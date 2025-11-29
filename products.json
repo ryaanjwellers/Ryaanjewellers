@@ -1,0 +1,32 @@
+[
+  {
+    "id": "RJ001",
+    "category": "Ring",
+    "title": "22K Classic Ring",
+    "weight_g": 4.2,
+    "karat": "22K",
+    "gold_price_per_g": 235,
+    "making_charge": 120,
+    "stones": "No",
+    "description": "Simple daily wear 22K ring.",
+    "image": "assets/placeholder.jpg",
+    "stock": "In Stock",
+    "status": "Active",
+    "selling_price": 1107.0
+  },
+  {
+    "id": "RJ002",
+    "category": "Chain",
+    "title": "22K Dubai Chain",
+    "weight_g": 16.5,
+    "karat": "22K",
+    "gold_price_per_g": 235,
+    "making_charge": 350,
+    "stones": "No",
+    "description": "Dubai design long chain.",
+    "image": "assets/placeholder.jpg",
+    "stock": "In Stock",
+    "status": "Active",
+    "selling_price": 4227.5
+  }
+]
