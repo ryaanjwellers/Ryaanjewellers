@@ -1595,4 +1595,387 @@
         });
     </script>
 </body>
+    <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>RYAAN JEWELLERS — Luxury Collection</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#0b0b0b;
+    --muted:#6b6b6b;
+    --gold:#b8860b;
+    --bg:#ffffff;
+    --card:#fbfbfb;
+    --accent:linear-gradient(90deg,#d4af37,#f0c75e);
+    --shadow: 0 10px 30px rgba(11,11,11,0.08);
+    --radius:14px;
+    --transition: 250ms cubic-bezier(.2,.8,.2,1);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+    color:var(--dark);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+  a{color:inherit;text-decoration:none}
+  header{
+    position:sticky; top:0; z-index:60;
+    background:rgba(255,255,255,0.98);
+    backdrop-filter: blur(4px);
+    border-bottom:1px solid rgba(0,0,0,0.04);
+  }
+  .container{max-width:1200px;margin:0 auto;padding:0 20px}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+  }
+  .logo{
+    width:64px;height:64px;border-radius:10px;background:var(--card);
+    display:flex;align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond',serif;color:var(--gold);font-weight:700;
+    font-size:20px; box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  }
+  .brand-name{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:1px}
+  .nav-actions{display:flex;gap:12px;align-items:center}
+  .hero{
+    display:grid;grid-template-columns:1fr 520px;gap:60px;padding:80px 0;
+  }
+  .hero-left{
+    align-self:center;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;margin:0 0 18px;
+    letter-spacing:1px;
+  }
+  .hero p.lead{
+    color:var(--muted);font-size:18px;margin:0 0 28px;max-width:680px;
+  }
+  .cta{
+    display:flex;gap:14px;
+  }
+  .btn{
+    padding:14px 26px;border-radius:10px;background:var(--dark);color:#fff;font-weight:600;
+    border:none;cursor:pointer;transition:var(--transition);box-shadow:0 8px 30px rgba(11,11,11,0.08);
+  }
+  .btn-light{
+    background:transparent;color:var(--dark);border:1px solid rgba(11,11,11,0.06);
+  }
+  .hero-right{display:flex;align-items:center;justify-content:center}
+  .hero-media{
+    width:100%;max-width:500px;border-radius:18px; overflow:hidden; box-shadow:var(--shadow);
+  }
+  .hero-media img{width:100%;display:block}
+
+  /* Collection */
+  .section{padding:70px 0}
+  .section-title{font-family:'Cormorant Garamond',serif;text-align:center;font-size:34px;margin-bottom:28px}
+  .collection-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .product-card{
+    background:var(--card);padding:16px;border-radius:14px;transition:var(--transition);
+    box-shadow:0 6px 20px rgba(0,0,0,0.04);
+    display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;
+  }
+  .product-card:hover{transform:translateY(-10px);box-shadow:0 18px 50px rgba(0,0,0,0.12)}
+  .product-card img{width:100%;height:320px;object-fit:cover;border-radius:10px}
+  .product-title{font-weight:600;font-size:16px;margin:0}
+  .price{color:var(--gold);font-weight:700;font-size:18px;margin-top:6px}
+  .product-desc{color:var(--muted);font-size:13px;margin:8px 0 0}
+
+  /* Modal */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:120}
+  .modal.open{display:flex}
+  .modal-body{background:#fff;border-radius:12px;max-width:1000px;width:95%;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
+  .modal-body img{width:100%;height:auto;border-radius:8px}
+  .modal-close{position:absolute;top:18px;right:18px;background:#fff;border-radius:50%;width:42px;height:42px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+
+  /* Footer */
+  footer{padding:40px 0;background:#0b0b0b;color:#ddd;margin-top:40px}
+  .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .footer h4{color:#fff;margin:0 0 10px;font-family:'Cormorant Garamond',serif}
+  .social{display:flex;gap:8px;margin-top:12px}
+
+  /* Responsive */
+  @media (max-width:1024px){
+    .hero{grid-template-columns:1fr;gap:40px;padding:48px 0}
+    .hero-right{order:-1}
+    .hero-media img{height:420px;object-fit:cover}
+  }
+  @media (max-width:800px){
+    .collection-grid{grid-template-columns:repeat(2,1fr)}
+    .product-card img{height:260px}
+    .modal-body{grid-template-columns:1fr}
+  }
+  @media (max-width:480px){
+    .collection-grid{grid-template-columns:1fr}
+    .product-card img{height:220px}
+    .hero h1{font-size:32px}
+  }
+
+  /* small helper */
+  .muted{color:var(--muted)}
+  .center{text-align:center}
+  .small{font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">R</div>
+        <div>
+          <div class="brand-name">RYAAN</div>
+          <div class="small muted">Gold & Diamonds</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a class="small muted" href="#collection">Collection</a>
+        <a class="small muted" href="#about">About</a>
+        <a class="small muted" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="container hero" aria-label="hero">
+    <div class="hero-left">
+      <h1>Luxury Gold & Diamond Jewellery</h1>
+      <p class="lead">Curated selection of hand-finished rings, necklaces, bracelets and earrings — crafted with passion for the connoisseur of elegance.</p>
+      <div class="cta">
+        <button class="btn" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">Shop Collection</button>
+        <a class="btn btn-light" href="#about">About Ryaan</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-media">
+        <img src="images/product1.jpg" alt="Featured necklace">
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Collection -->
+  <section id="collection" class="section container">
+    <h2 class="section-title">Our Luxury Collection</h2>
+
+    <div class="collection-grid">
+      <!-- 1 -->
+      <div class="product-card" tabindex="0" onclick="openModal(1)">
+        <img src="images/product1.jpg" alt="White Gold Move Uno Necklace">
+        <div class="product-title">White Gold Move Uno Necklace</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Elegant white gold necklace featuring a floating moving diamond for graceful sparkle.</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="product-card" tabindex="0" onclick="openModal(2)">
+        <img src="images/product2.jpg" alt="Rose Gold Move Pave Bangle">
+        <div class="product-title">Rose Gold Move Pave Bangle</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">A premium rose gold bangle fully set with pavé diamonds for ultimate shine.</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="product-card" tabindex="0" onclick="openModal(3)">
+        <img src="images/product3.jpg" alt="White Gold Move Pave Ring">
+        <div class="product-title">White Gold Move Pave Ring</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">A bold, elegant ring featuring the iconic Move design for modern luxury.</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="product-card" tabindex="0" onclick="openModal(4)">
+        <img src="images/product4.jpg" alt="Rose Gold Black Move Ring">
+        <div class="product-title">Rose Gold Black Move Ring</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Rose gold with sleek black enamel and moving diamonds — a modern luxury icon.</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="product-card" tabindex="0" onclick="openModal(5)">
+        <img src="images/product5.jpg" alt="White Gold Move Uno Pendant">
+        <div class="product-title">White Gold Move Uno Pendant</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Timeless white gold pendant with a floating central diamond — wearable grace.</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="product-card" tabindex="0" onclick="openModal(6)">
+        <img src="images/product6.jpg" alt="Rose Gold Move Uno Ring">
+        <div class="product-title">Rose Gold Move Uno Ring</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Feminine classic in rose gold polished to a mirror finish with pavé detail.</div>
+      </div>
+
+      <!-- 7 -->
+      <div class="product-card" tabindex="0" onclick="openModal(7)">
+        <img src="images/product7.jpg" alt="Rose Gold Circle Move Ring">
+        <div class="product-title">Rose Gold Circle Move Ring</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Circular modern design with center moving diamond — pure elegance.</div>
+      </div>
+
+      <!-- 8 -->
+      <div class="product-card" tabindex="0" onclick="openModal(8)">
+        <img src="images/product8.jpg" alt="Yellow Gold Pave Earrings">
+        <div class="product-title">Yellow Gold Pave Earrings</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Dazzling diamond pavé earrings crafted in rich yellow gold; afternoon to evening.</div>
+      </div>
+
+      <!-- 9 -->
+      <div class="product-card" tabindex="0" onclick="openModal(9)">
+        <img src="images/product9.jpg" alt="CARE(S) Yellow Cord Bracelet">
+        <div class="product-title">CARE(S) Yellow Cord Bracelet</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">A casual-luxury bracelet featuring vibrant cord and shimmering diamonds.</div>
+      </div>
+
+      <!-- 10 -->
+      <div class="product-card" tabindex="0" onclick="openModal(10)">
+        <img src="images/product10.jpg" alt="Chopard Happy Heart Necklace">
+        <div class="product-title">Chopard Happy Heart Necklace</div>
+        <div class="price">AED 5,580</div>
+        <div class="product-desc">Iconic floating diamonds inside a heart-shaped yellow gold pendant.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section container">
+    <h2 class="section-title">About RYAAN Jewellers</h2>
+    <div style="max-width:900px;margin:0 auto;color:var(--muted);text-align:center">
+      For generations we craft jewelry that celebrates life’s finest moments. Our atelier merges timeless technique with refined modernity — finished by hand and certified for quality. Visit our boutique in Gold Souk, Deira or contact us for bespoke commissions.
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container">
+    <h2 class="section-title">Contact & Visit</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+      <div style="padding:20px;background:var(--card);border-radius:12px">
+        <h4 style="margin:0 0 10px;font-family:'Cormorant Garamond',serif">Visit Us</h4>
+        <p class="muted small">Gold Souk, Deira, Dubai, UAE</p>
+        <p class="muted small">Open Mon–Sat: 10:00 — 22:00</p>
+      </div>
+      <div style="padding:20px;background:var(--card);border-radius:12px">
+        <h4 style="margin:0 0 10px;font-family:'Cormorant Garamond',serif">Contact</h4>
+        <p class="muted small">Email: ryaanjewellers@gmail.com</p>
+        <p class="muted small">Phone: +971 4 123 4567</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Product Modal -->
+<div id="product-modal" class="modal" aria-hidden="true">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-body container" id="modal-content">
+    <!-- Content populated by JS -->
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Ryaan Jewellers</h4>
+        <p class="muted">Luxury Gold & Diamond Jewellery — Crafted with passion and certified diamonds.</p>
+        <div class="social">
+          <span class="small muted">Instagram</span>
+          <span class="small muted">•</span>
+          <span class="small muted">WhatsApp</span>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p class="small muted">Collection</p>
+        <p class="small muted">About</p>
+        <p class="small muted">Contact</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p class="small muted">ryaanjewellers@gmail.com</p>
+        <p class="small muted">+971 4 123 4567</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:22px;color:#999;font-size:13px">
+      &copy; <span id="yr"></span> RYAAN JEWELLERS — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // set year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // products data (mirror of DOM list)
+  const products = [
+    {id:1,title:'White Gold Move Uno Necklace',price:'AED 5,580',img:'images/product1.jpg',desc:'Elegant white gold necklace featuring a floating moving diamond for graceful sparkle.'},
+    {id:2,title:'Rose Gold Move Pave Bangle',price:'AED 5,580',img:'images/product2.jpg',desc:'A premium rose gold bangle fully set with pavé diamonds for ultimate shine.'},
+    {id:3,title:'White Gold Move Pave Ring',price:'AED 5,580',img:'images/product3.jpg',desc:'A bold, elegant ring featuring the iconic Move design for modern luxury.'},
+    {id:4,title:'Rose Gold Black Move Ring',price:'AED 5,580',img:'images/product4.jpg',desc:'Rose gold with sleek black enamel and moving diamonds — a modern luxury icon.'},
+    {id:5,title:'White Gold Move Uno Pendant',price:'AED 5,580',img:'images/product5.jpg',desc:'Timeless white gold pendant with a floating central diamond — wearable grace.'},
+    {id:6,title:'Rose Gold Move Uno Ring',price:'AED 5,580',img:'images/product6.jpg',desc:'Feminine classic in rose gold polished to a mirror finish with pavé detail.'},
+    {id:7,title:'Rose Gold Circle Move Ring',price:'AED 5,580',img:'images/product7.jpg',desc:'Circular modern design with center moving diamond — pure elegance.'},
+    {id:8,title:'Yellow Gold Pave Earrings',price:'AED 5,580',img:'images/product8.jpg',desc:'Dazzling diamond pavé earrings crafted in rich yellow gold; afternoon to evening.'},
+    {id:9,title:'CARE(S) Yellow Cord Bracelet',price:'AED 5,580',img:'images/product9.jpg',desc:'A casual-luxury bracelet featuring vibrant cord and shimmering diamonds.'},
+    {id:10,title:'Chopard Happy Heart Necklace',price:'AED 5,580',img:'images/product10.jpg',desc:'Iconic floating diamonds inside a heart-shaped yellow gold pendant.'}
+  ];
+
+  function openModal(id){
+    const p = products.find(x=>x.id===id);
+    const content = document.getElementById('modal-content');
+    content.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <img src="${p.img}" alt="${p.title}">
+      </div>
+      <div style="padding:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+        <h2 style="margin:0">${p.title}</h2>
+        <div style="font-weight:700;color:var(--gold);font-size:20px">${p.price}</div>
+        <p style="color:var(--muted)">${p.desc}</p>
+        <div style="margin-top:auto;display:flex;gap:10px;width:100%">
+          <button class="btn" style="flex:1" onclick="addToCart(${p.id})">Inquire / Add to cart</button>
+          <button class="btn btn-light" style="flex:1" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    `;
+    document.getElementById('product-modal').classList.add('open');
+    document.getElementById('product-modal').setAttribute('aria-hidden','false');
+  }
+
+  function closeModal(){
+    document.getElementById('product-modal').classList.remove('open');
+    document.getElementById('product-modal').setAttribute('aria-hidden','true');
+  }
+
+  function addToCart(id){
+    alert('Thanks — we received your inquiry for product id: ' + id + '. We will contact you soon.');
+  }
+
+  // close on escape / click-outside
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+  document.getElementById('product-modal').addEventListener('click', (e)=>{
+    if(e.target.id==='product-modal') closeModal();
+  });
+
+</script>
+</body>
+</html>
 </html>
