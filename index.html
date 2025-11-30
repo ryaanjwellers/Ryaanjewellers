@@ -1,28 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ryaan Jewellers | Premium Gold & Diamond Jewellery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYAAN JEWELLERS | Luxury Gold & Diamond Collections</title>
+    <meta name="description" content="RYAAN JEWELLERS - Premium Gold & Diamond Jewellery in UAE. Explore exclusive rings, necklaces, bangles, bridal sets & custom designs.">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Ryaan Jewellers – Premium Gold & Diamond Jewellery in UAE. Explore rings, necklaces, bangles, bridal sets & custom designs." />
-    <meta name="keywords" content="Ryaan Jewellers, Gold Jewellery, Diamond Jewellery, UAE Jewellery Shop, Luxury Jewellery, Gold Rings, Diamond Necklaces" />
-    <meta name="author" content="Ryaan Jewellers" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Ryaan Jewellers | Premium Gold & Diamond Jewellery" />
-    <meta property="og:description" content="Discover luxury gold and diamond jewellery collections at Ryaan Jewellers. Crafted with precision and elegance." />
-    <meta property="og:type" content="website" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -34,7 +20,9 @@
             --text: #333333;
             --text-light: #777777;
             --white: #FFFFFF;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-heavy: 0 20px 50px rgba(0,0,0,0.15);
         }
 
         * {
@@ -48,79 +36,108 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: var(--white);
             color: var(--text);
             overflow-x: hidden;
             line-height: 1.6;
+            font-weight: 400;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             line-height: 1.2;
+            letter-spacing: 0.5px;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             position: relative;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             color: var(--dark);
             margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .section-title p {
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.3px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 100px;
             height: 3px;
-            background: var(--secondary);
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 32px;
             background: var(--primary);
             color: var(--white);
             border: none;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+            border-radius: 2px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
             text-align: center;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
             background: var(--secondary);
+            color: var(--dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-heavy);
         }
 
         .btn-secondary {
@@ -137,17 +154,20 @@
         header {
             background: var(--primary);
             color: var(--white);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
         .logo-container {
@@ -157,9 +177,11 @@
         }
 
         .logo-svg {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             color: var(--secondary);
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+            transition: var(--transition);
         }
 
         .logo-text {
@@ -168,39 +190,49 @@
         }
 
         .brand-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
             font-weight: 700;
             line-height: 1;
             color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .brand-subtitle {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
             color: var(--secondary);
-            margin-top: 2px;
+            margin-top: 3px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
         }
 
         .brand-tagline {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-light);
-            margin-top: 2px;
+            margin-top: 3px;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 40px;
         }
 
         nav a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: var(--transition);
             position: relative;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
         }
 
         nav a:hover {
@@ -225,17 +257,35 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .header-icon {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
             transition: var(--transition);
+            position: relative;
         }
 
         .header-icon:hover {
             color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--secondary);
+            color: var(--dark);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
         }
 
         .mobile-menu-btn {
@@ -245,166 +295,490 @@
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
         }
 
         .language-switcher {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             cursor: pointer;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 4px;
             transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .language-switcher:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        .splash-logo {
+            width: 150px;
+            height: 150px;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            animation: pulse 2s infinite;
+        }
+
+        .splash-text {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .splash-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .splash-text p {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            letter-spacing: 2px;
+        }
+
+        .splash-progress {
+            width: 200px;
+            height: 3px;
+            background: rgba(255,255,255,0.2);
+            margin-top: 30px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .splash-progress-bar {
+            height: 100%;
+            background: var(--secondary);
+            width: 0%;
+            transition: width 3s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Falling Gold Elements */
+        .falling-gold {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            overflow: hidden;
+        }
+
+        .gold-element {
+            position: absolute;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
         }
 
         /* Hero Section */
         .hero {
-            height: 90vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(26,26,26,0.7) 100%), url('https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: var(--white);
         }
 
         .hero-content {
-            max-width: 700px;
+            max-width: 800px;
             z-index: 2;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 4.8rem;
+            margin-bottom: 25px;
             line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
             max-width: 600px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .hero-btns {
             display: flex;
-            gap: 15px;
+            gap: 20px;
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(212, 175, 55, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            left: 85%;
+            animation-delay: 1s;
+        }
+
+        .floating-element:nth-child(3) {
+            top: 80%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(4) {
+            top: 30%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
         }
 
         /* Categories Section */
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         .category-card {
             background: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             cursor: pointer;
+            position: relative;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-heavy);
         }
 
         .category-img {
             width: 100%;
-            height: 250px;
+            height: 350px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-img {
+            transform: scale(1.05);
         }
 
         .category-content {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-content {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .category-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 10px;
-            color: var(--dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .category-content p {
-            color: var(--text-light);
             margin-bottom: 15px;
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .price {
             font-weight: 600;
             color: var(--secondary);
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Image Upload Section */
+        .image-upload-section {
+            background: var(--light);
+            text-align: center;
+        }
+
+        .upload-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 60px 20px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .upload-area:hover {
+            border-color: var(--secondary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .upload-area h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .upload-area p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .upload-preview {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .upload-preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
         }
 
         /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
         .about-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 25px;
             color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
 
         .about-text p {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--text);
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
         }
 
         .about-img {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(166, 124, 82, 0.1));
+            z-index: 1;
         }
 
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.03);
         }
 
         /* Mission & Vision */
         .mission-vision {
             background: var(--light);
+            position: relative;
         }
 
         .mission-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .mission-box, .vision-box {
             background: var(--white);
-            padding: 40px;
+            padding: 50px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
             text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-box::before, .vision-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+        }
+
+        .mission-box:hover, .vision-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
         }
 
         .mission-box i, .vision-box i {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .mission-box:hover i, .vision-box:hover i {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .mission-box h3, .vision-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             color: var(--dark);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .mission-box p, .vision-box p {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
         }
 
         /* Products Section */
@@ -416,19 +790,22 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 8px 20px;
+            padding: 10px 25px;
             background: var(--white);
             border: 1px solid #ddd;
             border-radius: 30px;
             cursor: pointer;
             transition: var(--transition);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
         }
 
         .filter-btn.active, .filter-btn:hover {
@@ -439,43 +816,67 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         .product-card {
             background: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
             transition: var(--transition);
+            position: relative;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
         }
 
         .product-img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .product-content {
-            padding: 20px;
+            padding: 25px;
         }
 
         .product-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             color: var(--dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .product-content p {
             color: var(--text-light);
             margin-bottom: 15px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .product-price {
@@ -487,36 +888,39 @@
         .price {
             font-weight: 600;
             color: var(--secondary);
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         /* Contact Section */
         .contact-form {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             background: var(--white);
-            padding: 40px;
+            padding: 50px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
             color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
         }
@@ -524,6 +928,7 @@
         .form-control:focus {
             border-color: var(--secondary);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
 
         /* Checkout Section */
@@ -534,25 +939,33 @@
         .checkout-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .checkout-form, .order-summary {
             background: var(--white);
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
+        }
+
+        .checkout-form h3, .order-summary h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .payment-methods {
             display: flex;
             gap: 15px;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .payment-btn {
             flex: 1;
-            padding: 15px;
+            padding: 18px;
             border: 1px solid #ddd;
             border-radius: 4px;
             background: var(--white);
@@ -560,32 +973,86 @@
             transition: var(--transition);
             text-align: center;
             font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .payment-btn:hover, .payment-btn.active {
             border-color: var(--secondary);
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.05);
         }
 
         .payment-btn i {
-            margin-right: 8px;
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .order-item p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .order-totals {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .grand-total {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         /* FAQ Section */
         .faq-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid #eee;
             border-radius: 8px;
             overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: #ddd;
         }
 
         .faq-question {
-            padding: 20px;
+            padding: 25px;
             background: var(--white);
             cursor: pointer;
             display: flex;
@@ -593,6 +1060,7 @@
             align-items: center;
             font-weight: 500;
             transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .faq-question:hover {
@@ -600,14 +1068,16 @@
         }
 
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 25px;
             max-height: 0;
             overflow: hidden;
             transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
         }
 
         .faq-item.active .faq-answer {
-            padding: 20px;
+            padding: 0 25px 25px;
             max-height: 500px;
         }
 
@@ -619,54 +1089,73 @@
         footer {
             background: var(--dark);
             color: var(--white);
-            padding: 60px 0 30px;
+            padding: 80px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
         }
 
         .footer-col p, .footer-col a {
             color: #aaa;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: block;
             text-decoration: none;
             transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .footer-col a:hover {
             color: var(--secondary);
+            transform: translateX(5px);
         }
 
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             transition: var(--transition);
+            font-size: 1.2rem;
         }
 
         .social-links a:hover {
             background: var(--secondary);
             color: var(--dark);
+            transform: translateY(-5px);
         }
 
         .footer-bottom {
@@ -675,6 +1164,7 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             color: #aaa;
             font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Modal */
@@ -695,84 +1185,117 @@
         .modal-content {
             background: var(--white);
             border-radius: 10px;
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .modal-close {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text);
             z-index: 10;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: rgba(0,0,0,0.05);
         }
 
         .modal-body {
-            padding: 30px;
+            padding: 40px;
         }
 
         .product-detail {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
         }
 
         .product-detail-img {
             width: 100%;
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
         .product-detail-img img {
             width: 100%;
             height: auto;
             display: block;
+            transition: var(--transition);
+        }
+
+        .product-detail-img:hover img {
+            transform: scale(1.03);
         }
 
         .product-detail-content h2 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
             color: var(--dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .product-detail-content .price {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 20px;
             display: block;
         }
 
         .product-detail-content p {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--text);
+            font-size: 1.05rem;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
         }
 
         .product-options {
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .option-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .option-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .option-select {
             width: 100%;
-            padding: 10px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .option-select:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
 
         /* RTL Support */
@@ -803,20 +1326,45 @@
             flex-direction: row-reverse;
         }
 
+        body[dir="rtl"] .about-text h2::after {
+            left: auto;
+            right: 0;
+        }
+
+        body[dir="rtl"] .footer-col h3::after {
+            left: auto;
+            right: 0;
+        }
+
+        body[dir="rtl"] .mission-box::before, body[dir="rtl"] .vision-box::before {
+            left: auto;
+            right: 0;
+        }
+
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
         @media (max-width: 992px) {
             .about-content, .mission-content, .checkout-container, .product-detail {
                 grid-template-columns: 1fr;
             }
             
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
             }
         }
 
         @media (max-width: 768px) {
             section {
-                padding: 60px 0;
+                padding: 80px 0;
             }
             
             .header-content {
@@ -826,7 +1374,7 @@
             nav {
                 order: 3;
                 width: 100%;
-                margin-top: 15px;
+                margin-top: 20px;
                 display: none;
             }
             
@@ -836,7 +1384,7 @@
             
             nav ul {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
             
             .mobile-menu-btn {
@@ -844,11 +1392,11 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .hero-btns {
@@ -861,7 +1409,15 @@
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .mission-box, .vision-box {
+                padding: 30px;
+            }
+            
+            .contact-form, .checkout-form, .order-summary {
+                padding: 30px;
             }
         }
 
@@ -880,15 +1436,15 @@
             }
             
             .brand-name {
-                font-size: 1.5rem;
-            }
-            
-            .contact-form, .mission-box, .vision-box {
-                padding: 25px;
+                font-size: 1.6rem;
             }
             
             .modal-body {
-                padding: 20px;
+                padding: 25px;
+            }
+            
+            .payment-methods {
+                flex-direction: column;
             }
         }
 
@@ -899,7 +1455,7 @@
         }
 
         @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
+            from { transform: translateY(40px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
@@ -910,9 +1466,55 @@
         .slide-up {
             animation: slideUp 0.8s ease;
         }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splash-screen">
+        <svg class="splash-logo" viewBox="0 0 1024.000000 1024.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+                <path d="M0 5120 l0 -5120 5120 0 5120 0 0 5120 0 5120 -5120 0 -5120 0 0 -5120z m5575 3395 c152 -18 377 -62 534 -105 61 -16 114 -30 118 -30 3 0 4 -2 1 -5 -2 -3 -47 4 -99 16 -597 130 -1339 90 -1985 -107 -371 -114 -793 -335 -1081 -566 -280 -226 -456 -409 -687 -718 -233 -311 -427 -679 -547 -1040 -48 -143 -50 -122 -5 52 130 505 373 962 738 1384 171 198 407 402 659 570 165 109 498 278 685 348 304 112 641 185 964 209 144 11 586 6 705 -8z m-1210 -426 c-442 -118 -811 -295 -1166 -561 -174 -130 -298 -238 -421 -366 -117 -123 -105 -104 31 45 281 309 649 564 1056 731 188 77 527 180 590 180 11 0 -29 -13 -90 -29z m-2019 -2166 c0 -100 42 -172 124 -207 39 -17 36 -18 -38 -16 -88 3 -177 -55 -204 -132 -15 -41 -27 -34 -18 9 15 66 -6 132 -59 183 -25 25 -54 50 -64 55 -14 7 -1 10 51 10 62 0 75 4 114 30 28 21 52 49 68 83 14 28 25 52 26 52 0 0 0 -30 0 -67z m-559 -105 c-3 -8 -6 -5 -6 6 -1 11 2 17 5 13 3 -3 4 -12 1 -19z m3387 -453 c65 -115 129 -222 143 -237 l27 -28 -73 0 c-62 0 -72 2 -62 14 10 11 7 25 -14 65 l-25 51 -154 0 -153 0 -26 -48 c-25 -45 -25 -49 -10 -65 16 -16 14 -17 -37 -17 -51 0 -53 1 -33 15 12 8 43 54 69 102 71 133 175 314 197 346 11 16 23 25 27 20 4 -4 60 -102 124 -218z m-647 -10 c68 -121 134 -228 146 -237 21 -17 20 -18 -50 -18 -68 0 -71 1 -66 21 4 13 -4 39 -18 65 l-24 44 -156 0 -156 0 -23 -50 c-19 -41 -21 -52 -10 -65 11 -13 6 -15 -41 -15 -50 0 -52 1 -33 15 12 7 79 116 150 240 84 148 133 225 143 223 8 -2 70 -102 138 -223z m-1121 204 c26 -7 60 -26 80 -44 30 -29 34 -38 34 -83 0 -64 -32 -106 -96 -125 l-45 -13 100 -97 100 -97 -47 0 c-59 0 -71 8 -162 114 l-74 86 -53 0 -53 0 0 -84 c0 -76 2 -86 22 -100 21 -15 18 -16 -57 -16 -78 0 -79 1 -57 18 22 17 22 20 20 222 l-3 204 -25 13 c-21 11 -3 13 123 13 82 0 168 -5 193 -11z m299 -3 c-17 -12 -13 -20 70 -116 l89 -103 59 64 c87 96 112 135 97 154 -11 13 -5 15 46 15 43 -1 55 -3 42 -10 -9 -6 -66 -66 -127 -134 l-111 -124 0 -81 c0 -70 3 -83 22 -101 l22 -20 -80 1 c-75 0 -78 1 -56 16 20 14 22 23 22 104 l0 88 -121 131 -120 130 82 0 c72 0 80 -2 64 -14z m1975 -165 l185 -180 3 167 c2 148 1 168 -15 179 -14 11 -9 13 33 13 38 -1 45 -3 32 -11 -16 -9 -18 -32 -18 -240 0 -137 -4 -229 -9 -227 -5 2 -99 90 -209 196 -110 105 -202 192 -204 192 -9 0 4 -355 14 -367 8 -10 2 -13 -31 -13 l-41 0 15 24 c14 21 16 54 13 211 l-3 187 -28 24 -28 24 53 0 53 0 185 -179z m733 164 c-21 -15 -22 -23 -25 -228 l-3 -212 -28 -48 c-33 -56 -97 -93 -130 -76 -17 9 -15 12 14 32 72 49 74 55 77 297 3 217 3 218 -20 234 -21 15 -19 16 57 16 74 0 78 -1 58 -15z m347 -9 c0 -13 3 -33 6 -43 4 -11 -2 -8 -18 10 -20 24 -33 29 -86 34 l-62 6 0 -107 0 -106 43 0 c23 0 53 7 65 16 22 15 22 14 22 -22 0 -30 -3 -35 -12 -26 -7 7 -37 12 -67 12 l-56 0 3 -96 3 -96 76 4 c72 3 77 5 105 38 27 31 29 32 23 10 -22 -74 -10 -69 -167 -72 -79 -2 -144 -2 -146 -1 -2 1 6 11 17 22 20 20 21 32 21 211 0 177 -1 191 -20 210 l-20 20 135 0 135 0 0 -24z m196 9 c-19 -14 -18 -18 21 -167 38 -148 40 -152 51 -118 6 19 29 95 52 168 23 72 45 132 49 132 8 0 101 -280 101 -305 0 -8 3 -15 8 -15 11 0 81 290 71 296 -20 12 -7 20 27 16 21 -3 31 -8 24 -12 -10 -6 -88 -276 -117 -404 -4 -22 -13 -41 -18 -42 -6 -2 -34 72 -64 164 l-55 167 -48 -155 c-27 -85 -51 -161 -54 -169 -9 -28 -22 6 -83 214 -47 157 -68 214 -84 227 -21 17 -20 18 58 17 72 0 78 -1 61 -14z m2236 -1 c4 -3 8 -24 7 -47 0 -35 -2 -38 -9 -20 -30 74 -177 72 -196 -3 -10 -38 21 -73 102 -117 92 -50 124 -85 124 -138 0 -74 -37 -116 -118 -134 -41 -8 -121 2 -144 19 -19 14 -42 96 -27 96 5 0 9 -6 9 -14 0 -8 16 -28 35 -45 69 -60 185 -33 185 43 0 47 -32 81 -111 121 -91 46 -109 67 -109 126 0 40 5 53 31 78 17 17 45 35 62 40 30 10 142 5 159 -5z m-1517 -30 c7 -40 1 -57 -10 -24 -9 27 -43 40 -106 40 l-49 0 0 -100 0 -100 52 0 c34 0 58 6 70 17 17 15 18 14 18 -27 0 -41 -1 -42 -18 -27 -12 11 -36 17 -70 17 l-52 0 0 -101 c0 -88 2 -100 16 -95 9 3 42 6 74 6 53 0 62 3 91 33 24 23 31 26 25 12 -4 -11 -10 -32 -13 -47 l-5 -28 -146 0 c-140 0 -145 1 -129 18 15 16 17 47 17 220 0 181 -2 202 -17 211 -13 8 19 10 113 11 l132 0 7 -36z m217 20 c-22 -15 -22 -20 -22 -220 l0 -204 75 0 c67 0 79 3 100 25 14 13 25 29 25 35 0 5 4 10 9 10 4 0 2 -20 -7 -45 l-14 -45 -147 0 c-124 1 -143 3 -128 14 15 12 17 35 17 219 0 186 -2 207 -17 216 -14 8 1 10 57 11 70 0 73 -1 52 -16z m498 -8 c0 -13 3 -33 6 -43 4 -11 -3 -7 -18 11 -21 25 -33 30 -86 34 l-62 4 0 -101 0 -101 55 0 c41 0 56 4 64 18 8 13 10 8 11 -26 0 -39 -1 -42 -16 -28 -10 10 -33 16 -65 16 l-49 0 0 -101 0 -102 72 5 c66 5 74 8 102 39 27 30 29 31 23 9 -4 -14 -7 -35 -7 -47 0 -23 -1 -23 -147 -23 -141 0 -146 1 -130 18 15 16 17 46 17 212 0 166 -2 196 -17 212 -16 17 -11 18 115 18 l132 0 0 -24z m366 5 c56 -25 74 -54 74 -117 0 -61 -23 -97 -75 -115 -19 -7 -31 -15 -27 -18 4 -4 36 -45 70 -93 34 -48 70 -89 80 -91 9 -3 -3 -5 -28 -6 -59 -1 -75 11 -140 106 -29 43 -62 85 -73 94 -19 16 -18 17 26 23 82 12 121 91 82 165 -16 32 -59 51 -116 51 l-39 0 0 -208 c0 -148 3 -211 12 -220 9 -9 -3 -12 -57 -12 -66 0 -68 1 -47 16 21 15 22 20 22 214 0 167 -2 201 -16 214 -14 15 -5 16 98 16 89 0 122 -4 154 -19z m-6138 -103 l37 -16 -38 -1 c-35 -1 -39 -5 -57 -43 -17 -40 -19 -41 -19 -15 -1 41 -16 63 -53 78 l-33 13 43 4 c39 3 45 7 60 40 l17 37 3 -40 c3 -35 7 -42 40 -57z m-411 -127 c100 -49 246 -124 324 -167 158 -86 157 -80 18 -109 l-86 -17 -196 83 c-146 63 -197 89 -201 104 -3 11 -17 59 -30 108 -14 48 -22 87 -18 87 4 0 89 -40 189 -89z m-185 -39 l22 -93 -54 -49 c-30 -27 -58 -49 -63 -50 -9 0 -219 191 -215 196 2 1 64 27 138 58 96 38 137 51 142 43 4 -7 17 -54 30 -105z m-114 -232 c4 -11 -57 -532 -63 -538 -3 -3 -5 3 -5 14 0 23 -127 686 -137 711 -4 10 40 -26 98 -81 57 -54 105 -102 107 -106z m347 38 c104 -45 191 -82 191 -82 1 -1 -6 -47 -15 -103 l-16 -102 -225 129 c-124 71 -229 131 -234 133 -8 3 92 106 104 107 2 0 90 -37 195 -82z m435 -45 c0 -5 9 -62 20 -128 11 -66 20 -129 20 -141 l0 -20 -142 23 c-77 12 -142 24 -143 25 -3 4 25 192 30 196 3 3 183 47 208 51 4 1 7 -2 7 -6z m-580 -98 c58 -34 144 -85 192 -112 l86 -49 -250 -170 c-138 -93 -255 -171 -260 -172 -5 -2 -6 7 -4 20 3 12 17 133 31 268 14 135 27 260 30 278 l6 32 32 -16 c17 -10 79 -45 137 -79z m475 -199 c72 -13 123 -26 115 -29 -8 -4 -132 -51 -275 -106 -143 -54 -307 -118 -365 -141 -130 -52 -180 -70 -180 -65 0 5 327 231 444 307 50 32 100 58 111 57 11 0 79 -11 150 -23z m1081 -163 c25 -16 54 -71 54 -102 0 -90 -92 -149 -175 -112 -65 29 -90 96 -61 164 28 69 117 93 182 50z m1322 11 c28 -20 29 -61 0 -91 l-22 -23 22 -22 21 -21 19 23 c26 32 48 18 25 -16 -15 -24 -15 -27 6 -55 21 -28 21 -29 3 -29 -11 0 -25 6 -31 14 -10 11 -17 11 -47 -4 -37 -20 -89 -13 -106 12 -16 26 -8 67 18 91 22 21 23 25 10 37 -29 23 -14 79 24 93 25 9 35 8 58 -9z m2199 1 c70 -20 98 -134 47 -194 -64 -77 -186 -50 -213 47 -18 63 21 133 85 152 29 8 38 7 81 -5z m1219 0 c21 -9 34 -20 31 -27 -2 -7 -11 -11 -18 -9 -8 2 -30 6 -51 9 -29 3 -38 0 -47 -17 -13 -23 -12 -24 68 -64 53 -26 66 -45 57 -80 -8 -33 -38 -50 -88 -50 -43 0 -96 29 -80 45 7 7 17 6 31 -2 12 -6 39 -10 59 -8 32 3 37 6 37 28 0 18 -8 28 -30 38 -87 37 -102 53 -91 96 4 18 18 32 39 41 41 18 41 18 83 0z m-5136 -10 c15 -18 3 -42 -13 -26 -6 6 -28 11 -50 11 -29 0 -46 -7 -68 -29 -62 -63 -17 -158 72 -149 30 3 34 7 37 36 3 30 1 32 -27 32 -21 0 -31 5 -31 15 0 11 12 15 45 15 l45 0 0 -55 c0 -64 -13 -75 -85 -75 -40 0 -52 5 -81 34 -28 28 -34 42 -34 75 0 48 20 93 52 115 29 21 121 21 138 1z m680 -90 l0 -105 55 0 c42 0 55 -3 55 -15 0 -12 -14 -15 -70 -15 l-70 0 0 120 c0 100 3 120 15 120 12 0 15 -18 15 -105z m440 90 c42 -22 60 -53 60 -107 0 -38 -6 -54 -29 -80 -26 -30 -35 -33 -100 -36 l-71 -4 0 121 0 121 55 0 c31 0 69 -7 85 -15z m1288 -19 c33 -31 37 -39 37 -85 0 -44 -4 -55 -32 -83 -30 -29 -40 -33 -103 -36 l-70 -4 0 121 0 121 65 0 c60 0 68 -3 103 -34z m272 -86 c0 -100 -2 -120 -15 -120 -12 0 -15 20 -15 120 0 100 3 120 15 120 13 0 15 -20 15 -120z m343 83 c8 -21 31 -75 51 -120 32 -74 33 -83 17 -83 -11 0 -24 12 -31 30 -12 29 -15 30 -71 30 -55 0 -59 -2 -74 -30 -9 -16 -22 -30 -30 -30 -8 0 -15 1 -15 3 0 2 18 46 41 98 23 52 45 104 50 117 14 35 45 28 62 -15z m356 -40 l39 -78 38 78 c31 62 43 77 61 77 21 0 23 -5 23 -52 0 -29 3 -83 7 -120 5 -58 4 -68 -10 -68 -17 0 -25 37 -30 135 l-2 50 -35 -67 c-45 -88 -59 -88 -103 -1 l-34 67 -7 -92 c-6 -77 -10 -92 -24 -92 -15 0 -17 9 -10 83 3 45 7 99 7 120 1 30 5 37 21 37 15 0 30 -20 59 -77z m919 -15 l67 -92 3 92 c2 73 6 92 17 92 12 0 15 -21 15 -120 0 -110 -2 -120 -19 -120 -12 0 -41 32 -82 91 l-64 91 -3 -91 c-2 -83 -5 -91 -22 -91 -19 0 -20 7 -20 120 0 114 1 120 20 120 14 0 41 -29 88 -92z m463 75 c65 -39 75 -131 19 -187 -26 -27 -38 -31 -100 -34 l-70 -4 0 121 0 121 61 0 c39 0 71 -6 90 -17z m1189 -563 l0 -30 -3680 0 -3680 0 0 30 0 30 3680 0 3680 0 0 -30z m-103 -431 c-211 -522 -503 -954 -913 -1348 -624 -599 -1288 -920 -2149 -1037 -183 -25 -614 -25 -815 -1 -249 31 -610 107 -660 139 -12 8 -11 8 3 4 46 -15 227 -48 339 -62 167 -21 671 -30 853 -15 593 49 1168 228 1651 512 713 420 1332 1090 1674 1811 35 75 66 136 67 134 2 -2 -21 -63 -50 -137z m-1278 -1162 c-362 -348 -885 -644 -1396 -791 -147 -42 -318 -79 -335 -73 -7 3 -3 6 9 6 42 2 328 80 463 127 358 124 691 299 985 518 124 92 278 221 329 275 17 17 32 31 35 31 3 -1 -37 -42 -90 -93z"/>
+                <path d="M2279 5844 c-20 -24 -65 -44 -100 -44 l-32 0 27 -21 c31 -24 56 -69 56 -99 0 -21 0 -21 30 3 34 29 94 51 115 43 24 -9 17 2 -20 35 -21 19 -37 43 -41 65 -7 38 -15 42 -35 18z"/>
+                <path d="M4948 5380 l-66 -120 135 0 134 0 -52 98 c-29 53 -58 107 -64 119 -5 13 -12 23 -15 23 -3 -1 -35 -55 -72 -120z"/>
+                <path d="M4342 5468 c-52 -87 -113 -200 -109 -204 2 -3 63 -3 135 -2 l130 3 -62 112 c-34 61 -64 114 -68 118 -3 3 -15 -9 -26 -27z"/>
+                <path d="M3190 5435 l0 -105 84 0 c126 0 176 27 176 95 0 78 -61 115 -185 115 l-75 0 0 -105z"/>
+                <path d="M3547 4549 c-11 -6 -25 -26 -33 -45 -25 -61 16 -124 81 -124 39 0 65 18 81 56 26 62 -16 124 -83 124 -15 0 -36 -5 -46 -11z"/>
+                <path d="M4932 4558 c-16 -16 -15 -33 3 -48 12 -10 18 -10 30 0 20 16 19 46 -1 54 -20 8 -18 8 -32 -6z"/>
+                <path d="M4916 4441 c-26 -28 -17 -55 19 -59 17 -1 37 2 45 8 13 8 10 14 -16 40 -30 30 -30 31 -48 11z"/>
+                <path d="M7076 4529 c-35 -41 -34 -83 3 -120 20 -20 39 -29 61 -29 43 0 90 47 90 90 0 45 -47 90 -93 90 -27 0 -41 -7 -61 -31z"/>
+                <path d="M4280 4470 l0 -90 41 0 c52 0 99 42 99 90 0 48 -47 90 -99 90 l-41 0 0 -90z"/>
+                <path d="M5540 4471 l0 -91 35 0 c42 0 90 22 99 45 12 32 6 83 -12 105 -13 16 -32 24 -70 28 l-52 5 0 -92z"/>
+                <path d="M6233 4495 l-21 -55 44 0 c24 0 44 4 44 9 0 9 -39 101 -43 101 -1 0 -12 -25 -24 -55z"/>
+                <path d="M7910 4471 l0 -91 35 0 c42 0 90 22 99 45 12 32 6 83 -12 105 -13 16 -32 24 -70 28 l-52 5 0 -92z"/>
+            </g>
+        </svg>
+        <div class="splash-text">
+            <h1>RYAAN JEWELLERS</h1>
+            <p>Luxury Gold & Diamonds</p>
+        </div>
+        <div class="splash-progress">
+            <div class="splash-progress-bar" id="splash-progress"></div>
+        </div>
+    </div>
+
+    <!-- Falling Gold Elements -->
+    <div class="falling-gold" id="falling-gold"></div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -946,9 +1548,9 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#collections">Collections</a></li>
+                        <li><a href="#upload">Upload Images</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#mission">Vision & Mission</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -961,7 +1563,10 @@
                     </div>
                     <i class="fas fa-search header-icon"></i>
                     <i class="fas fa-user header-icon"></i>
-                    <i class="fas fa-shopping-bag header-icon"></i>
+                    <div class="header-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">3</span>
+                    </div>
                     <button class="mobile-menu-btn" id="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -978,7 +1583,41 @@
                 <p>Discover our exclusive collection of premium gold and diamond jewellery, meticulously crafted to celebrate your most precious moments.</p>
                 <div class="hero-btns">
                     <a href="#collections" class="btn">Explore Collections</a>
-                    <a href="#contact" class="btn btn-secondary">Book Consultation</a>
+                    <a href="#upload" class="btn btn-secondary">Upload Your Design</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-element">💎</div>
+            <div class="floating-element">✨</div>
+            <div class="floating-element">⭐</div>
+            <div class="floating-element">🔶</div>
+        </div>
+    </section>
+
+    <!-- Image Upload Section -->
+    <section id="upload" class="image-upload-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upload Your Jewellery Images</h2>
+                <p>Share your jewellery designs or photos for custom orders and consultations</p>
+            </div>
+            
+            <div class="upload-container">
+                <div class="upload-area" id="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Your Images</h3>
+                    <p>Drag & drop your jewellery images here or click to browse</p>
+                    <p class="upload-note">Supported formats: JPG, PNG, GIF (Max 10MB)</p>
+                    <input type="file" id="file-input" accept="image/*" multiple style="display: none;">
+                    <button class="btn" id="upload-btn">Select Images</button>
+                </div>
+                
+                <div class="upload-preview" id="upload-preview">
+                    <h4>Uploaded Images:</h4>
+                    <div id="image-preview-container"></div>
                 </div>
             </div>
         </div>
@@ -998,8 +1637,8 @@
                     <div class="category-content">
                         <h3>Diamond Rings</h3>
                         <p>Exquisite diamond rings for every occasion</p>
-                        <div class="price">From $1,200</div>
-                        <a href="#" class="btn" style="margin-top: 15px; padding: 8px 20px;">View Collection</a>
+                        <span class="price">From AED 4,400</span>
+                        <a href="#" class="btn" style="margin-top: 15px; padding: 10px 25px;">View Collection</a>
                     </div>
                 </div>
                 
@@ -1008,8 +1647,8 @@
                     <div class="category-content">
                         <h3>Necklaces</h3>
                         <p>Elegant necklaces to complement your style</p>
-                        <div class="price">From $800</div>
-                        <a href="#" class="btn" style="margin-top: 15px; padding: 8px 20px;">View Collection</a>
+                        <span class="price">From AED 2,940</span>
+                        <a href="#" class="btn" style="margin-top: 15px; padding: 10px 25px;">View Collection</a>
                     </div>
                 </div>
                 
@@ -1018,8 +1657,8 @@
                     <div class="category-content">
                         <h3>Bangles</h3>
                         <p>Traditional and contemporary bangle designs</p>
-                        <div class="price">From $500</div>
-                        <a href="#" class="btn" style="margin-top: 15px; padding: 8px 20px;">View Collection</a>
+                        <span class="price">From AED 1,840</span>
+                        <a href="#" class="btn" style="margin-top: 15px; padding: 10px 25px;">View Collection</a>
                     </div>
                 </div>
                 
@@ -1028,8 +1667,8 @@
                     <div class="category-content">
                         <h3>Bridal Sets</h3>
                         <p>Complete bridal jewellery collections</p>
-                        <div class="price">From $2,500</div>
-                        <a href="#" class="btn" style="margin-top: 15px; padding: 8px 20px;">View Collection</a>
+                        <span class="price">From AED 9,180</span>
+                        <a href="#" class="btn" style="margin-top: 15px; padding: 10px 25px;">View Collection</a>
                     </div>
                 </div>
             </div>
@@ -1050,34 +1689,10 @@
                     <p>Ryaan Jewellers is a luxury jewellery brand based in the UAE, specialising in premium gold and diamond collections. With a commitment to purity, craftsmanship, and trust, we offer timeless jewellery designed with love and precision.</p>
                     <p>Founded in 1995, our journey began with a simple vision: to create jewellery that not only enhances beauty but also becomes a cherished part of your life's most precious moments.</p>
                     <p>Each piece in our collection is meticulously crafted by skilled artisans who combine traditional techniques with contemporary designs, ensuring that every creation is as unique as the person who wears it.</p>
-                    <a href="#mission" class="btn">Our Mission</a>
+                    <a href="#contact" class="btn">Contact Us</a>
                 </div>
                 <div class="about-img">
                     <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&w=800" alt="Ryaan Jewellers Store">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Vision Section -->
-    <section id="mission" class="mission-vision">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Vision & Mission</h2>
-                <p>Guiding principles that define our commitment to excellence</p>
-            </div>
-            
-            <div class="mission-content">
-                <div class="mission-box">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Our Mission</h3>
-                    <p>To deliver high-quality, luxurious jewellery pieces that celebrate beauty, elegance, and culture. We strive to exceed customer expectations through exceptional craftsmanship, personalized service, and ethical business practices.</p>
-                </div>
-                
-                <div class="vision-box">
-                    <i class="fas fa-eye"></i>
-                    <h3>Our Vision</h3>
-                    <p>To become the most trusted and loved jewellery brand worldwide, recognized for our innovation in design, commitment to quality, and dedication to creating timeless pieces that transcend generations.</p>
                 </div>
             </div>
         </div>
@@ -1101,24 +1716,26 @@
             
             <div class="products-grid">
                 <div class="product-card" data-category="rings">
+                    <div class="product-badge">Bestseller</div>
                     <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&w=800" alt="Diamond Solitaire Ring" class="product-img">
                     <div class="product-content">
                         <h3>Diamond Solitaire Ring</h3>
                         <p>Elegant solitaire diamond ring with 18K gold band</p>
                         <div class="product-price">
-                            <div class="price">$2,499</div>
+                            <div class="price">AED 9,180</div>
                             <button class="btn view-details" data-product="1">View Details</button>
                         </div>
                     </div>
                 </div>
                 
                 <div class="product-card" data-category="necklaces">
+                    <div class="product-badge">New</div>
                     <img src="https://images.unsplash.com/photo-1596944946757-75652dfd8f52?auto=format&w=800" alt="Pearl & Diamond Necklace" class="product-img">
                     <div class="product-content">
                         <h3>Pearl & Diamond Necklace</h3>
                         <p>Luxurious pearl necklace with diamond accents</p>
                         <div class="product-price">
-                            <div class="price">$3,200</div>
+                            <div class="price">AED 11,750</div>
                             <button class="btn view-details" data-product="2">View Details</button>
                         </div>
                     </div>
@@ -1130,19 +1747,20 @@
                         <h3>Diamond Stud Earrings</h3>
                         <p>Classic diamond stud earrings in white gold</p>
                         <div class="product-price">
-                            <div class="price">$1,850</div>
+                            <div class="price">AED 6,790</div>
                             <button class="btn view-details" data-product="3">View Details</button>
                         </div>
                     </div>
                 </div>
                 
                 <div class="product-card" data-category="bangles">
+                    <div class="product-badge">Limited</div>
                     <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&w=800" alt="Gold Bangle Set" class="product-img">
                     <div class="product-content">
                         <h3>Gold Bangle Set</h3>
                         <p>Set of three traditional gold bangles</p>
                         <div class="product-price">
-                            <div class="price">$1,100</div>
+                            <div class="price">AED 4,040</div>
                             <button class="btn view-details" data-product="4">View Details</button>
                         </div>
                     </div>
@@ -1159,7 +1777,7 @@
                 <p>Have questions or ready to make a purchase? Contact our jewellery experts</p>
             </div>
             
-            <form class="contact-form">
+            <form class="contact-form" id="contact-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
@@ -1172,7 +1790,7 @@
                 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                    <input type="tel" id="phone" class="form-control" placeholder="+971 54 374 6476" required>
                 </div>
                 
                 <div class="form-group">
@@ -1185,177 +1803,11 @@
                     <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your requirements..."></textarea>
                 </div>
                 
-                <button type="submit" class="btn">Submit Inquiry</button>
+                <button type="submit" class="btn" id="submit-btn">
+                    <span class="btn-text">Submit Inquiry</span>
+                    <div class="loading" style="display: none;"></div>
+                </button>
             </form>
-        </div>
-    </section>
-
-    <!-- Checkout Section -->
-    <section id="checkout" class="checkout">
-        <div class="container">
-            <div class="section-title">
-                <h2>Secure Checkout</h2>
-                <p>Complete your purchase with our secure payment options</p>
-            </div>
-            
-            <div class="checkout-container">
-                <div class="checkout-form">
-                    <h3>Billing Information</h3>
-                    
-                    <div class="form-group">
-                        <label for="checkout-name">Full Name</label>
-                        <input type="text" id="checkout-name" class="form-control" placeholder="Enter your full name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="checkout-email">Email Address</label>
-                        <input type="email" id="checkout-email" class="form-control" placeholder="Enter your email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="checkout-address">Shipping Address</label>
-                        <textarea id="checkout-address" class="form-control" rows="3" placeholder="Enter your complete address" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="checkout-phone">Phone Number</label>
-                        <input type="tel" id="checkout-phone" class="form-control" placeholder="Enter your phone number" required>
-                    </div>
-                    
-                    <h3>Payment Method</h3>
-                    <div class="payment-methods">
-                        <div class="payment-btn active" data-method="credit-card">
-                            <i class="far fa-credit-card"></i> Credit Card
-                        </div>
-                        <div class="payment-btn" data-method="paypal">
-                            <i class="fab fa-paypal"></i> PayPal
-                        </div>
-                        <div class="payment-btn" data-method="stripe">
-                            <i class="fas fa-credit-card"></i> Stripe
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" required>
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div class="form-group">
-                            <label for="expiry-date">Expiry Date</label>
-                            <input type="text" id="expiry-date" class="form-control" placeholder="MM/YY" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" class="form-control" placeholder="123" required>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Complete Purchase</button>
-                </div>
-                
-                <div class="order-summary">
-                    <h3>Order Summary</h3>
-                    
-                    <div class="order-item">
-                        <div class="item-details">
-                            <h4>Diamond Solitaire Ring</h4>
-                            <p>Quantity: 1</p>
-                        </div>
-                        <div class="item-price">$2,499</div>
-                    </div>
-                    
-                    <div class="order-item">
-                        <div class="item-details">
-                            <h4>Gold Bangle Set</h4>
-                            <p>Quantity: 1</p>
-                        </div>
-                        <div class="item-price">$1,100</div>
-                    </div>
-                    
-                    <div class="order-totals">
-                        <div class="total-line">
-                            <span>Subtotal:</span>
-                            <span>$3,599</span>
-                        </div>
-                        <div class="total-line">
-                            <span>Shipping:</span>
-                            <span>$50</span>
-                        </div>
-                        <div class="total-line">
-                            <span>Tax:</span>
-                            <span>$288</span>
-                        </div>
-                        <div class="total-line grand-total">
-                            <span>Total:</span>
-                            <span>$3,937</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our jewellery and services</p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is the purity of gold used in your jewellery?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We use 18K and 22K gold for our jewellery collections, ensuring the highest purity and quality. Each piece is hallmarked to guarantee its authenticity.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer custom jewellery design services?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we specialize in custom jewellery design. Our expert designers will work with you to create a unique piece that reflects your personal style and requirements.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is your return and exchange policy?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer a 30-day return policy for unworn jewellery in its original condition. Custom pieces and engraved items are final sale unless there is a manufacturing defect.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you provide jewellery authentication certificates?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>All our diamond and gemstone jewellery comes with authentication certificates from reputable gemological laboratories. Gold jewellery is hallmarked for purity assurance.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How can I care for my jewellery?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We recommend storing jewellery in a soft pouch or box, avoiding contact with chemicals, and cleaning with a soft cloth. We also offer professional cleaning services at our stores.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1378,6 +1830,7 @@
                     <h3>Quick Links</h3>
                     <a href="#home">Home</a>
                     <a href="#collections">Collections</a>
+                    <a href="#upload">Upload Images</a>
                     <a href="#products">Products</a>
                     <a href="#about">About Us</a>
                     <a href="#contact">Contact</a>
@@ -1394,9 +1847,10 @@
                 
                 <div class="footer-col">
                     <h3>Contact Info</h3>
+                    <p><i class="fas fa-globe"></i> ryaanjewellers.com</p>
+                    <p><i class="fas fa-envelope"></i> ryaanjewellers@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +971 54 374 6476</p>
                     <p><i class="fas fa-map-marker-alt"></i> Gold Souk, Deira, Dubai, UAE</p>
-                    <p><i class="fas fa-phone"></i> +971 4 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@ryaanjewellers.com</p>
                     <p><i class="fas fa-clock"></i> Mon-Sat: 10AM - 10PM</p>
                 </div>
             </div>
@@ -1407,66 +1861,45 @@
         </div>
     </footer>
 
-    <!-- Product Detail Modal -->
-    <div class="modal" id="product-modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close">&times;</button>
-            <div class="modal-body">
-                <div class="product-detail">
-                    <div class="product-detail-img">
-                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&w=800" alt="Product Image" id="modal-img">
-                    </div>
-                    <div class="product-detail-content">
-                        <h2 id="modal-title">Diamond Solitaire Ring</h2>
-                        <div class="price" id="modal-price">$2,499</div>
-                        <p id="modal-description">Elegant solitaire diamond ring with 18K gold band. Features a brilliant-cut diamond set in a classic four-prong setting. Perfect for engagements, anniversaries, or as a special gift.</p>
-                        
-                        <div class="product-options">
-                            <div class="option-group">
-                                <label for="metal-type">Metal Type</label>
-                                <select id="metal-type" class="option-select">
-                                    <option value="18k-yellow">18K Yellow Gold</option>
-                                    <option value="18k-white">18K White Gold</option>
-                                    <option value="18k-rose">18K Rose Gold</option>
-                                    <option value="platinum">Platinum</option>
-                                </select>
-                            </div>
-                            
-                            <div class="option-group">
-                                <label for="diamond-size">Diamond Size</label>
-                                <select id="diamond-size" class="option-select">
-                                    <option value="0.5">0.5 Carat</option>
-                                    <option value="0.75">0.75 Carat</option>
-                                    <option value="1.0" selected>1.0 Carat</option>
-                                    <option value="1.5">1.5 Carat</option>
-                                    <option value="2.0">2.0 Carat</option>
-                                </select>
-                            </div>
-                            
-                            <div class="option-group">
-                                <label for="ring-size">Ring Size</label>
-                                <select id="ring-size" class="option-select">
-                                    <option value="4">Size 4</option>
-                                    <option value="5">Size 5</option>
-                                    <option value="6" selected>Size 6</option>
-                                    <option value="7">Size 7</option>
-                                    <option value="8">Size 8</option>
-                                    <option value="9">Size 9</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="product-actions" style="margin-top: 30px;">
-                            <button class="btn" style="margin-right: 15px;">Add to Cart</button>
-                            <button class="btn btn-secondary">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
+        // Splash Screen
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const progressBar = document.getElementById('splash-progress');
+            const fallingGold = document.getElementById('falling-gold');
+            
+            // Animate progress bar
+            setTimeout(function() {
+                progressBar.style.width = '100%';
+            }, 100);
+            
+            // Hide splash screen after 3 seconds
+            setTimeout(function() {
+                splashScreen.style.opacity = '0';
+                splashScreen.style.visibility = 'hidden';
+                
+                // Create falling gold elements
+                createFallingGold();
+            }, 3000);
+        });
+
+        // Create falling gold elements
+        function createFallingGold() {
+            const fallingGold = document.getElementById('falling-gold');
+            const goldSymbols = ['💎', '✨', '⭐', '🔶', '🟡', '🌟'];
+            
+            for (let i = 0; i < 20; i++) {
+                const goldElement = document.createElement('div');
+                goldElement.className = 'gold-element';
+                goldElement.textContent = goldSymbols[Math.floor(Math.random() * goldSymbols.length)];
+                goldElement.style.left = Math.random() * 100 + 'vw';
+                goldElement.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                goldElement.style.animationDelay = Math.random() * 5 + 's';
+                goldElement.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                fallingGold.appendChild(goldElement);
+            }
+        }
+
         // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const nav = document.getElementById('main-nav');
@@ -1488,7 +1921,209 @@
                 langText.textContent = 'AR';
                 langFlag.textContent = '🇸🇦';
             }
+        })<section id="collection" class="collection">
+    <h2 class="section-title">Our Luxury Collection</h2>
+
+    <div class="collection-grid">
+
+        <!-- ITEM 1 -->
+        <div class="collection-item">
+            <img src="IMAGE1.jpg" alt="White Gold Move Uno Necklace">
+            <h3>White Gold Move Uno Necklace</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">Elegant white gold necklace featuring Messika’s signature moving diamonds.</p>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="collection-item">
+            <img src="IMAGE2.jpg" alt="Rose Gold Move Pave Bangle">
+            <h3>Rose Gold Move Pave Bangle</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">A premium rose gold bangle fully set with pavé diamonds for ultimate shine.</p>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="collection-item">
+            <img src="IMAGE3.jpg" alt="White Gold Move Pave Ring">
+            <h3>White Gold Move Pave Ring</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">A bold, masculine yet elegant ring featuring Messika’s iconic Move design.</p>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="collection-item">
+            <img src="IMAGE4.jpg" alt="Rose Gold Black Move Ring">
+            <h3>Rose Gold Black Move Ring</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">Rose gold with sleek black enamel and moving diamonds — a modern luxury icon.</p>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="collection-item">
+            <img src="IMAGE5.jpg" alt="White Gold Move Uno Pendant">
+            <h3>White Gold Move Uno Pendant</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">Timeless white gold pendant with a floating central diamond.</p>
+        </div>
+
+        <!-- ITEM 6 -->
+        <div class="collection-item">
+            <img src="IMAGE6.jpg" alt="Rose Gold Move Uno Ring">
+            <h3>Rose Gold Move Uno Ring</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">A feminine classic in rose gold with shimmering pavé diamonds.</p>
+        </div>
+
+        <!-- ITEM 7 -->
+        <div class="collection-item">
+            <img src="IMAGE7.jpg" alt="Rose Gold Circle Move Ring">
+            <h3>Rose Gold Circle Move Ring</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">Circular modern design with center moving diamond — pure elegance.</p>
+        </div>
+
+        <!-- ITEM 8 -->
+        <div class="collection-item">
+            <img src="IMAGE8.jpg" alt="Yellow Gold Pave Earrings">
+            <h3>Yellow Gold Pave Earrings</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">Dazzling diamond pavé earrings crafted in rich yellow gold.</p>
+        </div>
+
+        <!-- ITEM 9 -->
+        <div class="collection-item">
+            <img src="IMAGE9.jpg" alt="Messika Care(s) Yellow Cord Bracelet">
+            <h3>CARE(S) Yellow Cord Bracelet</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">A casual-luxury bracelet featuring vibrant cord and shimmering diamonds.</p>
+        </div>
+
+        <!-- ITEM 10 -->
+        <div class="collection-item">
+            <img src="IMAGE10.jpg" alt="Chopard Happy Heart Necklace">
+            <h3>Chopard Happy Heart Necklace</h3>
+            <p class="price">AED 5,580</p>
+            <p class="desc">Iconic floating diamonds inside a heart-shaped yellow gold pendant.</p>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.collection {
+    padding: 60px 20px;
+    background: #fff;
+}
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.collection-item {
+    text-align: center;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.collection-item img {
+    width: 100%;
+    border-radius: 12px;
+}
+.collection-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.price {
+    color: #b8860b;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.desc {
+    font-size: 14px;
+    color: #555;
+}
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+</style>
+
+        // Image Upload Functionality
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const uploadBtn = document.getElementById('upload-btn');
+        const uploadPreview = document.getElementById('upload-preview');
+        const imagePreviewContainer = document.getElementById('image-preview-container');
+
+        uploadBtn.addEventListener('click', function() {
+            fileInput.click();
         });
+
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            uploadArea.style.borderColor = 'var(--secondary)';
+            uploadArea.style.background = 'rgba(212, 175, 55, 0.05)';
+        });
+
+        uploadArea.addEventListener('dragleave', function() {
+            uploadArea.style.borderColor = '#ddd';
+            uploadArea.style.background = 'transparent';
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ddd';
+            uploadArea.style.background = 'transparent';
+            
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        fileInput.addEventListener('change', function() {
+            const files = this.files;
+            handleFiles(files);
+        });
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                uploadPreview.style.display = 'block';
+                imagePreviewContainer.innerHTML = '';
+                
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (file.type.match('image.*')) {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            const imgContainer = document.createElement('div');
+                            imgContainer.style.marginBottom = '15px';
+                            
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.style.maxWidth = '200px';
+                            img.style.marginRight = '10px';
+                            img.style.display = 'inline-block';
+                            
+                            const fileName = document.createElement('span');
+                            fileName.textContent = file.name;
+                            fileName.style.verticalAlign = 'top';
+                            
+                            imgContainer.appendChild(img);
+                            imgContainer.appendChild(fileName);
+                            imagePreviewContainer.appendChild(imgContainer);
+                        }
+                        
+                        reader.readAsDataURL(file);
+                    }
+                }
+                
+                // Show success message
+                alert('Images uploaded successfully! Our team will review them and contact you soon.');
+            }
+        }
 
         // Product Filter
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1513,469 +2148,43 @@
             });
         });
 
-        // Product Modal
-        const viewDetailBtns = document.querySelectorAll('.view-details');
-        const productModal = document.getElementById('product-modal');
-        const modalClose = document.getElementById('modal-close');
+        // Form Submission with Loading Animation
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const loading = submitBtn.querySelector('.loading');
         
-        viewDetailBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product');
-                // In a real application, you would fetch product details based on the ID
-                // For this demo, we'll use placeholder data
-                productModal.style.display = 'flex';
-            });
-        });
-        
-        modalClose.addEventListener('click', function() {
-            productModal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === productModal) {
-                productModal.style.display = 'none';
-            }
-        });
-
-        // Payment Method Selection
-        const paymentBtns = document.querySelectorAll('.payment-btn');
-        
-        paymentBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                paymentBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', function() {
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
-            });
-        });
-
-        // Form Submission
-        const contactForm = document.querySelector('.contact-form');
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your inquiry! We will contact you shortly.');
-            contactForm.reset();
+            
+            // Show loading animation
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(function() {
+                // Hide loading animation
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+                
+                alert('Thank you for your inquiry! We will contact you shortly.');
+                contactForm.reset();
+            }, 2000);
         });
 
-        // Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.category-card, .about-content, .mission-box, .vision-box, .product-card').forEach(el => {
-            observer.observe(el);
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.background = 'var(--primary)';
+                header.style.padding = '20px 0';
+            }
         });
     </script>
 </body>
-    <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>RYAAN JEWELLERS — Luxury Collection</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --dark:#0b0b0b;
-    --muted:#6b6b6b;
-    --gold:#b8860b;
-    --bg:#ffffff;
-    --card:#fbfbfb;
-    --accent:linear-gradient(90deg,#d4af37,#f0c75e);
-    --shadow: 0 10px 30px rgba(11,11,11,0.08);
-    --radius:14px;
-    --transition: 250ms cubic-bezier(.2,.8,.2,1);
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
-    color:var(--dark);
-    background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-  }
-  a{color:inherit;text-decoration:none}
-  header{
-    position:sticky; top:0; z-index:60;
-    background:rgba(255,255,255,0.98);
-    backdrop-filter: blur(4px);
-    border-bottom:1px solid rgba(0,0,0,0.04);
-  }
-  .container{max-width:1200px;margin:0 auto;padding:0 20px}
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;padding:18px 0;
-  }
-  .brand{
-    display:flex;align-items:center;gap:12px;
-  }
-  .logo{
-    width:64px;height:64px;border-radius:10px;background:var(--card);
-    display:flex;align-items:center; justify-content:center;
-    font-family:'Cormorant Garamond',serif;color:var(--gold);font-weight:700;
-    font-size:20px; box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-  }
-  .brand-name{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:1px}
-  .nav-actions{display:flex;gap:12px;align-items:center}
-  .hero{
-    display:grid;grid-template-columns:1fr 520px;gap:60px;padding:80px 0;
-  }
-  .hero-left{
-    align-self:center;
-  }
-  .hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:48px;margin:0 0 18px;
-    letter-spacing:1px;
-  }
-  .hero p.lead{
-    color:var(--muted);font-size:18px;margin:0 0 28px;max-width:680px;
-  }
-  .cta{
-    display:flex;gap:14px;
-  }
-  .btn{
-    padding:14px 26px;border-radius:10px;background:var(--dark);color:#fff;font-weight:600;
-    border:none;cursor:pointer;transition:var(--transition);box-shadow:0 8px 30px rgba(11,11,11,0.08);
-  }
-  .btn-light{
-    background:transparent;color:var(--dark);border:1px solid rgba(11,11,11,0.06);
-  }
-  .hero-right{display:flex;align-items:center;justify-content:center}
-  .hero-media{
-    width:100%;max-width:500px;border-radius:18px; overflow:hidden; box-shadow:var(--shadow);
-  }
-  .hero-media img{width:100%;display:block}
-
-  /* Collection */
-  .section{padding:70px 0}
-  .section-title{font-family:'Cormorant Garamond',serif;text-align:center;font-size:34px;margin-bottom:28px}
-  .collection-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
-  }
-  .product-card{
-    background:var(--card);padding:16px;border-radius:14px;transition:var(--transition);
-    box-shadow:0 6px 20px rgba(0,0,0,0.04);
-    display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;
-  }
-  .product-card:hover{transform:translateY(-10px);box-shadow:0 18px 50px rgba(0,0,0,0.12)}
-  .product-card img{width:100%;height:320px;object-fit:cover;border-radius:10px}
-  .product-title{font-weight:600;font-size:16px;margin:0}
-  .price{color:var(--gold);font-weight:700;font-size:18px;margin-top:6px}
-  .product-desc{color:var(--muted);font-size:13px;margin:8px 0 0}
-
-  /* Modal */
-  .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:120}
-  .modal.open{display:flex}
-  .modal-body{background:#fff;border-radius:12px;max-width:1000px;width:95%;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
-  .modal-body img{width:100%;height:auto;border-radius:8px}
-  .modal-close{position:absolute;top:18px;right:18px;background:#fff;border-radius:50%;width:42px;height:42px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
-
-  /* Footer */
-  footer{padding:40px 0;background:#0b0b0b;color:#ddd;margin-top:40px}
-  .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-  .footer h4{color:#fff;margin:0 0 10px;font-family:'Cormorant Garamond',serif}
-  .social{display:flex;gap:8px;margin-top:12px}
-
-  /* Responsive */
-  @media (max-width:1024px){
-    .hero{grid-template-columns:1fr;gap:40px;padding:48px 0}
-    .hero-right{order:-1}
-    .hero-media img{height:420px;object-fit:cover}
-  }
-  @media (max-width:800px){
-    .collection-grid{grid-template-columns:repeat(2,1fr)}
-    .product-card img{height:260px}
-    .modal-body{grid-template-columns:1fr}
-  }
-  @media (max-width:480px){
-    .collection-grid{grid-template-columns:1fr}
-    .product-card img{height:220px}
-    .hero h1{font-size:32px}
-  }
-
-  /* small helper */
-  .muted{color:var(--muted)}
-  .center{text-align:center}
-  .small{font-size:13px}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="container">
-    <nav class="nav">
-      <div class="brand">
-        <div class="logo">R</div>
-        <div>
-          <div class="brand-name">RYAAN</div>
-          <div class="small muted">Gold & Diamonds</div>
-        </div>
-      </div>
-
-      <div class="nav-actions">
-        <a class="small muted" href="#collection">Collection</a>
-        <a class="small muted" href="#about">About</a>
-        <a class="small muted" href="#contact">Contact</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="container hero" aria-label="hero">
-    <div class="hero-left">
-      <h1>Luxury Gold & Diamond Jewellery</h1>
-      <p class="lead">Curated selection of hand-finished rings, necklaces, bracelets and earrings — crafted with passion for the connoisseur of elegance.</p>
-      <div class="cta">
-        <button class="btn" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">Shop Collection</button>
-        <a class="btn btn-light" href="#about">About Ryaan</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-media">
-        <img src="images/product1.jpg" alt="Featured necklace">
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Collection -->
-  <section id="collection" class="section container">
-    <h2 class="section-title">Our Luxury Collection</h2>
-
-    <div class="collection-grid">
-      <!-- 1 -->
-      <div class="product-card" tabindex="0" onclick="openModal(1)">
-        <img src="images/product1.jpg" alt="White Gold Move Uno Necklace">
-        <div class="product-title">White Gold Move Uno Necklace</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Elegant white gold necklace featuring a floating moving diamond for graceful sparkle.</div>
-      </div>
-
-      <!-- 2 -->
-      <div class="product-card" tabindex="0" onclick="openModal(2)">
-        <img src="images/product2.jpg" alt="Rose Gold Move Pave Bangle">
-        <div class="product-title">Rose Gold Move Pave Bangle</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">A premium rose gold bangle fully set with pavé diamonds for ultimate shine.</div>
-      </div>
-
-      <!-- 3 -->
-      <div class="product-card" tabindex="0" onclick="openModal(3)">
-        <img src="images/product3.jpg" alt="White Gold Move Pave Ring">
-        <div class="product-title">White Gold Move Pave Ring</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">A bold, elegant ring featuring the iconic Move design for modern luxury.</div>
-      </div>
-
-      <!-- 4 -->
-      <div class="product-card" tabindex="0" onclick="openModal(4)">
-        <img src="images/product4.jpg" alt="Rose Gold Black Move Ring">
-        <div class="product-title">Rose Gold Black Move Ring</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Rose gold with sleek black enamel and moving diamonds — a modern luxury icon.</div>
-      </div>
-
-      <!-- 5 -->
-      <div class="product-card" tabindex="0" onclick="openModal(5)">
-        <img src="images/product5.jpg" alt="White Gold Move Uno Pendant">
-        <div class="product-title">White Gold Move Uno Pendant</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Timeless white gold pendant with a floating central diamond — wearable grace.</div>
-      </div>
-
-      <!-- 6 -->
-      <div class="product-card" tabindex="0" onclick="openModal(6)">
-        <img src="images/product6.jpg" alt="Rose Gold Move Uno Ring">
-        <div class="product-title">Rose Gold Move Uno Ring</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Feminine classic in rose gold polished to a mirror finish with pavé detail.</div>
-      </div>
-
-      <!-- 7 -->
-      <div class="product-card" tabindex="0" onclick="openModal(7)">
-        <img src="images/product7.jpg" alt="Rose Gold Circle Move Ring">
-        <div class="product-title">Rose Gold Circle Move Ring</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Circular modern design with center moving diamond — pure elegance.</div>
-      </div>
-
-      <!-- 8 -->
-      <div class="product-card" tabindex="0" onclick="openModal(8)">
-        <img src="images/product8.jpg" alt="Yellow Gold Pave Earrings">
-        <div class="product-title">Yellow Gold Pave Earrings</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Dazzling diamond pavé earrings crafted in rich yellow gold; afternoon to evening.</div>
-      </div>
-
-      <!-- 9 -->
-      <div class="product-card" tabindex="0" onclick="openModal(9)">
-        <img src="images/product9.jpg" alt="CARE(S) Yellow Cord Bracelet">
-        <div class="product-title">CARE(S) Yellow Cord Bracelet</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">A casual-luxury bracelet featuring vibrant cord and shimmering diamonds.</div>
-      </div>
-
-      <!-- 10 -->
-      <div class="product-card" tabindex="0" onclick="openModal(10)">
-        <img src="images/product10.jpg" alt="Chopard Happy Heart Necklace">
-        <div class="product-title">Chopard Happy Heart Necklace</div>
-        <div class="price">AED 5,580</div>
-        <div class="product-desc">Iconic floating diamonds inside a heart-shaped yellow gold pendant.</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section container">
-    <h2 class="section-title">About RYAAN Jewellers</h2>
-    <div style="max-width:900px;margin:0 auto;color:var(--muted);text-align:center">
-      For generations we craft jewelry that celebrates life’s finest moments. Our atelier merges timeless technique with refined modernity — finished by hand and certified for quality. Visit our boutique in Gold Souk, Deira or contact us for bespoke commissions.
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section container">
-    <h2 class="section-title">Contact & Visit</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
-      <div style="padding:20px;background:var(--card);border-radius:12px">
-        <h4 style="margin:0 0 10px;font-family:'Cormorant Garamond',serif">Visit Us</h4>
-        <p class="muted small">Gold Souk, Deira, Dubai, UAE</p>
-        <p class="muted small">Open Mon–Sat: 10:00 — 22:00</p>
-      </div>
-      <div style="padding:20px;background:var(--card);border-radius:12px">
-        <h4 style="margin:0 0 10px;font-family:'Cormorant Garamond',serif">Contact</h4>
-        <p class="muted small">Email: ryaanjewellers@gmail.com</p>
-        <p class="muted small">Phone: +971 4 123 4567</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- Product Modal -->
-<div id="product-modal" class="modal" aria-hidden="true">
-  <button class="modal-close" onclick="closeModal()">✕</button>
-  <div class="modal-body container" id="modal-content">
-    <!-- Content populated by JS -->
-  </div>
-</div>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Ryaan Jewellers</h4>
-        <p class="muted">Luxury Gold & Diamond Jewellery — Crafted with passion and certified diamonds.</p>
-        <div class="social">
-          <span class="small muted">Instagram</span>
-          <span class="small muted">•</span>
-          <span class="small muted">WhatsApp</span>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <p class="small muted">Collection</p>
-        <p class="small muted">About</p>
-        <p class="small muted">Contact</p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p class="small muted">ryaanjewellers@gmail.com</p>
-        <p class="small muted">+971 4 123 4567</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:22px;color:#999;font-size:13px">
-      &copy; <span id="yr"></span> RYAAN JEWELLERS — All Rights Reserved.
-    </div>
-  </div>
-</footer>
-
-<script>
-  // set year
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // products data (mirror of DOM list)
-  const products = [
-    {id:1,title:'White Gold Move Uno Necklace',price:'AED 5,580',img:'images/product1.jpg',desc:'Elegant white gold necklace featuring a floating moving diamond for graceful sparkle.'},
-    {id:2,title:'Rose Gold Move Pave Bangle',price:'AED 5,580',img:'images/product2.jpg',desc:'A premium rose gold bangle fully set with pavé diamonds for ultimate shine.'},
-    {id:3,title:'White Gold Move Pave Ring',price:'AED 5,580',img:'images/product3.jpg',desc:'A bold, elegant ring featuring the iconic Move design for modern luxury.'},
-    {id:4,title:'Rose Gold Black Move Ring',price:'AED 5,580',img:'images/product4.jpg',desc:'Rose gold with sleek black enamel and moving diamonds — a modern luxury icon.'},
-    {id:5,title:'White Gold Move Uno Pendant',price:'AED 5,580',img:'images/product5.jpg',desc:'Timeless white gold pendant with a floating central diamond — wearable grace.'},
-    {id:6,title:'Rose Gold Move Uno Ring',price:'AED 5,580',img:'images/product6.jpg',desc:'Feminine classic in rose gold polished to a mirror finish with pavé detail.'},
-    {id:7,title:'Rose Gold Circle Move Ring',price:'AED 5,580',img:'images/product7.jpg',desc:'Circular modern design with center moving diamond — pure elegance.'},
-    {id:8,title:'Yellow Gold Pave Earrings',price:'AED 5,580',img:'images/product8.jpg',desc:'Dazzling diamond pavé earrings crafted in rich yellow gold; afternoon to evening.'},
-    {id:9,title:'CARE(S) Yellow Cord Bracelet',price:'AED 5,580',img:'images/product9.jpg',desc:'A casual-luxury bracelet featuring vibrant cord and shimmering diamonds.'},
-    {id:10,title:'Chopard Happy Heart Necklace',price:'AED 5,580',img:'images/product10.jpg',desc:'Iconic floating diamonds inside a heart-shaped yellow gold pendant.'}
-  ];
-
-  function openModal(id){
-    const p = products.find(x=>x.id===id);
-    const content = document.getElementById('modal-content');
-    content.innerHTML = `
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <img src="${p.img}" alt="${p.title}">
-      </div>
-      <div style="padding:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
-        <h2 style="margin:0">${p.title}</h2>
-        <div style="font-weight:700;color:var(--gold);font-size:20px">${p.price}</div>
-        <p style="color:var(--muted)">${p.desc}</p>
-        <div style="margin-top:auto;display:flex;gap:10px;width:100%">
-          <button class="btn" style="flex:1" onclick="addToCart(${p.id})">Inquire / Add to cart</button>
-          <button class="btn btn-light" style="flex:1" onclick="closeModal()">Close</button>
-        </div>
-      </div>
-    `;
-    document.getElementById('product-modal').classList.add('open');
-    document.getElementById('product-modal').setAttribute('aria-hidden','false');
-  }
-
-  function closeModal(){
-    document.getElementById('product-modal').classList.remove('open');
-    document.getElementById('product-modal').setAttribute('aria-hidden','true');
-  }
-
-  function addToCart(id){
-    alert('Thanks — we received your inquiry for product id: ' + id + '. We will contact you soon.');
-  }
-
-  // close on escape / click-outside
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
-  document.getElementById('product-modal').addEventListener('click', (e)=>{
-    if(e.target.id==='product-modal') closeModal();
-  });
-
-</script>
-</body>
-</html>
 </html>
