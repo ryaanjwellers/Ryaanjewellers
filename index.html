@@ -2151,5 +2151,2743 @@
         <img src="images/Screenshot_20251129_014643_Chrome.jpg" alt="Messika Rose Gold Diamond Ring">
         <div class="product-name">Messika Diamond Ring - Rose Gold</div>
     </div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYAAN JEWELLERS | Instagram Gallery</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --softgold: #F5E3B2;
+            --darkgold: #B8860B;
+            --black: #000000;
+            --white: #FFFFFF;
+            --light-bg: #FAFAFA;
+            --dark-bg: #121212;
+            --card-bg: #FFFFFF;
+            --dark-card: #1E1E1E;
+            --gray: #8E8E8E;
+            --border: #DBDBDB;
+            --dark-border: #333333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --dark-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: #262626;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--white);
+        }
+
+        body.arabic {
+            font-family: 'Noto Sans Arabic', 'Poppins', sans-serif;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .header {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-svg {
+            height: 40px;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .dark-mode .logo-text h1 {
+            color: var(--white);
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* CONTROL BUTTONS */
+        .control-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #262626;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .control-btn {
+            border-color: var(--dark-border);
+            color: var(--white);
+        }
+
+        .control-btn:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        .dark-mode .control-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .control-btn.active {
+            background-color: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        /* PROFILE SECTION */
+        .profile-section {
+            padding: 40px 0;
+        }
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-image {
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .dark-mode .stat-number {
+            color: var(--white);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .profile-info h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .dark-mode .profile-info h2 {
+            color: var(--white);
+        }
+
+        .profile-bio {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .profile-link:hover {
+            background-color: var(--darkgold);
+            transform: translateY(-2px);
+        }
+
+        .profile-link.whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .profile-link.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        /* QR CODE SECTION */
+        .qr-section {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .qr-section {
+            background-color: var(--dark-card);
+            box-shadow: var(--dark-shadow);
+        }
+
+        .qr-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .qr-code-box {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .dark-mode .qr-code-box {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        #qrcode {
+            margin: 0 auto 15px;
+        }
+
+        .qr-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .dark-mode .qr-info h3 {
+            color: var(--white);
+        }
+
+        .qr-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #262626;
+        }
+
+        .dark-mode .share-btn {
+            border-color: var(--dark-border);
+            color: var(--white);
+        }
+
+        .share-btn:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        .dark-mode .share-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* GALLERY CONTROLS */
+        .gallery-controls {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .dark-mode .gallery-controls {
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+        }
+
+        .view-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            color: #262626;
+        }
+
+        .dark-mode .view-btn {
+            border-color: var(--dark-border);
+            color: var(--white);
+        }
+
+        .view-btn.active {
+            background-color: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .filter-search {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background-color: var(--white);
+            width: 250px;
+            font-size: 14px;
+        }
+
+        .dark-mode .search-input {
+            background-color: var(--dark-card);
+            border-color: var(--dark-border);
+            color: var(--white);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        /* GALLERY */
+        .gallery-section {
+            padding: 30px 0 60px;
+        }
+
+        /* GRID VIEW */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-view .gallery-grid {
+            display: grid;
+        }
+
+        .grid-view .gallery-list {
+            display: none;
+        }
+
+        /* LIST VIEW */
+        .gallery-list {
+            display: none;
+        }
+
+        .list-view .gallery-grid {
+            display: none;
+        }
+
+        .list-view .gallery-list {
+            display: block;
+        }
+
+        /* GALLERY ITEM */
+        .gallery-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .gallery-item {
+            background-color: var(--dark-card);
+            box-shadow: var(--dark-shadow);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .dark-mode .gallery-item:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        /* GRID ITEM */
+        .grid-item .item-image {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .grid-item .item-info {
+            padding: 20px;
+        }
+
+        .grid-item .item-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .dark-mode .grid-item .item-title {
+            color: var(--white);
+        }
+
+        .grid-item .item-description {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .grid-item .item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 6px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .action-btn {
+            border-color: var(--dark-border);
+        }
+
+        .action-btn:hover {
+            background-color: rgba(0,0,0,0.05);
+            color: var(--black);
+        }
+
+        .dark-mode .action-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+        }
+
+        /* LIST ITEM */
+        .list-item {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .list-item {
+            background-color: var(--dark-card);
+            box-shadow: var(--dark-shadow);
+        }
+
+        .list-item .item-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .list-item .item-info {
+            flex: 1;
+        }
+
+        .list-item .item-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .dark-mode .list-item .item-title {
+            color: var(--white);
+        }
+
+        .list-item .item-description {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .list-item .item-details {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .list-item .item-meta {
+            text-align: right;
+        }
+
+        /* MODAL FOR IMAGE VIEW */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .modal-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        /* 360 VIEWER */
+        .viewer-360 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            z-index: 3000;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .viewer-360.active {
+            display: flex;
+        }
+
+        .viewer-container {
+            width: 80%;
+            height: 70vh;
+            position: relative;
+        }
+
+        .viewer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .viewer-controls {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .viewer-btn {
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .viewer-btn:hover {
+            background-color: var(--darkgold);
+        }
+
+        .close-viewer {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--white);
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .dark-mode .footer {
+            background-color: var(--dark-bg);
+            border-top: 1px solid var(--dark-border);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .profile-container, .qr-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .controls-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .list-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .list-item .item-meta {
+                text-align: left;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-links {
+                flex-direction: column;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-svg" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+                        <text x="300" y="70" font-family="'Playfair Display', serif" font-size="42" font-weight="700" text-anchor="middle" fill="#D4AF37" letter-spacing="1.5">RYAAN JEWELLERS</text>
+                        <text x="300" y="110" font-family="'Poppins', sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#8E8E8E" letter-spacing="1">GOLD & DIAMONDS</text>
+                    </svg>
+                    <div class="logo-text">
+                        <h1>RYAAN JEWELLERS</h1>
+                        <p>@ryaan_jewellers • Dubai</p>
+                    </div>
+                </div>
+                
+                <div class="header-controls">
+                    <button class="control-btn" id="arabicToggle">
+                        <i class="fas fa-language"></i>
+                        <span class="lang-text">العربية</span>
+                    </button>
+                    
+                    <button class="control-btn" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                        <span>Night Mode</span>
+                    </button>
+                    
+                    <button class="control-btn" id="shareProfile">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROFILE SECTION -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop" alt="RYAAN JEWELLERS" class="profile-avatar">
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="postCount">128</div>
+                            <div class="stat-label">Posts</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="followerCount">15.2K</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="followingCount">289</div>
+                            <div class="stat-label">Following</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-info">
+                    <h2>RYAAN JEWELLERS</h2>
+                    <p class="profile-bio">Luxury Gold & Diamond Jewellery ✨<br>Handcrafted in Dubai since 1995<br>DM for custom designs & pricing<br>📍 Dubai Gold Souk<br>🕒 Sun-Thu: 10AM-10PM</p>
+                    
+                    <div class="profile-links">
+                        <a href="https://www.instagram.com/ryaan_jewellers?igsh=YWY1YzkwZWx6Zmh4" target="_blank" class="profile-link instagram">
+                            <i class="fab fa-instagram"></i>
+                            @ryaan_jewellers
+                        </a>
+                        <a href="https://wa.me/971501234567" target="_blank" class="profile-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                        <a href="#" class="profile-link" id="copyLink">
+                            <i class="fas fa-copy"></i>
+                            Copy Link
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- QR CODE SECTION -->
+            <div class="qr-section">
+                <div class="qr-container">
+                    <div class="qr-code-box">
+                        <div id="qrcode"></div>
+                        <p>Scan to visit profile</p>
+                    </div>
+                    
+                    <div class="qr-info">
+                        <h3>Share RYAAN JEWELLERS</h3>
+                        <p>Share our profile with friends, family, or clients. They can scan the QR code or use the share buttons below to connect with us.</p>
+                        
+                        <div class="share-buttons">
+                            <button class="share-btn" id="shareWhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </button>
+                            <button class="share-btn" id="shareFacebook">
+                                <i class="fab fa-facebook"></i>
+                                Facebook
+                            </button>
+                            <button class="share-btn" id="shareTwitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </button>
+                            <button class="share-btn" id="shareEmail">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY CONTROLS -->
+    <section class="gallery-controls">
+        <div class="container">
+            <div class="controls-container">
+                <div class="view-toggle">
+                    <button class="view-btn active" id="gridView">
+                        <i class="fas fa-th-large"></i>
+                        Grid
+                    </button>
+                    <button class="view-btn" id="listView">
+                        <i class="fas fa-list"></i>
+                        List
+                    </button>
+                </div>
+                
+                <div class="filter-search">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search jewellery...">
+                    </div>
+                    
+                    <button class="control-btn" id="filterBtn">
+                        <i class="fas fa-filter"></i>
+                        Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section">
+        <div class="container">
+            <!-- GRID VIEW -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Items will be dynamically loaded here -->
+            </div>
+            
+            <!-- LIST VIEW -->
+            <div class="gallery-list" id="galleryList">
+                <!-- Items will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE MODAL -->
+    <div class="modal" id="imageModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <button class="modal-nav modal-prev" id="modalPrev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-nav modal-next" id="modalNext">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <p id="modalPrice" class="item-price"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 360 VIEWER -->
+    <div class="viewer-360" id="viewer360">
+        <button class="close-viewer" id="closeViewer">&times;</button>
+        <div class="viewer-container">
+            <img class="viewer-image" id="viewerImage" src="" alt="">
+        </div>
+        <div class="viewer-controls">
+            <button class="viewer-btn" id="viewerPrev">
+                <i class="fas fa-chevron-left"></i>
+                Previous
+            </button>
+            <button class="viewer-btn" id="viewerAuto">
+                <i class="fas fa-sync"></i>
+                Auto Rotate
+            </button>
+            <button class="viewer-btn" id="viewerNext">
+                Next
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <svg class="footer-logo" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+                    <text x="300" y="70" font-family="'Playfair Display', serif" font-size="36" font-weight="700" text-anchor="middle" fill="#D4AF37" letter-spacing="1.5">RYAAN JEWELLERS</text>
+                    <text x="300" y="110" font-family="'Poppins', sans-serif" font-size="20" font-weight="500" text-anchor="middle" fill="#8E8E8E" letter-spacing="1">Since 1995 • Dubai</text>
+                </svg>
+                
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#" class="footer-link">Shop</a>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                </div>
+                
+                <p class="copyright">© 2025 RYAAN JEWELLERS. All rights reserved. | Instagram: @ryaan_jewellers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JEWELLERY DATA -->
+    <script>
+        // Sample jewellery data - In real implementation, this would come from Instagram API
+        const jewelleryItems = [
+            {
+                id: 1,
+                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop",
+                title: "Diamond Royal Necklace",
+                description: "24K gold necklace with 5-carat center diamond. Handcrafted in Dubai.",
+                price: "AED 89,500",
+                category: "necklace",
+                likes: 1245,
+                date: "2024-03-15",
+                views360: [
+                    "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1594576722512-582d5577dc56?q=80&w=1974&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 2,
+                image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?q=80&w=1974&auto=format&fit=crop",
+                title: "Heritage Gold Bangle",
+                description: "22K solid gold with traditional Arabic engraving. Weight: 45g.",
+                price: "AED 12,375",
+                category: "bangle",
+                likes: 876,
+                date: "2024-03-10",
+                views360: [
+                    "https://images.unsplash.com/photo-1594576722512-582d5577dc56?q=80&w=1974&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 3,
+                image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop",
+                title: "Eternity Diamond Ring",
+                description: "Platinum band with 18 brilliant-cut diamonds (3 carats total).",
+                price: "AED 42,800",
+                category: "ring",
+                likes: 1543,
+                date: "2024-03-05",
+                views360: [
+                    "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 4,
+                image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1974&auto=format&fit=crop",
+                title: "Pearl & Gold Earrings",
+                description: "South Sea pearls set in 18K gold with diamond accents. Limited edition.",
+                price: "AED 28,900",
+                category: "earrings",
+                likes: 932,
+                date: "2024-02-28",
+                views360: []
+            },
+            {
+                id: 5,
+                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop",
+                title: "Emerald & Diamond Set",
+                description: "Colombian emeralds with diamond halo. 18K white gold setting.",
+                price: "AED 65,000",
+                category: "set",
+                likes: 2107,
+                date: "2024-02-20",
+                views360: []
+            },
+            {
+                id: 6,
+                image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?q=80&w=1974&auto=format&fit=crop",
+                title: "Custom Wedding Ring",
+                description: "Custom designed with client's birthstones. Rose gold with diamonds.",
+                price: "AED 34,500",
+                category: "ring",
+                likes: 765,
+                date: "2024-02-15",
+                views360: []
+            },
+            {
+                id: 7,
+                image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop",
+                title: "Diamond Tennis Bracelet",
+                description: "Line of 45 diamonds (4.5 carats total). 18K white gold.",
+                price: "AED 38,900",
+                category: "bracelet",
+                likes: 1209,
+                date: "2024-02-10",
+                views360: []
+            },
+            {
+                id: 8,
+                image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1974&auto=format&fit=crop",
+                title: "Gold Investment Bars",
+                description: "24K gold bars (10g, 50g, 100g). Certified by DMCC Dubai.",
+                price: "From AED 2,980",
+                category: "investment",
+                likes: 654,
+                date: "2024-02-05",
+                views360: []
+            },
+            {
+                id: 9,
+                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop",
+                title: "Ruby & Diamond Pendant",
+                description: "Burmese ruby surrounded by diamonds. 18K yellow gold chain.",
+                price: "AED 22,500",
+                category: "pendant",
+                likes: 887,
+                date: "2024-01-30",
+                views360: []
+            }
+        ];
+
+        // Current state
+        let currentView = 'grid';
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let currentLanguage = 'english';
+        let darkMode = false;
+        let currentModalIndex = 0;
+        let currentViewerIndex = 0;
+        let viewerInterval = null;
+        let filteredItems = [...jewelleryItems];
+
+        // DOM Elements
+        const body = document.body;
+        const galleryGrid = document.getElementById('galleryGrid');
+        const galleryList = document.getElementById('galleryList');
+        const searchInput = document.getElementById('searchInput');
+        const gridViewBtn = document.getElementById('gridView');
+        const listViewBtn = document.getElementById('listView');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const arabicToggle = document.getElementById('arabicToggle');
+        const langText = document.querySelector('.lang-text');
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalClose = document.getElementById('modalClose');
+        const modalPrev = document.getElementById('modalPrev');
+        const modalNext = document.getElementById('modalNext');
+        const viewer360 = document.getElementById('viewer360');
+        const viewerImage = document.getElementById('viewerImage');
+        const closeViewer = document.getElementById('closeViewer');
+        const viewerPrev = document.getElementById('viewerPrev');
+        const viewerNext = document.getElementById('viewerNext');
+        const viewerAuto = document.getElementById('viewerAuto');
+        const copyLinkBtn = document.getElementById('copyLink');
+        const shareProfileBtn = document.getElementById('shareProfile');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate QR Code
+            QRCode.toCanvas(document.getElementById('qrcode'), 'https://www.instagram.com/ryaan_jewellers?igsh=YWY1YzkwZWx6Zmh4', {
+                width: 150,
+                height: 150,
+                colorDark: "#D4AF37",
+                colorLight: "#FFFFFF"
+            });
+            
+            // Render gallery
+            renderGallery();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Update stats randomly (simulating live updates)
+            setInterval(updateStats, 5000);
+        });
+
+        // Event Listeners
+        function setupEventListeners() {
+            // View toggle
+            gridViewBtn.addEventListener('click', () => switchView('grid'));
+            listViewBtn.addEventListener('click', () => switchView('list'));
+            
+            // Dark mode toggle
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+            
+            // Arabic toggle
+            arabicToggle.addEventListener('click', toggleArabic);
+            
+            // Search
+            searchInput.addEventListener('input', handleSearch);
+            
+            // Modal controls
+            modalClose.addEventListener('click', closeModal);
+            modalPrev.addEventListener('click', showPrevModal);
+            modalNext.addEventListener('click', showNextModal);
+            
+            // Viewer controls
+            closeViewer.addEventListener('click', closeViewer360);
+            viewerPrev.addEventListener('click', showPrevViewer);
+            viewerNext.addEventListener('click', showNextViewer);
+            viewerAuto.addEventListener('click', toggleAutoRotate);
+            
+            // Share buttons
+            copyLinkBtn.addEventListener('click', copyProfileLink);
+            shareProfileBtn.addEventListener('click', shareProfile);
+            
+            // Social share buttons
+            document.getElementById('shareWhatsApp').addEventListener('click', () => shareSocial('whatsapp'));
+            document.getElementById('shareFacebook').addEventListener('click', () => shareSocial('facebook'));
+            document.getElementById('shareTwitter').addEventListener('click', () => shareSocial('twitter'));
+            document.getElementById('shareEmail').addEventListener('click', () => shareSocial('email'));
+            
+            // Close modals on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    closeViewer360();
+                }
+            });
+            
+            // Close modal when clicking outside
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) {
+                    closeModal();
+                }
+            });
+            
+            viewer360.addEventListener('click', (e) => {
+                if (e.target === viewer360) {
+                    closeViewer360();
+                }
+            });
+        }
+
+        // Render gallery
+        function renderGallery() {
+            // Filter items based on search
+            filteredItems = jewelleryItems.filter(item => {
+                const matchesSearch = currentSearch === '' || 
+                    item.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    item.description.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    item.category.toLowerCase().includes(currentSearch.toLowerCase());
+                
+                const matchesFilter = currentFilter === 'all' || item.category === currentFilter;
+                
+                return matchesSearch && matchesFilter;
+            });
+            
+            // Clear galleries
+            galleryGrid.innerHTML = '';
+            galleryList.innerHTML = '';
+            
+            // Render items
+            filteredItems.forEach((item, index) => {
+                // Grid item
+                const gridItem = document.createElement('div');
+                gridItem.className = 'gallery-item grid-item';
+                gridItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="item-image" data-index="${index}">
+                    <div class="item-info">
+                        <h3 class="item-title">${item.title}</h3>
+                        <p class="item-description">${item.description}</p>
+                        <div class="item-meta">
+                            <span class="item-price">${item.price}</span>
+                            <div class="item-actions">
+                                <button class="action-btn like-btn" data-id="${item.id}">
+                                    <i class="fas fa-heart"></i> ${item.likes}
+                                </button>
+                                <button class="action-btn view-btn-360" data-index="${index}" ${item.views360.length === 0 ? 'disabled' : ''}>
+                                    <i class="fas fa-360-degrees"></i> 360°
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                galleryGrid.appendChild(gridItem);
+                
+                // List item
+                const listItem = document.createElement('div');
+                listItem.className = 'gallery-item list-item';
+                listItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="item-image" data-index="${index}">
+                    <div class="item-info">
+                        <h3 class="item-title">${item.title}</h3>
+                        <p class="item-description">${item.description}</p>
+                        <div class="item-details">
+                            <span><i class="fas fa-calendar"></i> ${item.date}</span>
+                            <span><i class="fas fa-heart"></i> ${item.likes} likes</span>
+                            <span><i class="fas fa-tag"></i> ${item.category}</span>
+                        </div>
+                    </div>
+                    <div class="item-meta">
+                        <div class="item-price">${item.price}</div>
+                        <div class="item-actions">
+                            <button class="action-btn view-btn-360" data-index="${index}" ${item.views360.length === 0 ? 'disabled' : ''}>
+                                <i class="fas fa-360-degrees"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                galleryList.appendChild(listItem);
+            });
+            
+            // Add click events to images
+            document.querySelectorAll('.item-image').forEach(img => {
+                img.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'));
+                    openModal(index);
+                });
+            });
+            
+            // Add click events to 360 buttons
+            document.querySelectorAll('.view-btn-360').forEach(btn => {
+                if (!btn.disabled) {
+                    btn.addEventListener('click', (e) => {
+                        const index = parseInt(e.target.closest('.view-btn-360').getAttribute('data-index'));
+                        openViewer360(index);
+                    });
+                }
+            });
+            
+            // Add click events to like buttons
+            document.querySelectorAll('.like-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.closest('.like-btn').getAttribute('data-id'));
+                    likeItem(id);
+                });
+            });
+        }
+
+        // Switch view mode
+        function switchView(mode) {
+            currentView = mode;
+            
+            // Update UI
+            if (mode === 'grid') {
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+                body.classList.remove('list-view');
+                body.classList.add('grid-view');
+            } else {
+                listViewBtn.classList.remove('active');
+                gridViewBtn.classList.add('active');
+                body.classList.remove('grid-view');
+                body.classList.add('list-view');
+            }
+            
+            // Update button text
+            listViewBtn.classList.toggle('active', mode === 'list');
+            gridViewBtn.classList.toggle('active', mode === 'grid');
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            darkMode = !darkMode;
+            body.classList.toggle('dark-mode', darkMode);
+            darkModeToggle.classList.toggle('active', darkMode);
+            
+            // Update icon
+            const icon = darkModeToggle.querySelector('i');
+            icon.className = darkMode ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Toggle Arabic
+        function toggleArabic() {
+            currentLanguage = currentLanguage === 'english' ? 'arabic' : 'english';
+            body.classList.toggle('arabic', currentLanguage === 'arabic');
+            arabicToggle.classList.toggle('active', currentLanguage === 'arabic');
+            
+            // Update button text
+            langText.textContent = currentLanguage === 'english' ? 'العربية' : 'English';
+            
+            // In a real app, you would translate all text here
+            if (currentLanguage === 'arabic') {
+                document.querySelector('.profile-bio').textContent = 'مجوهرات ذهب وماس فاخرة ✨\nمصنوعة يدوياً في دبي منذ 1995\nراسلنا للتصاميم المخصصة والأسعار\n📍 سوق الذهب دبي\n🕒 الأحد-الخميس: 10ص-10م';
+                searchInput.placeholder = 'ابحث عن المجوهرات...';
+            } else {
+                document.querySelector('.profile-bio').textContent = 'Luxury Gold & Diamond Jewellery ✨\nHandcrafted in Dubai since 1995\nDM for custom designs & pricing\n📍 Dubai Gold Souk\n🕒 Sun-Thu: 10AM-10PM';
+                searchInput.placeholder = 'Search jewellery...';
+            }
+        }
+
+        // Handle search
+        function handleSearch(e) {
+            currentSearch = e.target.value;
+            renderGallery();
+        }
+
+        // Open image modal
+        function openModal(index) {
+            const item = filteredItems[index];
+            currentModalIndex = index;
+            
+            modalImage.src = item.image;
+            modalTitle.textContent = item.title;
+            modalDescription.textContent = item.description;
+            modalPrice.textContent = item.price;
+            
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Show previous in modal
+        function showPrevModal() {
+            currentModalIndex = (currentModalIndex - 1 + filteredItems.length) % filteredItems.length;
+            openModal(currentModalIndex);
+        }
+
+        // Show next in modal
+        function showNextModal() {
+            currentModalIndex = (currentModalIndex + 1) % filteredItems.length;
+            openModal(currentModalIndex);
+        }
+
+        // Open 360 viewer
+        function openViewer360(index) {
+            const item = filteredItems[index];
+            currentViewerIndex = 0;
+            
+            if (item.views360.length > 0) {
+                viewerImage.src = item.views360[0];
+                viewer360.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Start auto rotation if available
+                if (item.views360.length > 1) {
+                    startAutoRotation(item.views360);
+                }
+            }
+        }
+
+        // Close 360 viewer
+        function closeViewer360() {
+            viewer360.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            stopAutoRotation();
+        }
+
+        // Show previous in viewer
+        function showPrevViewer() {
+            const item = filteredItems[currentModalIndex];
+            if (item.views360.length > 0) {
+                currentViewerIndex = (currentViewerIndex - 1 + item.views360.length) % item.views360.length;
+                viewerImage.src = item.views360[currentViewerIndex];
+            }
+        }
+
+        // Show next in viewer
+        function showNextViewer() {
+            const item = filteredItems[currentModalIndex];
+            if (item.views360.length > 0) {
+                currentViewerIndex = (currentViewerIndex + 1) % item.views360.length;
+                viewerImage.src = item.views360[currentViewerIndex];
+            }
+        }
+
+        // Start auto rotation
+        function startAutoRotation(images) {
+            stopAutoRotation();
+            let index = 0;
+            
+            viewerInterval = setInterval(() => {
+                index = (index + 1) % images.length;
+                viewerImage.src = images[index];
+            }, 2000);
+            
+            viewerAuto.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        }
+
+        // Stop auto rotation
+        function stopAutoRotation() {
+            if (viewerInterval) {
+                clearInterval(viewerInterval);
+                viewerInterval = null;
+                viewerAuto.innerHTML = '<i class="fas fa-sync"></i> Auto Rotate';
+            }
+        }
+
+        // Toggle auto rotation
+        function toggleAutoRotate() {
+            const item = filteredItems[currentModalIndex];
+            if (viewerInterval) {
+                stopAutoRotation();
+            } else if (item.views360.length > 1) {
+                startAutoRotation(item.views360);
+            }
+        }
+
+        // Like an item
+        function likeItem(id) {
+            const item = jewelleryItems.find(item => item.id === id);
+            if (item) {
+                item.likes++;
+                renderGallery();
+                
+                // Show notification
+                showNotification(`Liked "${item.title}"`);
+            }
+        }
+
+        // Copy profile link
+        function copyProfileLink() {
+            const link = 'https://www.instagram.com/ryaan_jewellers?igsh=YWY1YzkwZWx6Zmh4';
+            navigator.clipboard.writeText(link).then(() => {
+                showNotification('Link copied to clipboard!');
+            });
+        }
+
+        // Share profile
+        function shareProfile() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'RYAAN JEWELLERS',
+                    text: 'Check out RYAAN JEWELLERS luxury gold and diamond jewellery from Dubai!',
+                    url: 'https://www.instagram.com/ryaan_jewellers?igsh=YWY1YzkwZWx6Zmh4'
+                });
+            } else {
+                copyProfileLink();
+            }
+        }
+
+        // Share to social media
+        function shareSocial(platform) {
+            const url = 'https://www.instagram.com/ryaan_jewellers?igsh=YWY1YzkwZWx6Zmh4';
+            const text = 'Check out RYAAN JEWELLERS luxury gold and diamond jewellery from Dubai!';
+            
+            let shareUrl = '';
+            
+            switch (platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=RYAAN%20JEWELLERS&body=${encodeURIComponent(text + '\n\n' + url)}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank');
+            }
+        }
+
+        // Update stats (simulated)
+        function updateStats() {
+            // Randomly update follower count (simulating live updates)
+            const followerElement = document.getElementById('followerCount');
+            let current = parseFloat(followerElement.textContent.replace('K', '')) * 1000;
+            
+            // Small random change
+            const change = Math.floor(Math.random() * 21) - 10; // -10 to +10
+            current += change;
+            
+            // Keep within reasonable bounds
+            current = Math.max(15100, Math.min(15300, current));
+            
+            followerElement.textContent = (current / 1000).toFixed(1) + 'K';
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--gold);
+                color: var(--black);
+                padding: 12px 24px;
+                border-radius: 8px;
+                z-index: 10000;
+                font-weight: 600;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                animation: slideUp 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideDown 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Add CSS animations for notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideUp {
+                from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                to { transform: translateX(-50%) translateY(0); opacity: 1; }
+            }
+            
+            @keyframes slideDown {
+                from { transform: translateX(-50%) translateY(0); opacity: 1; }
+                to { transform: <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RYAAN JEWELLERS – Luxury Gold & Diamond Boutique</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* GLOBAL THEME – Luxury Black + Gold */
+:root{
+  --gold:#d4af37;
+  --gold2:#f3e5b1;
+  --black:#020202;
+  --panel:#0a0a0a;
+  --muted:rgba(255,255,255,0.65);
+  --white:#ffffff;
+}
+body,html{
+  margin:0;
+  padding:0;
+  background:var(--black);
+  font-family:'Montserrat',sans-serif;
+  color:#fff;
+  scroll-behavior:smooth;
+}
+*{box-sizing:border-box}
+
+/* Remove blue highlight on mobile */
+*{-webkit-tap-highlight-color: transparent;}
+
+a{color:inherit;text-decoration:none}
+
+/* SPLASH SCREEN */
+#splash{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#000,#111);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  overflow:hidden;
+  transition:opacity 0.7s ease;
+}
+#splash.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+
+.splash-bg{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+  filter:brightness(0.18);
+  transform:scale(1.05);
+}
+.splash-glow{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(40% 30% at 20% 30%, rgba(212,175,55,0.17), transparent 20%),
+    radial-gradient(35% 25% at 80% 70%, rgba(255,255,255,0.05), transparent 30%);
+}
+
+.splash-logo{
+  width:300px;
+  opacity:0;
+  animation:logoPop 1.3s ease forwards 0.3s;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+}
+@keyframes logoPop{
+  0%{opacity:0;transform:scale(.7) translateY(20px)}
+  60%{opacity:1;transform:scale(1.08) translateY(-10px)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+
+.splash-sub{
+  margin-top:16px;
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing:3px;
+  color:var(--gold2);
+  opacity:0;
+  animation:fadeUp .9s ease forwards 1.2s;
+  font-size:1.2rem;
+}
+@keyframes fadeUp{
+  0%{opacity:0;transform:translateY(10px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+
+.splash-bar{
+  width:260px;
+  height:6px;
+  background:rgba(255,255,255,0.1);
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:18px;
+  opacity:0;
+  animation:fadeUp .9s ease forwards 1.5s;
+}
+.splash-bar .fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  animation:loadBar 3.2s linear forwards;
+}
+@keyframes loadBar{to{width:100%}}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  padding:20px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s ease;
+}
+header.scrolled{
+  padding:15px 40px;
+  background:rgba(0,0,0,0.95);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-svg {
+  height: 50px;
+}
+
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+}
+
+nav{
+  display:flex;
+  gap:30px;
+}
+nav a{
+  font-size:14px;
+  opacity:.9;
+  padding:8px 0;
+  position:relative;
+  letter-spacing: 1px;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:0;
+  height:1px;
+  background:var(--gold);
+  transition:width 0.3s ease;
+}
+nav a:hover{
+  color:var(--gold);
+}
+nav a:hover::after{
+  width:100%;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.cart-icon{
+  position:relative;
+  cursor:pointer;
+}
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-8px;
+  background:var(--gold);
+  color:var(--black);
+  font-size:0.7rem;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+.appointment-btn{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:10px 25px;
+  font-size:0.8rem;
+  letter-spacing:1.5px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+.appointment-btn:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+/* HERO SECTION */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 520px;
+  padding:140px 50px 80px;
+  gap:50px;
+  align-items:center;
+}
+.hero-left h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:68px;
+  line-height:1.05;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.hero-left h1 span{
+  color:var(--gold);
+}
+.hero-left p{
+  color:var(--muted);
+  margin-top:12px;
+  font-size:18px;
+  line-height:1.6;
+  max-width:600px;
+}
+
+.hero-btns{
+  margin-top:35px;
+  display:flex;
+  gap:15px;
+}
+.btn{
+  padding:15px 35px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:all 0.3s ease;
+  letter-spacing: 1px;
+}
+.btn-gold{
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  color:#111;
+}
+.btn-gold:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(212,175,55,0.3);
+}
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
+}
+.btn-outline:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:var(--gold);
+}
+
+.hero-right{
+  height:600px;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+  position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+.hero-right::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,rgba(255,255,255,0.05),transparent 40%,rgba(255,255,255,0.08));
+  mix-blend-mode:overlay;
+}
+
+/* FEATURED COLLECTIONS */
+.featured{
+  padding:100px 50px;
+  background:var(--panel);
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;
+  color:var(--gold);
+  text-align:center;
+  margin-bottom:20px;
+}
+.section-subtitle{
+  color:var(--muted);
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 60px;
+  font-size:16px;
+}
+
+.collections-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.collection-card{
+  background:rgba(255,255,255,0.03);
+  border-radius:15px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s ease;
+}
+.collection-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--gold);
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.collection-image{
+  height:250px;
+  width:100%;
+  object-fit:cover;
+}
+.collection-info{
+  padding:25px;
+}
+.collection-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  margin-bottom:10px;
+  color:var(--white);
+}
+.collection-desc{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+.collection-price{
+  color:var(--gold);
+  font-weight:600;
+  font-size:18px;
+}
+
+/* ABOUT SECTION */
+.about{
+  padding:100px 50px;
+  background:var(--black);
+}
+.about-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.about-text h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  color:var(--gold);
+  margin-bottom:30px;
+}
+.about-text p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:20px;
+  font-size:16px;
+}
+.about-image{
+  height:500px;
+  border-radius:15px;
+  overflow:hidden;
+  background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+}
+
+/* GOLD PRICES */
+.gold-prices{
+  padding:80px 50px;
+  background:var(--panel);
+}
+.prices-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.price-card{
+  background:rgba(255,255,255,0.03);
+  border-radius:15px;
+  padding:30px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s ease;
+}
+.price-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-5px);
+}
+.price-title{
+  color:var(--muted);
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:15px;
+}
+.price-amount{
+  color:var(--gold);
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+.price-unit{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* CONTACT SECTION */
+.contact{
+  padding:100px 50px;
+  background:var(--black);
+}
+.contact-form{
+  max-width:600px;
+  margin:50px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.form-label{
+  color:var(--muted);
+  font-size:14px;
+}
+.form-input{
+  padding:15px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;
+  color:var(--white);
+  font-family:'Montserrat',sans-serif;
+  font-size:16px;
+  transition:all 0.3s ease;
+}
+.form-input:focus{
+  outline:none;
+  border-color:var(--gold);
+}
+textarea.form-input{
+  min-height:150px;
+  resize:vertical;
+}
+.submit-btn{
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  color:var(--black);
+  border:none;
+  padding:18px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  letter-spacing:1px;
+}
+.submit-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(212,175,55,0.3);
+}
+
+/* FOOTER */
+footer{
+  background:var(--panel);
+  padding:60px 50px 30px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+.footer-content{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:40px;
+  margin-bottom:40px;
+}
+.footer-logo{
+  height:40px;
+  margin-bottom:20px;
+}
+.footer-about{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+.footer-title{
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  margin-bottom:20px;
+}
+.footer-links{
+  list-style:none;
+  padding:0;
+}
+.footer-links li{
+  margin-bottom:10px;
+}
+.footer-links a{
+  color:var(--muted);
+  font-size:14px;
+  transition:color 0.3s ease;
+}
+.footer-links a:hover{
+  color:var(--gold);
+}
+.footer-contact p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.footer-bottom{
+  text-align:center;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* CART MODAL */
+.cart-modal{
+  position:fixed;
+  top:0;
+  right:-400px;
+  width:350px;
+  height:100%;
+  background:var(--panel);
+  z-index:1000;
+  transition:right 0.4s ease;
+  padding:20px;
+  overflow-y:auto;
+}
+.cart-modal.active{
+  right:0;
+}
+.cart-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  z-index:999;
+  display:none;
+}
+.cart-overlay.active{
+  display:block;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px){
+  .hero{
+    grid-template-columns:1fr;
+    padding:120px 30px 60px;
+  }
+  .hero-right{
+    height:400px;
+  }
+  .about-content{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    padding:15px 20px;
+    flex-direction:column;
+    gap:15px;
+  }
+  nav{
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .hero-left h1{
+    font-size:42px;
+  }
+  .hero-btns{
+    flex-direction:column;
+  }
+  .section-title{
+    font-size:36px;
+  }
+  .featured, .about, .gold-prices, .contact{
+    padding:60px 20px;
+  }
+}
+
+@media (max-width: 480px){
+  .splash-logo{
+    width:200px;
+  }
+  .hero-left h1{
+    font-size:32px;
+  }
+  .collections-grid, .prices-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <div class="splash-bg"></div>
+  <div class="splash-glow"></div>
+
+  <!-- SVG Logo -->
+  <svg class="splash-logo" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+    <text x="300" y="140" font-family="'Cormorant Garamond', serif" font-size="64" font-weight="700" text-anchor="middle" fill="#D4AF37" letter-spacing="2">RYAAN JEWELLERS</text>
+    <text x="300" y="220" font-family="'Cormorant Garamond', serif" font-size="48" font-weight="500" text-anchor="middle" fill="#F5E3B2" letter-spacing="1.5">GOLD & DIAMONDS</text>
+  </svg>
+
+  <div class="splash-sub">GOLD • DIAMONDS • LUXURY</div>
+  <div class="splash-bar"><div class="fill"></div></div>
 </div>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- CART MODAL -->
+<div class="cart-modal" id="cartModal">
+  <h3 style="color: var(--gold); margin-bottom: 20px;">Your Selection</h3>
+  <div id="cartItems">
+    <p style="color: var(--muted); text-align: center; padding: 40px 0;">Your cart is empty</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="mainHeader">
+  <div class="logo-container">
+    <svg class="logo-svg" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+      <text x="300" y="70" font-family="'Cormorant Garamond', serif" font-size="42" font-weight="700" text-anchor="middle" fill="#D4AF37" letter-spacing="1.5">RYAAN JEWELLERS</text>
+      <text x="300" y="110" font-family="'Montserrat', sans-serif" font-size="24" font-weight="500" text-anchor="middle" fill="#F5E3B2" letter-spacing="1">GOLD & DIAMONDS</text>
+    </svg>
+  </div>
+  
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#collections">Collections</a>
+    <a href="#about">Heritage</a>
+    <a href="#prices">Gold Prices</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <div class="header-actions">
+    <div class="cart-icon" id="cartIcon">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <button class="appointment-btn" onclick="scrollToContact()">Book Appointment</button>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <h1>Crafting <span>Timeless</span> Elegance Since 1995</h1>
+    <p>Exquisite gold & diamond jewellery curated for royalty. Handcrafted in Dubai with unparalleled precision, each piece tells a story of luxury, heritage, and unparalleled craftsmanship that transcends generations.</p>
+    
+    <div class="hero-btns">
+      <a href="#collections" class="btn btn-gold">
+        <i class="fas fa-gem"></i>
+        Explore Collection
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        <i class="fas fa-calendar"></i>
+        Private Viewing
+      </a>
+    </div>
+  </div>
+  
+  <div class="hero-right"></div>
+</section>
+
+<!-- FEATURED COLLECTIONS -->
+<section class="featured" id="collections">
+  <h2 class="section-title">Signature Collections</h2>
+  <p class="section-subtitle">Hand-selected pieces embodying luxury, craftsmanship and timeless elegance</p>
+  
+  <div class="collections-grid">
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1974&auto=format&fit=crop" alt="Diamond Necklace" class="collection-image">
+      <div class="collection-info">
+        <h3 class="collection-name">Royal Diamond Necklace</h3>
+        <p class="collection-desc">24K gold with 5-carat center diamond, surrounded by 48 smaller diamonds.</p>
+        <p class="collection-price">AED 89,500</p>
+        <button class="appointment-btn" style="width: 100%; margin-top: 15px;" onclick="addToCart('Royal Diamond Necklace', 89500)">Inquire Now</button>
+      </div>
+    </div>
+    
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1594576722512-582d5577dc56?q=80&w=1974&auto=format&fit=crop" alt="Gold Bangle" class="collection-image">
+      <div class="collection-info">
+        <h3 class="collection-name">Heritage Gold Bangle</h3>
+        <p class="collection-desc">22K solid gold bangle with intricate traditional Arabic engraving.</p>
+        <p class="collection-price">AED 12,375</p>
+        <button class="appointment-btn" style="width: 100%; margin-top: 15px;" onclick="addToCart('Heritage Gold Bangle', 12375)">Inquire Now</button>
+      </div>
+    </div>
+    
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop" alt="Diamond Ring" class="collection-image">
+      <div class="collection-info">
+        <h3 class="collection-name">Eternity Diamond Ring</h3>
+        <p class="collection-desc">Platinum band with continuous line of 18 brilliant-cut diamonds.</p>
+        <p class="collection-price">AED 42,800</p>
+        <button class="appointment-btn" style="width: 100%; margin-top: 15px;" onclick="addToCart('Eternity Diamond Ring', 42800)">Inquire Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>Our Heritage</h2>
+      <p>Founded in 1995 in the heart of Dubai's Gold Souk, RYAAN JEWELLERS has built a legacy of excellence spanning three generations. Our family-owned atelier combines traditional craftsmanship with contemporary design.</p>
+      <p>Each piece is a testament to our commitment to quality, from ethically sourced diamonds to 24K gold certified by the Dubai Multi Commodities Centre.</p>
+      <p>Our master craftsmen, trained in both traditional Arab techniques and European jewellery making, spend hundreds of hours perfecting each creation.</p>
+      <a href="#contact" class="btn btn-gold" style="margin-top: 30px;">
+        <i class="fas fa-history"></i>
+        Discover Our Story
+      </a>
+    </div>
+    <div class="about-image"></div>
+  </div>
+</section>
+
+<!-- GOLD PRICES -->
+<section class="gold-prices" id="prices">
+  <h2 class="section-title">Live Gold Prices (AED)</h2>
+  <p class="section-subtitle">Today's market rates updated hourly. Prices are per gram.</p>
+  
+  <div class="prices-grid">
+    <div class="price-card">
+      <div class="price-title">24K Pure Gold</div>
+      <div class="price-amount">298.5</div>
+      <div class="price-unit">per gram</div>
+    </div>
+    
+    <div class="price-card">
+      <div class="price-title">22K Gold</div>
+      <div class="price-amount">275.2</div>
+      <div class="price-unit">per gram</div>
+    </div>
+    
+    <div class="price-card">
+      <div class="price-title">18K Gold</div>
+      <div class="price-amount">225.8</div>
+      <div class="price-unit">per gram</div>
+    </div>
+    
+    <div class="price-card">
+      <div class="price-title">Diamond</div>
+      <div class="price-amount">1,200+</div>
+      <div class="price-unit">per carat</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+  <h2 class="section-title">Private Enquiry</h2>
+  <p class="section-subtitle">For personalized consultations, custom designs, or private viewings</p>
+  
+  <form class="contact-form" id="enquiryForm">
+    <div class="form-group">
+      <label class="form-label" for="name">Full Name *</label>
+      <input type="text" id="name" class="form-input" required>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="email">Email Address *</label>
+      <input type="email" id="email" class="form-input" required>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="phone">Phone Number *</label>
+      <input type="tel" id="phone" class="form-input" required>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="message">Your Message</label>
+      <textarea id="message" class="form-input" placeholder="Please provide details about your enquiry..."></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn">
+      <i class="fas fa-paper-plane"></i>
+      Submit Enquiry
+    </button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <svg class="footer-logo" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+        <text x="300" y="70" font-family="'Cormorant Garamond', serif" font-size="36" font-weight="700" text-anchor="middle" fill="#D4AF37" letter-spacing="1.5">RYAAN JEWELLERS</text>
+        <text x="300" y="110" font-family="'Montserrat', sans-serif" font-size="20" font-weight="500" text-anchor="middle" fill="#F5E3B2" letter-spacing="1">Since 1995 • Dubai</text>
+      </svg>
+      <p class="footer-about">Crafting timeless luxury since 1995. Located in the heart of Dubai's Gold Souk, we bring heritage and innovation to every piece.</p>
+    </div>
+    
+    <div class="footer-col">
+      <h4 class="footer-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#about">Heritage</a></li>
+        <li><a href="#prices">Gold Prices</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4 class="footer-title">Contact Info</h4>
+      <div class="footer-contact">
+        <p><i class="fas fa-map-marker-alt"></i> Gold Souk, Deira, Dubai, UAE</p>
+        <p><i class="fas fa-phone"></i> +971 4 123 4567</p>
+        <p><i class="fas fa-envelope"></i> enquiry@ryaanjewellers.ae</p>
+        <p><i class="fas fa-clock"></i> Sun-Thu: 10AM-10PM, Fri: 2PM-10PM</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 1995-2025 RYAAN JEWELLERS™. All Rights Reserved. | Dubai Gold & Jewellery Group Member</p>
+  </div>
+</footer>
+
+<script>
+// SPLASH SCREEN
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide splash after 4 seconds
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('hidden');
+  }, 4000);
+  
+  // Initialize cart
+  updateCartDisplay();
+});
+
+// HEADER SCROLL EFFECT
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('mainHeader');
+  if (window.scrollY > 100) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// CART SYSTEM
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCartDisplay();
+  
+  // Show notification
+  showNotification(`Added "${name}" to enquiries`);
+}
+
+function updateCartDisplay() {
+  const cartCount = document.getElementById('cartCount');
+  const cartItems = document.getElementById('cartItems');
+  
+  cartCount.textContent = cart.length;
+  
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<p style="color: var(--muted); text-align: center; padding: 40px 0;">Your cart is empty</p>';
+  } else {
+    let html = '';
+    let total = 0;
+    
+    cart.forEach((item, index) => {
+      total += item.price;
+      html += `
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 0; margin-bottom: 15px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <p style="margin: 0 0 5px 0; font-weight: 600;">${item.name}</p>
+              <p style="margin: 0; color: var(--gold); font-weight: 600;">AED ${item.price.toLocaleString()}</p>
+            </div>
+            <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #ff6b6b; cursor: pointer;">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+    
+    html += `
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
+        <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 20px;">
+          <span>Total</span>
+          <span style="color: var(--gold);">AED ${total.toLocaleString()}</span>
+        </div>
+        <button onclick="checkoutCart()" style="width: 100%; padding: 12px; background: linear-gradient(90deg, var(--gold), var(--gold2)); color: var(--black); border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+          Proceed to Enquiry
+        </button>
+      </div>
+    `;
+    
+    cartItems.innerHTML = html;
+  }
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCartDisplay();
+}
+
+function checkoutCart() {
+  if (cart.length === 0) {
+    showNotification('Add items to cart first');
+    return;
+  }
+  
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  showNotification(`Proceeding with enquiry for ${cart.length} items (Total: AED ${total.toLocaleString()})`);
+  
+  // Scroll to contact form
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  
+  // In a real app, you would redirect to checkout or open a modal
+}
+
+// CART MODAL CONTROLS
+document.getElementById('cartIcon').addEventListener('click', function() {
+  document.getElementById('cartModal').classList.add('active');
+  document.getElementById('cartOverlay').classList.add('active');
+});
+
+document.getElementById('cartOverlay').addEventListener('click', function() {
+  document.getElementById('cartModal').classList.remove('active');
+  this.classList.remove('active');
+});
+
+// FORM SUBMISSION
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+  
+  const submitBtn = this.querySelector('.submit-btn');
+  const originalText = submitBtn.innerHTML;
+  
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  submitBtn.disabled = true;
+  
+  // Simulate API call
+  setTimeout(() => {
+    showNotification('Enquiry sent successfully! We will contact you within 24 hours.');
+    
+    // Reset form
+    this.reset();
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+    
+    // In a real app, you would send data to server here
+    console.log('Enquiry submitted:', { name, email, phone, message });
+    
+  }, 1500);
+});
+
+// UTILITY FUNCTIONS
+function scrollToContact() {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showNotification(message) {
+  const notification = document.createElement('div');
+  notification.textContent = message;
+  notification.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--gold), var(--gold2));
+    color: var(--black);
+    padding: 12px 24px;
+    border-radius: 8px;
+    z-index: 10000;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: slideUp 0.3s ease;
+  `;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideDown 0.3s ease';
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 3000);
+}
+
+// Add CSS animations for notifications
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideUp {
+    from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateX(-50%) translateY(0); opacity: 1; }
+    to { transform: translateX(-50%) translateY(100px); opacity: 0; }
+  }
+`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
