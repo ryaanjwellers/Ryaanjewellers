@@ -1,35 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RYAAN JEWELLERS | Luxury Jewellry Inspired version</title>
+    <title>RYAAN JEWELLERS | Luxury Jewelry Maison Dubai</title>
     
-    <!-- Google Fonts -->
+    <!-- Meta Tags -->
+    <meta name="description" content="Dubai's Premier Luxury Jewelry Maison | Cartier & Bvlgari Inspired Collections | 18K Gold & Diamond Jewelry">
+    <meta name="keywords" content="luxury jewelry, gold Dubai, diamond jewelry, Cartier style, Bvlgari inspired, 18K gold, bridal jewelry">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- 360 View Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    
+    <!-- CSS Variables for Dark/Light Mode -->
     <style>
-        /* ========== CSS VARIABLES ========== */
         :root {
-            --gold: #D4AF37;
-            --gold-light: #F4E8C1;
-            --gold-dark: #B8941F;
+            /* Luxury Color Palette - Day Mode */
+            --primary-gold: #D4AF37;
+            --secondary-gold: #F4E8C1;
+            --dark-gold: #B8941F;
             --black: #0A0A0A;
-            --black-light: #1A1A1A;
+            --dark-gray: #1A1A1A;
+            --light-gray: #F8F8F8;
             --white: #FFFFFF;
+            --diamond-sparkle: #FFFFFF;
+            
+            /* Text Colors */
+            --text-primary: #0A0A0A;
+            --text-secondary: #333333;
+            --text-muted: #666666;
+            
+            /* Backgrounds */
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            
+            /* Borders */
+            --border-color: rgba(0, 0, 0, 0.1);
+            --gold-border: #D4AF37;
+            
+            /* Shadows */
+            --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --gold-glow: 0 0 40px rgba(212, 175, 55, 0.3);
+            
+            /* Transitions */
+            --transition-slow: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+            --transition-medium: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            --transition-fast: 0.2s ease;
+            
+            /* Spacing */
+            --border-radius-sm: 8px;
+            --border-radius: 12px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 40px;
+            
+            /* Layout */
+            --header-height: 90px;
+            --container-width: 1400px;
+        }
+
+        /* Night Mode Variables */
+        .night-mode {
+            --black: #FFFFFF;
+            --white: #0A0A0A;
+            --dark-gray: #2A2A2A;
+            --light-gray: #1A1A1A;
             --text-primary: #FFFFFF;
             --text-secondary: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(255, 255, 255, 0.65);
-            --transition: 0.3s ease;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            --border-radius: 12px;
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #1A1A1A;
+            --bg-card: #1A1A1A;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.3);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
+        /* Arabic Mode Variables */
+        .arabic-mode {
+            direction: rtl;
+            font-family: 'Cairo', 'Montserrat', sans-serif;
+        }
+    </style>
+    
+    <!-- Main CSS -->
+    <style>
         /* ========== RESET & BASE ========== */
         * {
             margin: 0;
@@ -38,90 +104,223 @@
         }
 
         html {
+            font-size: 16px;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--black);
+            background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color var(--transition-medium), color var(--transition-medium);
         }
 
-        /* ========== TYPOGRAPHY ========== */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+        .arabic-mode body {
+            font-family: 'Cairo', 'Montserrat', sans-serif;
         }
 
-        /* ========== BUTTONS ========== */
-        .btn {
-            display: inline-flex;
+        /* ========== SPARKLE ANIMATION ========== */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--diamond-sparkle);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: sparkleTwinkle 1s ease-in-out infinite;
+        }
+
+        @keyframes sparkleTwinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Diamond Sparkle Effect */
+        .diamond-sparkle {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        /* ========== SPLASH SCREEN ========== */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 14px 28px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .splash-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            z-index: 1;
+        }
+
+        .splash-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            z-index: 2;
+        }
+
+        .splash-logo-container {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .splash-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: 15px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: logoReveal 1.5s ease forwards 0.5s;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .splash-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            color: var(--dark-gold);
             text-transform: uppercase;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            border: none;
-            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: taglineReveal 1s ease forwards 1.5s;
         }
 
-        .btn-gold {
-            background: var(--gold);
-            color: var(--black);
+        .gold-fallout {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 4;
         }
 
-        .btn-gold:hover {
-            background: var(--gold-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
+        .gold-particle {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: linear-gradient(to bottom, transparent, var(--primary-gold), transparent);
+            animation: goldFall linear infinite;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
+        @keyframes goldFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
-        .btn-outline:hover {
+        .splash-loading {
+            width: 300px;
+            height: 2px;
             background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            opacity: 0;
+            animation: loadingReveal 0.5s ease forwards 2.3s;
         }
-         
+
+        .splash-loading-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold), var(--primary-gold));
+            animation: loadingBar 2.5s ease-in-out forwards 2.5s;
+        }
+
         /* ========== HEADER ========== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            height: var(--header-height);
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 20px 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-medium);
         }
 
         .header-container {
-            max-width: 1500px;
+            max-width: var(--container-width);
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 40px;
+            height: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+        }
+
+        .logo-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 600;
-            color: var(--gold);
-            text-decoration: none;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: 3px;
         }
 
         .nav-links {
@@ -130,20 +329,15 @@
         }
 
         .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
             font-size: 14px;
             font-weight: 500;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: var(--transition);
+            color: var(--text-secondary);
+            text-decoration: none;
             position: relative;
             padding: 5px 0;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--gold);
+            transition: color var(--transition-fast);
         }
 
         .nav-links a::after {
@@ -153,39 +347,80 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--gold);
-            transition: var(--transition);
+            background: var(--primary-gold);
+            transition: width var(--transition-medium);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
         }
 
-        .header-actions {
-            display: flex;
-            gap: 20px;
-            align-items: center;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-gold);
         }
 
-        .header-icon {
-            color: var(--text-primary);
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
             font-size: 18px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: color var(--transition-fast);
+            padding: 8px;
+            border-radius: var(--border-radius);
+        }
+
+        .control-btn:hover {
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .language-switcher {
             position: relative;
         }
 
-        .header-icon:hover {
-            color: var(--gold);
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 10px 0;
+            min-width: 120px;
+            display: none;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .language-switcher:hover .language-dropdown {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background var(--transition-fast);
+        }
+
+        .lang-option:hover {
+            background: rgba(212, 175, 55, 0.1);
         }
 
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--gold);
-            color: var(--black);
-            font-size: 12px;
+            top: -5px;
+            right: -5px;
+            background: var(--primary-gold);
+            color: var(--white);
+            font-size: 11px;
             width: 18px;
             height: 18px;
             border-radius: 50%;
@@ -195,94 +430,129 @@
             font-weight: 600;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 24px;
-            cursor: pointer;
+        /* ========== LIVE GOLD PRICE ========== */
+        .gold-price-bar {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+            color: var(--white);
+            padding: 10px 0;
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            box-shadow: var(--shadow-light);
+        }
+
+        .gold-price-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gold-price-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .price-value {
+            font-size: 14px;
+            font-weight: 600;
         }
 
         /* ========== HERO SECTION ========== */
-        .hero {
-            min-height: 100vh;
+        .hero-section {
+            height: 100vh;
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 20px 80px;
-            position: relative;
+            padding-top: calc(var(--header-height) + 40px);
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
-            opacity: 0.9;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
         }
 
         .hero-subtitle {
             font-family: 'Cormorant Garamond', serif;
             font-size: 24px;
-            color: var(--gold-light);
+            color: var(--secondary-gold);
             letter-spacing: 4px;
             margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
         }
 
         .hero-title {
-            font-size: 64px;
-            color: var(--gold);
-            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
             font-weight: 700;
+            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.7s;
         }
 
         .hero-description {
             font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.9s;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        /* ========== PRODUCTS SECTION ========== */
+        .products-section {
+            padding: 120px 0;
+            background: var(--bg-secondary);
         }
 
-        /* ========== PRODUCTS ========== */
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title {
+        .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .section-title h2 {
+        .section-title {
+            font-family: 'Playfair Display', serif;
             font-size: 48px;
-            color: var(--gold);
+            color: var(--text-primary);
             margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
 
-        .section-title h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -290,87 +560,168 @@
             transform: translateX(-50%);
             width: 80px;
             height: 2px;
-            background: var(--gold);
+            background: var(--primary-gold);
         }
 
-        .section-title p {
+        .section-subtitle {
             font-size: 18px;
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .products-section {
-            background: var(--black-light);
-        }
-
-        .products-filter {
+        .view-options {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
-        .filter-btn {
-            padding: 10px 25px;
+        .view-btn {
+            padding: 10px 20px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             color: var(--text-secondary);
             border-radius: var(--border-radius);
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all var(--transition-fast);
         }
 
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--gold);
-            color: var(--black);
-            border-color: var(--gold);
+        .view-btn.active,
+        .view-btn:hover {
+            background: var(--primary-gold);
+            color: var(--white);
+            border-color: var(--primary-gold);
         }
 
+        /* Grid View */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
-            max-width: 1200px;
+            max-width: var(--container-width);
             margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* List View */
+        .products-list {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-item-list {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+        }
+
+        .product-item-list:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
         }
 
         .product-card {
-            background: var(--black);
+            background: var(--bg-card);
             border-radius: var(--border-radius);
             overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+            position: relative;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--gold);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: var(--bg-secondary);
         }
 
         .product-image {
             width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background: var(--black-light);
-        }
-
-        .product-image img {
-            width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform var(--transition-slow);
         }
 
-        .product-card:hover .product-image img {
+        .product-card:hover .product-image {
             transform: scale(1.05);
+        }
+
+        .product-3d-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            border: none;
+            padding: 8px 12px;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+        }
+
+        .product-card:hover .product-3d-btn {
+            opacity: 1;
+        }
+
+        .product-zoom-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+        }
+
+        .product-card:hover .product-zoom-btn {
+            opacity: 1;
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .product-badge {
+            padding: 4px 12px;
+            background: var(--primary-gold);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: var(--border-radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .product-info {
@@ -379,16 +730,19 @@
 
         .product-category {
             font-size: 12px;
-            color: var(--gold);
+            color: var(--primary-gold);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .product-name {
             font-size: 18px;
-            margin-bottom: 10px;
+            font-weight: 600;
             color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
 
         .product-description {
@@ -399,9 +753,9 @@
         }
 
         .product-price {
-            font-size: 20px;
-            color: var(--gold);
-            font-weight: 600;
+            font-size: 22px;
+            color: var(--primary-gold);
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
@@ -410,10 +764,105 @@
             gap: 10px;
         }
 
-        .product-actions .btn {
+        .add-to-cart-btn {
             flex: 1;
             padding: 12px;
-            font-size: 13px;
+            background: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background var(--transition-fast);
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--dark-gold);
+        }
+
+        .wishlist-btn {
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wishlist-btn:hover,
+        .wishlist-btn.active {
+            color: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+
+        /* ========== 360 VIEWER ========== */
+        .viewer-360 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .viewer-360.active {
+            display: flex;
+        }
+
+        .viewer-container {
+            width: 90%;
+            height: 90%;
+            max-width: 1000px;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .viewer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ========== PAYMENT OPTIONS ========== */
+        .payment-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 24px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
         /* ========== CART MODAL ========== */
@@ -423,52 +872,36 @@
             right: -400px;
             width: 400px;
             height: 100vh;
-            background: var(--black-light);
+            background: var(--bg-card);
             z-index: 2000;
-            transition: right 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transition: right var(--transition-medium);
+            border-left: 1px solid var(--border-color);
+            box-shadow: var(--shadow-heavy);
         }
 
         .cart-modal.active {
             right: 0;
         }
 
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1999;
-            display: none;
-        }
-
-        .cart-overlay.active {
-            display: block;
-        }
-
         .cart-header {
             padding: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .cart-items {
-            flex: 1;
-            overflow-y: auto;
             padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
         }
 
         .cart-item {
             display: flex;
             gap: 15px;
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .cart-item-image {
@@ -477,7 +910,6 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             flex-shrink: 0;
-            background: var(--black);
         }
 
         .cart-item-image img {
@@ -486,51 +918,9 @@
             object-fit: cover;
         }
 
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .cart-item-price {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .cart-item-quantity {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .quantity-btn {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: none;
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .quantity-input {
-            width: 40px;
-            text-align: center;
-            background: transparent;
-            border: none;
-            color: var(--text-primary);
-        }
-
         .cart-footer {
             padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-color);
         }
 
         .cart-total {
@@ -538,167 +928,135 @@
             justify-content: space-between;
             margin-bottom: 25px;
             font-size: 20px;
-        }
-
-        /* ========== PAYMENT PAGE ========== */
-        .payment-page {
-            min-height: 100vh;
-            background: var(--black);
-            padding: 20px;
-        }
-
-        .payment-header {
-            text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            margin-bottom: 40px;
-            border-radius: var(--border-radius);
-        }
-
-        .payment-header h1 {
-            font-size: 48px;
-            color: var(--black);
-            margin-bottom: 10px;
-        }
-
-        .payment-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .payment-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .payment-card {
-            background: var(--black-light);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: var(--transition);
-        }
-        
-        .payment-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
-
-        .pay-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 16px;
             font-weight: 600;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: var(--transition);
+        }
+
+        /* ========== INSTAGRAM FEED ========== */
+        .instagram-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .instagram-post {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .instagram-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-medium);
+        }
+
+        .instagram-post:hover img {
+            transform: scale(1.1);
         }
 
         /* ========== FOOTER ========== */
         footer {
-            background: var(--black);
+            background: var(--bg-secondary);
             padding: 80px 0 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-content {
-            max-width: 1400px;
+            max-width: var(--container-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 60px;
             margin-bottom: 60px;
         }
 
         .footer-column h4 {
             font-size: 18px;
-            color: var(--gold);
+            color: var(--primary-gold);
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .footer-links {
-            list-style: none;
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--text-secondary);
             text-decoration: none;
-            transition: var(--transition);
+            transition: all var(--transition-fast);
+            border: 1px solid var(--border-color);
         }
 
-        .footer-links a:hover {
-            color: var(--gold);
+        .social-link:hover {
+            background: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-3px);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .payment-methods-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            width: 50px;
+            height: 30px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
             color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* ========== NOTIFICATION ========== */
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: var(--gold);
-            color: var(--black);
-            padding: 15px 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            z-index: 4000;
-            transform: translateX(150%);
-            transition: transform 0.3s ease;
-            max-width: 300px;
-        }
-
-        .notification.show {
-            transform: translateX(0);
+            border: 1px solid var(--border-color);
         }
 
         /* ========== RESPONSIVE ========== */
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             .hero-title {
-                font-size: 48px;
+                font-size: 56px;
             }
             
-            .section-title h2 {
+            .section-title {
                 font-size: 36px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--black);
-                flex-direction: column;
-                padding: 20px;
-                gap: 20px;
+            .header-container {
+                padding: 0 20px;
             }
             
-            .mobile-menu-btn {
-                display: block;
+            .nav-links {
+                display: none;
             }
             
             .hero-title {
@@ -709,8 +1067,8 @@
                 font-size: 18px;
             }
             
-            .hero-buttons {
-                flex-direction: column;
+            .products-grid {
+                grid-template-columns: 1fr;
             }
             
             .cart-modal {
@@ -718,773 +1076,127 @@
                 right: -100%;
             }
             
-            .products-grid {
+            .footer-content {
                 grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 28px;
-            }
-            
-            .section-title h2 {
-                font-size: 28px;
-            }
-        }
-
-        /* ========== UTILITY CLASSES ========== */
+        /* ========== UTILITIES ========== */
         .hidden {
             display: none !important;
         }
 
-        .text-center {
-            text-align: center;
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
-        .mb-20 {
-            margin-bottom: 20px;
+        .btn-primary {
+            padding: 16px 32px;
+            background: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .mb-30 {
-            margin-bottom: 30px;
+        .btn-primary:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--gold-glow);
         }
 
-        .mb-40 {
-            margin-bottom: 40px;
+        .btn-secondary {
+            padding: 16px 32px;
+            background: transparent;
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-<!-- HEADER LOGO -->
-    <a        href="#" class="logo">
-    <img src="ryaan jewellers logo.png" alt="RYAAN JEWELLERS" class="logo-image">
-    <span class="logo-text">
-             <nav class="nav-links">
-               
-               </a>
-               <a href="#home" class="active">Home</a>
-                <a href="#products">Collections</a>
+    <!-- SPARKLE EFFECT -->
+    <div class="diamond-sparkle" id="diamondSparkle"></div>
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen">
+        <div class="splash-bg"></div>
+        <div class="splash-overlay"></div>
+        <div class="gold-fallout" id="goldFallout"></div>
+        
+        <div class="splash-logo-container">
+            <div class="splash-logo">RYAAN</div>
+            <div class="splash-tagline">JEWELLERS</div>
+        </div>
+        
+        <div class="splash-divider"></div>
+        <div class="splash-loading">
+            <div class="splash-loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-container">
+                <img src="images/logo.png" alt="Ryaan Jewellers" class="logo-image" onerror="this.style.display='none'">
+                <div class="logo-text">RYAAN</div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#products">Products</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
             
-            <div class="header-actions">
-                <div class="header-icon wishlist-btn">
-                    <i class="fas fa-heart"></i>
+            <div class="header-controls">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="control-btn" id="languageBtn">
+                        <i class="fas fa-globe"></i> EN
+                    </button>
+                    <div class="language-dropdown">
+                        <div class="lang-option" data-lang="en">English</div>
+                        <div class="lang-option" data-lang="ar">العربية</div>
+                    </div>
                 </div>
-                <div class="header-icon cart-btn">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </div>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+                
+                <!-- Day/Night Mode -->
+                <button class="control-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
                 </button>
-            </div>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2 class="hero-subtitle">Dubai's Premier Jewelry Maison</h2>
-            <h1 class="hero-title">Timeless Elegance</h1>
-            <p class="hero-description">
-                Crafting exquisite jewelry pieces inspired by luxury maisons. Each creation tells a story of sophistication and unparalleled craftsmanship.
-            </p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn btn-gold">
-                    <i class="fas fa-gem"></i> VIEW COLLECTIONS
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-calendar"></i> BOOK APPOINTMENT
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products" class="products-section section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Collections</h2>
-                <p>Handcrafted luxury pieces for the discerning</p>
-            </div>
-            
-            <div class="products-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="necklaces">Necklaces</button>
-                <button class="filter-btn" data-filter="earrings">Earrings</button>
-                <button class="filter-btn" data-filter="rings">Rings</button>
-                <button class="filter-btn" data-filter="bracelets">Bracelets</button>
-            </div>
-            
-            <div class="products-grid" id="productsGrid">
-                <!-- Products loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Ryaan Jewellers</h2>
-                <p>Crafting excellence since 2024</p>
-            </div>
-            
-            <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h3 style="color: var(--gold); margin-bottom: 20px; font-size: 36px;">Dubai's Finest Jewelry Destination</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 18px;">
-                    Founded with a vision to create timeless jewelry pieces, Ryaan Jewellers brings together traditional craftsmanship and contemporary design.
-                </p>
-                <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 18px;">
-                    Each piece is meticulously crafted using the finest materials, including 18K and 22K gold, brilliant diamonds, and precious gemstones.
-                </p>
                 
-                <div class="about-stats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px;">
-                    <div class="stat-item">
-                        <div class="stat-number" style="font-size: 36px; color: var(--gold); font-weight: 600; margin-bottom: 5px;">150+</div>
-                        <div class="stat-label" style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Designs</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" style="font-size: 36px; color: var(--gold); font-weight: 600; margin-bottom: 5px;">98%</div>
-                        <div class="stat-label" style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Satisfaction</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" style="font-size: 36px; color: var(--gold); font-weight: 600; margin-bottom: 5px;">24/7</div>
-                        <div class="stat-label" style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Support</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Schedule an appointment or inquire about our collections</p>
-            </div>
-            
-            <div class="contact-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="contact-info">
-                    <h3 style="color: var(--gold); margin-bottom: 30px; font-size: 36px;">Visit Our Showroom</h3>
-                    
-                    <div class="contact-details" style="margin-bottom: 40px;">
-                        <div class="contact-item" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px;">
-                            <div class="contact-icon" style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 20px;">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div style="text-align: left;">
-                                <h4 style="font-size: 18px; margin-bottom: 5px;">Address</h4>
-                                <p style="color: var(--text-secondary);">RYAAN JEWELLERS <br> United Arab Emirates</p>
-                            </div>
-             </div>
-        
-              <div 
-               class="contact-item" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px;">
-                            <div class="contact-icon" style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 20px;">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div style="text-align: left;">
-                                <h4 style="font-size: 18px; margin-bottom: 5px;">Phone</h4>
-                                <p style="color: var(--text-secondary);">+971 54 374 6476</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px;">
-                            <div class="contact-icon" style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 20px;">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div style="text-align: left;">
-                                <h4 style="font-size: 18px; margin-bottom: 5px;">Email</h4>
-                                <p style="color: var(--text-secondary);">ryaanjewellers@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin-top: 30px;">
-                        <a href="#" class="social-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-primary); text-decoration: none; transition: var(--transition);">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-primary); text-decoration: none; transition: var(--transition);">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-primary); text-decoration: none; transition: var(--transition);">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CART OVERLAY -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-
-    <!-- CART MODAL -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-header">
-            <h3>Your Shopping Bag</h3>
-            <button class="cart-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="cart-items" id="cartItems">
-            <!-- Cart items will be loaded here -->
-            <div style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
-                <i class="fas fa-shopping-bag" style="font-size: 48px; opacity: 0.3; margin-bottom: 20px;"></i>
-                <p>Your cart is empty</p>
-            </div>
-        </div>
-        
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total Amount</span>
-                <span id="cartTotalAmount">AED 0.00</span>
-            </div>
-            <button class="btn btn-gold" style="width: 100%;" onclick="proceedToPayment()">
-                <i class="fas fa-lock"></i> PROCEED TO PAYMENT
-            </button>
-        </div>
-    </div>
-
-    <!-- NOTIFICATION -->
-    <div class="notification" id="notification"></div>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>RYAAN JEWELLERS</h4>
-                <p style="color: var(--text-secondary); line-height: 1.8;">
-                    Crafting luxury jewelry with exceptional craftsmanship and timeless design since 2024.
-                </p>
-            </div>
-            
-            <div class="footer-column">
-                <h4>QUICK LINKS</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Collections</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>CONTACT INFO</h4>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i>UAE</li>
-                    <li><i class="fas fa-phone"></i> +971 54 374 6476</li>
-                    <li><i class="fas fa-envelope"></i> info@ryaanjewellers.com</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2024 RYAAN JEWELLERS. All rights reserved. | United Arab Emirates</p>
-            <p style="margin-top: 10px; font-size: 12px; color: var(--text-muted);">
-                Crafted with Love & Precious 
-               <style> 
-             "italic"
-               </style>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // ========== YOUR ACTUAL PRODUCTS ==========
-        const products = [
-            {
-                id: 1,
-                name: "Chopard Inspired 3 Diamond Chain & Pendant",
-                category: "necklaces",
-                price: 6900,
-                image: "Screenshot_20251129_014405_Chrome.jpg",
-                description: "Exquisite Chopard-inspired necklace featuring three brilliant diamonds set in 18K white gold. A statement piece for special occasions."
-            },
-            {
-                id: 2,
-                name: "Messika UNO Full Diamond Earrings - Yellow Gold",
-                category: "earrings",
-                price: 8900,
-                image: "Screenshot_20251129_014443_Chrome.jpg",
-                description: "Luxurious Messika-inspired diamond earrings in 18K yellow gold. Full diamond coverage for maximum brilliance and elegance."
-            },
-            {
-                id: 3,
-                name: "Messika Chain & Pendant - White Gold",
-                category: "necklaces",
-                price: 7900,
-                image: "Screenshot_20251129_014511_Chrome.jpg",
-                description: "Sophisticated Messika-inspired chain and pendant in 18K white gold. Modern design with timeless appeal."
-            },
-            {
-                id: 4,
-                name: "Messika Diamond Ring - Rose Gold",
-                category: "rings",
-                price: 5900,
-                image: "Screenshot_20251129_014550_Chrome.jpg",
-                description: "Elegant Messika-inspired diamond ring set in 18K rose gold. Perfect blend of contemporary design and classic elegance."
-            },
-            {
-                id: 5,
-                name: "Messika Duo Diamond Ring - Rose Gold",
-                category: "rings",
-                price: 4900,
-                image: "Screenshot_20251129_014553_Chrome.jpg",
-                description: "Stunning Messika-inspired duo diamond ring in 18K rose gold. Features two brilliant diamonds in a modern setting."
-            },
-            {
-                id: 6,
-                name: "Messika UNO 5-Motif Diamond Necklace",
-                category: "necklaces",
-                price: 10900,
-                image: "Screenshot_20251129_014606_Chrome.jpg",
-                description: "Luxurious Messika-inspired necklace with five diamond motifs. A masterpiece of contemporary jewelry design."
-            },
-            {
-                id: 7,
-                name: "Messika Tie-Band Diamond Bracelet",
-                category: "bracelets",
-                price: 9900,
-                image: "Screenshot_20251129_014624_Chrome.jpg",
-                description: "Elegant Messika-inspired tie-band bracelet featuring brilliant diamonds. Adjustable design for perfect fit."
-            },
-            {
-                id: 8,
-                name: "Messika Full-Diamond Bangle - Rose Gold",
-                category: "bracelets",
-                price: 3900,
-                image: "Screenshot_20251129_014633_Chrome.jpg",
-                description: "Luxurious full-diamond bangle in 18K rose gold. Complete diamond coverage for ultimate luxury."
-            },
-            {
-                id: 9,
-                name: "Messika Diamond Ring - Rose Gold",
-                category: "rings",
-                price: 7900,
-                image: "Screenshot_20251129_014643_Chrome.jpg",
-                description: "Beautiful Messika-inspired diamond ring in 18K rose gold. Single brilliant diamond in a contemporary setting."
-            }
-        ];
-
-        // ========== CART MANAGEMENT ==========
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-        // ========== INITIALIZATION ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            renderProducts();
-            updateCartCount();
-            setupEventListeners();
-            setupProductFilters();
-        });
-
-        // ========== RENDER PRODUCTS ==========
-        function renderProducts(filter = 'all') {
-            const productsGrid = document.getElementById('productsGrid');
-            productsGrid.innerHTML = '';
-            
-            const filteredProducts = filter === 'all' 
-                ? products 
-                : products.filter(product => product.category === filter);
-            
-            filteredProducts.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.innerHTML = `
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzIyMiIvPjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5KZXdlbHJ5PC90ZXh0Pjwvc3ZnPg=='">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">${product.category.toUpperCase()}</div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-price">AED ${product.price.toLocaleString()}</div>
-                        <div class="product-actions">
-                            <button class="btn btn-gold" onclick="addToCart(${product.id})">
-                                Add to Cart
-                            </button>
-                            <button class="btn btn-outline" onclick="addToWishlist(${product.id})">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                productsGrid.appendChild(productCard);
-            });
-        }
-
-        // ========== PRODUCT FILTERS ==========
-        function setupProductFilters() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    renderProducts(this.dataset.filter);
-                });
-            });
-        }
-
-        // ========== CART FUNCTIONS ==========
-        function addToCart(productId, quantity = 1) {
-            const product = products.find(p => p.id === productId);
-            
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += quantity;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image,
-                    quantity: quantity
-                });
-            }
-            
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            renderCartItems();
-            showNotification(`${product.name} added to cart!`);
-        }
-
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            renderCartItems();
-            showNotification('Item removed from cart');
-        }
-
-        function updateQuantity(productId, newQuantity) {
-            if (newQuantity < 1) {
-                removeFromCart(productId);
-                return;
-            }
-            
-            const item = cart.find(item => item.id === productId);
-            if (item) {
-                item.quantity = newQuantity;
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCartCount();
-                renderCartItems();
-            }
-        }
-
-        function updateCartCount() {
-            const count = cart.reduce((total, item) => total + item.quantity, 0);
-            document.querySelector('.cart-count').textContent = count;
-        }
-
-        function renderCartItems() {
-            const cartItemsContainer = document.getElementById('cartItems');
-            const cartTotalElement = document.getElementById('cartTotalAmount');
-            
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
-                        <i class="fas fa-shopping-bag" style="font-size: 48px; opacity: 0.3; margin-bottom: 20px;"></i>
-                        <p>Your cart is empty</p>
-                    </div>
-                `;
-                cartTotalElement.textContent = 'AED 0.00';
-                return;
-            }
-            
-            let itemsHTML = '';
-            let total = 0;
-            
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                
-                itemsHTML += `
-                    <div class="cart-item">
-                        <div class="cart-item-image">
-                            <img src="${item.image}" alt="${item.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzIyMiIvPjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5KZXdlbHJ5PC90ZXh0Pjwvc3ZnPg=='">
-                        </div>
-                        <div class="cart-item-details">
-                            <h4 class="cart-item-name">${item.name}</h4>
-                            <div class="cart-item-price">AED ${item.price.toLocaleString()}</div>
-                            <div class="cart-item-quantity">
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
-                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
-                            </div>
-                            <button class="cart-item-remove" onclick="removeFromCart(${item.id})" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 14px;">
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            cartItemsContainer.innerHTML = itemsHTML;
-            cartTotalElement.textContent = `AED ${total.toLocaleString()}`;
-        }
-
-        function toggleCart() {
-            const cartModal = document.getElementById('cartModal');
-            const cartOverlay = document.getElementById('cartOverlay');
-            
-            cartModal.classList.toggle('active');
-            cartOverlay.classList.toggle('active');
-            document.body.style.overflow = cartModal.classList.contains('active') ? 'hidden' : 'auto';
-            
-            if (cartModal.classList.contains('active')) {
-                renderCartItems();
-            }
-        }
-
-        // ========== WISHLIST ==========
-        function addToWishlist(productId) {
-            const product = products.find(p => p.id === productId);
-            
-            if (!wishlist.find(item => item.id === productId)) {
-                wishlist.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image
-                });
-                
-                localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                showNotification(`${product.name} added to wishlist!`);
-            } else {
-                showNotification(`${product.name} is already in your wishlist`);
-            }
-        }
-
-        // ========== PAYMENT ==========
-        function proceedToPayment() {
-            if (cart.length === 0) {
-                showNotification('Your cart is empty');
-                return;
-            }
-            
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const paymentData = {
-                items: cart,
-                total: total,
-                timestamp: new Date().toISOString()
-            };
-            
-            localStorage.setItem('pendingPayment', JSON.stringify(paymentData));
-            
-            // Create payment page
-            createPaymentPage();
-        }
-
-        function createPaymentPage() {
-            const mainContent = document.querySelector('main');
-            const header = document.querySelector('header');
-            const footer = document.querySelector('footer');
-            
-            // Hide main content
-            mainContent.style.display = 'none';
-            header.style.display = 'none';
-            footer.style.display = 'none';
-            
-            // Create payment page
-            const paymentPage = document.createElement('div');
-            paymentPage.className = 'payment-page';
-            paymentPage.innerHTML = `
-                <div class="payment-header">
-                    <h1>RYAAN JEWELLERS</h1>
-                    <p style="color: rgba(0,0,0,0.8);">Secure Payment Gateway</p>
-                </div>
-                
-                <div class="payment-container">
-                    <div class="order-summary" style="background: var(--black-light); padding: 30px; border-radius: var(--border-radius); margin-bottom: 40px; border: 1px solid rgba(212, 175, 55, 0.3);">
-                        <h3 style="color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-receipt"></i> Order Summary
-                        </h3>
-                        <div id="paymentOrderItems"></div>
-                        <div style="border-top: 2px solid rgba(212, 175, 55, 0.5); padding-top: 20px; margin-top: 20px;">
-                            <div style="display: flex; justify-content: space-between; font-size: 24px; font-weight: 600;">
-                                <span>Total Amount:</span>
-                                <span id="paymentTotalAmount" style="color: var(--gold);">AED 0.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="payment-methods">
-                        <div class="payment-card">
-                            <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                                <i class="fas fa-credit-card"></i> Credit/Debit Card
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 20px;">Secure payment with Visa, MasterCard, or American Express</p>
-                            <button class="pay-btn" style="background: #6772e5; color: white;" onclick="processPayment('card')">
-                                <i class="fas fa-lock"></i> Pay with Card
-                            </button>
-                        </div>
-                        
-                        <div class="payment-card">
-                            <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                                <i class="fab fa-paypal"></i> PayPal
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 20px;">Fast and secure payment using your PayPal account</p>
-                            <button class="pay-btn" style="background: #003087; color: white;" onclick="processPayment('paypal')">
-                                <i class="fab fa-paypal"></i> Pay with PayPal
-                            </button>
-                        </div>
-                        
-                        <div class="payment-card">
-                            <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                                <i class="fas fa-university"></i> Bank Transfer
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 20px;">Direct bank transfer for larger orders</p>
-                            <button class="pay-btn" style="background: var(--gold); color: var(--black);" onclick="showBankDetails()">
-                                <i class="fas fa-university"></i> View Bank Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 40px;">
-                        <button onclick="goBackToShopping()" style="background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 12px 25px; border-radius: var(--border-radius); cursor: pointer; font-size: 16px;">
-                            <i class="fas fa-arrow-left"></i> Back to Shopping
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(paymentPage);
-            loadPaymentData();
-        }
-
-        function loadPaymentData() {
-            const paymentData = JSON.parse(localStorage.getItem('pendingPayment'));
-            const orderItemsDiv = document.getElementById('paymentOrderItems');
-            const totalAmountSpan = document.getElementById('paymentTotalAmount');
-            
-            if (!paymentData) return;
-            
-            let itemsHTML = '';
-            let total = 0;
-            
-            paymentData.items.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                
-                itemsHTML += `
-                    <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <p style="font-weight: 600;">${item.name}</p>
-                                <p style="color: var(--text-muted); font-size: 14px;">Qty: ${item.quantity} × AED ${item.price.toLocaleString()}</p>
-                            </div>
-                            <div style="color: var(--gold); font-weight: 600;">
-                                AED ${itemTotal.toLocaleString()}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            orderItemsDiv.innerHTML = itemsHTML;
-            totalAmountSpan.textContent = `AED ${total.toLocaleString()}`;
-        }
-
-        function processPayment(method) {
-            showNotification(`Processing ${method} payment...`);
-            
-            setTimeout(() => {
-                alert(`Payment Successful!\n\nThank you for your purchase. Your order confirmation will be emailed to you.`);
-                
-                // Clear cart and payment data
-                cart = [];
-                localStorage.removeItem('cart');
-                localStorage.removeItem('pendingPayment');
-                
-                // Go back to shopping
-                goBackToShopping();
-            }, 2000);
-        }
-
-        function showBankDetails() {
-            alert(`Bank Transfer Details:\n\n🏦 Bank: Emirates NBD\n👤 Account: Ryaan Jewellers FZCO\n🔢 Account No: 1234 5678 9012 3456\n🌐 IBAN: AE12 3456 7890 1234 5678 901\n📞 Swift: EBILAEADXXX\n\n📧 Send proof to: payments@ryaanjewellers.com`);
-        }
-
-        function goBackToShopping() {
-            // Remove payment page if exists
-            const paymentPage = document.querySelector('.payment-page');
-            if (paymentPage) {
-                paymentPage.remove();
-            }
-            
-            // Show main content
-            const mainContent = document.querySelector('main');
-            const header = document.querySelector('header');
-            const footer = document.querySelector('footer');
-            
-            mainContent.style.display = 'block';
-            header.style.display = 'block';
-            footer.style.display = 'block';
-            
-            // Update cart
-            updateCartCount();
-            renderCartItems();
-        }
-
-        // ========== EVENT LISTENERS ==========
-        function setupEventListeners() {
-            // Cart toggle
-            document.querySelector('.cart-btn').addEventListener('click', toggleCart);
-            document.querySelector('.cart-close').addEventListener('click', toggleCart);
-            document.getElementById('cartOverlay').addEventListener('click', toggleCart);
-            
-            // Mobile menu
-            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-                const navLinks = document.querySelector('.nav-links');
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            });
-            
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        // Close mobile menu
-                        if (window.innerWidth <= 768) {
-                            document.querySelector('.nav-links').style.display = 'none';
-                        }
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-            
-            // Close cart with ESC
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    const cartModal = document.getElementById('cartModal');
-                    if (cartModal.classList.contains('active')) {
-                        toggleCart();
-                    }
-                }
-            });
-        }
-
-        // ========== NOTIFICATION ==========
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        // ========== INITIAL RENDER ==========
-        renderCartItems();
-    </script>
-</body>
-    </html>
+                <!-- Wishlist -->
+                <button class="control-btn wishlist-btn">
+                    <i class="
