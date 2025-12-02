@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23D4AF37%22>💎</text></svg>">
     
     <style>
         /* ========== CSS VARIABLES ========== */
@@ -1604,6 +1604,7 @@
                 <a href="#about">About</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
+                <a href="payment.html" style="color: var(--gold);">Make Payment</a>
             </nav>
             
             <div class="header-actions">
@@ -1644,45 +1645,44 @@
         </div>
     </section>
 
-    <!-- ========== FEATURED COLLECTIONS ========== -->
-    <section id="collections" class="collections section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Collections</h2>
-                <p>Explore our curated collections of exquisite jewelry pieces</p>
+<!-- ========== FEATURED COLLECTIONS ========== -->
+<section id="collections" class="collections section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured Collections</h2>
+            <p>Explore our curated collections of exquisite jewelry pieces</p>
+        </div>
+        
+        <div class="collections-grid">
+            <div class="collection-card">
+                <div class="collection-image" style="background-image: url('Screenshot_20251129_014405_Chrome.jpg');"></div>
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Diamond Collections</h3>
+                    <p class="collection-description">Exquisite diamond pieces for every occasion</p>
+                    <a href="#" class="btn btn-outline">View Collection</a>
+                </div>
             </div>
             
-            <div class="collections-grid">
-                <div class="collection-card">
-                    <div class="collection-image" style="background-image: url('images/Screenshot_20251129_014405_Chrome.jpg');"></div>
-                    <div class="collection-overlay">
-                        <h3 class="collection-name">Diamond Collections</h3>
-                        <p class="collection-description">Exquisite diamond pieces for every occasion</p>
-                        <a href="#" class="btn btn-outline">View Collection</a>
-                    </div>
+            <div class="collection-card">
+                <div class="collection-image" style="background-image: url('Screenshot_20251129_014443_Chrome.jpg');"></div>
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Gold Heritage</h3>
+                    <p class="collection-description">Traditional craftsmanship, modern design</p>
+                    <a href="#" class="btn btn-outline">View Collection</a>
                 </div>
-                
-                <div class="collection-card">
-                    <div class="collection-image" style="background-image: url('images/Screenshot_20251129_014443_Chrome.jpg');"></div>
-                    <div class="collection-overlay">
-                        <h3 class="collection-name">Gold Heritage</h3>
-                        <p class="collection-description">Traditional craftsmanship, modern design</p>
-                        <a href="#" class="btn btn-outline">View Collection</a>
-                    </div>
-                </div>
-                
-                <div class="collection-card">
-                    <div class="collection-image" style="background-image: url('images/Screenshot_20251129_014511_Chrome.jpg');"></div>
-                    <div class="collection-overlay">
-                        <h3 class="collection-name">Luxury Sets</h3>
-                        <p class="collection-description">Complete jewelry sets for special moments</p>
-                        <a href="#" class="btn btn-outline">View Collection</a>
-                    </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-image" style="background-image: url('Screenshot_20251129_014511_Chrome.jpg');"></div>
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Luxury Sets</h3>
+                    <p class="collection-description">Complete jewelry sets for special moments</p>
+                    <a href="#" class="btn btn-outline">View Collection</a>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- ========== PRODUCTS SECTION ========== -->
     <section id="products" class="products-section section-padding">
         <div class="container">
@@ -1909,6 +1909,7 @@
                         <li><a href="#products">Shop</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="payment.html">Make Payment</a></li>
                     </ul>
                 </div>
                 
@@ -1963,7 +1964,7 @@
                 <span class="cart-total-label">Total</span>
                 <span class="cart-total-amount">AED 0.00</span>
             </div>
-            <button class="btn btn-gold" style="width: 100%;" onclick="checkout()">Proceed to Checkout</button>
+            <button class="btn btn-gold" style="width: 100%;" onclick="proceedToPayment()">Proceed to Payment</button>
         </div>
     </div>
 
@@ -2029,89 +2030,81 @@
             initializeApp();
         });
 
-        // ========== APPLICATION DATA ==========
-        // Updated with your actual product images
-        const products = [
-            {
-                id: 1,
-                name: "Chopard Inspired 3 Diamond Chain & Pendant",
-                category: "necklaces",
-                price: 28900,
-                image: "images/Screenshot_20251129_014405_Chrome.jpg",
-                description: "Exquisite Chopard-inspired necklace featuring three brilliant diamonds set in 18K white gold. A statement piece for special occasions."
-            },
-            {
-                id: 2,
-                name: "Messika UNO Full Diamond Earrings - Yellow Gold",
-                category: "earrings",
-                price: 18900,
-                image: "images/Screenshot_20251129_014443_Chrome.jpg",
-                description: "Luxurious Messika-inspired diamond earrings in 18K yellow gold. Full diamond coverage for maximum brilliance and elegance."
-            },
-            {
-                id: 3,
-                name: "Messika Chain & Pendant - White Gold",
-                category: "necklaces",
-                price: 32900,
-                image: "images/Screenshot_20251129_014511_Chrome.jpg",
-                description: "Sophisticated Messika-inspired chain and pendant in 18K white gold. Modern design with timeless appeal."
-            },
-            {
-                id: 4,
-                name: "Messika Diamond Ring - Rose Gold",
-                category: "rings",
-                price: 15900,
-                image: "images/Screenshot_20251129_014550_Chrome.jpg",
-                description: "Elegant Messika-inspired diamond ring set in 18K rose gold. Perfect blend of contemporary design and classic elegance."
-            },
-            {
-                id: 5,
-                name: "Messika Duo Diamond Ring - Rose Gold",
-                category: "rings",
-                price: 21900,
-                image: "images/Screenshot_20251129_014553_Chrome.jpg",
-                description: "Stunning Messika-inspired duo diamond ring in 18K rose gold. Features two brilliant diamonds in a modern setting."
-            },
-            {
-                id: 6,
-                name: "Messika UNO 5-Motif Diamond Necklace",
-                category: "necklaces",
-                price: 45900,
-                image: "images/Screenshot_20251129_014606_Chrome.jpg",
-                description: "Luxurious Messika-inspired necklace with five diamond motifs. A masterpiece of contemporary jewelry design."
-            },
-            {
-                id: 7,
-                name: "Messika Tie-Band Diamond Bracelet",
-                category: "bracelets",
-                price: 27900,
-                image: "images/Screenshot_20251129_014624_Chrome.jpg",
-                description: "Elegant Messika-inspired tie-band bracelet featuring brilliant diamonds. Adjustable design for perfect fit."
-            },
-            {
-                id: 8,
-                name: "Messika Tie-Band Bracelet - Gold",
-                category: "bracelets",
-                price: 24900,
-                image: "images/Screenshot_20251129_014624_Chrome.jpg",
-                description: "Classic Messika-inspired tie-band bracelet in 18K yellow gold. Minimalist design with maximum impact."
-            },
-            {
-                id: 9,
-                name: "Messika Full-Diamond Bangle - Rose Gold",
-                category: "bracelets",
-                price: 38900,
-                image: "images/Screenshot_20251129_014633_Chrome.jpg",
-                description: "Luxurious full-diamond bangle in 18K rose gold. Complete diamond coverage for ultimate luxury."
-            },
-            {
-                id: 10,
-                name: "Messika Diamond Ring - Rose Gold",
-                category: "rings",
-                price: 17900,
-                image: "images/Screenshot_20251129_014643_Chrome.jpg",
-                description: "Beautiful Messika-inspired diamond ring in 18K rose gold. Single brilliant diamond in a contemporary setting."
-            }
+// ========== APPLICATION DATA ==========
+// Using your actual product images
+const products = [
+    {
+        id: 1,
+        name: "Chopard Inspired 3 Diamond Chain & Pendant",
+        category: "necklaces",
+        price: 28900,
+        image: "Screenshot_20251129_014405_Chrome.jpg",
+        description: "Exquisite Chopard-inspired necklace featuring three brilliant diamonds set in 18K white gold. A statement piece for special occasions."
+    },
+    {
+        id: 2,
+        name: "Messika UNO Full Diamond Earrings - Yellow Gold",
+        category: "earrings",
+        price: 18900,
+        image: "Screenshot_20251129_014443_Chrome.jpg",
+        description: "Luxurious Messika-inspired diamond earrings in 18K yellow gold. Full diamond coverage for maximum brilliance and elegance."
+    },
+    {
+        id: 3,
+        name: "Messika Chain & Pendant - White Gold",
+        category: "necklaces",
+        price: 32900,
+        image: "Screenshot_20251129_014511_Chrome.jpg",
+        description: "Sophisticated Messika-inspired chain and pendant in 18K white gold. Modern design with timeless appeal."
+    },
+    {
+        id: 4,
+        name: "Messika Diamond Ring - Rose Gold",
+        category: "rings",
+        price: 15900,
+        image: "Screenshot_20251129_014550_Chrome.jpg",
+        description: "Elegant Messika-inspired diamond ring set in 18K rose gold. Perfect blend of contemporary design and classic elegance."
+    },
+    {
+        id: 5,
+        name: "Messika Duo Diamond Ring - Rose Gold",
+        category: "rings",
+        price: 21900,
+        image: "Screenshot_20251129_014553_Chrome.jpg",
+        description: "Stunning Messika-inspired duo diamond ring in 18K rose gold. Features two brilliant diamonds in a modern setting."
+    },
+    {
+        id: 6,
+        name: "Messika UNO 5-Motif Diamond Necklace",
+        category: "necklaces",
+        price: 45900,
+        image: "Screenshot_20251129_014606_Chrome.jpg",
+        description: "Luxurious Messika-inspired necklace with five diamond motifs. A masterpiece of contemporary jewelry design."
+    },
+    {
+        id: 7,
+        name: "Messika Tie-Band Diamond Bracelet",
+        category: "bracelets",
+        price: 27900,
+        image: "Screenshot_20251129_014624_Chrome.jpg",
+        description: "Elegant Messika-inspired tie-band bracelet featuring brilliant diamonds. Adjustable design for perfect fit."
+    },
+    {
+        id: 8,
+        name: "Messika Full-Diamond Bangle - Rose Gold",
+        category: "bracelets",
+        price: 38900,
+        image: "Screenshot_20251129_014633_Chrome.jpg",
+        description: "Luxurious full-diamond bangle in 18K rose gold. Complete diamond coverage for ultimate luxury."
+    },
+    {
+        id: 9,
+        name: "Messika Diamond Ring - Rose Gold",
+        category: "rings",
+        price: 17900,
+        image: "Screenshot_20251129_014643_Chrome.jpg",
+        description: "Beautiful Messika-inspired diamond ring in 18K rose gold. Single brilliant diamond in a contemporary setting."
+    }
         ];
 
         // Cart data
@@ -2343,24 +2336,24 @@
             }
         }
 
-        function checkout() {
+        function proceedToPayment() {
             if (cart.length === 0) {
                 showNotification('Your cart is empty');
                 return;
             }
             
-            // In a real application, this would redirect to a checkout page
-            // For demonstration, we'll show an alert
+            // Save cart total to localStorage for payment page
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            alert(`Proceeding to checkout with ${cart.length} items totaling AED ${total.toLocaleString()}\n\nThis would integrate with payment gateway in production.`);
+            const cartData = {
+                items: cart,
+                total: total,
+                timestamp: new Date().toISOString()
+            };
             
-            // Clear cart after checkout (for demo)
-            cart = [];
-            localStorage.setItem('ryaanCart', JSON.stringify(cart));
-            updateCartCount();
-            renderCartItems();
-            toggleCart();
-            showNotification('Order placed successfully!');
+            localStorage.setItem('ryaanPendingPayment', JSON.stringify(cartData));
+            
+            // Redirect to payment page
+            window.location.href = 'payment.html';
         }
 
         // ========== WISHLIST FUNCTIONALITY ==========
@@ -2551,4 +2544,4 @@
         renderCartItems();
     </script>
 </body>
-    </html>
+</html>
