@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RYAAN JEWELLERS | Luxury Jewelry Maison</title>
+    <title>RYAAN JEWELLERS | Gold &Diamonds UAE</title>
     
-    <!-- Fonts & Icons -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Social Media Meta -->
-    <meta property="og:title" content="RYAAN JEWELLERS | Luxury Jewelry Maison">
-    <meta property="og:description" content="Dubai's Premier Luxury Jewelry Destination">
-    <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="https://ryaanjewellers.com">
+    <!-- Arabic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <!-- 360 Viewer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-rotate-zoom@1.0.0/jquery.rotate-zoom.css">
     
     <style>
         /* ========== CSS VARIABLES ========== */
         :root {
-            /* Day Mode Colors */
             --gold: #D4AF37;
             --gold-light: #F4E8C1;
             --gold-dark: #B8941F;
-            --diamond: #FFFFFF;
-            --platinum: #E5E5E5;
+            --gold-sparkle: #FFD700;
             --black: #0A0A0A;
             --black-light: #1A1A1A;
             --white: #FFFFFF;
             --text-primary: #FFFFFF;
             --text-secondary: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(255, 255, 255, 0.65);
-            --transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            --shadow-gold: 0 0 40px rgba(212, 175, 55, 0.4);
-            --border-radius: 16px;
-            --border-radius-lg: 32px;
+            --transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+            --border-radius: 12px;
+            
+            /* Light mode variables */
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #1A1A1A;
+            --text-color: #FFFFFF;
         }
 
-        /* Night Mode Variables */
-        .night-mode {
-            --black: #000000;
-            --black-light: #0A0A0A;
-            --white: #FFFFFF;
-            --text-primary: #FFFFFF;
-            --gold: #FFD700;
-            --gold-light: #FFF8DC;
-        }
-
-        /* Arabic Mode */
-        .arabic-mode {
-            direction: rtl;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .light-mode {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --text-color: #0A0A0A;
+            --text-primary: #0A0A0A;
+            --text-secondary: rgba(0, 0, 0, 0.85);
+            --text-muted: rgba(0, 0, 0, 0.65);
         }
 
         /* ========== RESET & BASE ========== */
@@ -64,27 +64,32 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--black);
-            color: var(--text-primary);
-            line-height: 1.8;
+            background: var(--bg-primary);
+            color: var(--text-color);
+            line-height: 1.6;
             overflow-x: hidden;
             transition: background 0.5s ease;
+        }
+
+        /* Arabic text */
+        .arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            direction: rtl;
         }
 
         /* ========== SPARKLE ANIMATIONS ========== */
         .sparkle {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--gold);
+            width: 4px;
+            height: 4px;
+            background: var(--gold-sparkle);
             border-radius: 50%;
-            pointer-events: none;
             animation: sparkle 2s infinite;
+            pointer-events: none;
         }
 
         @keyframes sparkle {
@@ -92,20 +97,16 @@
             50% { opacity: 1; transform: scale(1); }
         }
 
-        .diamond-sparkle {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.3) 70%);
-            animation: diamondGlow 3s infinite alternate;
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
-        @keyframes diamondGlow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.8; }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px var(--gold); }
+            to { box-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold-light); }
         }
 
-        /* ========== SPLASH SCREEN (Cartier/Bvlgari Style) ========== */
+        /* ========== SPLASH SCREEN ========== */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -127,7 +128,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            background: linear-gradient(45deg, 
+                #0A0A0A 0%, 
+                #1A1A1A 25%, 
+                #0A0A0A 50%, 
+                #1A1A1A 75%, 
+                #0A0A0A 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 8s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .splash-overlay {
@@ -137,8 +151,9 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(212, 175, 55, 0.2) 0%, transparent 50%);
         }
 
         .splash-logo-container {
@@ -150,51 +165,70 @@
 
         .splash-logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 6rem;
+            font-size: 5rem;
             font-weight: 600;
             color: var(--gold);
             letter-spacing: 15px;
-            text-transform: uppercase;
-            position: relative;
             opacity: 0;
             transform: translateY(30px);
-            animation: logoReveal 2s ease forwards 0.5s;
+            animation: logoReveal 1.5s ease forwards 0.5s;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            position: relative;
         }
 
         .splash-logo::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            animation: lineExpand 1.5s ease forwards 1.5s;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 45%, var(--gold-light) 50%, transparent 55%);
+            background-size: 200% 200%;
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
 
         .splash-tagline {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             letter-spacing: 8px;
             color: var(--gold-light);
             text-transform: uppercase;
-            margin-top: 30px;
+            margin-top: 20px;
             opacity: 0;
             transform: translateY(20px);
-            animation: taglineReveal 1s ease forwards 2s;
+            animation: taglineReveal 1s ease forwards 1.5s;
+        }
+
+        .splash-divider {
+            width: 300px;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold), 
+                var(--gold-light), 
+                var(--gold), 
+                transparent);
+            margin: 40px auto;
+            opacity: 0;
+            animation: dividerReveal 1s ease forwards 2s;
         }
 
         .splash-loading {
             width: 300px;
-            height: 2px;
+            height: 3px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
             position: relative;
-            margin: 40px auto;
+            z-index: 3;
             opacity: 0;
-            animation: loadingReveal 0.5s ease forwards 2.5s;
+            animation: loadingReveal 0.5s ease forwards 2.3s;
         }
 
         .splash-loading-bar {
@@ -203,523 +237,621 @@
             left: 0;
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-            animation: loadingBar 3s ease-in-out forwards 3s;
+            background: linear-gradient(90deg, 
+                var(--gold), 
+                var(--gold-light), 
+                var(--gold-dark), 
+                var(--gold));
+            animation: loadingBar 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards 2.5s;
+            box-shadow: 0 0 10px var(--gold);
         }
 
-        /* ========== HEADER ========== */
-        header {
-            position: fixed;
-            top: 0;
+        @keyframes loadingBar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .splash-bottom-text {
+            position: absolute;
+            bottom: 40px;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            padding: 25px 0;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            transform: translateY(-100%);
-            animation: headerSlideDown 0.8s ease forwards 4s;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: bottomTextReveal 1s ease forwards 3s;
         }
 
-        @keyframes headerSlideDown {
-            to { transform: translateY(0); }
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: linear-gradient(90deg, var(--black), var(--gold-dark), var(--black));
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
         }
 
-        .header-container {
-            max-width: 1600px;
+        .top-bar-content {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* Logo */
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+        .gold-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-weight: 600;
+        }
+
+        .gold-price i {
             color: var(--gold);
-            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--text-primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: top 0.3s ease;
+        }
+
+        .light-mode header {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO */
+        .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+            text-decoration: none;
+            position: relative;
         }
 
         .logo-image {
             height: 60px;
             width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
             transition: var(--transition);
         }
 
-        .logo:hover .logo-image {
-            transform: scale(1.05);
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 3px;
         }
 
-        /* Navigation */
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--gold), transparent, var(--gold));
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .logo:hover::before {
+            opacity: 0.3;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* NAVIGATION */
         .nav-links {
             display: flex;
-            gap: 50px;
+            gap: 40px;
         }
 
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 14px;
             font-weight: 500;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            position: relative;
-            padding: 10px 0;
             transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
         }
 
-        .nav-links a::after {
+        .nav-links a::before {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold);
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
             transition: var(--transition);
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
             width: 100%;
         }
 
-        /* Header Controls */
-        .header-controls {
-            display: flex;
-            align-items: center;
-            gap: 25px;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
         }
 
-        .control-btn {
-            background: none;
-            border: none;
+        /* HEADER ACTIONS */
+        .header-actions {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .header-icon {
             color: var(--text-primary);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
             transition: var(--transition);
             position: relative;
         }
 
-        .control-btn:hover {
-            background: rgba(212, 175, 55, 0.1);
+        .header-icon:hover {
             color: var(--gold);
             transform: translateY(-2px);
         }
 
-        .language-switcher {
-            position: relative;
-        }
-
-        .language-dropdown {
+        .cart-count {
             position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--black-light);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: var(--border-radius);
-            padding: 15px;
-            display: none;
-            min-width: 120px;
-            z-index: 1001;
-        }
-
-        .language-switcher:hover .language-dropdown {
-            display: block;
-        }
-
-        .lang-option {
-            display: block;
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .lang-option:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold);
-        }
-
-        /* ========== GOLD PRICE TICKER ========== */
-        .gold-ticker {
-            background: linear-gradient(90deg, var(--gold-dark), var(--gold));
-            padding: 15px 0;
-            position: fixed;
-            top: 90px;
-            width: 100%;
-            z-index: 999;
-            transform: translateY(-100%);
-            animation: tickerSlide 0.8s ease forwards 4.2s;
-        }
-
-        @keyframes tickerSlide {
-            to { transform: translateY(0); }
-        }
-
-        .ticker-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .gold-price {
+            top: -8px;
+            right: -8px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 20px;
-        }
-
-        .price-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            justify-content: center;
+            font-weight: 600;
         }
 
         /* ========== HERO SECTION ========== */
         .hero {
-            height: 100vh;
-            position: relative;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            position: relative;
             overflow: hidden;
-            padding-top: 180px;
+            padding: 180px 20px 100px;
         }
 
-        .hero-video {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
+            background: linear-gradient(45deg, 
+                rgba(10, 10, 10, 0.9) 0%, 
+                rgba(26, 26, 26, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.8);
         }
 
         .hero-content {
-            text-align: center;
-            max-width: 900px;
-            padding: 0 40px;
-            z-index: 2;
             position: relative;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 5.5rem;
-            color: var(--gold);
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: heroReveal 1s ease forwards 4.5s;
+            z-index: 2;
+            max-width: 800px;
+            margin-left: 100px;
         }
 
         .hero-subtitle {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--gold-light);
-            letter-spacing: 4px;
-            margin-bottom: 40px;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
             opacity: 0;
             transform: translateY(30px);
-            animation: heroReveal 1s ease forwards 4.7s;
+            animation: fadeInUp 1s ease forwards 0.5s;
         }
 
-        @keyframes heroReveal {
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.9s;
+        }
+
+        @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* ========== PRODUCT GALLERY ========== */
+        /* ========== PRODUCTS SECTION ========== */
         .products-section {
-            padding: 150px 40px;
+            padding: 120px 20px;
+            background: var(--bg-secondary);
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
             margin-bottom: 80px;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+        .section-title h2 {
+            font-size: 3.5rem;
             color: var(--gold);
             margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
 
-        .section-title::after {
+        .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: var(--gold);
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
         }
 
-        /* Product View Toggle */
-        .view-toggle {
+        /* VIEW OPTIONS */
+        .view-options {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .view-btn {
-            padding: 12px 30px;
+            padding: 10px 25px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             color: var(--text-secondary);
             border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .view-btn.active,
-        .view-btn:hover {
+        .view-btn.active {
             background: var(--gold);
             color: var(--black);
             border-color: var(--gold);
         }
 
-        /* Grid View */
+        /* PRODUCTS GRID */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 40px;
-            margin-bottom: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
+        /* PRODUCT CARD */
         .product-card {
-            background: var(--black-light);
-            border-radius: var(--border-radius-lg);
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
             overflow: hidden;
             transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .product-card:hover {
-            transform: translateY(-20px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-gold);
             border-color: var(--gold);
         }
 
+        /* PRODUCT IMAGE CONTAINER */
         .product-image-container {
             position: relative;
-            height: 400px;
+            width: 100%;
+            height: 350px;
             overflow: hidden;
+            background: var(--black-light);
         }
 
-        .product-image {
+        .product-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
 
-        .product-card:hover .product-image {
+        .product-card:hover .product-image-container img {
             transform: scale(1.05);
         }
 
-        .product-overlay {
+        /* 360 VIEWER */
+        .viewer-360 {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.9));
-            opacity: 0;
-            transition: var(--transition);
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
             display: flex;
-            align-items: flex-end;
-            padding: 40px;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+            transition: var(--transition);
         }
 
-        .product-card:hover .product-overlay {
+        .viewer-360:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* ZOOM BUTTON */
+        .zoom-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .zoom-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: scale(1.1);
+        }
+
+        /* QUICK VIEW */
+        .quick-view-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .product-card:hover .quick-view-btn {
             opacity: 1;
+        }
+
+        /* PRODUCT INFO */
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-category {
+            font-size: 0.9rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .installment {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
         }
 
         .product-actions {
             display: flex;
             gap: 15px;
-            width: 100%;
         }
 
-        .action-btn {
+        .product-actions .btn {
             flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: var(--border-radius);
+            padding: 12px;
             font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .quick-view-btn {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-        .quick-view-btn:hover {
-            background: var(--gold-dark);
-        }
-
-        .zoom-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
-            backdrop-filter: blur(10px);
-        }
-
-        .zoom-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .product-info {
-            padding: 30px;
-        }
-
-        .product-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-
-        .product-price {
-            font-size: 1.8rem;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        /* ========== 360° VIEWER ========== */
-        .viewer-360 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .viewer-360.active {
-            display: flex;
-        }
-
-        .viewer-container {
-            width: 80%;
-            height: 80%;
-            position: relative;
-        }
-
-        .viewer-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: var(--border-radius-lg);
-        }
-
-        /* ========== PAYMENT OPTIONS ========== */
-        .payment-options {
-            background: var(--black-light);
-            padding: 100px 40px;
-            text-align: center;
-        }
-
-        .payment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 50px auto;
-        }
-
-        .payment-card {
-            background: var(--black);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: var(--transition);
-        }
-
-        .payment-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .payment-icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
         }
 
         /* ========== INSTAGRAM FEED ========== */
         .instagram-feed {
-            padding: 100px 40px;
-            background: var(--black);
+            padding: 100px 20px;
+            background: var(--bg-primary);
         }
 
         .instagram-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .instagram-post {
+        .insta-item {
             position: relative;
-            height: 250px;
-            border-radius: var(--border-radius);
+            height: 300px;
             overflow: hidden;
+            border-radius: var(--border-radius);
         }
 
-        .instagram-post img {
+        .insta-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .instagram-post:hover img {
+        .insta-item:hover img {
             transform: scale(1.1);
+        }
+
+        /* ========== PAYMENT OPTIONS ========== */
+        .payment-options {
+            background: var(--bg-secondary);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .payment-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--gold);
+            transition: var(--transition);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .payment-icon:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-5px);
+            border-color: var(--gold);
         }
 
         /* ========== SOCIAL MEDIA ========== */
         .social-media {
-            background: var(--black-light);
-            padding: 80px 40px;
+            padding: 60px 20px;
+            background: var(--bg-primary);
             text-align: center;
         }
 
@@ -734,96 +866,89 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--black);
+            background: var(--bg-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
             font-size: 1.5rem;
-            text-decoration: none;
+            color: var(--text-primary);
             transition: var(--transition);
-            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transform: translateY(100%);
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .social-icon:hover::before {
+            transform: translateY(0);
+        }
+
+        .social-icon i {
+            position: relative;
+            z-index: 2;
         }
 
         .social-icon:hover {
-            background: var(--gold);
             color: var(--black);
             transform: translateY(-5px);
-            border-color: var(--gold);
         }
 
-        /* Instagram */
-        .social-icon.instagram:hover {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-            color: white;
-        }
-
-        /* WhatsApp */
-        .social-icon.whatsapp:hover {
-            background: #25D366;
-            color: white;
-        }
-
-        /* Snapchat */
-        .social-icon.snapchat:hover {
-            background: #FFFC00;
-            color: black;
-        }
-
-        /* TikTok */
-        .social-icon.tiktok:hover {
-            background: #000000;
-            color: white;
-        }
-
-        /* ========== FOOTER ========== */
-        footer {
-            background: var(--black);
-            padding: 100px 40px 40px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .footer-content {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-column h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-item {
-            display: flex;
+        /* ========== MODALS ========== */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            display: none;
             align-items: center;
-            gap: 15px;
-            color: var(--text-secondary);
+            justify-content: center;
+            padding: 20px;
         }
 
-        .contact-item i {
-            color: var(--gold);
-            font-size: 1.2rem;
-            width: 30px;
+        .modal.active {
+            display: flex;
+        }
+
+        /* 360 VIEWER MODAL */
+        .viewer-modal .modal-content {
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ZOOM MODAL */
+        .zoom-modal .modal-content {
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
         }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1200px) {
             .hero-title {
-                font-size: 4.5rem;
+                font-size: 4rem;
             }
             
             .products-grid {
@@ -832,161 +957,80 @@
         }
 
         @media (max-width: 992px) {
-            .header-container {
-                padding: 0 20px;
+            .hero-content {
+                margin-left: 0;
+                text-align: center;
             }
             
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--black);
-                flex-direction: column;
-                padding: 20px;
-                gap: 20px;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
-            
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            
-            .section-title {
-                font-size: 3rem;
-            }
         }
 
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.5rem;
+            .section-title h2 {
+                font-size: 2.5rem;
             }
             
             .products-grid {
                 grid-template-columns: 1fr;
             }
             
-            .ticker-container {
+            .product-actions {
                 flex-direction: column;
-                gap: 15px;
-                text-align: center;
             }
-        }
-
-        /* ========== UTILITY CLASSES ========== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px 36px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            border: none;
-            gap: 12px;
-        }
-
-        .btn-gold {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-        .btn-gold:hover {
-            background: var(--gold-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-        }
-
-        .btn-outline:hover {
-            background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .visible {
-            display: block !important;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-30 {
-            margin-bottom: 30px;
-        }
-
-        .mb-50 {
-            margin-bottom: 50px;
-        }
-
-        .mt-30 {
-            margin-top: 30px;
-        }
-
-        .mt-50 {
-            margin-top: 50px;
         }
     </style>
 </head>
 <body>
-    <!-- SPARKLE ANIMATIONS -->
-    <div id="sparkles"></div>
+    <!-- SPARKLE ELEMENTS -->
+    <div id="sparkle-container"></div>
 
     <!-- SPLASH SCREEN -->
     <div id="splash-screen">
         <div class="splash-bg"></div>
         <div class="splash-overlay"></div>
+        
         <div class="splash-logo-container">
             <div class="splash-logo">RYAAN</div>
             <div class="splash-tagline">JEWELLERS</div>
         </div>
+        
+        <div class="splash-divider"></div>
         <div class="splash-loading">
             <div class="splash-loading-bar"></div>
         </div>
+        <div class="splash-bottom-text">ESTABLISHED 2024 | DUBAI</div>
     </div>
 
-    <!-- GOLD PRICE TICKER -->
-    <div class="gold-ticker">
-        <div class="ticker-container">
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <!-- LIVE GOLD PRICE -->
             <div class="gold-price">
-                <div class="price-item">
-                    <i class="fas fa-gem"></i>
-                    <span>24K Gold: <span id="gold24k">AED 280.50/g</span></span>
-                </div>
-                <div class="price-item">
-                    <i class="fas fa-ring"></i>
-                    <span>22K Gold: <span id="gold22k">AED 257.30/g</span></span>
-                </div>
-                <div class="price-item">
-                    <i class="fas fa-crown"></i>
-                    <span>18K Gold: <span id="gold18k">AED 210.40/g</span></span>
-                </div>
+                <i class="fas fa-gem"></i>
+                <span id="live-gold-price">24K Gold: AED 275.50/g</span>
             </div>
-            <div class="price-update">
-                <i class="fas fa-sync-alt"></i>
-                <span>Updated: <span id="update-time">Just now</span></span>
+            
+            <!-- LANGUAGE SWITCHER -->
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+            </div>
+            
+            <!-- THEME SWITCHER -->
+            <div class="theme-switcher">
+                <button class="theme-btn" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -994,58 +1038,34 @@
     <!-- HEADER -->
     <header>
         <div class="header-container">
-            <!-- Logo -->
+            <!-- LOGO -->
             <a href="#" class="logo">
-                <img src="images/logo.png" alt="Ryaan Jewellers" class="logo-image">
-                <span>RYAAN</span>
+                <div class="logo-text">RYAAN</div>
             </a>
-
-            <!-- Navigation -->
+            
+            <!-- NAVIGATION -->
             <nav class="nav-links">
                 <a href="#home" class="active">Home</a>
                 <a href="#collections">Collections</a>
-                <a href="#products">Products</a>
-                <a href="#custom">Custom Design</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#products">Jewelry</a>
+                <a href="#instagram">Gallery</a>
+                <a href="#about">Maison</a>
+                <a href="#contact">Appointment</a>
             </nav>
-
-            <!-- Header Controls -->
-            <div class="header-controls">
-                <!-- Language Switcher -->
-                <div class="language-switcher">
-                    <button class="control-btn language-btn">
-                        <i class="fas fa-globe"></i>
-                    </button>
-                    <div class="language-dropdown">
-                        <a href="#" class="lang-option" data-lang="en">English</a>
-                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
-                    </div>
-                </div>
-
-                <!-- Night Mode Toggle -->
-                <button class="control-btn mode-toggle" id="modeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-
-                <!-- Search -->
-                <button class="control-btn search-btn">
+            
+            <!-- HEADER ACTIONS -->
+            <div class="header-actions">
+                <div class="header-icon search-btn">
                     <i class="fas fa-search"></i>
-                </button>
-
-                <!-- Wishlist -->
-                <button class="control-btn wishlist-btn">
+                </div>
+                <div class="header-icon wishlist-btn">
                     <i class="fas fa-heart"></i>
-                </button>
-
-                <!-- Cart -->
-                <button class="control-btn cart-btn">
+                </div>
+                <div class="header-icon cart-btn">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
-                </button>
-
-                <!-- Mobile Menu -->
-                <button class="control-btn mobile-menu-btn">
+                </div>
+                <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -1054,124 +1074,587 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <video autoplay muted loop class="hero-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-gold-jewelry-on-a-dark-background-4996-large.mp4" type="video/mp4">
-        </video>
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Timeless Elegance</h1>
-            <p class="hero-subtitle">Dubai's Premier Jewelry Maison</p>
+            <h2 class="hero-subtitle">RYAAN JEWELLERS </h2>
+            <h1 class="hero-title">Luxury Branded</h1>
+            <p class="hero-description">
+             Each piece is a masterpiece 
+                crafted with exceptional diamonds and 18K gold, reflecting UAE luxurious spirit.
+            </p>
             <div class="hero-buttons">
-                <a href="#collections" class="btn btn-gold">
-                    <i class="fas fa-gem"></i> Explore Collections
-                </a>
-                <a href="#custom" class="btn btn-outline">
-                    <i class="fas fa-pen-fancy"></i> Custom Design
-                </a>
+                <button class="btn btn-gold">
+                    <i class="fas fa-gem"></i> EXPLORE COLLECTIONS
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-calendar"></i> BOOK PRIVATE VIEWING
+                </button>
             </div>
         </div>
     </section>
 
     <!-- PRODUCTS SECTION -->
     <section id="products" class="products-section">
-        <div class="section-header">
-            <h2 class="section-title">Our Collections</h2>
-            <p class="section-subtitle">Handcrafted Luxury Pieces</p>
-        </div>
-
-        <!-- View Toggle -->
-        <div class="view-toggle">
-            <button class="view-btn active" data-view="grid">
-                <i class="fas fa-th"></i> Grid View
-            </button>
-            <button class="view-btn" data-view="list">
-                <i class="fas fa-list"></i> List View
-            </button>
-            <button class="view-btn" data-view="360">
-                <i class="fas fa-sync-alt"></i> 360° View
-            </button>
-        </div>
-
-        <!-- Products Grid -->
-        <div class="products-grid" id="productsGrid">
-            <!-- Products will be loaded by JavaScript -->
-        </div>
-    </section>
-
-    <!-- 360° VIEWER -->
-    <div class="viewer-360" id="viewer360">
-        <div class="viewer-container">
-            <img src="" alt="360 View" class="viewer-image" id="viewerImage">
-            <button class="btn btn-gold viewer-close">
-                <i class="fas fa-times"></i> Close
-            </button>
-        </div>
-    </div>
-
-    <!-- PAYMENT OPTIONS -->
-    <section class="payment-options">
-        <div class="section-header">
-            <h2 class="section-title">Flexible Payment</h2>
-            <p class="section-subtitle">Choose your preferred payment method</p>
-        </div>
-        <div class="payment-grid">
-            <div class="payment-card">
-                <div class="payment-icon">
-                    <i class="fas fa-credit-card"></i>
-                </div>
-                <h3>Credit/Debit Card</h3>
-                <p>Secure payment with all major cards</p>
-                <button class="btn btn-outline mt-30" onclick="processPayment('card')">
-                    Pay Now
+        <div class="container">
+            <div class="section-title">
+                <h2>Haute Joaillerie</h2>
+                <p>Masterpieces Inspired by Luxury Maisons</p>
+            </div>
+            
+            <!-- VIEW OPTIONS -->
+            <div class="view-options">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th-large"></i> Grid View
+                </button>
+                <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i> List View
+                </button>
+                <button class="view-btn" data-view="360">
+                    <i class="fas fa-sync-alt"></i> 360° View
                 </button>
             </div>
-            <div class="payment-card">
-                <div class="payment-icon">
-                    <i class="fab fa-cc-paypal"></i>
-                </div>
-                <h3>PayPal</h3>
-                <p>Fast and secure payment</p>
-                <button class="btn btn-outline mt-30" onclick="processPayment('paypal')">
-                    Pay with PayPal
-                </button>
-            </div>
-            <div class="payment-card">
-                <div class="payment-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <h3>Tabby & Tamara</h3>
-                <p>Buy Now, Pay Later</p>
-                <button class="btn btn-outline mt-30" onclick="showTabbyOptions()">
-                    Installment Plans
-                </button>
+            
+<!-- PRODUCTS GRID -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products loaded by JavaScript -->
             </div>
         </div>
     </section>
 
     <!-- INSTAGRAM FEED -->
-    <section class="instagram-feed">
-        <div class="section-header">
-            <h2 class="section-title">Follow Us</h2>
-            <p class="section-subtitle">@ryaanjewellers</p>
+    <section id="instagram" class="instagram-feed">
+        <div class="container">
+            <div class="section-title">
+                <h2>#RyaanJewellers</h2>
+                <p>Follow Our Instagram for Latest Collections</p>
+            </div>
+            
+            <div class="instagram-grid" id="instagramGrid">
+                <!-- Instagram photos loaded dynamically -->
+            </div>
         </div>
-        <div class="instagram-grid" id="instagramFeed">
-            <!-- Instagram posts loaded by JavaScript -->
+    </section>
+
+    <!-- PAYMENT OPTIONS -->
+    <section class="payment-options">
+        <div class="container">
+            <div class="section-title">
+                <h2>Flexible Payment</h2>
+                <p>Multiple Payment Options Available</p>
+            </div>
+            
+            <div class="payment-icons">
+                <div class="payment-icon" title="Tabby">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="payment-icon" title="Tamara">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="payment-icon" title="Credit Card">
+                    <i class="fab fa-cc-visa"></i>
+                </div>
+                <div class="payment-icon" title="PayPal">
+                    <i class="fab fa-paypal"></i>
+                </div>
+                <div class="payment-icon" title="Apple Pay">
+                    <i class="fab fa-apple-pay"></i>
+                </div>
+                <div class="payment-icon" title="Bank Transfer">
+                    <i class="fas fa-university"></i>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- SOCIAL MEDIA -->
     <section class="social-media">
-        <div class="section-header">
-            <h2 class="section-title">Connect With Us</h2>
+        <div class="container">
+            <div class="section-title">
+                <h2>Connect With Us</h2>
+                <p>Follow Our Journey</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
         </div>
-        <div class="social-icons">
-            <a href="https://instagram.com/ryaanjewellers" class="social-icon instagram" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/971501234567" class="social-icon whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://snapchat.com/add/ryaanjewels" class="social-icon snapchat" target="_blank">
-                <i class="fab fa-snapchat-ghost"></i>
-            </a>
-            <a href="https://tiktok.com/@ryaanjewellers" class="social-icon tiktok" target="_blank">
-                <i class="fab fa-tiktok"></
+    </section>
+
+    <!-- MODALS -->
+    <div class="modal viewer-modal" id="viewerModal">
+        <div class="modal-content">
+            <!-- 360 viewer will be loaded here -->
+        </div>
+    </div>
+    
+    <div class="modal zoom-modal" id="zoomModal">
+        <div class="modal-content">
+            <!-- Zoom viewer will be loaded here -->
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-rotate-zoom@1.0.0/jquery.rotate-zoom.min.js"></script>
+    
+    <script>
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize everything
+            initSparkles();
+            initSplashScreen();
+            initProducts();
+            initInstagram();
+            initGoldPrice();
+            initEventListeners();
+        });
+
+        // ========== SPARKLE ANIMATIONS ==========
+        function initSparkles() {
+            const container = document.getElementById('sparkle-container');
+            const sparkleCount = 50;
+            
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // Random position
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                
+                // Random size
+                const size = Math.random() * 6 + 2;
+                sparkle.style.width = size + 'px';
+                sparkle.style.height = size + 'px';
+                
+                // Random animation delay
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(sparkle);
+            }
+        }
+
+        // ========== SPLASH SCREEN ==========
+        function initSplashScreen() {
+            setTimeout(() => {
+                const splashScreen = document.getElementById('splash-screen');
+                splashScreen.classList.add('hidden');
+                
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1000);
+            }, 4000);
+        }
+
+        // ========== LIVE GOLD PRICE ==========
+        function initGoldPrice() {
+            // Simulate live gold price updates
+            const goldPrices = {
+                '24K': [275.50, 276.25, 274.80, 277.10, 275.90],
+                '22K': [258.25, 259.10, 257.50, 259.80, 258.40],
+                '18K': [206.80, 207.50, 206.00, 208.20, 207.10]
+            };
+            
+            function updateGoldPrice() {
+                const type = '24K';
+                const prices = goldPrices[type];
+                const randomPrice = prices[Math.floor(Math.random() * prices.length)];
+                document.getElementById('live-gold-price').textContent = 
+                    `${type} Gold: AED ${randomPrice.toFixed(2)}/g`;
+            }
+            
+            updateGoldPrice();
+            setInterval(updateGoldPrice, 30000); // Update every 30 seconds
+        }
+
+        // ========== LANGUAGE SWITCHER ==========
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (lang === 'ar') {
+                document.body.classList.add('arabic');
+                document.body.dir = 'rtl';
+                document.title = 'ريان جويليرز | دار مجوهرات فاخرة دبي';
+            } else {
+                document.body.classList.remove('arabic');
+                document.body.dir = 'ltr';
+                document.title = 'RYAAN JEWELLERS | Luxury Maison Dubai';
+            }
+        }
+
+        // ========== THEME SWITCHER ==========
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const themeBtn = document.querySelector('.theme-btn i');
+            if (document.body.classList.contains('light-mode')) {
+                themeBtn.className = 'fas fa-sun';
+            } else {
+                themeBtn.className = 'fas fa-moon';
+            }
+        }
+
+        // ========== PRODUCTS ==========
+        const products = [
+            {
+                id: 1,
+                name: "Chopard Inspired 3 Diamond Chain & Pendant",
+                category: "necklaces",
+                price: 28900,
+                image: "Screenshot_20251129_014405_Chrome.jpg",
+                description: "Exquisite Chopard-inspired necklace featuring three brilliant diamonds set in 18K white gold.",
+                installment: "AED 963/month with Tabby",
+                tags: ["diamond", "chopard", "white-gold"]
+            },
+            {
+                id: 2,
+                name: "Messika UNO Full Diamond Earrings - Yellow Gold",
+                category: "earrings",
+                price: 18900,
+                image: "Screenshot_20251129_014443_Chrome.jpg",
+                description: "Luxurious Messika-inspired diamond earrings in 18K yellow gold.",
+                installment: "AED 630/month with Tamara",
+                tags: ["diamond", "messika", "yellow-gold"]
+            },
+            {
+                id: 3,
+                name: "Messika Chain & Pendant - White Gold",
+                category: "necklaces",
+                price: 32900,
+                image: "Screenshot_20251129_014511_Chrome.jpg",
+                description: "Sophisticated Messika-inspired chain and pendant in 18K white gold.",
+                installment: "AED 1,097/month with Tabby",
+                tags: ["diamond", "messika", "white-gold"]
+            },
+            {
+                id: 4,
+                name: "Messika Diamond Ring - Rose Gold",
+                category: "rings",
+                price: 15900,
+                image: "Screenshot_20251129_014550_Chrome.jpg",
+                description: "Elegant Messika-inspired diamond ring set in 18K rose gold.",
+                installment: "AED 530/month with Tamara",
+                tags: ["diamond", "messika", "rose-gold"]
+            },
+            {
+                id: 5,
+                name: "Messika Duo Diamond Ring - Rose Gold",
+                category: "rings",
+                price: 21900,
+                image: "Screenshot_20251129_014553_Chrome.jpg",
+                description: "Stunning Messika-inspired duo diamond ring in 18K rose gold.",
+                installment: "AED 730/month with Tabby",
+                tags: ["diamond", "messika", "rose-gold"]
+            },
+            {
+                id: 6,
+                name: "Messika UNO 5-Motif Diamond Necklace",
+                category: "necklaces",
+                price: 45900,
+                image: "Screenshot_20251129_014606_Chrome.jpg",
+                description: "Luxurious Messika-inspired necklace with five diamond motifs.",
+                installment: "AED 1,530/month with Tabby",
+                tags: ["diamond", "messika", "white-gold"]
+            },
+            {
+                id: 7,
+                name: "Messika Tie-Band Diamond Bracelet",
+                category: "bracelets",
+                price: 27900,
+                image: "Screenshot_20251129_014624_Chrome.jpg",
+                description: "Elegant Messika-inspired tie-band bracelet featuring brilliant diamonds.",
+                installment: "AED 930/month with Tamara",
+                tags: ["diamond", "messika", "white-gold"]
+            },
+            {
+                id: 8,
+                name: "Messika Full-Diamond Bangle - Rose Gold",
+                category: "bracelets",
+                price: 38900,
+                image: "Screenshot_20251129_014633_Chrome.jpg",
+                description: "Luxurious full-diamond bangle in 18K rose gold.",
+                installment: "AED 1,297/month with Tabby",
+                tags: ["diamond", "messika", "rose-gold"]
+            },
+            {
+                id: 9,
+                name: "Messika Diamond Ring - Rose Gold",
+                category: "rings",
+                price: 17900,
+                image: "Screenshot_20251129_014643_Chrome.jpg",
+                description: "Beautiful Messika-inspired diamond ring in 18K rose gold.",
+                installment: "AED 597/month with Tamara",
+                tags: ["diamond", "messika", "rose-gold"]
+            }
+        ];
+
+        function initProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzIyMiIvPjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5KZXdlbHJ5PC90ZXh0Pjwvc3ZnPg=='">
+                        
+                        <!-- 360 VIEWER BUTTON -->
+                        <div class="viewer-360" onclick="open360Viewer(${product.id})">
+                            <i class="fas fa-sync-alt"></i> 360° View
+                        </div>
+                        
+                        <!-- ZOOM BUTTON -->
+                        <div class="zoom-btn" onclick="openZoomViewer(${product.id})">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        
+                        <!-- QUICK VIEW BUTTON -->
+                        <button class="quick-view-btn" onclick="quickView(${product.id})">
+                            <i class="fas fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-category">${product.category.toUpperCase()}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        
+                        <div class="product-price">
+                            AED ${product.price.toLocaleString()}
+                            <span class="installment">${product.installment}</span>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="btn btn-gold" onclick="addToCart(${product.id})">
+                                <i class="fas fa-shopping-bag"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-outline" onclick="addToWishlist(${product.id})">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // ========== INSTAGRAM FEED ==========
+        function initInstagram() {
+            // Instagram photos will be loaded here
+            // You'll need to connect to Instagram API
+            const instagramGrid = document.getElementById('instagramGrid');
+            
+            // Placeholder for now
+            for (let i = 1; i <= 6; i++) {
+                const instaItem = document.createElement('div');
+                instaItem.className = 'insta-item';
+                instaItem.innerHTML = `
+                    <img src="https://images.unsplash.com/photo-${1500000000000 + i}?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Instagram ${i}">
+                `;
+                instagramGrid.appendChild(instaItem);
+            }
+        }
+
+        // ========== 360 VIEWER ==========
+        function open360Viewer(productId) {
+            const product = products.find(p => p.id === productId);
+            const modal = document.getElementById('viewerModal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('viewerModal')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h3>${product.name} - 360° View</h3>
+                    <div class="viewer-container" style="width: 100%; height: 70vh;">
+                        <!-- 360 viewer would go here -->
+                        <img src="${product.image}" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+            `;
+            modal.classList.add('active');
+        }
+
+        // ========== ZOOM VIEWER ==========
+        function openZoomViewer(productId) {
+            const product = products.find(p => p.id === productId);
+            const modal = document.getElementById('zoomModal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('zoomModal')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h3>${product.name} - Zoom View</h3>
+                    <div class="zoom-container" style="width: 100%; height: 70vh;">
+                        <img src="${product.image}" style="width: 100%; height: 100%; object-fit: contain;" 
+                             class="zoom-image">
+                    </div>
+                </div>
+            `;
+            modal.classList.add('active');
+            
+            // Initialize zoom functionality
+            $('.zoom-image').rotateZoom({
+                zoom: 200,
+                rotate: true,
+                scrollZoom: true,
+                zoomWindowStyle: 'background-color: rgba(0,0,0,0.8);'
+            });
+        }
+
+        // ========== MODAL FUNCTIONS ==========
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // ========== CART SYSTEM ==========
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = count;
+        }
+
+        // ========== WISHLIST ==========
+        function addToWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            showNotification(`${product.name} added to wishlist!`);
+        }
+
+        // ========== NOTIFICATION ==========
+        function showNotification(message) {
+            // Create notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--gold);
+                color: var(--black);
+                padding: 15px 25px;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow-gold);
+                z-index: 4000;
+                transform: translateX(150%);
+                transition: transform 0.3s ease;
+                max-width: 300px;
+                font-weight: 600;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Animate out
+            setTimeout(() => {
+                notification.style.transform = 'translateX(150%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // ========== EVENT LISTENERS ==========
+        function initEventListeners() {
+            // View options
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const view = this.dataset.view;
+                    const grid = document.getElementById('productsGrid');
+                    
+                    if (view === 'list') {
+                        grid.style.gridTemplateColumns = '1fr';
+                    } else {
+                        grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(350px, 1fr))';
+                    }
+                });
+            });
+            
+            // Close modals on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal').forEach(modal => {
+                        modal.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Close modals on overlay click
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Mobile menu
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                document.querySelector('.nav-links').style.display = 
+                    document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        // Initialize cart count
+        updateCartCount();
+    </script>
+</body>
+</html>
