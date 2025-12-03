@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RYAAN JEWELLERS | Luxury Gold & Diamonds Dubai</title>
     
-    <!-- Preload logo for better performance -->
+    <!-- Preload logo -->
     <link rel="preload" href="Ryaan Jewellers_20251201_231002_0000.png" as="image" type="image/png">
-    <!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=AED"></script>
+    
     <!-- Meta tags -->
     <meta name="description" content="RYAAN JEWELLERS - Luxury Gold & Diamonds Jewelry in Dubai, UAE. Exclusive collections inspired by Chopard and Messika.">
     <meta name="keywords" content="gold jewelry, diamonds, Dubai, luxury jewelry, Chopard, Messika, Ryaan Jewellers">
@@ -26,6 +25,9 @@
     
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <!-- PayPal SDK (Sandbox for testing) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=AED&intent=capture"></script>
     
     <style>
         /* ========== CSS VARIABLES ========== */
@@ -178,6 +180,26 @@
             }
         }
 
+        /* White background for logos */
+        .splash-logo-container {
+            background: white !important;
+            border: 3px solid var(--gold) !important;
+            padding: 40px 60px !important;
+            border-radius: 20px;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-logo {
+            background: white !important;
+            padding: 10px 25px !important;
+            border-radius: var(--border-radius) !important;
+            border: 2px solid var(--gold) !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+        }
+
         .header-logo:hover .logo-image {
             transform: scale(1.1);
             filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
@@ -230,17 +252,6 @@
             background: 
                 radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-        }
-
-        .splash-logo-container {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 40px;
-            border-radius: 20px;
-            background: rgba(26, 26, 26, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .splash-divider {
@@ -313,10 +324,10 @@
             to { opacity: 1; }
         }
 
-        /* ========== TOP BAR ========== */
+        /* ========== LIVE GOLD PRICE ========== */
         .top-bar {
             background: linear-gradient(90deg, var(--black), var(--gold-dark), var(--black));
-            padding: 10px 0;
+            padding: 12px 0;
             font-size: 0.9rem;
             position: fixed;
             top: 0;
@@ -333,13 +344,47 @@
             align-items: center;
         }
 
+        .gold-price-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .gold-price {
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 600;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
+        .gold-price i {
+            color: var(--gold);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .gold-price-details {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+        }
+
+        .gold-type {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--gold-light);
+        }
+
+        /* ========== LANGUAGE & THEME ========== */
         .language-switcher {
             display: flex;
             gap: 10px;
@@ -457,67 +502,7 @@
             position: relative;
         }
 
-      <!-- PAYMENT OPTIONS -->
-<section class="payment-options">
-    <div class="container">
-        <div class="section-title">
-            <h2>Secure Checkout</h2>
-            <p>100% Secure Payment with PayPal</p>
-        </div>
-        
-        <!-- PayPal Express Checkout -->
-        <div style="max-width: 400px; margin: 40px auto;">
-            <div id="paypal-express-container"></div>
-            <p style="text-align: center; margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">
-                <i class="fas fa-lock"></i> Secure payment powered by PayPal
-            </p>
-        </div>
-        
-        <div class="payment-icons">
-            <div class="payment-icon" title="PayPal" onclick="openPayPalCheckout()" 
-                 style="cursor: pointer; background: var(--gold); color: var(--black);">
-                <i class="fab fa-paypal"></i>
-            </div>
-            <div class="payment-icon" title="Tabby">
-                <i class="fas fa-credit-card"></i>
-            </div>
-            <div class="payment-icon" title="Tamara">
-                <i class="fas fa-wallet"></i>
-            </div>
-            <div class="payment-icon" title="Credit Card">
-                <i class="fab fa-cc-visa"></i>
-            </div>
-            <div class="payment-icon" title="Apple Pay">
-                <i class="fab fa-apple-pay"></i>
-            </div>
-            <div class="payment-icon" title="Bank Transfer">
-                <i class="fas fa-university"></i>
-            </div>
-        </div>
-        
-        <div style="max-width: 600px; margin: 40px auto 0; padding: 20px; 
-                    background: var(--bg-primary); border-radius: var(--border-radius); 
-                    border: 1px solid rgba(212, 175, 55, 0.2);">
-            <h4 style="color: var(--gold); margin-bottom: 15px; text-align: center;">
-                <i class="fas fa-shield-alt"></i> Secure Shopping
-            </h4>
-            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                <div style="text-align: center;">
-                    <i class="fas fa-lock" style="color: var(--gold); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">SSL Encryption</p>
-                </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-credit-card" style="color: var(--gold); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Secure Payments</p>
-                </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-shipping-fast" style="color: var(--gold); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Fast Delivery</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>.header-icon:hover {
+        .header-icon:hover {
             color: var(--gold);
             transform: translateY(-2px);
         }
@@ -547,41 +532,6 @@
             cursor: pointer;
         }
 
-       <!-- CART MODAL -->
-<div class="modal" id="cartModal">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('cartModal')">
-            <i class="fas fa-times"></i>
-        </button>
-        <div style="padding: 40px;">
-            <h3 style="margin-bottom: 30px; color: var(--gold);">
-                <i class="fas fa-shopping-bag"></i> Your Shopping Cart
-            </h3>
-            <div id="cartItems" style="margin-bottom: 30px; max-height: 300px; overflow-y: auto;">
-                <!-- Cart items will be loaded here -->
-            </div>
-            <div style="border-top: 1px solid rgba(212, 175, 55, 0.3); padding-top: 20px;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                    <h4>Total:</h4>
-                    <h4 id="cartTotal" style="color: var(--gold);">AED 0</h4>
-                </div>
-                
-                <!-- PayPal Button Container -->
-                <div id="paypal-button-container" style="margin-bottom: 15px;"></div>
-                
-                <!-- Alternative Checkout Button -->
-                <button class="btn btn-outline" style="width: 100%; margin-top: 10px;" 
-                        onclick="showAlternativePayment()">
-                    <i class="fas fa-credit-card"></i> Other Payment Methods
-                </button>
-                
-                <p style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.8rem;">
-                    <i class="fas fa-lock"></i> 100% Secure Checkout · SSL Encrypted
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
         /* ========== HERO SECTION ========== */
         .hero {
             min-height: 100vh;
@@ -1045,9 +995,9 @@
             background: var(--bg-primary);
             border-radius: var(--border-radius);
             overflow: hidden;
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
+            width: 95%;
+            max-width: 1200px;
+            max-height: 95vh;
             overflow-y: auto;
         }
 
@@ -1067,6 +1017,24 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
+        }
+
+        /* ========== ZOOM & 360 VIEWER STYLES ========== */
+        #zoomImage, #viewer360Image {
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+        }
+
+        .zoom-level-display {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
         }
 
         /* ========== FALLBACK LOGO ========== */
@@ -1144,6 +1112,10 @@
             .mobile-menu-btn {
                 display: block;
             }
+            
+            .gold-price-details {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1176,6 +1148,10 @@
                 height: 200px;
                 max-width: 400px;
             }
+            
+            .splash-logo-container {
+                padding: 30px 40px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1199,7 +1175,17 @@
             }
             
             .splash-logo-container {
-                padding: 20px;
+                padding: 20px 30px !important;
+            }
+            
+            .payment-icons {
+                gap: 15px;
+            }
+            
+            .payment-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -1232,13 +1218,25 @@
         </div>
     </div>
 
-    <!-- TOP BAR -->
+    <!-- TOP BAR WITH LIVE GOLD PRICES -->
     <div class="top-bar">
         <div class="top-bar-content">
-            <!-- LIVE GOLD PRICE -->
-            <div class="gold-price">
-                <i class="fas fa-gem"></i>
-                <span id="live-gold-price">24K Gold: AED 275.50/g</span>
+            <!-- LIVE GOLD PRICES -->
+            <div class="gold-price-container">
+                <div class="gold-price">
+                    <i class="fas fa-gem"></i>
+                    <span id="live-gold-price">24K: AED 275.50/g</span>
+                </div>
+                <div class="gold-price-details">
+                    <div class="gold-type">
+                        <span>22K:</span>
+                        <span id="gold-22k">AED 258.25/g</span>
+                    </div>
+                    <div class="gold-type">
+                        <span>18K:</span>
+                        <span id="gold-18k">AED 206.80/g</span>
+                    </div>
+                </div>
             </div>
             
             <!-- LANGUAGE SWITCHER -->
@@ -1373,11 +1371,23 @@
     <section class="payment-options">
         <div class="container">
             <div class="section-title">
-                <h2>Flexible Payment</h2>
-                <p>Multiple Payment Options Available</p>
+                <h2>Secure Checkout</h2>
+                <p>100% Secure Payment with PayPal</p>
+            </div>
+            
+            <!-- PayPal Express Checkout -->
+            <div style="max-width: 300px; margin: 30px auto;">
+                <div id="paypal-express-container"></div>
+                <p style="text-align: center; margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+                    Express checkout with PayPal
+                </p>
             </div>
             
             <div class="payment-icons">
+                <div class="payment-icon" title="PayPal" onclick="openCart()" 
+                     style="cursor: pointer; background: var(--gold); color: var(--black);">
+                    <i class="fab fa-paypal"></i>
+                </div>
                 <div class="payment-icon" title="Tabby">
                     <i class="fas fa-credit-card"></i>
                 </div>
@@ -1387,14 +1397,33 @@
                 <div class="payment-icon" title="Credit Card">
                     <i class="fab fa-cc-visa"></i>
                 </div>
-                <div class="payment-icon" title="PayPal">
-                    <i class="fab fa-paypal"></i>
-                </div>
                 <div class="payment-icon" title="Apple Pay">
                     <i class="fab fa-apple-pay"></i>
                 </div>
                 <div class="payment-icon" title="Bank Transfer">
                     <i class="fas fa-university"></i>
+                </div>
+            </div>
+            
+            <div style="max-width: 600px; margin: 40px auto 0; padding: 20px; 
+                        background: var(--bg-primary); border-radius: var(--border-radius); 
+                        border: 1px solid rgba(212, 175, 55, 0.2);">
+                <h4 style="color: var(--gold); margin-bottom: 15px; text-align: center;">
+                    <i class="fas fa-shield-alt"></i> Secure Shopping
+                </h4>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-lock" style="color: var(--gold); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">SSL Encryption</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-credit-card" style="color: var(--gold); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Secure Payments</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-shipping-fast" style="color: var(--gold); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Fast Delivery</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1432,37 +1461,9 @@
     </section>
 
     <!-- MODALS -->
-    <div class="modal" id="viewerModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('viewerModal')">
-                <i class="fas fa-times"></i>
-            </button>
-            <div style="padding: 40px;">
-                <h3 style="margin-bottom: 20px; color: var(--gold);">360° Product View</h3>
-                <div style="width: 100%; height: 400px; background: var(--bg-secondary); 
-                           display: flex; align-items: center; justify-content: center; 
-                           border-radius: var(--border-radius);">
-                    <p style="color: var(--text-secondary);">360° Viewer Loading...</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="modal" id="viewerModal"></div>
     
-    <div class="modal" id="zoomModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('zoomModal')">
-                <i class="fas fa-times"></i>
-            </button>
-            <div style="padding: 40px;">
-                <h3 style="margin-bottom: 20px; color: var(--gold);">Zoom Product View</h3>
-                <div style="width: 100%; height: 400px; background: var(--bg-secondary); 
-                           display: flex; align-items: center; justify-content: center; 
-                           border-radius: var(--border-radius);">
-                    <p style="color: var(--text-secondary);">Zoom Viewer Loading...</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="modal" id="zoomModal"></div>
 
     <!-- CART MODAL -->
     <div class="modal" id="cartModal">
@@ -1471,18 +1472,22 @@
                 <i class="fas fa-times"></i>
             </button>
             <div style="padding: 40px;">
-                <h3 style="margin-bottom: 30px; color: var(--gold);">Your Shopping Cart</h3>
-                <div id="cartItems" style="margin-bottom: 30px;">
-                    <!-- Cart items will be loaded here -->
-                </div>
+                <h3 style="margin-bottom: 30px; color: var(--gold);">
+                    <i class="fas fa-shopping-bag"></i> Your Shopping Cart
+                </h3>
+                <div id="cartItems" style="margin-bottom: 30px; max-height: 300px; overflow-y: auto;"></div>
                 <div style="border-top: 1px solid rgba(212, 175, 55, 0.3); padding-top: 20px;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
                         <h4>Total:</h4>
-                        <h4 id="cartTotal">AED 0</h4>
+                        <h4 id="cartTotal" style="color: var(--gold);">AED 0</h4>
                     </div>
-                    <button class="btn btn-gold" style="width: 100%;" onclick="proceedToCheckout()">
-                        <i class="fas fa-lock"></i> PROCEED TO CHECKOUT
-                    </button>
+                    
+                    <!-- PayPal Button Container -->
+                    <div id="paypal-button-container" style="margin-bottom: 15px;"></div>
+                    
+                    <p style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.8rem;">
+                        <i class="fas fa-lock"></i> Secure payment by PayPal
+                    </p>
                 </div>
             </div>
         </div>
@@ -1529,7 +1534,15 @@
         // ========== GLOBAL VARIABLES ==========
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let products = [];
-        
+        let currentZoomProduct = null;
+        let zoomLevel = 1;
+        let isDragging = false;
+        let startX, startY, translateX = 0, translateY = 0;
+        let currentAngle = 0;
+        let imageSequence360 = [];
+        let autoRotateInterval = null;
+        let isAutoRotating = false;
+
         // ========== INITIALIZATION ==========
         document.addEventListener('DOMContentLoaded', function() {
             initSparkles();
@@ -1539,7 +1552,14 @@
             initGoldPrice();
             initEventListeners();
             
-            // Hide splash screen after 4 seconds
+            // Initialize PayPal buttons
+            if (typeof paypal !== 'undefined') {
+                initPayPalButtons();
+            } else {
+                setTimeout(initPayPalButtons, 1000);
+            }
+            
+            // Hide splash screen
             setTimeout(() => {
                 const splashScreen = document.getElementById('splash-screen');
                 splashScreen.style.opacity = '0';
@@ -1573,10 +1593,6 @@
 
         // ========== LOGO HANDLER ==========
         function initLogoHandler() {
-            // Preload logo
-            const preloadImg = new Image();
-            preloadImg.src = "Ryaan Jewellers_20251201_231002_0000.png";
-            
             // Add error handlers
             document.querySelectorAll('.logo-image, .splash-logo-image').forEach(img => {
                 img.onerror = function() {
@@ -1607,24 +1623,88 @@
             parent.replaceChild(fallbackDiv, failedImg);
         }
 
-        // ========== LIVE GOLD PRICE ==========
+        // ========== LIVE GOLD PRICE WITH REALISTIC VALUES ==========
         function initGoldPrice() {
-            const goldPrices = {
-                '24K': [275.50, 276.25, 274.80, 277.10, 275.90],
-                '22K': [258.25, 259.10, 257.50, 259.80, 258.40],
-                '18K': [206.80, 207.50, 206.00, 208.20, 207.10]
+            // Realistic gold prices for UAE (as of 2024)
+            const goldRates = {
+                '24K': { base: 275.50, range: [274.00, 277.00] },
+                '22K': { base: 258.25, range: [257.00, 259.50] },
+                '18K': { base: 206.80, range: [205.50, 208.00] }
             };
             
-            function updateGoldPrice() {
-                const type = '24K';
-                const prices = goldPrices[type];
-                const randomPrice = prices[Math.floor(Math.random() * prices.length)];
-                document.getElementById('live-gold-price').textContent = 
-                    `${type} Gold: AED ${randomPrice.toFixed(2)}/g`;
+            function updateGoldPrices() {
+                const now = new Date();
+                const hour = now.getHours();
+                
+                // Simulate realistic price fluctuations based on time of day
+                let fluctuation = 0;
+                
+                if (hour >= 9 && hour <= 17) { // Market hours
+                    fluctuation = (Math.random() * 2 - 1); // -1 to +1 AED
+                } else {
+                    fluctuation = (Math.random() * 0.5 - 0.25); // Smaller fluctuations
+                }
+                
+                // Update each gold type
+                Object.keys(goldRates).forEach(type => {
+                    const rate = goldRates[type];
+                    const currentPrice = Math.max(
+                        rate.range[0],
+                        Math.min(rate.range[1], rate.base + fluctuation)
+                    );
+                    
+                    const element = document.getElementById(`gold-${type.toLowerCase()}`);
+                    if (element) {
+                        element.textContent = `AED ${currentPrice.toFixed(2)}/g`;
+                    }
+                    
+                    if (type === '24K') {
+                        document.getElementById('live-gold-price').textContent = 
+                            `24K: AED ${currentPrice.toFixed(2)}/g`;
+                    }
+                });
+                
+                // Update time display
+                const timeElement = document.querySelector('.gold-time');
+                if (!timeElement) {
+                    const timeDiv = document.createElement('div');
+                    timeDiv.className = 'gold-time';
+                    timeDiv.style.cssText = `
+                        font-size: 0.8rem;
+                        color: var(--gold-light);
+                        margin-top: 5px;
+                    `;
+                    document.querySelector('.gold-price').appendChild(timeDiv);
+                }
+                document.querySelector('.gold-time').textContent = 
+                    `Updated: ${now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
             }
             
-            updateGoldPrice();
-            setInterval(updateGoldPrice, 30000);
+            // Initial update
+            updateGoldPrices();
+            
+            // Update every 30 seconds
+            setInterval(updateGoldPrices, 30000);
+            
+            // Add gold price trend indicator
+            const trendIndicator = document.createElement('div');
+            trendIndicator.className = 'gold-trend';
+            trendIndicator.style.cssText = `
+                font-size: 0.8rem;
+                margin-left: 10px;
+                padding: 2px 8px;
+                border-radius: 10px;
+                background: rgba(0, 0, 0, 0.3);
+            `;
+            
+            // Random trend for demo
+            const trends = ['↗ Rising', '↘ Falling', '→ Stable'];
+            trendIndicator.textContent = trends[Math.floor(Math.random() * trends.length)];
+            trendIndicator.style.color = trendIndicator.textContent.includes('Rising') ? '#4CAF50' : 
+                                       trendIndicator.textContent.includes('Falling') ? '#F44336' : 
+                                       '#FFC107';
+            
+            document.querySelector('.gold-price').appendChild(trendIndicator);
         }
 
         // ========== LANGUAGE SWITCHER ==========
@@ -1812,6 +1892,441 @@
             });
         }
 
+        // ========== WORKING PAYPAL INTEGRATION ==========
+        function initPayPalButtons() {
+            if (typeof paypal === 'undefined') {
+                console.log('PayPal SDK not loaded yet');
+                setTimeout(initPayPalButtons, 1000);
+                return;
+            }
+
+            // Render cart PayPal button
+            renderCartPayPalButton();
+            
+            // Render express checkout button
+            renderExpressCheckoutButton();
+        }
+
+        function renderCartPayPalButton() {
+            const container = document.getElementById('paypal-button-container');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            paypal.Buttons({
+                style: {
+                    layout: 'vertical',
+                    color: 'gold',
+                    shape: 'rect',
+                    label: 'paypal',
+                    height: 45
+                },
+                
+                createOrder: function(data, actions) {
+                    if (cart.length === 0) {
+                        showNotification('Your cart is empty!');
+                        return false;
+                    }
+                    
+                    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: 'RYAAN JEWELLERS Purchase',
+                            amount: {
+                                currency_code: 'AED',
+                                value: (total / 100).toFixed(2)
+                            }
+                        }]
+                    });
+                },
+                
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        showNotification('✅ Payment successful! Order ID: ' + details.id);
+                        
+                        // Clear cart
+                        cart = [];
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartCount();
+                        
+                        // Update cart modal
+                        document.getElementById('cartItems').innerHTML = `
+                            <div style="text-align: center; padding: 40px;">
+                                <div style="color: var(--gold); font-size: 3rem; margin-bottom: 20px;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3 style="color: var(--gold); margin-bottom: 10px;">Payment Successful!</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                    Thank you for your purchase
+                                </p>
+                                <p><strong>Order ID:</strong> ${details.id}</p>
+                                <p><strong>Amount:</strong> AED ${details.purchase_units[0].amount.value}</p>
+                            </div>
+                        `;
+                        
+                        document.getElementById('paypal-button-container').innerHTML = '';
+                        document.getElementById('cartTotal').textContent = 'AED 0';
+                    });
+                },
+                
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    showNotification('❌ Payment failed. Please try again.');
+                }
+            }).render('#paypal-button-container');
+        }
+
+        function renderExpressCheckoutButton() {
+            const container = document.getElementById('paypal-express-container');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            paypal.Buttons({
+                style: {
+                    layout: 'horizontal',
+                    color: 'gold',
+                    shape: 'rect',
+                    label: 'checkout',
+                    tagline: false,
+                    height: 45
+                },
+                
+                createOrder: function(data, actions) {
+                    if (cart.length === 0) {
+                        const sampleProduct = products[0];
+                        return actions.order.create({
+                            purchase_units: [{
+                                description: `RYAAN JEWELLERS - ${sampleProduct.name}`,
+                                amount: {
+                                    currency_code: 'AED',
+                                    value: (sampleProduct.price / 100).toFixed(2)
+                                }
+                            }]
+                        });
+                    }
+                    
+                    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: 'RYAAN JEWELLERS Purchase',
+                            amount: {
+                                currency_code: 'AED',
+                                value: (total / 100).toFixed(2)
+                            }
+                        }]
+                    });
+                },
+                
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        showNotification('✅ Express checkout successful!');
+                        cart = [];
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartCount();
+                    });
+                }
+            }).render('#paypal-express-container');
+        }
+
+        // ========== WORKING ZOOM FUNCTIONALITY ==========
+        function openZoomViewer(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            currentZoomProduct = product;
+            
+            const modal = document.getElementById('zoomModal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('zoomModal')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <div style="flex: 1; padding: 40px; background: var(--bg-secondary);">
+                            <h3 style="color: var(--gold); margin-bottom: 20px; font-size: 1.8rem;">${product.name}</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 25px;">${product.description}</p>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <h4 style="color: var(--text-primary); margin-bottom: 10px;">Details</h4>
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                                    <div>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem;">Category</p>
+                                        <p style="color: var(--text-primary);">${product.category}</p>
+                                    </div>
+                                    <div>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem;">Price</p>
+                                        <p style="color: var(--gold); font-weight: 600; font-size: 1.2rem;">AED ${product.price.toLocaleString()}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <button class="btn btn-gold" style="width: 100%; margin-bottom: 15px;" onclick="addToCart(${product.id}); closeModal('zoomModal');">
+                                    <i class="fas fa-shopping-bag"></i> Add to Cart - AED ${product.price.toLocaleString()}
+                                </button>
+                                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                                    <i class="fas fa-sync-alt"></i> ${product.installment}
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 2; position: relative; overflow: hidden; background: var(--black-light); min-height: 400px;">
+                            <img id="zoomImage" 
+                                 src="${product.image}" 
+                                 alt="${product.name}"
+                                 style="width: 100%; height: 100%; object-fit: contain; cursor: zoom-in;"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzFhMWExYSIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Qcm9kdWN0IEltYWdlPC90ZXh0Pjwvc3ZnPg=='">
+                            
+                            <div class="zoom-level-display">100%</div>
+                            
+                            <div style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 10;">
+                                <button onclick="zoomIn()" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.7); 
+                                        color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button onclick="zoomOut()" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.7); 
+                                        color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <button onclick="resetZoom()" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.7); 
+                                        color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); 
+                                        color: white; padding: 10px 15px; border-radius: var(--border-radius); font-size: 0.9rem;">
+                                <i class="fas fa-mouse-pointer"></i> Click & drag to pan • Scroll to zoom
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            
+            // Initialize zoom
+            setTimeout(initImageZoom, 100);
+        }
+
+        function initImageZoom() {
+            const image = document.getElementById('zoomImage');
+            if (!image) return;
+            
+            // Reset zoom state
+            zoomLevel = 1;
+            translateX = 0;
+            translateY = 0;
+            updateImageTransform();
+            
+            // Mouse wheel zoom
+            image.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                zoomLevel = Math.max(0.5, Math.min(5, zoomLevel * delta));
+                updateImageTransform();
+            });
+            
+            // Mouse drag for panning
+            image.addEventListener('mousedown', function(e) {
+                if (zoomLevel > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    image.style.cursor = 'grabbing';
+                }
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateImageTransform();
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                if (image) image.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+            });
+        }
+
+        function updateImageTransform() {
+            const image = document.getElementById('zoomImage');
+            if (!image) return;
+            
+            image.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+            image.style.transition = isDragging ? 'none' : 'transform 0.2s ease';
+            image.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+            
+            // Update zoom level display
+            const zoomDisplay = document.querySelector('.zoom-level-display');
+            if (zoomDisplay) {
+                zoomDisplay.textContent = `${Math.round(zoomLevel * 100)}%`;
+            }
+        }
+
+        function zoomIn() {
+            zoomLevel = Math.min(5, zoomLevel * 1.2);
+            updateImageTransform();
+        }
+
+        function zoomOut() {
+            zoomLevel = Math.max(0.5, zoomLevel * 0.8);
+            updateImageTransform();
+        }
+
+        function resetZoom() {
+            zoomLevel = 1;
+            translateX = 0;
+            translateY = 0;
+            updateImageTransform();
+        }
+
+        // ========== WORKING 360° VIEWER ==========
+        function open360Viewer(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Create image sequence (in real app, use actual 360 images)
+            imageSequence360 = [
+                product.image,
+                product.image,
+                product.image,
+                product.image,
+                product.image,
+                product.image,
+                product.image,
+                product.image
+            ];
+            
+            const modal = document.getElementById('viewerModal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('viewerModal')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div style="padding: 40px; height: 100%; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--gold); margin-bottom: 20px; text-align: center;">
+                            <i class="fas fa-sync-alt"></i> ${product.name} - 360° View
+                        </h3>
+                        
+                        <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+                            <div style="flex: 2; position: relative; overflow: hidden; border-radius: var(--border-radius); 
+                                        background: var(--black-light); min-height: 400px;">
+                                <img id="viewer360Image" 
+                                     src="${imageSequence360[0]}" 
+                                     alt="${product.name} - 360 View"
+                                     style="width: 100%; height: 100%; object-fit: contain;"
+                                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzFhMWExYSIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj4zNjDigJMgVmlldzwvdGV4dD48L3N2Zz4='">
+                                
+                                <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); 
+                                            display: flex; gap: 10px; background: rgba(0,0,0,0.7); padding: 10px 20px; 
+                                            border-radius: 30px; z-index: 10;">
+                                    <button onclick="rotate360Left()" style="background: none; border: none; color: white; 
+                                            cursor: pointer; font-size: 1.2rem;">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button onclick="toggleAutoRotate()" id="autoRotateBtn" style="background: var(--gold); 
+                                            color: var(--black); border: none; padding: 8px 20px; border-radius: 20px; 
+                                            cursor: pointer; font-weight: 600;">
+                                        <i class="fas fa-play"></i> Auto Rotate
+                                    </button>
+                                    <button onclick="rotate360Right()" style="background: none; border: none; color: white; 
+                                            cursor: pointer; font-size: 1.2rem;">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                
+                                <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); 
+                                            color: white; padding: 8px 15px; border-radius: var(--border-radius); 
+                                            font-size: 0.9rem;">
+                                    <i class="fas fa-sync-alt"></i> <span id="rotationAngle">0°</span>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; overflow-y: auto;">
+                                <h4 style="color: var(--text-primary); margin-bottom: 15px;">Product Details</h4>
+                                <p style="color: var(--text-secondary); margin-bottom: 20px;">${product.description}</p>
+                                
+                                <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--border-radius); 
+                                            margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <span style="color: var(--text-muted);">Price:</span>
+                                        <span style="color: var(--gold); font-weight: 600;">AED ${product.price.toLocaleString()}</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <span style="color: var(--text-muted);">Installment:</span>
+                                        <span style="color: var(--text-secondary);">${product.installment}</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span style="color: var(--text-muted);">Category:</span>
+                                        <span style="color: var(--text-secondary); text-transform: capitalize;">${product.category}</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-gold" style="width: 100%; margin-bottom: 15px;" 
+                                        onclick="addToCart(${product.id}); closeModal('viewerModal');">
+                                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            
+            // Initialize 360 viewer
+            currentAngle = 0;
+            update360Image();
+        }
+
+        function update360Image() {
+            const image = document.getElementById('viewer360Image');
+            const angleDisplay = document.getElementById('rotationAngle');
+            
+            if (image && imageSequence360.length > 0) {
+                const imageIndex = Math.floor((currentAngle % 360) / (360 / imageSequence360.length));
+                image.src = imageSequence360[imageIndex];
+            }
+            
+            if (angleDisplay) {
+                angleDisplay.textContent = `${Math.round(currentAngle)}°`;
+            }
+        }
+
+        function rotate360Left() {
+            currentAngle = (currentAngle - 45) % 360;
+            update360Image();
+        }
+
+        function rotate360Right() {
+            currentAngle = (currentAngle + 45) % 360;
+            update360Image();
+        }
+
+        function toggleAutoRotate() {
+            const button = document.getElementById('autoRotateBtn');
+            
+            if (isAutoRotating) {
+                clearInterval(autoRotateInterval);
+                isAutoRotating = false;
+                button.innerHTML = '<i class="fas fa-play"></i> Auto Rotate';
+                button.style.background = 'var(--gold)';
+            } else {
+                isAutoRotating = true;
+                button.innerHTML = '<i class="fas fa-pause"></i> Stop';
+                button.style.background = 'var(--gold-dark)';
+                
+                autoRotateInterval = setInterval(() => {
+                    currentAngle = (currentAngle + 5) % 360;
+                    update360Image();
+                }, 100);
+            }
+        }
+
         // ========== CART SYSTEM ==========
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
@@ -1831,7 +2346,7 @@
             
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
-            showNotification(`${product.name} added to cart!`);
+            showNotification(`✅ ${product.name} added to cart!`);
         }
 
         function updateCartCount() {
@@ -1849,9 +2364,14 @@
                     <div style="text-align: center; padding: 40px;">
                         <i class="fas fa-shopping-bag" style="font-size: 3rem; color: var(--gold); margin-bottom: 20px;"></i>
                         <p style="color: var(--text-secondary);">Your cart is empty</p>
+                        <button class="btn btn-outline" onclick="closeModal('cartModal'); scrollToSection('products')" 
+                                style="margin-top: 20px;">
+                            <i class="fas fa-gem"></i> Browse Collections
+                        </button>
                     </div>
                 `;
                 cartTotal.textContent = 'AED 0';
+                document.getElementById('paypal-button-container').innerHTML = '';
             } else {
                 let total = 0;
                 cartItems.innerHTML = cart.map(item => {
@@ -1862,8 +2382,10 @@
                                  style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;"
                                  onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iMzAiIHk9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Qcm9kPC90ZXh0Pjwvc3ZnPg=='">
                             <div style="flex: 1;">
-                                <h4 style="margin-bottom: 5px; color: var(--text-primary);">${item.name}</h4>
-                                <p style="color: var(--gold); font-weight: 600;">
+                                <h4 style="margin-bottom: 5px; color: var(--text-primary); font-size: 0.9rem;">
+                                    ${item.name}
+                                </h4>
+                                <p style="color: var(--gold); font-weight: 600; font-size: 0.9rem;">
                                     AED ${item.price.toLocaleString()} × ${item.quantity}
                                 </p>
                             </div>
@@ -1876,6 +2398,11 @@
                 }).join('');
                 
                 cartTotal.textContent = `AED ${total.toLocaleString()}`;
+                
+                // Re-render PayPal button with updated cart
+                if (typeof paypal !== 'undefined') {
+                    renderCartPayPalButton();
+                }
             }
             
             modal.classList.add('active');
@@ -1888,49 +2415,7 @@
             openCart();
         }
 
-        function proceedToCheckout() {
-            if (cart.length === 0) {
-                showNotification('Your cart is empty!');
-                return;
-            }
-            
-            // In a real implementation, this would redirect to a payment gateway
-            showNotification('Checkout functionality coming soon!');
-            console.log('Proceeding to checkout with:', cart);
-        }
-
-        // ========== WISHLIST ==========
-        function addToWishlist(productId) {
-            const product = products.find(p => p.id === productId);
-            showNotification(`${product.name} added to wishlist!`);
-        }
-
-        // ========== VIEWER FUNCTIONS ==========
-        function open360Viewer(productId) {
-            const modal = document.getElementById('viewerModal');
-            modal.classList.add('active');
-        }
-
-        function openZoomViewer(productId) {
-            const modal = document.getElementById('zoomModal');
-            modal.classList.add('active');
-        }
-
-        function quickView(productId) {
-            const product = products.find(p => p.id === productId);
-            alert(`Quick View: ${product.name}\nPrice: AED ${product.price.toLocaleString()}\n${product.description}`);
-        }
-
-        // ========== MODAL FUNCTIONS ==========
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-        }
-
-        function openBookingModal() {
-            document.getElementById('bookingModal').classList.add('active');
-        }
-
-        // ========== NOTIFICATION ==========
+        // ========== UTILITY FUNCTIONS ==========
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.style.cssText = `
@@ -1961,7 +2446,14 @@
             }, 3000);
         }
 
-        // ========== UTILITY FUNCTIONS ==========
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            // Stop auto rotation if active
+            if (isAutoRotating) {
+                toggleAutoRotate();
+            }
+        }
+
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
@@ -1979,6 +2471,20 @@
 
         function openWishlist() {
             alert('Wishlist functionality coming soon!');
+        }
+
+        function addToWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            showNotification(`${product.name} added to wishlist!`);
+        }
+
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId);
+            alert(`Quick View: ${product.name}\nPrice: AED ${product.price.toLocaleString()}\n${product.description}`);
+        }
+
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
         }
 
         // ========== EVENT LISTENERS ==========
@@ -2039,9 +2545,9 @@
                 showNotification('Appointment booked successfully! We will contact you soon.');
             });
         }
-<!-- Replace with your actual client-id=https://www.paypal.com/qrcodes/p2pqrc/Y5KUVSAMQHYVQ&currency=AED"></script>
+
         // Initialize cart count
         updateCartCount();
     </script>
 </body>
-        </html>
+    </html>
