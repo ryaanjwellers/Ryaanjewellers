@@ -21,7 +21,7 @@
     border: 2px solid var(--gold);
     color: var(--gold);
 }
-
+.splash-logo-container, .header-logo { background: white !important; }
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-gold);
