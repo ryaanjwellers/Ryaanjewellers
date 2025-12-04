@@ -2,2550 +2,1140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>RYAAN JEWELLERS | Luxury Gold & Diamonds Dubai</title>
-    <link rel="preload" href="Ryaan Jewellers_20251201_231002_0000.png" as="image" type="image/png">
-    <meta name="description" content="RYAAN JEWELLERS - Luxury Gold & Diamonds Jewelry in Dubai, UAE. Cartier, Van Cleef & Arpels, Bvlgari inspired collections.">
-    <meta name="keywords" content="gold jewelry, diamonds, Dubai, luxury jewelry, Cartier, Van Cleef & Arpels, Bvlgari, Messika, Ryaan Jewellers">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYAAN JEWELERS | Gold & Diamonds</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #D4AF37;
-            --gold-light: #F4E8C1;
-            --gold-dark: #B8941F;
-            --gold-sparkle: #FFD700;
-            --black: #0A0A0A;
-            --black-light: #1A1A1A;
-            --white: #FFFFFF;
-            --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.85);
-            --text-muted: rgba(255, 255, 255, 0.65);
-            --transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
-            --border-radius: 12px;
-            --bg-primary: #0A0A0A;
-            --bg-secondary: #1A1A1A;
-            --text-color: #FFFFFF
-        }
-
-        .light-mode {
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #F8F8F8;
-            --text-color: #0A0A0A;
-            --text-primary: #0A0A0A;
-            --text-secondary: rgba(0, 0, 0, 0.85);
-            --text-muted: rgba(0, 0, 0, 0.65)
-        }
-
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box
+            box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth
+        
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --light-gold: #F5E8AA;
+            --dark-bg: #0A0A0A;
+            --light-bg: #1A1A1A;
+            --text-light: #F5F5F5;
+            --text-gray: #AAAAAA;
+            --card-bg: rgba(26, 26, 26, 0.8);
         }
-
+        
         body {
-            font-family: Montserrat, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
-            transition: background .5s ease
         }
-
-        .arabic {
-            font-family: 'Noto Sans Arabic', sans-serif;
-            direction: rtl
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem
-        }
-
-        .btn-gold {
-            background: linear-gradient(45deg, var(--gold), var(--gold-dark));
-            color: var(--black)
-        }
-
-        .btn-outline {
-            background: 0 0;
-            border: 2px solid var(--gold);
-            color: var(--gold)
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-gold)
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--gold-sparkle);
-            border-radius: 50%;
-            animation: sparkle 2s infinite;
-            pointer-events: none
-        }
-
-        @keyframes sparkle {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0)
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1)
-            }
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px
-        }
-
-        .logo-image {
-            height: 60px;
-            width: auto;
-            max-width: 200px;
-            min-width: 150px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, .5));
-            transition: var(--transition);
-            object-fit: contain
-        }
-
-        .splash-logo-image {
-            height: 250px;
-            width: auto;
-            max-width: 500px;
-            min-width: 300px;
-            filter: drop-shadow(0 0 20px rgba(212, 175, 55, .7));
-            animation: logoReveal 1.5s ease forwards .5s, logoFloat 4s ease-in-out infinite 2s;
-            object-fit: contain;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(30px) scale(.95)
-        }
-
-        @keyframes logoReveal {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1)
-            }
-        }
-
-        @keyframes logoFloat {
-            0%, 100% {
-                transform: translateY(0) rotateX(0);
-                filter: drop-shadow(0 0 20px rgba(212, 175, 55, .7))
-            }
-            50% {
-                transform: translateY(-20px) rotateX(5deg);
-                filter: drop-shadow(0 0 30px rgba(212, 175, 55, .9))
-            }
-        }
-
-        .splash-logo-container {
-            background: #fff !important;
-            border: 3px solid var(--gold) !important;
-            padding: 40px 60px !important;
-            border-radius: 20px;
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .1)
-        }
-
-        .header-logo {
-            background: #fff !important;
-            padding: 10px 25px !important;
-            border-radius: var(--border-radius) !important;
-            border: 2px solid var(--gold) !important;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .08) !important
-        }
-
-        .header-logo:hover .logo-image {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, .8))
-        }
-
-        #splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: var(--black);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            overflow: hidden
-        }
-
-        .splash-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #0a0a0a 0, #1a1a1a 25%, #0a0a0a 50%, #1a1a1a 75%, #0a0a0a 100%);
-            background-size: 400% 400%;
-            animation: gradientFlow 8s ease infinite
-        }
-
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0 50%
-            }
-            50% {
-                background-position: 100% 50%
-            }
-            100% {
-                background-position: 0 50%
-            }
-        }
-
-        .splash-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, .3) 0, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, .1) 0, transparent 50%)
-        }
-
-        .splash-divider {
-            width: 300px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
-            margin: 30px auto;
-            opacity: 0;
-            animation: dividerReveal 1s ease forwards 2s
-        }
-
-        @keyframes dividerReveal {
-            to {
-                opacity: 1
-            }
-        }
-
-        .splash-loading {
-            width: 300px;
-            height: 3px;
-            background: rgba(255, 255, 255, .1);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            z-index: 3;
-            opacity: 0;
-            animation: loadingReveal .5s ease forwards 2.3s
-        }
-
-        @keyframes loadingReveal {
-            to {
-                opacity: 1
-            }
-        }
-
-        .splash-loading-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold-dark), var(--gold));
-            animation: loadingBar 2.5s cubic-bezier(.65, 0, .35, 1) forwards 2.5s
-        }
-
-        @keyframes loadingBar {
-            0% {
-                width: 0%
-            }
-            100% {
-                width: 100%
-            }
-        }
-
-        .splash-bottom-text {
-            position: absolute;
-            bottom: 40px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-size: .9rem;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            opacity: 0;
-            animation: bottomTextReveal 1s ease forwards 3s
-        }
-
-        @keyframes bottomTextReveal {
-            to {
-                opacity: 1
-            }
-        }
-
-        .top-bar {
-            background: linear-gradient(90deg, var(--black), var(--gold-dark), var(--black));
-            padding: 12px 0;
-            font-size: .9rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1001
-        }
-
-        .top-bar-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        .gold-price-container {
-            display: flex;
-            align-items: center;
-            gap: 20px
-        }
-
-        .gold-price {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            background: rgba(0, 0, 0, .3);
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, .3)
-        }
-
-        .gold-price i {
-            color: var(--gold);
-            animation: pulse 2s infinite
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1)
-            }
-            50% {
-                transform: scale(1.1)
-            }
-        }
-
-        .gold-price-details {
-            display: flex;
-            gap: 15px;
-            font-size: .8rem
-        }
-
-        .gold-type {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--gold-light)
-        }
-
-        .language-switcher {
-            display: flex;
-            gap: 10px
-        }
-
-        .lang-btn {
-            background: 0 0;
-            border: 1px solid var(--gold);
-            color: var(--text-primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: .8rem
-        }
-
-        .lang-btn.active {
-            background: var(--gold);
-            color: var(--black)
-        }
-
-        .theme-switcher {
-            display: flex;
-            align-items: center;
-            gap: 10px
-        }
-
-        .theme-btn {
-            background: 0 0;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition)
-        }
-
-        .theme-btn:hover {
-            color: var(--gold);
-            transform: scale(1.1)
-        }
-
-        header {
-            position: fixed;
-            top: 40px;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            background: rgba(10, 10, 10, .95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, .2);
-            transition: top .3s ease
-        }
-
-        .light-mode header {
-            background: rgba(255, 255, 255, .95)
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: var(--transition);
-            position: relative;
-            padding: 5px 0
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-            transition: var(--transition)
-        }
-
-        .nav-links a.active::before,
-        .nav-links a:hover::before {
-            width: 100%
-        }
-
-        .nav-links a.active,
-        .nav-links a:hover {
-            color: var(--gold)
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 25px;
-            align-items: center
-        }
-
-        .header-icon {
-            color: var(--text-primary);
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative
-        }
-
-        .header-icon:hover {
-            color: var(--gold);
-            transform: translateY(-2px)
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--gold);
-            color: var(--black);
-            font-size: 12px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: 0 0;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 180px 20px 100px
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(10, 10, 10, .9) 0, rgba(26, 26, 26, .7) 100%), url(https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);
-            background-size: cover;
-            background-position: center;
-            filter: brightness(.8)
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin-left: 100px
-        }
-
-        .hero-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--gold-light);
-            letter-spacing: 6px;
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards .5s
-        }
-
-        .hero-title {
-            font-size: 5rem;
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cinzel', serif;
             font-weight: 700;
-            margin-bottom: 30px;
-            background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards .7s
+            color: var(--gold);
         }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 600px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards .9s
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards 1.1s
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-
-        .products-section {
-            padding: 120px 20px;
-            background: var(--bg-secondary)
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto
-        }
-
+        
         .section-title {
             text-align: center;
-            margin-bottom: 80px
-        }
-
-        .section-title h2 {
-            font-size: 3.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
             position: relative;
-            display: inline-block
+            letter-spacing: 2px;
         }
-
-        .section-title h2::after {
+        
+        .section-title:after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold))
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
-
-        .section-title p {
-            color: var(--text-secondary);
-            font-size: 1.1rem
-        }
-
-        .category-filters {
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
             gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 40px
         }
-
-        .category-btn {
-            padding: 10px 25px;
-            background: 0 0;
-            border: 1px solid rgba(212, 175, 55, .3);
-            color: var(--text-secondary);
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px
-        }
-
-        .category-btn.active {
-            background: var(--gold);
-            color: var(--black);
-            border-color: var(--gold)
-        }
-
-        .category-btn:hover {
-            border-color: var(--gold);
-            color: var(--gold)
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px
-        }
-
-        .product-card {
-            background: var(--bg-primary);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid rgba(212, 175, 55, .1);
-            position: relative
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-gold);
-            border-color: var(--gold)
-        }
-
-        .product-image-container {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            background: var(--black-light)
-        }
-
-        .product-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .8s ease
-        }
-
-        .product-card:hover .product-image-container img {
-            transform: scale(1.05)
-        }
-
-        .viewer-360 {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, .7);
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: .9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            z-index: 10;
-            transition: var(--transition)
-        }
-
-        .viewer-360:hover {
-            background: var(--gold);
-            color: var(--black)
-        }
-
-        .zoom-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, .7);
-            color: #fff;
-            width: 40px;
-            height: 40px;
+        
+        .logo {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: var(--transition)
-        }
-
-        .zoom-btn:hover {
-            background: var(--gold);
-            color: var(--black);
-            transform: scale(1.1)
-        }
-
-        .quick-view-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--black);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 10
-        }
-
-        .product-card:hover .quick-view-btn {
-            opacity: 1
-        }
-
-        .product-info {
-            padding: 30px
-        }
-
-        .product-category {
-            font-size: .9rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px
-        }
-
-        .product-name {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--text-primary)
-        }
-
-        .product-description {
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-            font-size: .95rem;
-            min-height: 40px
-        }
-
-        .product-price {
-            font-size: 1.6rem;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap
-        }
-
-        .installment {
-            font-size: .9rem;
-            color: var(--text-muted);
-            background: rgba(212, 175, 55, .1);
-            padding: 5px 10px;
-            border-radius: 15px
-        }
-
-        .product-actions {
-            display: flex;
-            gap: 15px
-        }
-
-        .product-actions .btn {
-            flex: 1;
-            padding: 12px;
-            font-size: .9rem
-        }
-
-        .instagram-feed {
-            padding: 100px 20px;
-            background: var(--bg-primary)
-        }
-
-        .instagram-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto
-        }
-
-        .insta-item {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            cursor: pointer
-        }
-
-        .insta-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .5s ease
-        }
-
-        .insta-item:hover img {
-            transform: scale(1.1)
-        }
-
-        .payment-options {
-            background: var(--bg-secondary);
-            padding: 80px 20px;
-            text-align: center
-        }
-
-        .payment-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 40px auto 0
-        }
-
-        .payment-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--bg-primary);
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: var(--gold);
-            transition: var(--transition);
-            border: 2px solid rgba(212, 175, 55, .2);
-            cursor: pointer
+            font-weight: bold;
+            color: var(--dark-bg);
+            border: 3px solid var(--light-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
         }
-
-        .payment-icon:hover {
-            background: var(--gold);
-            color: var(--black);
-            transform: translateY(-5px);
-            border-color: var(--gold)
+        
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, var(--gold), var(--light-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-
-        .social-media {
-            padding: 60px 20px;
-            background: var(--bg-primary);
-            text-align: center
-        }
-
-        .social-icons {
+        
+        nav ul {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px
+            list-style: none;
+            gap: 2.5rem;
         }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .header-icons i {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .header-icons i:hover {
+            color: var(--gold);
+        }
+        
+        .cart-icon {
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: var(--bg-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none
+            font-weight: bold;
         }
-
-        .social-icon::before {
-            content: '';
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--dark-bg);
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            color: var(--dark-bg);
+        }
+        
+        /* Gold Price Section */
+        .gold-price-section {
+            padding: 5rem 2rem;
+            background-color: var(--light-bg);
+        }
+        
+        .gold-price-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gold-price-display {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .gold-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gold-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+        
+        .gold-type {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gold-price {
+            font-size: 2.2rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .price-change {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .positive {
+            color: #4CAF50;
+        }
+        
+        .negative {
+            color: #F44336;
+        }
+        
+        /* Jewelry Categories */
+        .categories-section {
+            padding: 5rem 2rem;
+        }
+        
+        .categories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            height: 300px;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .category-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-card:hover .category-img {
+            transform: scale(1.1);
+        }
+        
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .category-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Brands Section */
+        .brands-section {
+            padding: 5rem 2rem;
+            background-color: var(--light-bg);
+        }
+        
+        .brands-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .brand-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .brand-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        /* Instagram Gallery */
+        .gallery-section {
+            padding: 5rem 2rem;
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .instagram-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .instagram-overlay {
+            opacity: 1;
+        }
+        
+        .instagram-icon {
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        /* Shopping Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
             height: 100%;
-            background: var(--gold);
-            transform: translateY(100%);
-            transition: var(--transition);
-            z-index: 1
+            background-color: var(--light-bg);
+            z-index: 2000;
+            transition: right 0.5s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
         }
-
-        .social-icon:hover::before {
-            transform: translateY(0)
+        
+        .cart-modal.open {
+            right: 0;
         }
-
-        .social-icon i {
-            position: relative;
-            z-index: 2
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-
-        .social-icon:hover {
-            color: var(--black);
-            transform: translateY(-5px)
+        
+        .cart-items {
+            padding: 1.5rem;
         }
-
-        .modal {
+        
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-price {
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .cart-item-remove {
+            color: var(--text-gray);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .cart-item-remove:hover {
+            color: #F44336;
+        }
+        
+        .cart-total {
+            padding: 1.5rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .cart-actions {
+            padding: 0 1.5rem 2rem;
+        }
+        
+        /* Payment Modal */
+        .payment-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, .95);
+            background-color: rgba(0, 0, 0, 0.9);
             z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px
-        }
-
-        .modal.active {
-            display: flex
-        }
-
-        .modal-content {
-            position: relative;
-            background: var(--bg-primary);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            width: 95%;
-            max-width: 1200px;
-            max-height: 95vh;
-            overflow-y: auto
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--gold);
-            color: var(--black);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
-
-        #viewer360Image,
-        #zoomImage {
-            transition: transform .3s ease;
-            transform-origin: center center
+        
+        .payment-modal.open {
+            opacity: 1;
+            visibility: visible;
         }
-
-        .zoom-level-display {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, .7);
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: .9rem;
-            z-index: 10
+        
+        .payment-container {
+            background-color: var(--light-bg);
+            width: 90%;
+            max-width: 500px;
+            padding: 2.5rem;
+            border-radius: 5px;
+            border: 1px solid var(--gold);
         }
-
-        .fallback-logo {
+        
+        .payment-form {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--black-light), var(--black));
-            border: 2px solid var(--gold);
-            border-radius: 10px;
-            padding: 20px 30px;
-            text-align: center
+            gap: 1.5rem;
         }
-
-        .fallback-logo-large {
-            padding: 40px 60px;
-            border-width: 3px
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
         }
-
-        .fallback-logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 2px;
-            font-size: 2rem
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            color: var(--text-gray);
         }
-
-        .fallback-logo-subtext {
-            font-family: Montserrat, sans-serif;
-            font-size: .9em;
-            color: var(--gold-light);
-            letter-spacing: 3px;
-            margin-top: 5px
+        
+        .form-group input {
+            padding: 0.8rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 3px;
+            color: white;
+            font-size: 1rem;
         }
-
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Footer */
         footer {
-            background: var(--black);
-            padding: 60px 20px 30px;
-            color: var(--text-muted);
-            text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, .2)
+            background-color: var(--dark-bg);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
-
-        .footer-content {
-            max-width: 1400px;
+        
+        .footer-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px
+            gap: 3rem;
         }
-
-        .footer-section h4 {
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-size: 1.2rem
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
         }
-
-        .footer-section p,
-        .footer-section a {
-            color: var(--text-muted);
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: var(--text-gray);
             text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            transition: var(--transition)
+            transition: color 0.3s ease;
         }
-
-        .footer-section a:hover {
-            color: var(--gold)
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, .1);
-            padding-top: 30px;
-            font-size: .9rem
-        }
-
-        .order-form-container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: var(--bg-primary);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            border: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .order-form-container h3 {
+        
+        .footer-column a:hover {
             color: var(--gold);
-            margin-bottom: 25px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+        }
+        
+        .copyright {
             text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
             font-size: 0.9rem;
         }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            font-family: Montserrat, sans-serif;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width:1200px) {
-            .hero-title {
-                font-size: 4rem
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav ul {
+                gap: 1.5rem;
             }
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
             }
         }
-
-        @media (max-width:992px) {
-            .hero-content {
-                margin-left: 0;
-                text-align: center
-            }
-            .hero-buttons {
-                justify-content: center;
-                flex-wrap: wrap
-            }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--bg-primary);
+        
+        @media (max-width: 768px) {
+            header {
                 flex-direction: column;
-                padding: 20px;
-                gap: 20px;
-                border-top: 1px solid rgba(212, 175, 55, .2)
+                padding: 1rem;
+                gap: 1rem;
             }
-            .nav-links.active {
-                display: flex
+            
+            nav ul {
+                gap: 1rem;
             }
-            .mobile-menu-btn {
-                display: block
+            
+            .hero h1 {
+                font-size: 2.8rem;
             }
-            .gold-price-details {
-                display: none
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width:768px) {
-            .hero-title {
-                font-size: 3rem
-            }
-            .section-title h2 {
-                font-size: 2.5rem
-            }
-            .products-grid {
-                grid-template-columns: 1fr
-            }
-            .product-actions {
-                flex-direction: column
-            }
-            .category-filters {
-                flex-wrap: wrap
-            }
-            .logo-image {
-                height: 50px;
-                max-width: 180px
-            }
-            .splash-logo-image {
-                height: 200px;
-                max-width: 400px
-            }
-            .splash-logo-container {
-                padding: 30px 40px !important
-            }
-            .order-form-container {
-                padding: 20px;
+            
+            .cart-modal {
+                width: 100%;
+                right: -100%;
             }
         }
-
-        @media (max-width:480px) {
-            .hero-title {
-                font-size: 2.5rem
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-                letter-spacing: 3px
-            }
-            .logo-image {
-                height: 40px;
-                max-width: 150px
-            }
-            .splash-logo-image {
-                height: 150px;
-                max-width: 300px
-            }
-            .splash-logo-container {
-                padding: 20px 30px !important
-            }
-            .payment-icons {
-                gap: 15px
-            }
-            .payment-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem
-            }
+        
+        /* Overlay for modals */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
 <body>
-    <div id="sparkle-container"></div>
-    
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-        <div class="splash-bg"></div>
-        <div class="splash-overlay"></div>
-        <div class="splash-logo-container">
-            <img src="Ryaan Jewellers_20251201_231002_0000.png" alt="RYAAN JEWELLERS | Gold & Diamonds UAE" class="splash-logo-image" onerror="showFallbackLogo(this,true)">
-            <div class="splash-divider"></div>
-            <div class="splash-loading">
-                <div class="splash-loading-bar"></div>
-            </div>
-        </div>
-        <div class="splash-bottom-text">
-            <i class="fas fa-map-marker-alt"></i>DUBAI • UAE • <i class="fas fa-gem"></i>ESTABLISHED 2024
-        </div>
-    </div>
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="gold-price-container">
-                <div class="gold-price">
-                    <i class="fas fa-gem"></i>
-                    <span id="live-gold-price">24K: AED 275.50/g</span>
-                </div>
-                <div class="gold-price-details">
-                    <div class="gold-type">
-                        <span>22K:</span>
-                        <span id="gold-22k">AED 258.25/g</span>
-                    </div>
-                    <div class="gold-type">
-                        <span>18K:</span>
-                        <span id="gold-18k">AED 206.80/g</span>
-                    </div>
-                </div>
-            </div>
-            <div class="language-switcher">
-                <button class="lang-btn active" onclick='switchLanguage("en")'>EN</button>
-                <button class="lang-btn" onclick='switchLanguage("ar")'>AR</button>
-            </div>
-            <div class="theme-switcher">
-                <button class="theme-btn" onclick="toggleTheme()">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Header -->
     <header>
-        <div class="header-container">
-            <a href="#home" class="logo header-logo logo-container">
-                <img src="Ryaan Jewellers_20251201_231002_0000.png" alt="RYAAN JEWELLERS" class="logo-image" onerror="showFallbackLogo(this,false)">
-            </a>
-            <nav class="nav-links">
-                <a href="#home" class="active">
-                    <i class="fas fa-home"></i>Home
-                </a>
-                <a href="#products">
-                    <i class="fas fa-gem"></i>Collections
-                </a>
-                <a href="#categories">
-                    <i class="fas fa-ring"></i>Categories
-                </a>
-                <a href="#instagram">
-                    <i class="fas fa-images"></i>Gallery
-                </a>
-                <a href="#about">
-                    <i class="fas fa-store"></i>About Us
-                </a>
-                <a href="#payment">
-                    <i class="fas fa-shopping-cart"></i>Order Now
-                </a>
-            </nav>
-            <div class="header-actions">
-                <div class="header-icon search-btn" onclick="openSearch()">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="header-icon wishlist-btn" onclick="openWishlist()">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="header-icon cart-btn" onclick="openCart()">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </div>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <div class="logo-container">
+            <div class="logo">R</div>
+            <div class="logo-text">RYAAN JEWELERS</div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gold">Gold Prices</a></li>
+                <li><a href="#categories">Collections</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-icons">
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
             </div>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h2 class="hero-subtitle">RYAAN JEWELLERS</h2>
-            <h1 class="hero-title">Luxury Reimagined</h1>
-            <p class="hero-description">Exquisite jewelry collections inspired by Cartier, Van Cleef & Arpels, and Bvlgari. Crafted with 18K gold and premium diamonds in Dubai.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-gold" onclick='scrollToSection("products")'>
-                    <i class="fas fa-gem"></i>VIEW COLLECTIONS
-                </button>
-                <button class="btn btn-outline" onclick="openBookingModal()">
-                    <i class="fas fa-calendar"></i>BOOK APPOINTMENT
-                </button>
-            </div>
+            <h1>RYAAN JEWELERS</h1>
+            <h2>GOLD & DIAMONDS</h2>
+            <p>Discover the world's most exquisite jewelry collections, meticulously crafted for those who appreciate timeless luxury and unparalleled elegance.</p>
+            <a href="#categories" class="btn">Explore Collections</a>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="products-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Collections</h2>
-                <p>Inspired by World's Finest Luxury Maisons</p>
-            </div>
-            <div class="category-filters" id="categoryFilters">
-                <button class="category-btn active" data-category="all">
-                    <i class="fas fa-star"></i>All Collections
-                </button>
-                <button class="category-btn" data-category="cartier">
-                    <i class="fas fa-crown"></i>Cartier Inspired
-                </button>
-                <button class="category-btn" data-category="vca">
-                    <i class="fas fa-clover"></i>Van Cleef & Arpels
-                </button>
-                <button class="category-btn" data-category="bvlgari">
-                    <i class="fas fa-snake"></i>Bvlgari Inspired
-                </button>
-                <button class="category-btn" data-category="messika">
-                    <i class="fas fa-gem"></i>Messika Inspired
-                </button>
-            </div>
-            <div class="products-grid" id="productsGrid"></div>
-        </div>
-    </section>
-
-    <!-- Instagram Feed -->
-    <section id="instagram" class="instagram-feed">
-        <div class="container">
-            <div class="section-title">
-                <h2>#RyaanJewellers</h2>
-                <p>Follow Our Journey on Instagram</p>
-            </div>
-            <div class="instagram-grid" id="instagramGrid"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="products-section" style="background: var(--bg-primary);">
-        <div class="container">
-            <div class="section-title">
-                <h2>About RYAAN JEWELLERS</h2>
-                <p>Dubai's Premier Destination for Luxury Jewelry</p>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div style="margin-bottom: 40px;">
-                    <h3 style="color: var(--gold); margin-bottom: 20px; font-size: 2rem;">Crafting Dreams Since 2024</h3>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
-                        Located in the heart of Dubai, RYAAN JEWELLERS brings you exclusive collections inspired by the world's most prestigious luxury brands. 
-                        Each piece is meticulously crafted using 18K gold and premium diamonds, offering exceptional quality and timeless elegance.
-                    </p>
+    <!-- Gold Price Section -->
+    <section class="gold-price-section" id="gold">
+        <div class="gold-price-container">
+            <h2 class="section-title">Live Gold Prices</h2>
+            <div class="gold-price-display">
+                <div class="gold-card">
+                    <h3 class="gold-type">24K Gold</h3>
+                    <div class="gold-price">$2,150.75</div>
+                    <div class="price-change positive">+12.50 (0.58%)</div>
+                    <p>Per ounce</p>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
-                    <div style="text-align: center;">
-                        <i class="fas fa-gem" style="font-size: 3rem; color: var(--gold); margin-bottom: 15px;"></i>
-                        <h4 style="color: var(--text-primary); margin-bottom: 10px;">Premium Quality</h4>
-                        <p style="color: var(--text-muted);">18K Gold & Certified Diamonds</p>
+                <div class="gold-card">
+                    <h3 class="gold-type">22K Gold</h3>
+                    <div class="gold-price">$1,972.25</div>
+                    <div class="price-change positive">+10.80 (0.55%)</div>
+                    <p>Per ounce</p>
+                </div>
+                <div class="gold-card">
+                    <h3 class="gold-type">18K Gold</h3>
+                    <div class="gold-price">$1,613.06</div>
+                    <div class="price-change negative">-5.25 (0.32%)</div>
+                    <p>Per ounce</p>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-gray); font-size: 0.9rem;">Prices update every 5 minutes. Last updated: <span id="updateTime">Just now</span></p>
+        </div>
+    </section>
+
+    <!-- Jewelry Categories -->
+    <section class="categories-section" id="categories">
+        <div class="categories-container">
+            <h2 class="section-title">Jewelry Collections</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="rings">
+                    <img src="https://images.unsplash.com/photo-1603561596112-0a132b757442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rings" class="category-img">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Rings</h3>
+                        <p>Exquisite diamond & gold rings</p>
                     </div>
-                    <div style="text-align: center;">
-                        <i class="fas fa-hand-sparkles" style="font-size: 3rem; color: var(--gold); margin-bottom: 15px;"></i>
-                        <h4 style="color: var(--text-primary); margin-bottom: 10px;">Handcrafted</h4>
-                        <p style="color: var(--text-muted);">Expert Artisan Craftsmanship</p>
+                </div>
+                <div class="category-card" data-category="necklaces">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Necklaces" class="category-img">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Necklaces</h3>
+                        <p>Statement necklaces & pendants</p>
                     </div>
-                    <div style="text-align: center;">
-                        <i class="fas fa-shipping-fast" style="font-size: 3rem; color: var(--gold); margin-bottom: 15px;"></i>
-                        <h4 style="color: var(--text-primary); margin-bottom: 10px;">Worldwide Shipping</h4>
-                        <p style="color: var(--text-muted);">Secure Delivery to Your Doorstep</p>
+                </div>
+                <div class="category-card" data-category="bangles">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bangles" class="category-img">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Bangles</h3>
+                        <p>Gold & diamond bangles</p>
                     </div>
-                    <div style="text-align: center;">
-                        <i class="fas fa-headset" style="font-size: 3rem; color: var(--gold); margin-bottom: 15px;"></i>
-                        <h4 style="color: var(--text-primary); margin-bottom: 10px;">Personal Service</h4>
-                        <p style="color: var(--text-muted);">Dedicated Client Support</p>
+                </div>
+                <div class="category-card" data-category="earrings">
+                    <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Earrings" class="category-img">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Earrings</h3>
+                        <p>Diamond studs & hoops</p>
+                    </div>
+                </div>
+                <div class="category-card" data-category="bracelets">
+                    <img src="https://images.unsplash.com/photo-162179148c5d30c7535d6d2e90e3c4e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bracelets" class="category-img">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Bracelets</h3>
+                        <p>Luxury gold bracelets</p>
+                    </div>
+                </div>
+                <div class="category-card" data-category="chokers">
+                    <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chokers" class="category-img">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Chokers</h3>
+                        <p>Elegant diamond chokers</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Payment Options -->
-    <section id="payment" class="payment-options">
-        <div class="container">
-            <div class="section-title">
-                <h2>Order & Payment</h2>
-                <p>Secure Order Processing - We'll Contact You for Payment</p>
-            </div>
-            
-            <!-- Order Form -->
-            <div class="order-form-container">
-                <h3><i class="fas fa-shopping-cart"></i> Place Your Order</h3>
-                
-                <form id="orderForm" action="https://formsubmit.co/ryaanjewellers@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Order - RYAAN JEWELLERS">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://www.ryaanjewellers.com/thank-you">
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>First Name *</label>
-                            <input type="text" name="first_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name *</label>
-                            <input type="text" name="last_name" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Email Address *</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" name="phone" required value="+971">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Select Payment Method *</label>
-                        <select name="payment_method" required>
-                            <option value="">Choose payment method</option>
-                            <option value="bank_transfer">Bank Transfer (UAE)</option>
-                            <option value="cash_on_delivery">Cash on Delivery (Dubai Only)</option>
-                            <option value="credit_card">Credit Card (Link will be sent)</option>
-                            <option value="paypal">PayPal (Link will be sent)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Shipping Address</label>
-                        <textarea name="shipping_address" placeholder="Full shipping address (for delivery orders)"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Order Notes</label>
-                        <textarea name="order_notes" placeholder="Please list the items you want to order from your cart..."></textarea>
-                    </div>
-                    
-                    <input type="hidden" name="cart_items" id="cartItemsInput">
-                    
-                    <button type="submit" class="btn btn-gold" style="width: 100%; padding: 15px; font-size: 1.1rem;">
-                        <i class="fas fa-paper-plane"></i> SUBMIT ORDER REQUEST
-                    </button>
-                    
-                    <p style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.85rem;">
-                        <i class="fas fa-lock"></i> We'll contact you within 24 hours to confirm order and provide payment link
-                    </p>
-                </form>
-            </div>
-            
-            <!-- WhatsApp Order Button -->
-            <a href="https://wa.me/971543746476?text=Hi%20RYAAN%20JEWELLERS,%20I%20want%20to%20order:%0A[Please%20list%20items%20here]" 
-               target="_blank" class="btn btn-gold" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px auto; max-width: 300px;">
-                <i class="fab fa-whatsapp"></i> Order via WhatsApp
-            </a>
-            
-            <!-- Payment Icons -->
-            <div class="payment-icons">
-                <div class="payment-icon" title="Bank Transfer" onclick="showPaymentInfo('bank')">
-                    <i class="fas fa-university"></i>
+    <!-- Brands Section -->
+    <section class="brands-section" id="brands">
+        <div class="brands-container">
+            <h2 class="section-title">Luxury Brands</h2>
+            <div class="brands-grid">
+                <div class="brand-card" data-brand="cartier">
+                    <div style="font-size: 2.5rem; color: var(--gold);">C</div>
+                    <h3 class="brand-name">Cartier</h3>
                 </div>
-                <div class="payment-icon" title="Cash on Delivery" onclick="showPaymentInfo('cash')">
-                    <i class="fas fa-money-bill-wave"></i>
+                <div class="brand-card" data-brand="messika">
+                    <div style="font-size: 2.5rem; color: var(--gold);">M</div>
+                    <h3 class="brand-name">Messika</h3>
                 </div>
-                <div class="payment-icon" title="Credit Card" onclick="showPaymentInfo('card')">
-                    <i class="fas fa-credit-card"></i>
+                <div class="brand-card" data-brand="boucheron">
+                    <div style="font-size: 2.5rem; color: var(--gold);">B</div>
+                    <h3 class="brand-name">Boucheron</h3>
                 </div>
-                <div class="payment-icon" title="PayPal" onclick="showPaymentInfo('paypal')">
-                    <i class="fab fa-paypal"></i>
+                <div class="brand-card" data-brand="chopard">
+                    <div style="font-size: 2.5rem; color: var(--gold);">C</div>
+                    <h3 class="brand-name">Chopard</h3>
                 </div>
-                <div class="payment-icon" title="Tabby" onclick="showPaymentInfo('tabby')">
-                    <i class="fas fa-calendar-alt"></i>
+                <div class="brand-card" data-brand="vca">
+                    <div style="font-size: 2.5rem; color: var(--gold);">VCA</div>
+                    <h3 class="brand-name">Van Cleef & Arpels</h3>
                 </div>
-                <div class="payment-icon" title="Tamara" onclick="showPaymentInfo('tamara')">
-                    <i class="fas fa-wallet"></i>
+                <div class="brand-card" data-brand="marli">
+                    <div style="font-size: 2.5rem; color: var(--gold);">M</div>
+                    <h3 class="brand-name">Marli</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Media -->
-    <section class="social-media">
-        <div class="container">
-            <div class="section-title">
-                <h2>Connect With Us</h2>
-                <p>Follow our luxury journey</p>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/ryaan_jewellers?igsh=YWY1YzkwZWx6Zmh4" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/share/1DSHTzxoAG/" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.paypal.com/qrcodes/p2pqrc/Y5KUVSAMQHYVQ" target="_blank" class="social-icon">
-                    <i class="fab fa-paypal"></i>
-                </a>
-                <a href="https://wa.me/971543746476" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="mailto:ryaanjewellers@gmail.com" class="social-icon">
-                    <i class="fas fa-envelope"></i>
-                </a>
+    <!-- Instagram Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Instagram Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry" class="gallery-img">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram instagram-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry" class="gallery-img">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram instagram-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1535448995412-2038ff6c3e7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry" class="gallery-img">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram instagram-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1605100940457-0d3d1e6ca4c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry" class="gallery-img">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram instagram-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry" class="gallery-img">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram instagram-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry" class="gallery-img">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram instagram-icon"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Shopping Bag</h3>
+            <i class="fas fa-times close-cart" id="closeCart"></i>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0.00</span>
+        </div>
+        <div class="cart-actions">
+            <button class="btn" id="checkoutBtn" style="width: 100%;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-container">
+            <h2 class="section-title" style="font-size: 2rem;">Complete Your Purchase</h2>
+            <form class="payment-form" id="paymentForm">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Cardholder Name</label>
+                    <input type="text" id="name" placeholder="John Smith" required>
+                </div>
+                <button type="submit" class="btn">Complete Payment</button>
+                <button type="button" class="btn" id="cancelPayment" style="background: transparent; border: 1px solid var(--gold); color: var(--gold); margin-top: 1rem;">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay for modals -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>RYAAN JEWELLERS</h4>
-                    <p>Luxury Gold & Diamond Jewelry</p>
-                    <p>Dubai, United Arab Emirates</p>
-                    <p>Established 2024</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#home">Home</a>
-                    <a href="#products">Collections</a>
-                    <a href="#about">About Us</a>
-                    <a href="#payment">Order Now</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-phone"></i> +971 54 374 6476</p>
-                    <p><i class="fas fa-envelope"></i> ryaanjewellers@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
-                    <p><i class="fas fa-globe"></i> www.ryaanjewellers.com</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Business Hours</h4>
-                    <p>Mon - Sat: 10:00 AM - 10:00 PM</p>
-                    <p>Sunday: 12:00 PM - 8:00 PM</p>
-                    <p>By Appointment Only</p>
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>RYAAN JEWELERS</h3>
+                <p>Since 1985, Ryaan Jewelers has been the epitome of luxury, offering the world's finest gold and diamond jewelry to discerning clients worldwide.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 RYAAN JEWELLERS. All rights reserved. | Luxury Jewelry UNITED ARAB EMIRATES</p>
-                <p>Inspired by Cartier, Van Cleef & Arpels, Bvlgari,Chopard,Messika, Boucheron,Pasquale Bruninei ,Hermès | All jewelry pieces are crafted with 18K gold and premium diamonds</p>
+            <div class="footer-column">
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="#categories">Rings</a></li>
+                    <li><a href="#categories">Necklaces</a></li>
+                    <li><a href="#categories">Bangles</a></li>
+                    <li><a href="#categories">Earrings</a></li>
+                    <li><a href="#categories">Bracelets</a></li>
+                    <li><a href="#categories">Chokers</a></li>
+                </ul>
             </div>
+            <div class="footer-column">
+                <h3>Brands</h3>
+                <ul>
+                    <li><a href="#brands">Cartier</a></li>
+                    <li><a href="#brands">Messika</a></li>
+                    <li><a href="#brands">Boucheron</a></li>
+                    <li><a href="#brands">Chopard</a></li>
+                    <li><a href="#brands">Van Cleef & Arpels</a></li>
+                    <li><a href="#brands">Marli</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 5th Avenue, New York, NY 10001</li>
+                    <li><i class="fas fa-phone"></i> +1 (212) 555-1234</li>
+                    <li><i class="fas fa-envelope"></i> info@ryaanjewelers.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 10AM-8PM, Sun: 12PM-6PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 RYAAN JEWELERS. All rights reserved. | Luxury Gold & Diamond Jewelry</p>
         </div>
     </footer>
 
-    <!-- Modals -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div id="modalContent"></div>
-        </div>
-    </div>
-
-    <div id="viewer360Modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeViewer360Modal()">&times;</button>
-            <div id="viewer360Content"></div>
-        </div>
-    </div>
-
-    <div id="zoomModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeZoomModal()">&times;</button>
-            <div id="zoomContent"></div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
     <script>
-        // Product Data with your specific products
+        // Sample jewelry products
         const products = [
-            // Cartier Inspired
-            { id: 1, name: "Juste Un Clou Bracelet Small Gold", category: "cartier", type: "bracelet", price: "AED 8,500", description: "Iconic nail bracelet in 18K yellow gold, Cartier inspired design.", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 708/mo for 12 months" },
-            { id: 2, name: "Juste Un Clou Bracelet Classic Gold", category: "cartier", type: "bracelet", price: "AED 12,000", description: "Classic nail bracelet design in 18K yellow gold.", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,000/mo for 12 months" },
-            { id: 3, name: "Juste Un Clou Bracelet Half Paved White Gold", category: "cartier", type: "bracelet", price: "AED 18,500", description: "Half paved diamond nail bracelet in 18K white gold.", image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,542/mo for 12 months" },
-            { id: 4, name: "Juste Un Clou Torque Necklace Small Gold", category: "cartier", type: "necklace", price: "AED 9,800", description: "Torque necklace with nail motif in 18K yellow gold.", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 817/mo for 12 months" },
-            { id: 5, name: "Clash De Cartier Bracelet Small Gold", category: "cartier", type: "bracelet", price: "AED 11,500", description: "Clash collection bracelet in 18K yellow gold.", image: "https://images.unsplash.com/photo-1621461133947-f63381c2f7f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 958/mo for 12 months" },
-            { id: 6, name: "Clash De Cartier Ring White Gold", category: "cartier", type: "ring", price: "AED 7,200", description: "Clash collection ring in 18K white gold.", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 600/mo for 12 months" },
-            { id: 7, name: "Love Earrings Multiwear Gold", category: "cartier", type: "earrings", price: "AED 14,500", description: "Love collection multiwear earrings in 18K yellow gold.", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,208/mo for 12 months" },
-            { id: 8, name: "Love Ring Small Model Paved Diamond", category: "cartier", type: "ring", price: "AED 10,800", description: "Love ring with paved diamonds in 18K gold.", image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 900/mo for 12 months" },
-            { id: 9, name: "Trinity Ring Classic Half Paved Three Gold", category: "cartier", type: "ring", price: "AED 13,200", description: "Trinity ring in three gold colors, half paved with diamonds.", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,100/mo for 12 months" },
-            { id: 10, name: "Juste Un Clou Pendant Gold Diamonds", category: "cartier", type: "pendant", price: "AED 9,500", description: "Nail pendant with diamonds in 18K yellow gold.", image: "https://images.unsplash.com/photo-1621461133947-f63381c2f7f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 792/mo for 12 months" },
-            
-            // Van Cleef & Arpels Inspired
-            { id: 11, name: "VCA Alhambra Bracelet Black Gold", category: "vca", type: "bracelet", price: "AED 15,800", description: "Alhambra bracelet in black and gold, iconic clover motif.", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,317/mo for 12 months" },
-            { id: 12, name: "VCA Alhambra Bracelet Red Gold", category: "vca", type: "bracelet", price: "AED 16,500", description: "Alhambra bracelet in red and gold combination.", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,375/mo for 12 months" },
-            { id: 13, name: "VCA Alhambra Bracelet Blue Gold", category: "vca", type: "bracelet", price: "AED 17,200", description: "Alhambra bracelet featuring blue enamel and gold.", image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,433/mo for 12 months" },
-            { id: 14, name: "VCA Alhambra Bracelet Green Gold", category: "vca", type: "bracelet", price: "AED 16,800", description: "Alhambra bracelet with green enamel and gold.", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,400/mo for 12 months" },
-            
-            // Bvlgari Inspired
-            { id: 15, name: "Bvlgari Serpenti Half Paved Bracelet", category: "bvlgari", type: "bracelet", price: "AED 22,500", description: "Serpenti bracelet half paved with diamonds, iconic snake design.", image: "https://images.unsplash.com/photo-1621461133947-f63381c2f7f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,875/mo for 12 months" },
-            { id: 16, name: "Bvlgari Divas Chain Pendant", category: "bvlgari", type: "pendant", price: "AED 14,800", description: "Divas' Dream pendant with chain in 18K gold.", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,233/mo for 12 months" },
-            { id: 17, name: "Bvlgari Divas Mother Of Pearl", category: "bvlgari", type: "pendant", price: "AED 19,500", description: "Divas' Dream pendant with mother of pearl and diamonds.", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,625/mo for 12 months" },
-            
-            // Messika Inspired
-            { id: 18, name: "Messika Tie Band Diamond Bracelet", category: "messika", type: "bracelet", price: "AED 21,000", description: "Tie band bracelet with moving diamonds, Messika inspired.", image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,750/mo for 12 months" },
-            { id: 19, name: "Juste Un Clou Long Necklace Extra Large Gold", category: "cartier", type: "necklace", price: "AED 25,000", description: "Extra large nail necklace in 18K yellow gold.", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 2,083/mo for 12 months" },
-            { id: 20, name: "Love Earrings Multiwear Half Paved Gold", category: "cartier", type: "earrings", price: "AED 19,800", description: "Half paved Love earrings in 18K yellow gold.", image: "https://images.unsplash.com/photo-1621461133947-f63381c2f7f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", installment: "AED 1,650/mo for 12 months" }
+            { id: 1, name: "Diamond Solitaire Ring", price: 12500, category: "rings", brand: "cartier", image: "https://images.unsplash.com/photo-1603561596112-0a132b757442?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+            { id: 2, name: "Emerald Necklace", price: 8500, category: "necklaces", brand: "vca", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+            { id: 3, name: "Gold Diamond Bangles", price: 7200, category: "bangles", brand: "chopard", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+            { id: 4, name: "Diamond Choker", price: 16500, category: "chokers", brand: "boucheron", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+            { id: 5, name: "Pearl Earrings", price: 3500, category: "earrings", brand: "messika", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+            { id: 6, name: "Gold Bracelet", price: 6200, category: "bracelets", brand: "marli", image: "https://images.unsplash.com/photo-162179148c5d30c7535d6d2e90e3c4e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" }
         ];
 
-        const instagramPosts = [
-            "Screenshot_20251129_014405_Chrome.jpg",
-            "Screenshot_20251129_014443_Chrome.jpg",
-            "Screenshot_20251129_014511_Chrome.jpg",
-            "Screenshot_20251129_014550_Chrome.jpg",
-            "Screenshot_20251129_014553_Chrome.jpg",
-            "Screenshot_20251129_014606_Chrome.jpg",
-            "Screenshot_20251129_014624_Chrome.jpg",
-            "Screenshot_20251129_014633_Chrome.jpg"
-        ];
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hide splash screen after loading
-            setTimeout(() => {
-                document.getElementById('splash-screen').style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 4000);
-
-            // Load products
-            loadProducts();
-            
-            // Load Instagram feed
-            loadInstagramFeed();
-            
-            // Initialize sparkles
-            createSparkles();
-            
-            // Set up event listeners
-            setupEventListeners();
-            
-            // Update gold prices
-            updateGoldPrices();
-            
-            // Initialize scroll behavior
-            initScrollBehavior();
-        });
-
-        function loadProducts() {
-            const productsGrid = document.getElementById('productsGrid');
-            const categoryFilter = document.querySelector('.category-btn.active').dataset.category;
-            
-            productsGrid.innerHTML = '';
-            
-            const filteredProducts = categoryFilter === 'all' 
-                ? products 
-                : products.filter(product => product.category === categoryFilter);
-            
-            filteredProducts.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.innerHTML = `
-                    <div class="product-image-container">
-                        <img src="${product.image}" alt="${product.name}" loading="lazy">
-                        <div class="viewer-360" onclick="openViewer360('${product.image}', '${product.name}')">
-                            <i class="fas fa-sync-alt"></i> 360° View
-                        </div>
-                        <div class="zoom-btn" onclick="openZoom('${product.image}', '${product.name}')">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                        <button class="quick-view-btn" onclick="openQuickView(${product.id})">
-                            <i class="fas fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">${product.category.toUpperCase()}</div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-price">
-                            ${product.price}
-                            <span class="installment">${product.installment}</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-gold" onclick="addToCart(${product.id})">
-                                <i class="fas fa-shopping-bag"></i> Add to Cart
-                            </button>
-                            <button class="btn btn-outline" onclick="addToWishlist(${product.id})">
-                                <i class="fas fa-heart"></i> Wishlist
-                            </button>
-                        </div>
-                    </div>
-                `;
-                productsGrid.appendChild(productCard);
-            });
-        }
-
-        function loadInstagramFeed() {
-            const instagramGrid = document.getElementById('instagramGrid');
-            instagramGrid.innerHTML = '';
-            
-            // Use placeholder images since actual image paths are provided
-            const placeholderImages = [
-                "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1621461133947-f63381c2f7f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            ];
-            
-            placeholderImages.forEach((post, index) => {
-                const instaItem = document.createElement('div');
-                instaItem.className = 'insta-item';
-                instaItem.innerHTML = `
-                    <img src="${post}" alt="Instagram Post ${index + 1}" loading="lazy">
-                `;
-                instagramGrid.appendChild(instaItem);
-            });
-        }
-
-        function createSparkles() {
-            const container = document.getElementById('sparkle-container');
-            for (let i = 0; i < 20; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = Math.random() * 100 + 'vw';
-                sparkle.style.top = Math.random() * 100 + 'vh';
-                sparkle.style.animationDelay = Math.random() * 2 + 's';
-                container.appendChild(sparkle);
-            }
-        }
-
-        function setupEventListeners() {
-            // Category filters
-            document.querySelectorAll('.category-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    loadProducts();
-                });
-            });
-
-            // Mobile menu
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    document.querySelector('.nav-links').classList.remove('active');
-                });
-            });
-
-            // Update cart count on load
-            updateCartCount();
-        }
-
-        function updateGoldPrices() {
-            <!-- Updated Gold Price Section -->
-<div class="top-bar">
-    <div class="top-bar-content">
-        <!-- Gold Price Display -->
-        <div class="gold-price-container">
-            <div class="gold-price">
-                <div id="live-gold-price">
-                    <!-- Loading state initially -->
-                    <div class="loading-state">
-                        <i class="fas fa-spinner fa-spin"></i>
-                        <span>Loading gold prices...</span>
-                    </div>
-                </div>
-                <div class="gold-price-details">
-                    <!-- Karat details will be populated -->
-                </div>
-                <div class="gold-timestamp">
-                    <!-- Timestamp will be populated -->
-                </div>
-            </div>
-        </div>
-        
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-            <button class="lang-btn active" onclick='switchLanguage("en")'>EN</button>
-            <button class="lang-btn" onclick='switchLanguage("ar")'>AR</button>
-        </div>
-        
-        <!-- Theme Switcher -->
-        <div class="theme-switcher">
-            <button class="theme-btn" onclick="toggleTheme()">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </div>
-</div>
-        }
-
-        function initScrollBehavior() {
-            let lastScrollTop = 0;
-            const header = document.querySelector('header');
-            
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down
-                    header.style.top = '-100px';
-                } else {
-                    // Scrolling up
-                    header.style.top = '40px';
-                }
-                
-                lastScrollTop = scrollTop;
-                
-                // Update active nav link
-                updateActiveNavLink();
-            });
-        }
-
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Modal Functions
-        function openQuickView(productId) {
-            const product = products.find(p => p.id === productId);
-            const modalContent = document.getElementById('modalContent');
-            modalContent.innerHTML = `
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px;">
-                    <div>
-                        <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: var(--border-radius);">
-                        <div style="display: flex; gap: 10px; margin-top: 20px;">
-                            <button class="btn btn-gold" style="flex: 1;" onclick="openViewer360('${product.image}', '${product.name}')">
-                                <i class="fas fa-sync-alt"></i> 360° View
-                            </button>
-                            <button class="btn btn-outline" style="flex: 1;" onclick="openZoom('${product.image}', '${product.name}')">
-                                <i class="fas fa-search-plus"></i> Zoom
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-category">${product.category.toUpperCase()}</div>
-                        <h2 style="color: var(--text-primary); margin: 10px 0 20px; font-size: 2rem;">${product.name}</h2>
-                        <p style="color: var(--text-secondary); margin: 20px 0; line-height: 1.8;">${product.description}</p>
-                        <div class="product-price" style="font-size: 2.5rem; margin: 30px 0;">
-                            ${product.price}
-                            <span class="installment">${product.installment}</span>
-                        </div>
-                        <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--border-radius); margin: 20px 0;">
-                            <h4 style="color: var(--gold); margin-bottom: 10px;">Product Details:</h4>
-                            <ul style="color: var(--text-muted); padding-left: 20px;">
-                                <li>18K Gold (Yellow/White/Rose)</li>
-                                <li>Premium Quality Diamonds</li>
-                                <li>Handcrafted in Dubai</li>
-                                <li>Authenticity Certificate</li>
-                                <li>Free Shipping in UAE</li>
-                            </ul>
-                        </div>
-                        <div style="display: flex; gap: 15px; margin-top: 30px;">
-                            <button class="btn btn-gold" style="flex: 2;" onclick="addToCart(${product.id}); closeModal();">
-                                <i class="fas fa-shopping-bag"></i> Add to Cart
-                            </button>
-                            <button class="btn btn-outline" style="flex: 1;" onclick="addToWishlist(${product.id})">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <p style="color: var(--text-muted); margin-top: 20px; font-size: 0.9rem;">
-                            <i class="fas fa-shipping-fast"></i> Free delivery in Dubai | 
-                            <i class="fas fa-shield-alt"></i> 1-year warranty | 
-                            <i class="fas fa-exchange-alt"></i> 30-day return policy
-                        </p>
-                    </div>
-                </div>
-            `;
-            document.getElementById('productModal').classList.add('active');
-        }
-
-        function openViewer360(imageUrl, productName) {
-            const viewerContent = document.getElementById('viewer360Content');
-            viewerContent.innerHTML = `
-                <div style="padding: 40px; text-align: center;">
-                    <h2 style="color: var(--gold); margin-bottom: 30px;">${productName} - 360° View</h2>
-                    <div style="position: relative; max-width: 600px; margin: 0 auto;">
-                        <img id="viewer360Image" src="${imageUrl}" alt="${productName}" 
-                             style="width: 100%; border-radius: var(--border-radius); cursor: grab;">
-                        <div class="zoom-level-display">Drag to rotate • Scroll to zoom</div>
-                    </div>
-                    <p style="color: var(--text-muted); margin-top: 20px;">
-                        Drag the image to rotate • Use mouse wheel to zoom
-                    </p>
-                </div>
-            `;
-            document.getElementById('viewer360Modal').classList.add('active');
-            init360Viewer();
-        }
-
-        function openZoom(imageUrl, productName) {
-            const zoomContent = document.getElementById('zoomContent');
-            zoomContent.innerHTML = `
-                <div style="padding: 40px; text-align: center;">
-                    <h2 style="color: var(--gold); margin-bottom: 30px;">${productName}</h2>
-                    <div style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: var(--border-radius);">
-                        <img id="zoomImage" src="${imageUrl}" alt="${productName}" 
-                             style="width: 100%; cursor: zoom-in;">
-                        <div class="zoom-level-display" id="zoomLevel">100%</div>
-                    </div>
-                    <p style="color: var(--text-muted); margin-top: 20px;">
-                        Scroll to zoom • Click and drag to pan
-                    </p>
-                </div>
-            `;
-            document.getElementById('zoomModal').classList.add('active');
-            initZoom();
-        }
-
-        function init360Viewer() {
-            const image = document.getElementById('viewer360Image');
-            let isDragging = false;
-            let startX, startY;
-            let currentX = 0, currentY = 0;
-            let scale = 1;
-
-            image.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.clientX - currentX;
-                startY = e.clientY - currentY;
-                image.style.cursor = 'grabbing';
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                currentX = e.clientX - startX;
-                currentY = e.clientY - startY;
-                image.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-            });
-
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-                image.style.cursor = 'grab';
-            });
-
-            image.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                scale += e.deltaY * -0.01;
-                scale = Math.min(Math.max(.125, scale), 4);
-                image.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-            });
-
-            // Touch events for mobile
-            image.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                startX = e.touches[0].clientX - currentX;
-                startY = e.touches[0].clientY - currentY;
-            });
-
-            image.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                currentX = e.touches[0].clientX - startX;
-                currentY = e.touches[0].clientY - startY;
-                image.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-            });
-
-            image.addEventListener('touchend', () => {
-                isDragging = false;
-            });
-        }
-
-        function initZoom() {
-            const image = document.getElementById('zoomImage');
-            const zoomLevel = document.getElementById('zoomLevel');
-            let scale = 1;
-            let isDragging = false;
-            let startX, startY;
-            let translateX = 0, translateY = 0;
-
-            image.addEventListener('click', () => {
-                scale = scale === 1 ? 2 : 1;
-                translateX = 0;
-                translateY = 0;
-                updateTransform();
-            });
-
-            image.addEventListener('mousedown', (e) => {
-                if (scale === 1) return;
-                isDragging = true;
-                startX = e.clientX - translateX;
-                startY = e.clientY - translateY;
-                image.style.cursor = 'grabbing';
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (!isDragging || scale === 1) return;
-                e.preventDefault();
-                translateX = e.clientX - startX;
-                translateY = e.clientY - startY;
-                updateTransform();
-            });
-
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-                image.style.cursor = scale === 1 ? 'zoom-in' : 'grabbing';
-            });
-
-            image.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                scale += e.deltaY * -0.01;
-                scale = Math.min(Math.max(1, scale), 5);
-                updateTransform();
-            });
-
-            function updateTransform() {
-                image.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-                zoomLevel.textContent = `${Math.round(scale * 100)}%`;
-            }
-        }
-
-        // Cart Functions
+        // Shopping cart
         let cart = [];
-        let wishlist = [];
-
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.querySelector('.cart-count');
+        const overlay = document.getElementById('overlay');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const paymentModal = document.getElementById('paymentModal');
+        const cancelPayment = document.getElementById('cancelPayment');
+        const paymentForm = document.getElementById('paymentForm');
+        
+        // Update time for gold prices
+        function updateGoldTime() {
+            const now = new Date();
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('updateTime').textContent = now.toLocaleTimeString('en-US', options);
+            
+            // Randomly change gold prices to simulate live updates
+            const goldPrices = document.querySelectorAll('.gold-price');
+            goldPrices.forEach(priceEl => {
+                const currentPrice = parseFloat(priceEl.textContent.replace('$', '').replace(',', ''));
+                const change = (Math.random() - 0.5) * 10;
+                const newPrice = currentPrice + change;
+                priceEl.textContent = '$' + newPrice.toFixed(2);
+                
+                // Update change indicator
+                const changeEl = priceEl.nextElementSibling;
+                changeEl.textContent = `${change >= 0 ? '+' : ''}${change.toFixed(2)} (${(change/currentPrice*100).toFixed(2)}%)`;
+                changeEl.className = `price-change ${change >= 0 ? 'positive' : 'negative'}`;
+            });
+        }
+        
+        // Update gold prices every 30 seconds
+        setInterval(updateGoldTime, 30000);
+        
+        // Initialize gold prices time
+        updateGoldTime();
+        
+        // Cart functions
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
-            cart.push(product);
-            updateCartCount();
+            const existingItem = cart.find(item => item.id === productId);
             
-            // Show notification
-            showNotification(`${product.name} added to cart!`, 'success');
-        }
-
-        function addToWishlist(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!wishlist.find(p => p.id === productId)) {
-                wishlist.push(product);
-                showNotification(`${product.name} added to wishlist!`, 'success');
-            }
-        }
-
-        function updateCartCount() {
-            document.querySelector('.cart-count').textContent = cart.length;
-        }
-
-        function openCart() {
-            const modalContent = document.getElementById('modalContent');
-            if (cart.length === 0) {
-                modalContent.innerHTML = `
-                    <div style="padding: 40px; text-align: center;">
-                        <i class="fas fa-shopping-bag" style="font-size: 4rem; color: var(--gold); margin-bottom: 20px;"></i>
-                        <h2 style="color: var(--gold); margin-bottom: 20px;">Your Cart is Empty</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 30px;">Add some beautiful jewelry to your cart!</p>
-                        <button class="btn btn-gold" onclick="closeModal(); scrollToSection('products')">
-                            <i class="fas fa-gem"></i> Browse Collections
-                        </button>
-                    </div>
-                `;
+            if (existingItem) {
+                existingItem.quantity += 1;
             } else {
-                let total = 0;
-                modalContent.innerHTML = `
-                    <div style="padding: 40px;">
-                        <h2 style="color: var(--gold); margin-bottom: 30px;">Your Shopping Cart (${cart.length} items)</h2>
-                        <div style="max-height: 400px; overflow-y: auto; margin-bottom: 30px;">
-                            ${cart.map((item, index) => {
-                                const priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
-                                total += priceNum;
-                                return `
-                                    <div style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.1);">
-                                        <img src="${item.image}" alt="${item.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: var(--border-radius);">
-                                        <div style="flex: 1;">
-                                            <h4 style="color: var(--text-primary); margin-bottom: 5px;">${item.name}</h4>
-                                            <p style="color: var(--text-muted); font-size: 0.9rem;">${item.category.toUpperCase()}</p>
-                                        </div>
-                                        <div style="text-align: right;">
-                                            <div style="color: var(--gold); font-weight: 600; margin-bottom: 10px;">${item.price}</div>
-                                            <button onclick="removeFromCart(${index})" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.9rem;">
-                                                <i class="fas fa-trash"></i> Remove
-                                            </button>
-                                        </div>
-                                    </div>
-                                `;
-                            }).join('')}
-                        </div>
-                        <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--border-radius); margin-bottom: 30px;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                                <span style="color: var(--text-secondary);">Subtotal:</span>
-                                <span style="color: var(--text-primary); font-weight: 600;">AED ${total.toLocaleString()}</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                                <span style="color: var(--text-secondary);">Shipping:</span>
-                                <span style="color: var(--text-primary); font-weight: 600;">FREE (UAE)</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding-top: 15px; border-top: 1px solid rgba(212, 175, 55, 0.3);">
-                                <span style="color: var(--gold); font-size: 1.2rem;">Total:</span>
-                                <span style="color: var(--gold); font-size: 1.5rem; font-weight: 700;">AED ${total.toLocaleString()}</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 15px;">
-                            <button class="btn btn-outline" style="flex: 1;" onclick="closeModal(); scrollToSection('products')">
-                                <i class="fas fa-plus"></i> Continue Shopping
-                            </button>
-                            <button class="btn btn-gold" style="flex: 2;" onclick="proceedToCheckout()">
-                                <i class="fas fa-lock"></i> Proceed to Checkout
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }
-            document.getElementById('productModal').classList.add('active');
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartCount();
-            openCart();
-        }
-
-        function proceedToCheckout() {
-            closeModal();
-            scrollToSection('payment');
-            // Update cart items in order form
-            document.getElementById('cartItemsInput').value = JSON.stringify(cart.map(item => ({
-                name: item.name,
-                price: item.price,
-                category: item.category
-            })));
-        }
-
-        // UI Functions
-        function toggleMobileMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function switchLanguage(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            if (lang === 'ar') {
-                document.body.classList.add('arabic');
-                // Update text to Arabic
-                document.querySelector('.hero-title').textContent = "الفخامة بإعادة تصور";
-                document.querySelector('.hero-description').textContent = "مجموعات مجوهرات رائعة مستوحاة من كارتييه، فان كليف آند آربلز، وبولغاري. مصنوعة من الذهب عيار 18 قيراط وألماس فاخرة في دبي.";
-            } else {
-                document.body.classList.remove('arabic');
-                // Restore English text
-                document.querySelector('.hero-title').textContent = "Luxury Reimagined";
-                document.querySelector('.hero-description').textContent = "Exquisite jewelry collections inspired by Cartier, Van Cleef & Arpels, and Bvlgari. Crafted with 18K gold and premium diamonds in Dubai.";
-            }
-        }
-
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const themeBtn = document.querySelector('.theme-btn i');
-            if (document.body.classList.contains('light-mode')) {
-                themeBtn.className = 'fas fa-sun';
-            } else {
-                themeBtn.className = 'fas fa-moon';
-            }
-        }
-
-        function openSearch() {
-            const modalContent = document.getElementById('modalContent');
-            modalContent.innerHTML = `
-                <div style="padding: 40px; text-align: center;">
-                    <h2 style="color: var(--gold); margin-bottom: 30px;">Search Our Collection</h2>
-                    <div style="position: relative; max-width: 500px; margin: 0 auto;">
-                        <input type="text" id="searchInput" placeholder="Search for Cartier, VCA, Bvlgari, diamonds, gold..." 
-                               style="width: 100%; padding: 15px 50px 15px 20px; border-radius: var(--border-radius); 
-                                      border: 2px solid var(--gold); background: var(--bg-secondary); 
-                                      color: var(--text-primary); font-size: 1rem;">
-                        <button onclick="performSearch()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); 
-                                      background: none; border: none; color: var(--gold); cursor: pointer; font-size: 1.2rem;">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <div style="margin-top: 30px; color: var(--text-muted); text-align: left; max-width: 500px; margin: 30px auto 0;">
-                        <p style="color: var(--gold); margin-bottom: 10px;">Popular searches:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                            <span onclick="searchKeyword('Cartier')" style="background: var(--bg-secondary); padding: 8px 15px; border-radius: 20px; cursor: pointer; border: 1px solid rgba(212, 175, 55, 0.3);">Cartier</span>
-                            <span onclick="searchKeyword('VCA')" style="background: var(--bg-secondary); padding: 8px 15px; border-radius: 20px; cursor: pointer; border: 1px solid rgba(212, 175, 55, 0.3);">Van Cleef</span>
-                            <span onclick="searchKeyword('Bvlgari')" style="background: var(--bg-secondary); padding: 8px 15px; border-radius: 20px; cursor: pointer; border: 1px solid rgba(212, 175, 55, 0.3);">Bvlgari</span>
-                            <span onclick="searchKeyword('bracelet')" style="background: var(--bg-secondary); padding: 8px 15px; border-radius: 20px; cursor: pointer; border: 1px solid rgba(212, 175, 55, 0.3);">Bracelets</span>
-                            <span onclick="searchKeyword('diamond')" style="background: var(--bg-secondary); padding: 8px 15px; border-radius: 20px; cursor: pointer; border: 1px solid rgba(212, 175, 55, 0.3);">Diamonds</span>
-                            <span onclick="searchKeyword('necklace')" style="background: var(--bg-secondary); padding: 8px 15px; border-radius: 20px; cursor: pointer; border: 1px solid rgba(212, 175, 55, 0.3);">Necklaces</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.getElementById('productModal').classList.add('active');
-            
-            // Add enter key listener
-            document.getElementById('searchInput').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
-            });
-        }
-
-        function searchKeyword(keyword) {
-            document.getElementById('searchInput').value = keyword;
-            performSearch();
-        }
-
-        function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            closeModal();
-            
-            // Filter products
-            const filteredProducts = products.filter(product => 
-                product.name.toLowerCase().includes(searchTerm) ||
-                product.category.toLowerCase().includes(searchTerm) ||
-                product.description.toLowerCase().includes(searchTerm) ||
-                product.type.toLowerCase().includes(searchTerm)
-            );
-            
-            // Update category filter and show results
-            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.category-btn[data-category="all"]').classList.add('active');
-            
-            const productsGrid = document.getElementById('productsGrid');
-            productsGrid.innerHTML = '';
-            
-            if (filteredProducts.length === 0) {
-                productsGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                        <i class="fas fa-search" style="font-size: 4rem; color: var(--gold); margin-bottom: 20px;"></i>
-                        <h3 style="color: var(--text-primary); margin-bottom: 15px;">No products found for "${searchTerm}"</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 30px;">Try searching for different keywords like Cartier, VCA, Bvlgari, bracelet, diamond, etc.</p>
-                        <button class="btn btn-gold" onclick="scrollToSection('products')">
-                            <i class="fas fa-gem"></i> View All Collections
-                        </button>
-                    </div>
-                `;
-            } else {
-                filteredProducts.forEach(product => {
-                    const productCard = document.createElement('div');
-                    productCard.className = 'product-card';
-                    productCard.innerHTML = `
-                        <div class="product-image-container">
-                            <img src="${product.image}" alt="${product.name}" loading="lazy">
-                            <button class="quick-view-btn" onclick="openQuickView(${product.id})">
-                                <i class="fas fa-eye"></i> Quick View
-                            </button>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-category">${product.category.toUpperCase()}</div>
-                            <h3 class="product-name">${product.name}</h3>
-                            <p class="product-description">${product.description}</p>
-                            <div class="product-price">
-                                ${product.price}
-                                <span class="installment">${product.installment}</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn btn-gold" onclick="addToCart(${product.id})">
-                                    <i class="fas fa-shopping-bag"></i> Add to Cart
-                                </button>
-                                <button class="btn btn-outline" onclick="addToWishlist(${product.id})">
-                                    <i class="fas fa-heart"></i> Wishlist
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                    productsGrid.appendChild(productCard);
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
                 });
             }
             
-            scrollToSection('products');
+            updateCart();
+            showNotification(`${product.name} added to cart`);
         }
-
-        function openWishlist() {
-            const modalContent = document.getElementById('modalContent');
-            if (wishlist.length === 0) {
-                modalContent.innerHTML = `
-                    <div style="padding: 40px; text-align: center;">
-                        <i class="fas fa-heart" style="font-size: 4rem; color: var(--gold); margin-bottom: 20px;"></i>
-                        <h2 style="color: var(--gold); margin-bottom: 20px;">Your Wishlist is Empty</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 30px;">Save your favorite jewelry pieces here!</p>
-                        <button class="btn btn-gold" onclick="closeModal(); scrollToSection('products')">
-                            <i class="fas fa-gem"></i> Explore Collections
-                        </button>
-                    </div>
-                `;
-            } else {
-                modalContent.innerHTML = `
-                    <div style="padding: 40px;">
-                        <h2 style="color: var(--gold); margin-bottom: 30px;">Your Wishlist (${wishlist.length} items)</h2>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-                            ${wishlist.map(item => `
-                                <div style="background: var(--bg-secondary); border-radius: var(--border-radius); padding: 20px; border: 1px solid rgba(212, 175, 55, 0.2); position: relative;">
-                                    <button onclick="removeFromWishlist(${item.id})" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.2rem;">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                    <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--border-radius); margin-bottom: 15px;">
-                                    <h4 style="color: var(--text-primary); margin-bottom: 10px; font-size: 1.1rem;">${item.name}</h4>
-                                    <div style="color: var(--gold); font-weight: 600; margin-bottom: 15px;">${item.price}</div>
-                                    <div style="display: flex; gap: 10px;">
-                                        <button class="btn btn-gold" style="flex: 1; padding: 8px;" onclick="addToCart(${item.id}); closeModal();">
-                                            <i class="fas fa-shopping-bag"></i> Add to Cart
-                                        </button>
-                                        <button class="btn btn-outline" style="flex: 1; padding: 8px;" onclick="openQuickView(${item.id})">
-                                            <i class="fas fa-eye"></i> View
-                                        </button>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                        <div style="text-align: center; margin-top: 30px;">
-                            <button class="btn btn-gold" onclick="closeModal(); scrollToSection('products')">
-                                <i class="fas fa-plus"></i> Continue Shopping
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }
-            document.getElementById('productModal').classList.add('active');
+        
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
         }
-
-        function removeFromWishlist(productId) {
-            wishlist = wishlist.filter(item => item.id !== productId);
-            openWishlist();
-        }
-
-        function openBookingModal() {
-            const modalContent = document.getElementById('modalContent');
-            modalContent.innerHTML = `
-                <div style="padding: 40px;">
-                    <h2 style="color: var(--gold); margin-bottom: 30px; text-align: center;">Book Private Viewing</h2>
-                    <form id="bookingForm" style="max-width: 500px; margin: 0 auto;">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>First Name *</label>
-                                <input type="text" name="first_name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name *</label>
-                                <input type="text" name="last_name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address *</label>
-                            <input type="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" name="phone" required value="+971">
-                        </div>
-                        <div class="form-group">
-                            <label>Preferred Date *</label>
-                            <input type="date" name="date" required min="${new Date().toISOString().split('T')[0]}" max="${new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}">
-                        </div>
-                        <div class="form-group">
-                            <label>Preferred Time *</label>
-                            <select name="time" required>
-                                <option value="">Select time</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="16:00">4:00 PM</option>
-                                <option value="17:00">5:00 PM</option>
-                                <option value="18:00">6:00 PM</option>
-                                <option value="19:00">7:00 PM</option>
-                                <option value="20:00">8:00 PM</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Collection Interest</label>
-                            <select name="collection">
-                                <option value="">Select collection (optional)</option>
-                                <option value="cartier">Cartier Inspired</option>
-                                <option value="vca">Van Cleef & Arpels</option>
-                                <option value="bvlgari">Bvlgari Inspired</option>
-                                <option value="messika">Messika Inspired</option>
-                                <option value="all">All Collections</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Special Requests</label>
-                            <textarea name="requests" placeholder="Any specific pieces or requirements..."></textarea>
-                        </div>
-                        <button type="button" class="btn btn-gold" style="width: 100%; padding: 15px; margin-top: 20px;" onclick="submitBookingForm()">
-                            <i class="fas fa-calendar-check"></i> BOOK PRIVATE VIEWING
-                        </button>
-                        <p style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.9rem;">
-                            <i class="fas fa-info-circle"></i> We'll confirm your appointment within 2 hours via WhatsApp
-                        </p>
-                    </form>
-                </div>
-            `;
-            document.getElementById('productModal').classList.add('active');
-        }
-
-        function submitBookingForm() {
-            const form = document.getElementById('bookingForm');
-            const formData = new FormData(form);
+        
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
             
-            // Simple validation
-            let isValid = true;
-            form.querySelectorAll('[required]').forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'red';
-                } else {
-                    input.style.borderColor = '';
-                }
-            });
+            // Update cart items display
+            cartItems.innerHTML = '';
             
-            if (!isValid) {
-                showNotification('Please fill in all required fields', 'error');
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: var(--text-gray);">Your cart is empty</p>';
+                cartTotal.textContent = '$0.00';
                 return;
             }
             
-            // Create booking message
-            const message = `New Private Viewing Request:
-Name: ${formData.get('first_name')} ${formData.get('last_name')}
-Email: ${formData.get('email')}
-Phone: ${formData.get('phone')}
-Date: ${formData.get('date')}
-Time: ${formData.get('time')}
-Collection: ${formData.get('collection') || 'Not specified'}
-Requests: ${formData.get('requests') || 'None'}`;
+            let total = 0;
             
-            // Encode message for WhatsApp
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/971543746476?text=${encodedMessage}`;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItemEl = document.createElement('div');
+                cartItemEl.className = 'cart-item';
+                cartItemEl.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">$${item.price.toLocaleString()}</div>
+                        <div>Quantity: ${item.quantity}</div>
+                    </div>
+                    <div class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</div>
+                `;
+                
+                cartItems.appendChild(cartItemEl);
+            });
             
-            // Open WhatsApp
-            window.open(whatsappUrl, '_blank');
-            
-            showNotification('Opening WhatsApp to confirm your appointment...', 'success');
-            closeModal();
+            cartTotal.textContent = '$' + total.toLocaleString();
         }
-
-        function showPaymentInfo(type) {
-            const messages = {
-                bank: 'Bank Transfer: Please use the bank details we will provide via email. UAE accounts only.',
-                cash: 'Cash on Delivery: Available in Dubai only. Free delivery for orders above AED 5,000.',
-                card: 'Credit Card: Secure payment link will be sent after order confirmation.',
-                paypal: 'PayPal: Payment link will be sent to your email. International payments accepted.',
-                tabby: 'Tabby: 4 interest-free payments available. Apply at checkout.',
-                tamara: 'Tamara: Pay in 3 installments, 0% interest. Available for UAE residents.'
-            };
-            showNotification(messages[type], 'info');
-        }
-
-        function showNotification(message, type) {
+        
+        // Show notification
+        function showNotification(message) {
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
                 top: 100px;
                 right: 20px;
-                background: ${type === 'success' ? 'var(--gold)' : type === 'error' ? '#ff4444' : 'var(--bg-secondary)'};
-                color: ${type === 'success' ? 'var(--black)' : 'var(--text-primary)'};
-                padding: 15px 25px;
-                border-radius: var(--border-radius);
-                border: 2px solid var(--gold);
+                background-color: var(--gold);
+                color: var(--dark-bg);
+                padding: 1rem 1.5rem;
+                border-radius: 5px;
                 z-index: 10000;
+                font-weight: bold;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
                 animation: slideIn 0.3s ease;
-                max-width: 300px;
-                box-shadow: var(--shadow);
             `;
-            notification.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-                    <span>${message}</span>
-                </div>
-            `;
+            
+            notification.textContent = message;
             document.body.appendChild(notification);
             
             setTimeout(() => {
@@ -2553,7 +1143,7 @@ Requests: ${formData.get('requests') || 'None'}`;
                 setTimeout(() => notification.remove(), 300);
             }, 3000);
             
-            // Add keyframes for animation
+            // Add CSS for animation
             if (!document.querySelector('#notification-styles')) {
                 const style = document.createElement('style');
                 style.id = 'notification-styles';
@@ -2570,32 +1160,105 @@ Requests: ${formData.get('requests') || 'None'}`;
                 document.head.appendChild(style);
             }
         }
-
-        function showFallbackLogo(imgElement, isLarge) {
-            const container = imgElement.parentElement;
-            imgElement.style.display = 'none';
+        
+        // Event listeners
+        cartIcon.addEventListener('click', () => {
+            cartModal.classList.add('open');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartModal.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            cartModal.classList.remove('open');
+            overlay.classList.remove('active');
+            paymentModal.classList.remove('open');
+        });
+        
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showNotification('Your cart is empty');
+                return;
+            }
             
-            const fallbackDiv = document.createElement('div');
-            fallbackDiv.className = `fallback-logo ${isLarge ? 'fallback-logo-large' : ''}`;
-            fallbackDiv.innerHTML = `
-                <div class="fallback-logo-text">RYAAN JEWELLERS</div>
-                <div class="fallback-logo-subtext">LUXURY GOLD & DIAMONDS</div>
-            `;
+            cartModal.classList.remove('open');
+            paymentModal.classList.add('open');
+        });
+        
+        cancelPayment.addEventListener('click', () => {
+            paymentModal.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        paymentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
             
-            container.appendChild(fallbackDiv);
-        }
-
-        function closeModal() {
-            document.getElementById('productModal').classList.remove('active');
-        }
-
-        function closeViewer360Modal() {
-            document.getElementById('viewer360Modal').classList.remove('active');
-        }
-
-        function closeZoomModal() {
-            document.getElementById('zoomModal').classList.remove('active');
-        }
+            // In a real application, you would process the payment here
+            // For demo purposes, we'll just show a success message
+            showNotification('Payment successful! Thank you for your purchase.');
+            
+            // Clear the cart
+            cart = [];
+            updateCart();
+            
+            // Close modals
+            paymentModal.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+        
+        // Add click events to category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
+                const categoryProducts = products.filter(p => p.category === category);
+                
+                // In a real application, you would show products for this category
+                // For demo, we'll add the first product from this category to the cart
+                if (categoryProducts.length > 0) {
+                    addToCart(categoryProducts[0].id);
+                }
+            });
+        });
+        
+        // Add click events to brand cards
+        document.querySelectorAll('.brand-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const brand = card.getAttribute('data-brand');
+                const brandProducts = products.filter(p => p.brand === brand);
+                
+                // In a real application, you would show products for this brand
+                // For demo, we'll add the first product from this brand to the cart
+                if (brandProducts.length > 0) {
+                    addToCart(brandProducts[0].id);
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize cart
+        updateCart();
+        
+        // Add some sample items to cart for demo
+        setTimeout(() => {
+            addToCart(1);
+            addToCart(4);
+        }, 1000);
     </script>
 </body>
-  </html>
+</html>
