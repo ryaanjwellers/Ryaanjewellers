@@ -2,7 +2,7 @@
    CONFIGURATION
    - Updated with your actual file names
    ===================== */
-const RAW_BASE = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers007/main/';
+const RAW_BASE = 'https://raw.githubusercontent.com/Ryaanjewellers007/Ryaanjewellers007/main/';
 const LOGO_CANDIDATES = ['Logo new ryaan.png'];
 
 // Your uploaded products with correct file names
