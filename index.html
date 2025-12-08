@@ -14,58 +14,6 @@
     <meta property="og:url" content="https://ryaanjewellers.com">
     <meta property="og:type" content="website">
     
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RYAAN Jewellers — Master Quality Assurance">
-    <meta name="twitter:description" content="Luxury jewellery with door-to-door service in Dubai">
-    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "JewelryStore",
-      "name": "RYAAN Jewellers",
-      "image": "https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png",
-      "description": "Master Quality Assurance in luxury jewellery with door-to-door service in Dubai",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dubai",
-        "addressRegion": "Dubai",
-        "addressCountry": "UAE"
-      },
-      "telephone": "+971543746476",
-      "openingHours": "Mo-Su 07:00-23:00",
-      "priceRange": "$$$$",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Jewellery Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Door-to-Door Luxury Showroom"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Old Gold Buying Service"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Jewellery Repair & Restoration"
-            }
-          }
-        ]
-      }
-    }
-    </script>
-    
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -73,9 +21,6 @@
     <!-- Swiper.js for Sliders -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    
-    <!-- PhotoSwipe for 360° & Zoom -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.4/photoswipe.min.css">
     
     <style>
         /* ====== CSS VARIABLES ====== */
@@ -92,6 +37,15 @@
             --radius: 16px;
             --shadow: 0 20px 60px rgba(0,0,0,0.4);
             --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Light Theme Variables */
+        .theme-light {
+            --bg-dark: #FFFFFF;
+            --bg-card: #F5F5F5;
+            --text-light: #111111;
+            --text-muted: #666666;
+            --shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
         
         /* ====== RESET & BASE ====== */
@@ -112,6 +66,11 @@
             color: var(--text-light);
             line-height: 1.8;
             overflow-x: hidden;
+            transition: var(--transition);
+        }
+        
+        [dir="rtl"] {
+            font-family: 'Poppins', 'Tahoma', sans-serif;
         }
         
         .container {
@@ -124,7 +83,7 @@
             padding: 100px 0;
         }
         
-        /* ====== HEADER ====== */
+        /* ====== HEADER WITH LANGUAGE & THEME SWITCHES ====== */
         .master-header {
             position: fixed;
             top: 0;
@@ -136,6 +95,11 @@
             z-index: 1000;
             padding: 15px 0;
             transition: var(--transition);
+        }
+        
+        .theme-light .master-header {
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .header-content {
@@ -158,6 +122,10 @@
             animation: logoGlow 3s infinite alternate;
         }
         
+        .theme-light .logo-img {
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
+        }
+        
         .brand-text {
             font-family: 'Cinzel', serif;
             font-weight: 900;
@@ -176,6 +144,126 @@
             letter-spacing: 4px;
             color: var(--text-muted);
             font-family: 'Poppins', sans-serif;
+        }
+        
+        [dir="rtl"] .brand-text::after {
+            left: auto;
+            right: 0;
+        }
+        
+        /* Control Switches */
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .switch-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 8px 15px;
+            border-radius: 50px;
+        }
+        
+        .theme-light .switch-container {
+            background: rgba(212, 175, 55, 0.05);
+        }
+        
+        .switch-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        /* Language Switch */
+        .lang-switch {
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            padding: 4px;
+            position: relative;
+            cursor: pointer;
+            width: 120px;
+        }
+        
+        .theme-light .lang-switch {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .lang-option {
+            flex: 1;
+            text-align: center;
+            padding: 8px 15px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-muted);
+            z-index: 1;
+            transition: var(--transition);
+        }
+        
+        .lang-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: calc(50% - 4px);
+            height: calc(100% - 8px);
+            background: var(--gold);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        
+        [dir="rtl"] .lang-slider {
+            left: auto;
+            right: 4px;
+        }
+        
+        .lang-option.active {
+            color: #000000;
+        }
+        
+        /* Theme Switch */
+        .theme-switch {
+            width: 60px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            padding: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .theme-light .theme-switch {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .theme-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 22px;
+            height: 22px;
+            background: var(--gold);
+            border-radius: 50%;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .theme-switch.active .theme-slider {
+            left: calc(100% - 26px);
+        }
+        
+        [dir="rtl"] .theme-slider {
+            left: auto;
+            right: 4px;
+        }
+        
+        [dir="rtl"] .theme-switch.active .theme-slider {
+            right: calc(100% - 26px);
         }
         
         /* ====== HERO SLIDER ====== */
@@ -221,6 +309,14 @@
             background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
         }
         
+        .theme-light .hero-overlay {
+            background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(255,255,255,0.1) 100%);
+        }
+        
+        [dir="rtl"] .hero-overlay {
+            background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.9) 100%);
+        }
+        
         .hero-content {
             position: relative;
             z-index: 2;
@@ -230,6 +326,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+        
+        [dir="rtl"] .hero-content {
+            padding: 100px;
+            margin-right: 0;
+            margin-left: auto;
         }
         
         .hero-tag {
@@ -255,6 +357,10 @@
             text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
+        .theme-light .hero-title {
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
         .hero-subtitle {
             font-size: 24px;
             color: var(--text-light);
@@ -264,7 +370,7 @@
         
         /* ====== VISION MISSION SECTION ====== */
         .vision-mission-section {
-            background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -274,6 +380,10 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+        }
+        
+        [dir="rtl"] .vm-container {
+            direction: rtl;
         }
         
         .vm-card {
@@ -319,7 +429,7 @@
         
         /* ====== DOOR-TO-DOOR SERVICES ====== */
         .door-services {
-            background: linear-gradient(135deg, var(--bg-card) 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
         }
         
         .service-grid {
@@ -329,8 +439,12 @@
             margin-top: 60px;
         }
         
+        [dir="rtl"] .service-grid {
+            direction: rtl;
+        }
+        
         .service-card {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(212, 175, 55, 0.05);
             border-radius: var(--radius);
             padding: 50px 40px;
             text-align: center;
@@ -338,6 +452,10 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+        }
+        
+        .theme-light .service-card {
+            background: rgba(212, 175, 55, 0.02);
         }
         
         .service-card::before {
@@ -361,19 +479,9 @@
             transform: scaleX(1);
         }
         
-        .service-number {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 48px;
-            font-weight: 900;
-            color: rgba(212, 175, 55, 0.1);
-            font-family: 'Cinzel', serif;
-        }
-        
         /* ====== BRAND COLLECTIONS ====== */
         .brand-section {
-            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
         }
         
         .brand-slider {
@@ -395,47 +503,9 @@
             box-shadow: var(--shadow);
         }
         
-        .brand-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .brand-card:hover .brand-image {
-            transform: scale(1.05);
-        }
-        
-        .brand-info {
-            padding: 30px;
-        }
-        
-        .brand-name {
-            font-family: 'Cinzel', serif;
-            font-size: 24px;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-        
-        .brand-description {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        
-        .brand-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
         /* ====== 360° PRODUCT VIEWER ====== */
         .product-viewer-section {
-            background: #000;
+            background: var(--bg-dark);
             position: relative;
         }
         
@@ -446,54 +516,13 @@
             align-items: center;
         }
         
-        .viewer-display {
-            background: #111;
-            border-radius: var(--radius);
-            overflow: hidden;
-            height: 600px;
-            position: relative;
-        }
-        
-        .viewer-canvas {
-            width: 100%;
-            height: 100%;
-            background: #000;
-            cursor: grab;
-        }
-        
-        .viewer-controls {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            background: rgba(0,0,0,0.8);
-            padding: 15px;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .viewer-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gold);
-            border: none;
-            color: #000;
-            font-size: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .viewer-btn:hover {
-            background: var(--gold-dark);
-            transform: scale(1.1);
+        [dir="rtl"] .viewer-container {
+            direction: rtl;
         }
         
         /* ====== QUALITY ASSURANCE ====== */
         .quality-section {
-            background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
         }
         
         .quality-grid {
@@ -503,77 +532,18 @@
             margin-top: 60px;
         }
         
-        .quality-item {
-            text-align: center;
-            padding: 40px;
-            background: rgba(212, 175, 55, 0.05);
-            border-radius: var(--radius);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: var(--transition);
-        }
-        
-        .quality-item:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-        }
-        
-        .quality-icon {
-            font-size: 48px;
-            color: var(--gold);
-            margin-bottom: 30px;
+        [dir="rtl"] .quality-grid {
+            direction: rtl;
         }
         
         /* ====== SOCIAL MEDIA INTEGRATION ====== */
         .social-section {
-            background: linear-gradient(135deg, var(--bg-card) 0%, #000 100%);
-        }
-        
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .social-card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: var(--transition);
-        }
-        
-        .social-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-        }
-        
-        .social-icon {
-            font-size: 48px;
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-        
-        .whatsapp .social-icon { color: #25D366; }
-        .instagram .social-icon { color: #E4405F; }
-        .linkedin .social-icon { color: #0A66C2; }
-        
-        .social-card:hover .social-icon {
-            transform: scale(1.2);
-        }
-        
-        .social-embed {
-            margin-top: 40px;
-            background: #000;
-            padding: 20px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
         }
         
         /* ====== APPOINTMENT BOOKING ====== */
         .booking-section {
-            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
         }
         
         .booking-form {
@@ -587,25 +557,9 @@
             overflow: hidden;
         }
         
-        .booking-form::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, var(--gold), transparent 30%);
-            animation: rotate 4s linear infinite;
-        }
-        
-        .booking-form > * {
-            position: relative;
-            z-index: 1;
-        }
-        
         /* ====== FOOTER ====== */
         .master-footer {
-            background: #000;
+            background: var(--bg-dark);
             padding: 80px 0 30px;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
@@ -617,55 +571,8 @@
             margin-bottom: 60px;
         }
         
-        .footer-logo {
-            height: 100px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-title {
-            font-family: 'Cinzel', serif;
-            font-size: 20px;
-            color: var(--gold);
-            margin-bottom: 30px;
-        }
-        
-        .footer-links a {
-            display: block;
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-bottom: 15px;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--gold);
-            transform: translateX(10px);
-        }
-        
-        .contact-info {
-            list-style: none;
-        }
-        
-        .contact-info li {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--text-muted);
-        }
-        
-        .contact-info i {
-            color: var(--gold);
-            font-size: 20px;
-            width: 30px;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-muted);
-            font-size: 14px;
+        [dir="rtl"] .footer-grid {
+            direction: rtl;
         }
         
         /* ====== ANIMATIONS ====== */
@@ -674,13 +581,9 @@
             to { filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.6)); }
         }
         
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .theme-light @keyframes logoGlow {
+            from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2)); }
+            to { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4)); }
         }
         
         /* ====== RESPONSIVE ====== */
@@ -696,6 +599,15 @@
             .section-padding { padding: 60px 0; }
             .vm-card { padding: 40px; }
             .booking-form { padding: 30px; }
+            .header-content {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .header-controls {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
         }
         
         @media (max-width: 480px) {
@@ -703,12 +615,46 @@
             .brand-text { font-size: 24px; }
             .vm-title { font-size: 28px; }
             .service-grid { grid-template-columns: 1fr; }
+            .lang-switch { width: 100px; }
+        }
+        
+        /* RTL Specific Adjustments */
+        [dir="rtl"] .swiper-button-next {
+            right: auto;
+            left: 10px;
+        }
+        
+        [dir="rtl"] .swiper-button-prev {
+            left: auto;
+            right: 10px;
+        }
+        
+        [dir="rtl"] .section-title {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .section-subtitle {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .form-group {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .form-input, 
+        [dir="rtl"] .form-select, 
+        [dir="rtl"] .form-textarea {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .contact-info li {
+            text-align: right;
         }
     </style>
 </head>
 <body>
 
-<!-- Master Header -->
+<!-- Master Header with Language & Theme Switches -->
 <header class="master-header">
     <div class="container">
         <div class="header-content">
@@ -719,17 +665,38 @@
             </div>
             
             <nav class="main-nav">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#vision" class="nav-link">Vision</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#brands" class="nav-link">Brands</a>
-                <a href="#quality" class="nav-link">Quality</a>
-                <a href="#booking" class="nav-link">Book</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="#vision" class="nav-link" data-i18n="nav.vision">Vision</a>
+                <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="#brands" class="nav-link" data-i18n="nav.brands">Brands</a>
+                <a href="#quality" class="nav-link" data-i18n="nav.quality">Quality</a>
+                <a href="#booking" class="nav-link" data-i18n="nav.book">Book</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
             </nav>
             
-            <div class="header-actions">
-                <a href="https://wa.me/971543746476" class="whatsapp-btn" target="_blank">
+            <div class="header-controls">
+                <!-- Language Switch -->
+                <div class="switch-container">
+                    <span class="switch-label" data-i18n="header.language">Language</span>
+                    <div class="lang-switch" id="langSwitch">
+                        <div class="lang-option active" data-lang="en">English</div>
+                        <div class="lang-option" data-lang="ar">العربية</div>
+                        <div class="lang-slider"></div>
+                    </div>
+                </div>
+                
+                <!-- Theme Switch -->
+                <div class="switch-container">
+                    <span class="switch-label" data-i18n="header.theme">Theme</span>
+                    <div class="theme-switch" id="themeSwitch">
+                        <div class="theme-slider">
+                            <i class="fas fa-moon" id="themeIcon"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/971543746476" class="whatsapp-btn" target="_blank" data-i18n="header.whatsapp">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -746,12 +713,12 @@
                 <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2067');"></div>
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <span class="hero-tag">Master Quality Assurance</span>
-                    <h1 class="hero-title">Luxury At Your Doorstep</h1>
-                    <p class="hero-subtitle">Experience our complete luxury jewellery collection in the comfort of your home. Book your personal door-to-door showroom today.</p>
+                    <span class="hero-tag" data-i18n="hero.tag1">Master Quality Assurance</span>
+                    <h1 class="hero-title" data-i18n="hero.title1">Luxury At Your Doorstep</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle1">Experience our complete luxury jewellery collection in the comfort of your home. Book your personal door-to-door showroom today.</p>
                     <div class="hero-buttons">
-                        <a href="#booking" class="primary-btn">Book Home Visit</a>
-                        <a href="#brands" class="secondary-btn">View Collections</a>
+                        <a href="#booking" class="primary-btn" data-i18n="hero.btn1">Book Home Visit</a>
+                        <a href="#brands" class="secondary-btn" data-i18n="hero.btn2">View Collections</a>
                     </div>
                 </div>
             </div>
@@ -761,12 +728,12 @@
                 <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2070');"></div>
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <span class="hero-tag">Brand Inspired Excellence</span>
-                    <h1 class="hero-title">Master Craftsmanship</h1>
-                    <p class="hero-subtitle">Inspired by Cartier, Van Cleef, Messika & Chopard. Each piece crafted with master quality assurance.</p>
+                    <span class="hero-tag" data-i18n="hero.tag2">Brand Inspired Excellence</span>
+                    <h1 class="hero-title" data-i18n="hero.title2">Master Craftsmanship</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle2">Inspired by Cartier, Van Cleef, Messika & Chopard. Each piece crafted with master quality assurance.</p>
                     <div class="hero-buttons">
-                        <a href="#brands" class="primary-btn">Explore Brands</a>
-                        <a href="#quality" class="secondary-btn">Quality Standards</a>
+                        <a href="#brands" class="primary-btn" data-i18n="hero.btn3">Explore Brands</a>
+                        <a href="#quality" class="secondary-btn" data-i18n="hero.btn4">Quality Standards</a>
                     </div>
                 </div>
             </div>
@@ -776,12 +743,12 @@
                 <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2070');"></div>
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <span class="hero-tag">Complete Gold Services</span>
-                    <h1 class="hero-title">Buy & Sell Gold</h1>
-                    <p class="hero-subtitle">Get best prices for your old gold. Professional valuation at your doorstep with instant cash payment.</p>
+                    <span class="hero-tag" data-i18n="hero.tag3">Complete Gold Services</span>
+                    <h1 class="hero-title" data-i18n="hero.title3">Buy & Sell Gold</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle3">Get best prices for your old gold. Professional valuation at your doorstep with instant cash payment.</p>
                     <div class="hero-buttons">
-                        <a href="#services" class="primary-btn">Sell Gold Now</a>
-                        <a href="#booking" class="secondary-btn">Free Valuation</a>
+                        <a href="#services" class="primary-btn" data-i18n="hero.btn5">Sell Gold Now</a>
+                        <a href="#booking" class="secondary-btn" data-i18n="hero.btn6">Free Valuation</a>
                     </div>
                 </div>
             </div>
@@ -797,8 +764,8 @@
 <section class="vision-mission-section section-padding" id="vision">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Our Philosophy</span>
-            <h2 class="section-title">Vision & Mission</h2>
+            <span class="section-tag" data-i18n="section.tag1">Our Philosophy</span>
+            <h2 class="section-title" data-i18n="section.title1">Vision & Mission</h2>
         </div>
         
         <div class="vm-container">
@@ -806,73 +773,45 @@
                 <div class="vm-icon">
                     <i class="fas fa-eye"></i>
                 </div>
-                <h3 class="vm-title">Our Vision</h3>
-                <p class="vm-text">
+                <h3 class="vm-title" data-i18n="vision.title">Our Vision</h3>
+                <p class="vm-text" data-i18n="vision.text">
                     To revolutionize luxury jewellery shopping by bringing master-crafted, brand-inspired collections directly to our clients' homes across Dubai. We envision becoming the most trusted name in door-to-door luxury jewellery services, setting new standards in quality, convenience, and customer experience.
                 </p>
-                <div class="vm-points">
-                    <div class="vm-point">
-                        <i class="fas fa-star"></i>
-                        <span>Redefining luxury convenience</span>
-                    </div>
-                    <div class="vm-point">
-                        <i class="fas fa-crown"></i>
-                        <span>Setting industry standards</span>
-                    </div>
-                    <div class="vm-point">
-                        <i class="fas fa-home"></i>
-                        <span>Home luxury experience</span>
-                    </div>
-                </div>
             </div>
             
             <div class="vm-card">
                 <div class="vm-icon">
                     <i class="fas fa-bullseye"></i>
                 </div>
-                <h3 class="vm-title">Our Mission</h3>
-                <p class="vm-text">
+                <h3 class="vm-title" data-i18n="mission.title">Our Mission</h3>
+                <p class="vm-text" data-i18n="mission.text">
                     To provide unparalleled luxury jewellery experiences through our door-to-door service, combining master quality assurance with brand-inspired designs. We are committed to transparency in gold trading, excellence in craftsmanship, and creating lasting relationships with our clients through trust and superior service.
                 </p>
-                <div class="vm-points">
-                    <div class="vm-point">
-                        <i class="fas fa-gem"></i>
-                        <span>Master quality assurance</span>
-                    </div>
-                    <div class="vm-point">
-                        <i class="fas fa-handshake"></i>
-                        <span>Trust & transparency</span>
-                    </div>
-                    <div class="vm-point">
-                        <i class="fas fa-award"></i>
-                        <span>Excellence in service</span>
-                    </div>
-                </div>
             </div>
         </div>
         
         <!-- Success Story -->
         <div class="success-story" style="margin-top: 80px; background: rgba(212, 175, 55, 0.05); padding: 60px; border-radius: var(--radius); border: 1px solid rgba(212, 175, 55, 0.1);">
             <div class="success-header">
-                <span class="section-tag">Our Journey</span>
-                <h3 class="section-title" style="font-size: 32px;">Success Story</h3>
+                <span class="section-tag" data-i18n="section.tag2">Our Journey</span>
+                <h3 class="section-title" style="font-size: 32px;" data-i18n="section.title2">Success Story</h3>
             </div>
             <div class="success-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px;">
                 <div class="success-item">
                     <div class="success-number" style="font-family: 'Cinzel', serif; font-size: 48px; color: var(--gold); margin-bottom: 15px;">500+</div>
-                    <div class="success-text" style="color: var(--text-muted);">Happy Clients Served</div>
+                    <div class="success-text" style="color: var(--text-muted);" data-i18n="success.clients">Happy Clients Served</div>
                 </div>
                 <div class="success-item">
                     <div class="success-number" style="font-family: 'Cinzel', serif; font-size: 48px; color: var(--gold); margin-bottom: 15px;">1000+</div>
-                    <div class="success-text" style="color: var(--text-muted);">Door-to-Door Visits</div>
+                    <div class="success-text" style="color: var(--text-muted);" data-i18n="success.visits">Door-to-Door Visits</div>
                 </div>
                 <div class="success-item">
                     <div class="success-number" style="font-family: 'Cinzel', serif; font-size: 48px; color: var(--gold); margin-bottom: 15px;">AED 5M+</div>
-                    <div class="success-text" style="color: var(--text-muted);">Gold Transactions</div>
+                    <div class="success-text" style="color: var(--text-muted);" data-i18n="success.transactions">Gold Transactions</div>
                 </div>
                 <div class="success-item">
                     <div class="success-number" style="font-family: 'Cinzel', serif; font-size: 48px; color: var(--gold); margin-bottom: 15px;">98%</div>
-                    <div class="success-text" style="color: var(--text-muted);">Client Satisfaction</div>
+                    <div class="success-text" style="color: var(--text-muted);" data-i18n="success.satisfaction">Client Satisfaction</div>
                 </div>
             </div>
         </div>
@@ -883,9 +822,9 @@
 <section class="door-services section-padding" id="services">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Premium Services</span>
-            <h2 class="section-title">Door-to-Door Luxury Experience</h2>
-            <p class="section-subtitle">We bring the complete jewellery experience to your doorstep across Dubai</p>
+            <span class="section-tag" data-i18n="section.tag3">Premium Services</span>
+            <h2 class="section-title" data-i18n="section.title3">Door-to-Door Luxury Experience</h2>
+            <p class="section-subtitle" data-i18n="section.subtitle3">We bring the complete jewellery experience to your doorstep across Dubai</p>
         </div>
         
         <div class="service-grid">
@@ -895,25 +834,11 @@
                 <div class="service-icon" style="font-size: 48px; color: var(--gold); margin-bottom: 30px;">
                     <i class="fas fa-home"></i>
                 </div>
-                <h3 class="service-title">Personal Showroom</h3>
-                <p class="service-description">
+                <h3 class="service-title" data-i18n="services.title1">Personal Showroom</h3>
+                <p class="service-description" data-i18n="services.desc1">
                     Our complete luxury collection brought to your home or office. Private viewing with expert consultation.
                 </p>
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Complete collection display</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Private, pressure-free experience</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Flexible timing (7AM-11PM)</span>
-                    </div>
-                </div>
-                <a href="#booking" class="primary-btn" style="margin-top: 30px;">Book Showroom</a>
+                <a href="#booking" class="primary-btn" style="margin-top: 30px;" data-i18n="services.btn1">Book Showroom</a>
             </div>
             
             <!-- Service 2 -->
@@ -922,25 +847,11 @@
                 <div class="service-icon" style="font-size: 48px; color: var(--gold); margin-bottom: 30px;">
                     <i class="fas fa-money-bill-wave"></i>
                 </div>
-                <h3 class="service-title">Old Gold Buying</h3>
-                <p class="service-description">
+                <h3 class="service-title" data-i18n="services.title2">Old Gold Buying</h3>
+                <p class="service-description" data-i18n="services.desc2">
                     Get best cash price for your old gold, diamonds & jewellery. Professional valuation at your location.
                 </p>
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Instant cash payment</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Professional testing equipment</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Complete transparency</span>
-                    </div>
-                </div>
-                <a href="#booking" class="primary-btn" style="margin-top: 30px;">Sell Gold Now</a>
+                <a href="#booking" class="primary-btn" style="margin-top: 30px;" data-i18n="services.btn2">Sell Gold Now</a>
             </div>
             
             <!-- Service 3 -->
@@ -949,25 +860,11 @@
                 <div class="service-icon" style="font-size: 48px; color: var(--gold); margin-bottom: 30px;">
                     <i class="fas fa-tools"></i>
                 </div>
-                <h3 class="service-title">Jewellery Repair</h3>
-                <p class="service-description">
+                <h3 class="service-title" data-i18n="services.title3">Jewellery Repair</h3>
+                <p class="service-description" data-i18n="services.desc3">
                     Expert repair services at your doorstep. We fix, resize, polish and restore all types of jewellery.
                 </p>
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>On-site repair assessment</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Quick turnaround</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Quality guaranteed</span>
-                    </div>
-                </div>
-                <a href="#booking" class="primary-btn" style="margin-top: 30px;">Request Repair</a>
+                <a href="#booking" class="primary-btn" style="margin-top: 30px;" data-i18n="services.btn3">Request Repair</a>
             </div>
             
             <!-- Service 4 -->
@@ -976,327 +873,11 @@
                 <div class="service-icon" style="font-size: 48px; color: var(--gold); margin-bottom: 30px;">
                     <i class="fas fa-pencil-ruler"></i>
                 </div>
-                <h3 class="service-title">Custom Design</h3>
-                <p class="service-description">
+                <h3 class="service-title" data-i18n="services.title4">Custom Design</h3>
+                <p class="service-description" data-i18n="services.desc4">
                     Create your dream jewellery with our designers. From concept to creation, all at your location.
                 </p>
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>One-on-one design session</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>3D visualization</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check"></i>
-                        <span>Use your own materials</span>
-                    </div>
-                </div>
-                <a href="#booking" class="primary-btn" style="margin-top: 30px;">Start Designing</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Brand Collections -->
-<section class="brand-section section-padding" id="brands">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Master Collections</span>
-            <h2 class="section-title">Brand Inspired Excellence</h2>
-            <p class="section-subtitle">Inspired by luxury houses, crafted with master quality assurance</p>
-        </div>
-        
-        <div class="swiper brand-slider">
-            <div class="swiper-wrapper">
-                <!-- Messika Collection -->
-                <div class="swiper-slide">
-                    <div class="brand-card">
-                        <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Messika%20white.jpg" 
-                             alt="Messika Inspired Collection" class="brand-image">
-                        <div class="brand-info">
-                            <h3 class="brand-name">Messika Inspired</h3>
-                            <p class="brand-description">
-                                Contemporary designs featuring moving diamonds and modern aesthetics. Perfect for the fashion-forward client.
-                            </p>
-                            <div class="brand-tags">
-                                <span class="brand-tag">18K Gold</span>
-                                <span class="brand-tag">Diamonds</span>
-                                <span class="brand-tag">Modern</span>
-                            </div>
-                            <a href="#" class="view-collection-btn">View Collection</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Van Cleef Inspired -->
-                <div class="swiper-slide">
-                    <div class="brand-card">
-                        <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg" 
-                             alt="Van Cleef Inspired" class="brand-image">
-                        <div class="brand-info">
-                            <h3 class="brand-name">Van Cleef Inspired</h3>
-                            <p class="brand-description">
-                                Classic Alhambra motifs with precious stones. Timeless elegance for the sophisticated collector.
-                            </p>
-                            <div class="brand-tags">
-                                <span class="brand-tag">Mother of Pearl</span>
-                                <span class="brand-tag">Onyx</span>
-                                <span class="brand-tag">Classic</span>
-                            </div>
-                            <a href="#" class="view-collection-btn">View Collection</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bvlgari Inspired -->
-                <div class="swiper-slide">
-                    <div class="brand-card">
-                        <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg" 
-                             alt="Bvlgari Inspired" class="brand-image">
-                        <div class="brand-info">
-                            <h3 class="brand-name">Bvlgari Inspired</h3>
-                            <p class="brand-description">
-                                Iconic Serpenti designs with exquisite craftsmanship. Bold statements for the confident wearer.
-                            </p>
-                            <div class="brand-tags">
-                                <span class="brand-tag">Serpent Motif</span>
-                                <span class="brand-tag">Emeralds</span>
-                                <span class="brand-tag">Bold</span>
-                            </div>
-                            <a href="#" class="view-collection-btn">View Collection</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Chopard Inspired -->
-                <div class="swiper-slide">
-                    <div class="brand-card">
-                        <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Chopard%20heart%20bangles%20white.jpg" 
-                             alt="Chopard Inspired" class="brand-image">
-                        <div class="brand-info">
-                            <h3 class="brand-name">Chopard Inspired</h3>
-                            <p class="brand-description">
-                                Heart motifs and romantic designs. Perfect for expressing love and affection through jewellery.
-                            </p>
-                            <div class="brand-tags">
-                                <span class="brand-tag">Heart Motif</span>
-                                <span class="brand-tag">Romantic</span>
-                                <span class="brand-tag">Elegant</span>
-                            </div>
-                            <a href="#" class="view-collection-btn">View Collection</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div>
-</section>
-
-<!-- 360° Product Viewer -->
-<section class="product-viewer-section section-padding">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Interactive Experience</span>
-            <h2 class="section-title">360° Product Viewer</h2>
-            <p class="section-subtitle">Rotate, zoom and explore our jewellery in stunning detail</p>
-        </div>
-        
-        <div class="viewer-container">
-            <div class="viewer-display">
-                <canvas class="viewer-canvas" id="productViewer"></canvas>
-                <div class="viewer-controls">
-                    <button class="viewer-btn" onclick="rotateProduct('left')">
-                        <i class="fas fa-rotate-left"></i>
-                    </button>
-                    <button class="viewer-btn" onclick="zoomIn()">
-                        <i class="fas fa-search-plus"></i>
-                    </button>
-                    <button class="viewer-btn" onclick="zoomOut()">
-                        <i class="fas fa-search-minus"></i>
-                    </button>
-                    <button class="viewer-btn" onclick="rotateProduct('right')">
-                        <i class="fas fa-rotate-right"></i>
-                    </button>
-                    <button class="viewer-btn" onclick="autoRotate()">
-                        <i class="fas fa-sync"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="viewer-info">
-                <h3 class="viewer-product-title">Messika Move Uno 18K White Gold</h3>
-                <div class="viewer-product-desc">
-                    <p>Experience this masterpiece in 360° detail. The moving diamonds create a mesmerizing effect that must be seen to be believed.</p>
-                    
-                    <div class="product-specs">
-                        <div class="spec">
-                            <i class="fas fa-weight"></i>
-                            <span>Weight: 28.3g</span>
-                        </div>
-                        <div class="spec">
-                            <i class="fas fa-gem"></i>
-                            <span>Gold: 18K White</span>
-                        </div>
-                        <div class="spec">
-                            <i class="fas fa-diamond"></i>
-                            <span>Diamonds: 2.5ct</span>
-                        </div>
-                        <div class="spec">
-                            <i class="fas fa-ruler"></i>
-                            <span>Length: 18cm</span>
-                        </div>
-                    </div>
-                    
-                    <div class="viewer-actions">
-                        <button class="primary-btn" onclick="bookViewing()">
-                            <i class="fas fa-calendar"></i> Book Physical Viewing
-                        </button>
-                        <button class="secondary-btn" onclick="shareProduct()">
-                            <i class="fas fa-share"></i> Share
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Quality Assurance -->
-<section class="quality-section section-padding" id="quality">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Our Standards</span>
-            <h2 class="section-title">Master Quality Assurance</h2>
-            <p class="section-subtitle">Every piece meets our rigorous quality standards</p>
-        </div>
-        
-        <div class="quality-grid">
-            <div class="quality-item">
-                <div class="quality-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <h3 class="quality-title">Gold Purity</h3>
-                <p class="quality-desc">
-                    Guaranteed 18K, 22K, 24K gold purity with proper hallmarks. Each piece tested and certified.
-                </p>
-            </div>
-            
-            <div class="quality-item">
-                <div class="quality-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <h3 class="quality-title">Diamond Quality</h3>
-                <p class="quality-desc">
-                    Only GIA certified diamonds used. 4Cs verified for every stone in our collections.
-                </p>
-            </div>
-            
-            <div class="quality-item">
-                <div class="quality-icon">
-                    <i class="fas fa-hammer"></i>
-                </div>
-                <h3 class="quality-title">Craftsmanship</h3>
-                <p class="quality-desc">
-                    Master artisans with 20+ years experience. Every detail perfected for lasting beauty.
-                </p>
-            </div>
-            
-            <div class="quality-item">
-                <div class="quality-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="quality-title">Lifetime Warranty</h3>
-                <p class="quality-desc">
-                    Comprehensive warranty covering manufacturing defects. Peace of mind guaranteed.
-                </p>
-            </div>
-            
-            <div class="quality-item">
-                <div class="quality-icon">
-                    <i class="fas fa-balance-scale"></i>
-                </div>
-                <h3 class="quality-title">Weight Accuracy</h3>
-                <p class="quality-desc">
-                    Digital precision weighing. Exact weight provided with certification.
-                </p>
-            </div>
-            
-            <div class="quality-item">
-                <div class="quality-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <h3 class="quality-title">Final Inspection</h3>
-                <p class="quality-desc">
-                    Triple-check quality control process. Only perfect pieces reach our clients.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Social Media Integration -->
-<section class="social-section section-padding">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Connect With Us</span>
-            <h2 class="section-title">Social Media & Activities</h2>
-            <p class="section-subtitle">Follow our journey and latest collections</p>
-        </div>
-        
-        <div class="social-grid">
-            <div class="social-card whatsapp">
-                <div class="social-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <h3 class="social-title">WhatsApp Business</h3>
-                <p class="social-desc">
-                    Direct communication for appointments, quotes, and customer support. Fastest response time.
-                </p>
-                <a href="https://wa.me/971543746476" class="primary-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat Now
-                </a>
-            </div>
-            
-            <div class="social-card instagram">
-                <div class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <h3 class="social-title">Instagram</h3>
-                <p class="social-desc">
-                    Daily updates, new arrivals, customer stories, and behind-the-scenes content.
-                </p>
-                <a href="https://instagram.com/ryaanjewellers007" class="primary-btn" target="_blank">
-                    <i class="fab fa-instagram"></i> Follow Us
-                </a>
-            </div>
-            
-            <div class="social-card linkedin">
-                <div class="social-icon">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <h3 class="social-title">LinkedIn</h3>
-                <p class="social-desc">
-                    Business updates, industry insights, and professional networking.
-                </p>
-                <a href="#" class="primary-btn" target="_blank">
-                    <i class="fab fa-linkedin"></i> Connect
-                </a>
-            </div>
-        </div>
-        
-        <!-- Instagram Feed Embed -->
-        <div class="social-embed">
-            <h3 style="text-align: center; margin-bottom: 30px; color: var(--gold);">Latest from Instagram</h3>
-            <div id="instagram-feed" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <!-- Instagram posts will be loaded here -->
-                <div class="insta-post">Loading Instagram feed...</div>
+                <a href="#booking" class="primary-btn" style="margin-top: 30px;" data-i18n="services.btn4">Start Designing</a>
             </div>
         </div>
     </div>
@@ -1306,71 +887,71 @@
 <section class="booking-section section-padding" id="booking">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Book Your Experience</span>
-            <h2 class="section-title">Schedule Door-to-Door Service</h2>
-            <p class="section-subtitle">Fill this form and we'll bring luxury to your doorstep</p>
+            <span class="section-tag" data-i18n="section.tag4">Book Your Experience</span>
+            <h2 class="section-title" data-i18n="section.title4">Schedule Door-to-Door Service</h2>
+            <p class="section-subtitle" data-i18n="section.subtitle4">Fill this form and we'll bring luxury to your doorstep</p>
         </div>
         
         <div class="booking-form">
             <form id="appointmentForm" onsubmit="submitAppointment(event)">
                 <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
                     <div class="form-group">
-                        <label class="form-label">Full Name *</label>
-                        <input type="text" class="form-input" required placeholder="Enter your full name">
+                        <label class="form-label" data-i18n="form.name">Full Name *</label>
+                        <input type="text" class="form-input" required data-i18n-placeholder="form.name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Phone Number *</label>
-                        <input type="tel" class="form-input" required placeholder="+971 XXXXXXXX">
+                        <label class="form-label" data-i18n="form.phone">Phone Number *</label>
+                        <input type="tel" class="form-input" required data-i18n-placeholder="form.phone_placeholder">
                     </div>
                 </div>
                 
                 <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
                     <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" placeholder="your@email.com">
+                        <label class="form-label" data-i18n="form.email">Email Address</label>
+                        <input type="email" class="form-input" data-i18n-placeholder="form.email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Service Required *</label>
+                        <label class="form-label" data-i18n="form.service">Service Required *</label>
                         <select class="form-select" required>
-                            <option value="">Select Service</option>
-                            <option value="showroom">Door-to-Door Showroom</option>
-                            <option value="buy-gold">Sell Old Gold/Jewellery</option>
-                            <option value="repair">Jewellery Repair</option>
-                            <option value="design">Custom Design Consultation</option>
-                            <option value="valuation">Free Gold Valuation</option>
+                            <option value="" data-i18n="form.select_service">Select Service</option>
+                            <option value="showroom" data-i18n="form.service1">Door-to-Door Showroom</option>
+                            <option value="buy-gold" data-i18n="form.service2">Sell Old Gold/Jewellery</option>
+                            <option value="repair" data-i18n="form.service3">Jewellery Repair</option>
+                            <option value="design" data-i18n="form.service4">Custom Design Consultation</option>
+                            <option value="valuation" data-i18n="form.service5">Free Gold Valuation</option>
                         </select>
                     </div>
                 </div>
                 
                 <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
                     <div class="form-group">
-                        <label class="form-label">Preferred Date *</label>
+                        <label class="form-label" data-i18n="form.date">Preferred Date *</label>
                         <input type="date" class="form-input" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Preferred Time *</label>
+                        <label class="form-label" data-i18n="form.time">Preferred Time *</label>
                         <select class="form-select" required>
-                            <option value="">Select Time Slot</option>
-                            <option value="morning">Morning (9 AM - 12 PM)</option>
-                            <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
-                            <option value="evening">Evening (4 PM - 8 PM)</option>
-                            <option value="late">Late Evening (8 PM - 11 PM)</option>
+                            <option value="" data-i18n="form.select_time">Select Time Slot</option>
+                            <option value="morning" data-i18n="form.time1">Morning (9 AM - 12 PM)</option>
+                            <option value="afternoon" data-i18n="form.time2">Afternoon (12 PM - 4 PM)</option>
+                            <option value="evening" data-i18n="form.time3">Evening (4 PM - 8 PM)</option>
+                            <option value="late" data-i18n="form.time4">Late Evening (8 PM - 11 PM)</option>
                         </select>
                     </div>
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 30px;">
-                    <label class="form-label">Location in Dubai *</label>
-                    <input type="text" class="form-input" required placeholder="e.g., Downtown Dubai, Marina, JBR, etc.">
+                    <label class="form-label" data-i18n="form.location">Location in Dubai *</label>
+                    <input type="text" class="form-input" required data-i18n-placeholder="form.location_placeholder">
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 30px;">
-                    <label class="form-label">Additional Details</label>
-                    <textarea class="form-textarea" rows="4" placeholder="Tell us about what you're looking for, specific pieces, or any special requests..."></textarea>
+                    <label class="form-label" data-i18n="form.details">Additional Details</label>
+                    <textarea class="form-textarea" rows="4" data-i18n-placeholder="form.details_placeholder"></textarea>
                 </div>
                 
                 <button type="submit" class="primary-btn" style="width: 100%; padding: 20px; font-size: 18px;">
-                    <i class="fas fa-paper-plane"></i> SUBMIT APPOINTMENT REQUEST
+                    <i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">SUBMIT APPOINTMENT REQUEST</span>
                 </button>
             </form>
         </div>
@@ -1384,7 +965,7 @@
             <div class="footer-column">
                 <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png" 
                      alt="RYAAN Jewellers" class="footer-logo">
-                <p style="color: var(--text-muted); margin-bottom: 30px;">
+                <p style="color: var(--text-muted); margin-bottom: 30px;" data-i18n="footer.about">
                     Master Quality Assurance in luxury jewellery with door-to-door service across Dubai. Redefining luxury convenience since establishment.
                 </p>
                 <div class="social-links">
@@ -1400,65 +981,61 @@
                     <a href="#" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
                 </div>
             </div>
             
             <div class="footer-column">
-                <h3 class="footer-title">Quick Links</h3>
+                <h3 class="footer-title" data-i18n="footer.quicklinks">Quick Links</h3>
                 <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#vision">Vision & Mission</a>
-                    <a href="#services">Services</a>
-                    <a href="#brands">Brand Collections</a>
-                    <a href="#quality">Quality Assurance</a>
-                    <a href="#booking">Book Appointment</a>
+                    <a href="#home" data-i18n="nav.home">Home</a>
+                    <a href="#vision" data-i18n="nav.vision">Vision & Mission</a>
+                    <a href="#services" data-i18n="nav.services">Services</a>
+                    <a href="#brands" data-i18n="nav.brands">Brand Collections</a>
+                    <a href="#quality" data-i18n="nav.quality">Quality Assurance</a>
+                    <a href="#booking" data-i18n="nav.book">Book Appointment</a>
                 </div>
             </div>
             
             <div class="footer-column">
-                <h3 class="footer-title">Our Services</h3>
+                <h3 class="footer-title" data-i18n="footer.services">Our Services</h3>
                 <div class="footer-links">
-                    <a href="#booking">Door-to-Door Showroom</a>
-                    <a href="#booking">Buy Old Gold</a>
-                    <a href="#booking">Jewellery Repair</a>
-                    <a href="#booking">Custom Design</a>
-                    <a href="#booking">Gold Valuation</a>
-                    <a href="#booking">Diamond Consultation</a>
+                    <a href="#booking" data-i18n="services.title1">Door-to-Door Showroom</a>
+                    <a href="#booking" data-i18n="services.title2">Buy Old Gold</a>
+                    <a href="#booking" data-i18n="services.title3">Jewellery Repair</a>
+                    <a href="#booking" data-i18n="services.title4">Custom Design</a>
+                    <a href="#booking" data-i18n="form.service5">Gold Valuation</a>
                 </div>
             </div>
             
             <div class="footer-column">
-                <h3 class="footer-title">Contact Info</h3>
+                <h3 class="footer-title" data-i18n="footer.contact">Contact Info</h3>
                 <ul class="contact-info">
                     <li>
                         <i class="fas fa-phone"></i>
                         <div>
                             <div style="font-weight: 600;">+971 543 746 476</div>
-                            <div style="font-size: 12px; color: var(--text-muted);">Call / WhatsApp</div>
+                            <div style="font-size: 12px; color: var(--text-muted);" data-i18n="footer.call">Call / WhatsApp</div>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-envelope"></i>
                         <div>
                             <div style="font-weight: 600;">ryaanjewellers@gmail.com</div>
-                            <div style="font-size: 12px; color: var(--text-muted);">Email Support</div>
+                            <div style="font-size: 12px; color: var(--text-muted);" data-i18n="footer.email">Email Support</div>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <div style="font-weight: 600;">Door-to-Door Service</div>
-                            <div style="font-size: 12px; color: var(--text-muted);">Across Dubai, UAE</div>
+                            <div style="font-weight: 600;" data-i18n="footer.location">Door-to-Door Service</div>
+                            <div style="font-size: 12px; color: var(--text-muted);" data-i18n="footer.area">Across Dubai, UAE</div>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-clock"></i>
                         <div>
                             <div style="font-weight: 600;">7 AM - 11 PM</div>
-                            <div style="font-size: 12px; color: var(--text-muted);">7 Days a Week</div>
+                            <div style="font-size: 12px; color: var(--text-muted);" data-i18n="footer.hours">7 Days a Week</div>
                         </div>
                     </li>
                 </ul>
@@ -1466,8 +1043,8 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 RYAAN JEWELLERS. All rights reserved. Master Quality Assurance in Gold & Diamonds.</p>
-            <p style="margin-top: 10px; color: var(--gold);">Crafted with Love & Precious | Dubai's Premier Door-to-Door Luxury Jewellery Service</p>
+            <p data-i18n="footer.copyright">&copy; 2023 RYAAN JEWELLERS. All rights reserved. Master Quality Assurance in Gold & Diamonds.</p>
+            <p style="margin-top: 10px; color: var(--gold);" data-i18n="footer.tagline">Crafted with Love & Precious | Dubai's Premier Door-to-Door Luxury Jewellery Service</p>
         </div>
     </div>
 </footer>
@@ -1485,51 +1062,368 @@
     </button>
 </div>
 
-<!-- Loading Screen -->
-<div id="loadingScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0A0A0A; display: flex; align-items: center; justify-content: center; z-index: 9999;">
-    <div style="text-align: center;">
-        <div class="loading-logo">
-            <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png" 
-                 alt="Loading" style="width: 150px; animation: pulse 1.5s infinite;">
-        </div>
-        <div style="color: var(--gold); margin-top: 20px; font-family: 'Cinzel', serif;">Loading Luxury Experience...</div>
-        <div class="loading-bar" style="width: 200px; height: 3px; background: rgba(212, 175, 55, 0.2); margin: 20px auto; border-radius: 2px; overflow: hidden;">
-            <div class="loading-progress" style="width: 0%; height: 100%; background: var(--gold); transition: width 2s;"></div>
-        </div>
-    </div>
-</div>
-
 <script>
+// ========== TRANSLATION SYSTEM ==========
+const translations = {
+    en: {
+        // Header
+        "header.language": "Language",
+        "header.theme": "Theme",
+        "header.whatsapp": "WhatsApp",
+        
+        // Navigation
+        "nav.home": "Home",
+        "nav.vision": "Vision",
+        "nav.services": "Services",
+        "nav.brands": "Brands",
+        "nav.quality": "Quality",
+        "nav.book": "Book",
+        "nav.contact": "Contact",
+        
+        // Hero Section
+        "hero.tag1": "Master Quality Assurance",
+        "hero.title1": "Luxury At Your Doorstep",
+        "hero.subtitle1": "Experience our complete luxury jewellery collection in the comfort of your home. Book your personal door-to-door showroom today.",
+        "hero.btn1": "Book Home Visit",
+        "hero.btn2": "View Collections",
+        
+        "hero.tag2": "Brand Inspired Excellence",
+        "hero.title2": "Master Craftsmanship",
+        "hero.subtitle2": "Inspired by Cartier, Van Cleef, Messika & Chopard. Each piece crafted with master quality assurance.",
+        "hero.btn3": "Explore Brands",
+        "hero.btn4": "Quality Standards",
+        
+        "hero.tag3": "Complete Gold Services",
+        "hero.title3": "Buy & Sell Gold",
+        "hero.subtitle3": "Get best prices for your old gold. Professional valuation at your doorstep with instant cash payment.",
+        "hero.btn5": "Sell Gold Now",
+        "hero.btn6": "Free Valuation",
+        
+        // Sections
+        "section.tag1": "Our Philosophy",
+        "section.title1": "Vision & Mission",
+        "section.tag2": "Our Journey",
+        "section.title2": "Success Story",
+        "section.tag3": "Premium Services",
+        "section.title3": "Door-to-Door Luxury Experience",
+        "section.subtitle3": "We bring the complete jewellery experience to your doorstep across Dubai",
+        "section.tag4": "Book Your Experience",
+        "section.title4": "Schedule Door-to-Door Service",
+        "section.subtitle4": "Fill this form and we'll bring luxury to your doorstep",
+        
+        // Vision & Mission
+        "vision.title": "Our Vision",
+        "vision.text": "To revolutionize luxury jewellery shopping by bringing master-crafted, brand-inspired collections directly to our clients' homes across Dubai. We envision becoming the most trusted name in door-to-door luxury jewellery services, setting new standards in quality, convenience, and customer experience.",
+        
+        "mission.title": "Our Mission",
+        "mission.text": "To provide unparalleled luxury jewellery experiences through our door-to-door service, combining master quality assurance with brand-inspired designs. We are committed to transparency in gold trading, excellence in craftsmanship, and creating lasting relationships with our clients through trust and superior service.",
+        
+        // Success
+        "success.clients": "Happy Clients Served",
+        "success.visits": "Door-to-Door Visits",
+        "success.transactions": "Gold Transactions",
+        "success.satisfaction": "Client Satisfaction",
+        
+        // Services
+        "services.title1": "Personal Showroom",
+        "services.desc1": "Our complete luxury collection brought to your home or office. Private viewing with expert consultation.",
+        "services.btn1": "Book Showroom",
+        
+        "services.title2": "Old Gold Buying",
+        "services.desc2": "Get best cash price for your old gold, diamonds & jewellery. Professional valuation at your location.",
+        "services.btn2": "Sell Gold Now",
+        
+        "services.title3": "Jewellery Repair",
+        "services.desc3": "Expert repair services at your doorstep. We fix, resize, polish and restore all types of jewellery.",
+        "services.btn3": "Request Repair",
+        
+        "services.title4": "Custom Design",
+        "services.desc4": "Create your dream jewellery with our designers. From concept to creation, all at your location.",
+        "services.btn4": "Start Designing",
+        
+        // Form
+        "form.name": "Full Name *",
+        "form.name_placeholder": "Enter your full name",
+        "form.phone": "Phone Number *",
+        "form.phone_placeholder": "+971 XXXXXXXX",
+        "form.email": "Email Address",
+        "form.email_placeholder": "your@email.com",
+        "form.service": "Service Required *",
+        "form.select_service": "Select Service",
+        "form.service1": "Door-to-Door Showroom",
+        "form.service2": "Sell Old Gold/Jewellery",
+        "form.service3": "Jewellery Repair",
+        "form.service4": "Custom Design Consultation",
+        "form.service5": "Free Gold Valuation",
+        "form.date": "Preferred Date *",
+        "form.time": "Preferred Time *",
+        "form.select_time": "Select Time Slot",
+        "form.time1": "Morning (9 AM - 12 PM)",
+        "form.time2": "Afternoon (12 PM - 4 PM)",
+        "form.time3": "Evening (4 PM - 8 PM)",
+        "form.time4": "Late Evening (8 PM - 11 PM)",
+        "form.location": "Location in Dubai *",
+        "form.location_placeholder": "e.g., Downtown Dubai, Marina, JBR, etc.",
+        "form.details": "Additional Details",
+        "form.details_placeholder": "Tell us about what you're looking for, specific pieces, or any special requests...",
+        "form.submit": "SUBMIT APPOINTMENT REQUEST",
+        
+        // Footer
+        "footer.about": "Master Quality Assurance in luxury jewellery with door-to-door service across Dubai. Redefining luxury convenience since establishment.",
+        "footer.quicklinks": "Quick Links",
+        "footer.services": "Our Services",
+        "footer.contact": "Contact Info",
+        "footer.call": "Call / WhatsApp",
+        "footer.email": "Email Support",
+        "footer.location": "Door-to-Door Service",
+        "footer.area": "Across Dubai, UAE",
+        "footer.hours": "7 Days a Week",
+        "footer.copyright": "© 2023 RYAAN JEWELLERS. All rights reserved. Master Quality Assurance in Gold & Diamonds.",
+        "footer.tagline": "Crafted with Love & Precious | Dubai's Premier Door-to-Door Luxury Jewellery Service"
+    },
+    
+    ar: {
+        // Header
+        "header.language": "اللغة",
+        "header.theme": "المظهر",
+        "header.whatsapp": "واتساب",
+        
+        // Navigation
+        "nav.home": "الرئيسية",
+        "nav.vision": "الرؤية",
+        "nav.services": "الخدمات",
+        "nav.brands": "الماركات",
+        "nav.quality": "الجودة",
+        "nav.book": "الحجز",
+        "nav.contact": "اتصل بنا",
+        
+        // Hero Section
+        "hero.tag1": "ضمان الجودة الرئيسي",
+        "hero.title1": "الفخامة على عتبة داركم",
+        "hero.subtitle1": "اختبر مجموعتنا الكاملة من المجوهرات الفاخرة في راحة منزلك. احجز عرض المجوهرات الشخصي أمام باب منزلك اليوم.",
+        "hero.btn1": "احجز زيارة منزلية",
+        "hero.btn2": "عرض المجموعات",
+        
+        "hero.tag2": "تميز مستوحى من الماركات",
+        "hero.title2": "حرفية رئيسية",
+        "hero.subtitle2": "مستوحى من كارتير، فان كليف، ميسيكا وشوبارد. كل قطعة مصنوعة بضمان الجودة الرئيسي.",
+        "hero.btn3": "استكشف الماركات",
+        "hero.btn4": "معايير الجودة",
+        
+        "hero.tag3": "خدمات الذهب الكاملة",
+        "hero.title3": "شراء وبيع الذهب",
+        "hero.subtitle3": "احصل على أفضل الأسعار لذهبك القديم. تقييم محترف عند عتبة دارك مع دفع نقدي فوري.",
+        "hero.btn5": "بيع الذهب الآن",
+        "hero.btn6": "تقييم مجاني",
+        
+        // Sections
+        "section.tag1": "فلسفتنا",
+        "section.title1": "الرؤية والرسالة",
+        "section.tag2": "رحلتنا",
+        "section.title2": "قصة النجاح",
+        "section.tag3": "خدمات متميزة",
+        "section.title3": "تجربة فاخرة أمام الباب",
+        "section.subtitle3": "نقدم تجربة المجوهرات الكاملة إلى عتبة داركم عبر دبي",
+        "section.tag4": "احجز تجربتك",
+        "section.title4": "جدول خدمة العرض المنزلي",
+        "section.subtitle4": "املأ هذا النموذج وسنحضر الفخامة إلى عتبة دارك",
+        
+        // Vision & Mission
+        "vision.title": "رؤيتنا",
+        "vision.text": "إحداث ثورة في تسوق المجوهرات الفاخرة من خلال إحضار المجموعات المصممة باحترافية والمستوحاة من الماركات العالمية مباشرة إلى منازل عملائنا في جميع أنحاء دبي. نحن نتطلع لأن نصبح الاسم الأكثر موثوقية في خدمات المجوهرات الفاخرة أمام الباب، ووضع معايير جديدة في الجودة والراحة وتجربة العملاء.",
+        
+        "mission.title": "رسالتنا",
+        "mission.text": "تقديم تجارب مجوهرات فاخرة لا مثيل لها من خلال خدمتنا أمام الباب، من خلال الجمع بين ضمان الجودة الرئيسي والتصاميم المستوحاة من الماركات العالمية. نحن ملتزمون بالشفافية في تجارة الذهب، والتميز في الحرفية، وخلق علاقات دائمة مع عملائنا من خلال الثقة والخدمة المتفوقة.",
+        
+        // Success
+        "success.clients": "عملاء سعداء",
+        "success.visits": "زيارات منزلية",
+        "success.transactions": "معاملات ذهب",
+        "success.satisfaction": "رضا العملاء",
+        
+        // Services
+        "services.title1": "عرض منزلي شخصي",
+        "services.desc1": "مجموعتنا الفاخرة الكاملة تُحضر إلى منزلك أو مكتبك. مشاهدة خاصة مع استشارة الخبراء.",
+        "services.btn1": "احجز العرض",
+        
+        "services.title2": "شراء الذهب القديم",
+        "services.desc2": "احصل على أفضل سعر نقدي لذهبك القديم، الماس والمجوهرات. تقييم محترف في موقعك.",
+        "services.btn2": "بيع الذهب الآن",
+        
+        "services.title3": "إصلاح المجوهرات",
+        "services.desc3": "خدمات إصلاح محترفة أمام باب منزلك. نصلح، نغير المقاسات، نلمع ونستعيد جميع أنواع المجوهرات.",
+        "services.btn3": "طلب إصلاح",
+        
+        "services.title4": "تصميم مخصص",
+        "services.desc4": "اصنع مجوهرات أحلامك مع مصممينا. من الفكرة إلى التنفيذ، كل ذلك في موقعك.",
+        "services.btn4": "ابدأ التصميم",
+        
+        // Form
+        "form.name": "الاسم الكامل *",
+        "form.name_placeholder": "أدخل اسمك الكامل",
+        "form.phone": "رقم الهاتف *",
+        "form.phone_placeholder": "+971 XXXXXXXX",
+        "form.email": "البريد الإلكتروني",
+        "form.email_placeholder": "your@email.com",
+        "form.service": "الخدمة المطلوبة *",
+        "form.select_service": "اختر الخدمة",
+        "form.service1": "عرض منزلي أمام الباب",
+        "form.service2": "بيع الذهب/المجوهرات القديمة",
+        "form.service3": "إصلاح المجوهرات",
+        "form.service4": "استشارة تصميم مخصص",
+        "form.service5": "تقييم ذهب مجاني",
+        "form.date": "التاريخ المفضل *",
+        "form.time": "الوقت المفضل *",
+        "form.select_time": "اختر الوقت",
+        "form.time1": "الصباح (9 صباحًا - 12 ظهرًا)",
+        "form.time2": "بعد الظهر (12 ظهرًا - 4 مساءً)",
+        "form.time3": "المساء (4 مساءً - 8 مساءً)",
+        "form.time4": "المساء المتأخر (8 مساءً - 11 مساءً)",
+        "form.location": "الموقع في دبي *",
+        "form.location_placeholder": "مثل: وسط دبي، المارينا، جي بي آر، إلخ.",
+        "form.details": "تفاصيل إضافية",
+        "form.details_placeholder": "أخبرنا عما تبحث عنه، القطع المحددة، أو أي طلبات خاصة...",
+        "form.submit": "إرسال طلب الحجز",
+        
+        // Footer
+        "footer.about": "ضمان الجودة الرئيسي في المجوهرات الفاخرة مع خدمة العرض المنزلي في جميع أنحاء دبي. إعادة تعريف راحة الفخامة منذ التأسيس.",
+        "footer.quicklinks": "روابط سريعة",
+        "footer.services": "خدماتنا",
+        "footer.contact": "معلومات الاتصال",
+        "footer.call": "الاتصال / واتساب",
+        "footer.email": "الدعم عبر البريد",
+        "footer.location": "خدمة العرض المنزلي",
+        "footer.area": "في جميع أنحاء دبي، الإمارات",
+        "footer.hours": "7 أيام في الأسبوع",
+        "footer.copyright": "© 2023 ريان للمجوهرات. جميع الحقوق محفوظة. ضمان الجودة الرئيسي في الذهب والماس.",
+        "footer.tagline": "مصنوع بالحب والثمين | خدمة المجوهرات الفاخرة الرائدة أمام الباب في دبي"
+    }
+};
+
+// ========== LANGUAGE MANAGEMENT ==========
+let currentLang = localStorage.getItem('ryaan_lang') || 'en';
+let currentTheme = localStorage.getItem('ryaan_theme') || 'dark';
+
+// Initialize language
+function initLanguage() {
+    // Set HTML direction
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    
+    // Update language switch
+    updateLanguageSwitch();
+    
+    // Apply translations
+    applyTranslations();
+}
+
+function updateLanguageSwitch() {
+    const langSwitch = document.getElementById('langSwitch');
+    const options = langSwitch.querySelectorAll('.lang-option');
+    const slider = langSwitch.querySelector('.lang-slider');
+    
+    options.forEach(option => {
+        option.classList.remove('active');
+        if (option.dataset.lang === currentLang) {
+            option.classList.add('active');
+        }
+    });
+    
+    if (currentLang === 'ar') {
+        slider.style.transform = 'translateX(calc(100% + 4px))';
+    } else {
+        slider.style.transform = 'translateX(0)';
+    }
+    
+    // For RTL, adjust slider position
+    if (document.dir === 'rtl') {
+        if (currentLang === 'ar') {
+            slider.style.right = '4px';
+            slider.style.left = 'auto';
+        } else {
+            slider.style.left = '4px';
+            slider.style.right = 'auto';
+        }
+    }
+}
+
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('ryaan_lang', lang);
+    initLanguage();
+    
+    // Show notification
+    showNotification(lang === 'ar' ? 'تم تغيير اللغة إلى العربية' : 'Language switched to English');
+}
+
+function applyTranslations() {
+    // Translate text elements
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+            element.textContent = translations[currentLang][key];
+        }
+    });
+    
+    // Translate placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[currentLang][key]) {
+            element.placeholder = translations[currentLang][key];
+        }
+    });
+    
+    // Update form options
+    document.querySelectorAll('option[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+            element.textContent = translations[currentLang][key];
+        }
+    });
+}
+
+// ========== THEME MANAGEMENT ==========
+function initTheme() {
+    if (currentTheme === 'light') {
+        document.body.classList.add('theme-light');
+        document.getElementById('themeSwitch').classList.add('active');
+        document.getElementById('themeIcon').className = 'fas fa-sun';
+    } else {
+        document.body.classList.remove('theme-light');
+        document.getElementById('themeSwitch').classList.remove('active');
+        document.getElementById('themeIcon').className = 'fas fa-moon';
+    }
+}
+
+function switchTheme() {
+    const themeSwitch = document.getElementById('themeSwitch');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    if (currentTheme === 'dark') {
+        currentTheme = 'light';
+        document.body.classList.add('theme-light');
+        themeSwitch.classList.add('active');
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        currentTheme = 'dark';
+        document.body.classList.remove('theme-light');
+        themeSwitch.classList.remove('active');
+        themeIcon.className = 'fas fa-moon';
+    }
+    
+    localStorage.setItem('ryaan_theme', currentTheme);
+    
+    // Show notification
+    showNotification(currentTheme === 'light' ? 'Switched to Light Mode' : 'تم التبديل إلى الوضع الليلي');
+}
+
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize loading screen
-    setTimeout(() => {
-        document.getElementById('loadingScreen').style.opacity = '0';
-        setTimeout(() => {
-            document.getElementById('loadingScreen').style.display = 'none';
-        }, 500);
-        document.querySelector('.loading-progress').style.width = '100%';
-    }, 2000);
+    // Initialize language and theme
+    initLanguage();
+    initTheme();
     
-    // Initialize Swiper sliders
-    initializeSwipers();
-    
-    // Initialize 360 viewer
-    initializeViewer();
-    
-    // Initialize Instagram feed
-    loadInstagramFeed();
-    
-    // Initialize booking form
-    initializeBookingForm();
-    
-    // Add scroll animations
-    initializeAnimations();
-});
-
-// ========== SWIPER SLIDERS ==========
-function initializeSwipers() {
-    // Hero Slider
+    // Initialize Swiper
     const heroSwiper = new Swiper('.swiper-hero', {
         direction: 'horizontal',
         loop: true,
@@ -1549,291 +1443,46 @@ function initializeSwipers() {
         },
     });
     
-    // Brand Slider
-    const brandSwiper = new Swiper('.brand-slider', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-        },
-    });
-}
-
-// ========== 360° PRODUCT VIEWER ==========
-let viewerRotation = 0;
-let viewerZoom = 1;
-let autoRotateInterval = null;
-
-function initializeViewer() {
-    const canvas = document.getElementById('productViewer');
-    const ctx = canvas.getContext('2d');
-    
-    // Set canvas dimensions
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    
-    // Load product image
-    const productImg = new Image();
-    productImg.src = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Messika%20white.jpg';
-    
-    productImg.onload = function() {
-        drawProduct(ctx, canvas, productImg);
-    };
-    
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        if (productImg.complete) {
-            drawProduct(ctx, canvas, productImg);
+    // Language switch event
+    document.getElementById('langSwitch').addEventListener('click', function(e) {
+        const target = e.target.closest('.lang-option');
+        if (target && target.dataset.lang) {
+            switchLanguage(target.dataset.lang);
         }
     });
     
-    // Handle mouse/touch interactions
-    let isDragging = false;
-    let startX = 0;
+    // Theme switch event
+    document.getElementById('themeSwitch').addEventListener('click', switchTheme);
     
-    canvas.addEventListener('mousedown', function(e) {
-        isDragging = true;
-        startX = e.clientX;
-    });
-    
-    canvas.addEventListener('mousemove', function(e) {
-        if (isDragging) {
-            const deltaX = e.clientX - startX;
-            viewerRotation += deltaX * 0.01;
-            startX = e.clientX;
-            drawProduct(ctx, canvas, productImg);
-        }
-    });
-    
-    canvas.addEventListener('mouseup', function() {
-        isDragging = false;
-    });
-    
-    canvas.addEventListener('mouseleave', function() {
-        isDragging = false;
-    });
-    
-    // Touch events for mobile
-    canvas.addEventListener('touchstart', function(e) {
-        isDragging = true;
-        startX = e.touches[0].clientX;
-        e.preventDefault();
-    });
-    
-    canvas.addEventListener('touchmove', function(e) {
-        if (isDragging) {
-            const deltaX = e.touches[0].clientX - startX;
-            viewerRotation += deltaX * 0.01;
-            startX = e.touches[0].clientX;
-            drawProduct(ctx, canvas, productImg);
-            e.preventDefault();
-        }
-    });
-    
-    canvas.addEventListener('touchend', function() {
-        isDragging = false;
-    });
-}
-
-function drawProduct(ctx, canvas, img) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw background
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Calculate dimensions
-    const size = Math.min(canvas.width, canvas.height) * 0.8 * viewerZoom;
-    const x = canvas.width / 2;
-    const y = canvas.height / 2;
-    
-    // Save context
-    ctx.save();
-    
-    // Translate to center
-    ctx.translate(x, y);
-    
-    // Apply rotation
-    ctx.rotate(viewerRotation);
-    
-    // Draw product image
-    ctx.drawImage(img, -size/2, -size/2, size, size);
-    
-    // Restore context
-    ctx.restore();
-    
-    // Draw rotation indicator
-    drawRotationIndicator(ctx, canvas);
-}
-
-function drawRotationIndicator(ctx, canvas) {
-    const centerX = canvas.width - 60;
-    const centerY = canvas.height - 60;
-    const radius = 40;
-    
-    // Draw circle
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.3)';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    
-    // Draw rotation indicator
-    ctx.beginPath();
-    ctx.moveTo(centerX, centerY - radius);
-    ctx.lineTo(centerX, centerY - radius + 10);
-    ctx.strokeStyle = '#D4AF37';
-    ctx.lineWidth = 3;
-    ctx.stroke();
-    
-    // Draw instructions
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.font = '12px Poppins';
-    ctx.textAlign = 'center';
-    ctx.fillText('Drag to rotate', centerX, centerY + radius + 20);
-}
-
-// Viewer Controls
-function rotateProduct(direction) {
-    if (direction === 'left') {
-        viewerRotation -= 0.1;
-    } else {
-        viewerRotation += 0.1;
-    }
-    const canvas = document.getElementById('productViewer');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.src = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Messika%20white.jpg';
-    img.onload = function() {
-        drawProduct(ctx, canvas, img);
-    };
-}
-
-function zoomIn() {
-    viewerZoom = Math.min(viewerZoom * 1.2, 3);
-    const canvas = document.getElementById('productViewer');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.src = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Messika%20white.jpg';
-    img.onload = function() {
-        drawProduct(ctx, canvas, img);
-    };
-}
-
-function zoomOut() {
-    viewerZoom = Math.max(viewerZoom / 1.2, 0.5);
-    const canvas = document.getElementById('productViewer');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.src = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Messika%20white.jpg';
-    img.onload = function() {
-        drawProduct(ctx, canvas, img);
-    };
-}
-
-function autoRotate() {
-    if (autoRotateInterval) {
-        clearInterval(autoRotateInterval);
-        autoRotateInterval = null;
-        document.querySelector('.viewer-btn i.fa-sync').style.color = '';
-    } else {
-        autoRotateInterval = setInterval(() => {
-            viewerRotation += 0.01;
-            const canvas = document.getElementById('productViewer');
-            const ctx = canvas.getContext('2d');
-            const img = new Image();
-            img.src = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Messika%20white.jpg';
-            img.onload = function() {
-                drawProduct(ctx, canvas, img);
-            };
-        }, 50);
-        document.querySelector('.viewer-btn i.fa-sync').style.color = '#D4AF37';
-    }
-}
-
-function bookViewing() {
-    window.location.href = '#booking';
-}
-
-function shareProduct() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'RYAAN Jewellers - Messika Move Uno',
-            text: 'Check out this beautiful Messika inspired piece!',
-            url: window.location.href + '#viewer',
-        });
-    } else {
-        // Fallback
-        const shareUrl = `https://wa.me/?text=${encodeURIComponent('Check out this beautiful jewellery from RYAAN Jewellers: ' + window.location.href)}`;
-        window.open(shareUrl, '_blank');
-    }
-}
-
-// ========== INSTAGRAM FEED ==========
-async function loadInstagramFeed() {
-    // Note: Instagram API requires authentication
-    // This is a simulated feed using your images
-    const instagramFeed = document.getElementById('instagram-feed');
-    const images = [
-        'Messika%20white.jpg',
-        'Messika%20mov%20uno.jpg',
-        'Messika%20rose%20uno%20move.jpg',
-        'Serpenti%20Bvulgari%20Chocker.jpg',
-        'Chopard%20heart%20bangles%20white.jpg',
-        'Vancleef%20Bracelet%20Onyx.jpg'
-    ];
-    
-    let html = '';
-    images.forEach((image, index) => {
-        html += `
-            <div class="insta-post" style="background: #222; border-radius: 10px; overflow: hidden;">
-                <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/${image}" 
-                     alt="Instagram Post ${index + 1}"
-                     style="width: 100%; height: 200px; object-fit: cover;">
-                <div style="padding: 15px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <div style="color: var(--gold); font-size: 12px;">#RYAANJewellers</div>
-                        <div style="color: var(--text-muted); font-size: 12px;">
-                            <i class="far fa-heart"></i> ${Math.floor(Math.random() * 100) + 50}
-                        </div>
-                    </div>
-                    <div style="color: white; font-size: 14px;">Luxury Collection ${index + 1}</div>
-                </div>
-            </div>
-        `;
-    });
-    
-    instagramFeed.innerHTML = html;
-}
-
-// ========== APPOINTMENT BOOKING ==========
-function initializeBookingForm() {
+    // Initialize booking form
     const dateInput = document.querySelector('input[type="date"]');
     const today = new Date().toISOString().split('T')[0];
     dateInput.min = today;
     
-    // Set default to tomorrow
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     dateInput.value = tomorrow.toISOString().split('T')[0];
-}
+    
+    // Add scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.section-padding').forEach(section => {
+        observer.observe(section);
+    });
+});
 
+// ========== FORM SUBMISSION ==========
 function submitAppointment(event) {
     event.preventDefault();
     
@@ -1850,23 +1499,39 @@ function submitAppointment(event) {
         timestamp: new Date().toISOString()
     };
     
-    // Prepare WhatsApp message
+    // Prepare WhatsApp message in both languages
     const serviceNames = {
-        'showroom': 'Door-to-Door Showroom',
-        'buy-gold': 'Sell Old Gold/Jewellery',
-        'repair': 'Jewellery Repair',
-        'design': 'Custom Design Consultation',
-        'valuation': 'Free Gold Valuation'
+        'showroom': currentLang === 'ar' ? 'عرض منزلي أمام الباب' : 'Door-to-Door Showroom',
+        'buy-gold': currentLang === 'ar' ? 'بيع الذهب/المجوهرات القديمة' : 'Sell Old Gold/Jewellery',
+        'repair': currentLang === 'ar' ? 'إصلاح المجوهرات' : 'Jewellery Repair',
+        'design': currentLang === 'ar' ? 'استشارة تصميم مخصص' : 'Custom Design Consultation',
+        'valuation': currentLang === 'ar' ? 'تقييم ذهب مجاني' : 'Free Gold Valuation'
     };
     
     const timeSlots = {
-        'morning': 'Morning (9 AM - 12 PM)',
-        'afternoon': 'Afternoon (12 PM - 4 PM)',
-        'evening': 'Evening (4 PM - 8 PM)',
-        'late': 'Late Evening (8 PM - 11 PM)'
+        'morning': currentLang === 'ar' ? 'الصباح (9 صباحًا - 12 ظهرًا)' : 'Morning (9 AM - 12 PM)',
+        'afternoon': currentLang === 'ar' ? 'بعد الظهر (12 ظهرًا - 4 مساءً)' : 'Afternoon (12 PM - 4 PM)',
+        'evening': currentLang === 'ar' ? 'المساء (4 مساءً - 8 مساءً)' : 'Evening (4 PM - 8 PM)',
+        'late': currentLang === 'ar' ? 'المساء المتأخر (8 مساءً - 11 مساءً)' : 'Late Evening (8 PM - 11 PM)'
     };
     
-    const message = `🎯 *NEW APPOINTMENT REQUEST - RYAAN Jewellers* 🎯
+    const message = currentLang === 'ar' ? 
+        `🎯 *طلب حجز جديد - ريان للمجوهرات* 🎯
+
+📋 *الخدمة:* ${serviceNames[formData.service] || formData.service}
+👤 *الاسم:* ${formData.name}
+📞 *الهاتف:* ${formData.phone}
+📧 *البريد:* ${formData.email}
+📅 *التاريخ:* ${formData.date}
+⏰ *الوقت:* ${timeSlots[formData.time] || formData.time}
+📍 *الموقع:* ${formData.location}
+📝 *التفاصيل:* ${formData.details}
+
+🕒 *تم الإرسال:* ${new Date().toLocaleString('ar-AE')}
+🔗 *المصدر:* نموذج الحجز على الموقع
+
+يرجى تأكيد هذا الحجز.` :
+        `🎯 *NEW APPOINTMENT REQUEST - RYAAN Jewellers* 🎯
 
 📋 *Service:* ${serviceNames[formData.service] || formData.service}
 👤 *Name:* ${formData.name}
@@ -1886,33 +1551,17 @@ Please confirm this appointment.`;
     window.open(`https://wa.me/971543746476?text=${encodeURIComponent(message)}`, '_blank');
     
     // Show confirmation
-    showNotification('Appointment request sent! We will contact you shortly to confirm.');
+    showNotification(currentLang === 'ar' ? 
+        'تم إرسال طلب الحجز! سنتواصل معك قريبًا للتأكيد.' :
+        'Appointment request sent! We will contact you shortly to confirm.'
+    );
     
     // Reset form
     event.target.reset();
-    initializeBookingForm();
-}
-
-// ========== ANIMATIONS ==========
-function initializeAnimations() {
-    // Add scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all sections
-    document.querySelectorAll('.section-padding').forEach(section => {
-        observer.observe(section);
-    });
+    const dateInput = document.querySelector('input[type="date"]');
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dateInput.value = tomorrow.toISOString().split('T')[0];
 }
 
 // ========== UTILITY FUNCTIONS ==========
@@ -1921,23 +1570,25 @@ function showNotification(message) {
     notification.style.cssText = `
         position: fixed;
         top: 100px;
-        right: 20px;
+        right: ${document.dir === 'rtl' ? 'auto' : '20px'};
+        left: ${document.dir === 'rtl' ? '20px' : 'auto'};
         background: var(--gold);
         color: #000;
         padding: 20px 30px;
         border-radius: var(--radius);
         z-index: 10000;
         box-shadow: var(--shadow);
-        animation: slideInRight 0.3s ease;
+        animation: slideIn 0.3s ease;
         font-weight: 600;
         max-width: 400px;
+        text-align: ${document.dir === 'rtl' ? 'right' : 'left'};
     `;
     notification.textContent = message;
     
     document.body.appendChild(notification);
     
     setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease';
+        notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
@@ -1949,14 +1600,26 @@ function scrollToBooking() {
 // Add CSS animations
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+    @keyframes slideIn {
+        from { 
+            transform: ${document.dir === 'rtl' ? 'translateX(-100%)' : 'translateX(100%)'}; 
+            opacity: 0; 
+        }
+        to { 
+            transform: translateX(0); 
+            opacity: 1; 
+        }
     }
     
-    @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
+    @keyframes slideOut {
+        from { 
+            transform: translateX(0); 
+            opacity: 1; 
+        }
+        to { 
+            transform: ${document.dir === 'rtl' ? 'translateX(-100%)' : 'translateX(100%)'}; 
+            opacity: 0; 
+        }
     }
     
     @keyframes fadeInUp {
@@ -2046,7 +1709,8 @@ style.textContent = `
     
     .floating-actions {
         position: fixed;
-        right: 20px;
+        right: ${document.dir === 'rtl' ? 'auto' : '20px'};
+        left: ${document.dir === 'rtl' ? '20px' : 'auto'};
         bottom: 20px;
         display: flex;
         flex-direction: column;
@@ -2139,6 +1803,13 @@ style.textContent = `
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         transition: var(--transition);
+    }
+    
+    .theme-light .form-input,
+    .theme-light .form-select,
+    .theme-light .form-textarea {
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--text-light);
     }
     
     .form-input:focus, .form-select:focus, .form-textarea:focus {
