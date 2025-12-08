@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RYAAN JEWELLERS | Dubai 24K Gold & Diamond Luxury Jewelry</title>
-    <meta name="description" content="RYAAN JEWELLERS Dubai - 24K Gold, Diamond Jewelry, Luxury Brands, Custom Designs, AR Try-On, Blockchain Authentication">
+    <title>RYAAN JEWELLERS | Dubai 24K, 22K, 18K Gold & Diamond Luxury Jewelry</title>
+    <meta name="description" content="RYAAN JEWELLERS Dubai - 24K, 22K, 18K Gold, Diamond Jewelry, Luxury Brands, Custom Designs, AR Try-On, Blockchain Authentication">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:wght@400;500;700;800&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:wght@400;500;700;800&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Marck+Script&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gold: #D4AF37;
@@ -26,16 +26,106 @@
             --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
             --glow: 0 0 40px rgba(212, 175, 55, 0.4);
             --gold-gradient: linear-gradient(45deg, #D4AF37, #FFD700, #F0E68C);
+            --marli-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--darker-bg);
+            background: var(--dark-bg);
             color: var(--text-light);
             overflow-x: hidden;
             position: relative;
+            transition: var(--transition);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(180deg);
+        }
+        .theme-toggle i {
+            font-size: 1.5rem;
+            color: var(--dark-bg);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary-gold);
+        }
+
+        /* Social Media Floating */
+        .social-media {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
         }
 
         /* Diamond Pattern Background */
@@ -51,122 +141,7 @@
             z-index: -1;
         }
 
-        /* ===== CUSTOM CURSOR ===== */
-        .custom-cursor {
-            position: fixed;
-            width: 20px; height: 20px;
-            border: 2px solid var(--primary-gold);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 99999;
-            transition: transform 0.2s ease;
-        }
-        .cursor-dot {
-            position: fixed;
-            width: 4px; height: 4px;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 99999;
-        }
-
-        /* ===== SCROLL INDICATOR ===== */
-        .scroll-progress {
-            position: fixed;
-            top: 0; left: 0;
-            width: 0%;
-            height: 3px;
-            background: var(--gold-gradient);
-            z-index: 10000;
-            transition: width 0.1s ease;
-        }
-
-        /* ===== SPLASH SCREEN ===== */
-        .splash-screen {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 999999;
-            transition: opacity 1.2s ease;
-        }
-        .splash-content {
-            text-align: center;
-            animation: fadeIn 1.5s ease;
-        }
-        .splash-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 6rem;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 12px;
-            margin-bottom: 20px;
-            position: relative;
-            animation: pulse 3s infinite;
-        }
-        .splash-logo:after {
-            content: '✦';
-            position: absolute;
-            top: -20px; right: -40px;
-            font-size: 3rem;
-            animation: spin 4s linear infinite;
-        }
-        .splash-subtitle {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            letter-spacing: 8px;
-            color: var(--primary-gold);
-            margin-bottom: 30px;
-        }
-        .splash-progress {
-            width: 300px;
-            height: 2px;
-            background: rgba(212, 175, 55, 0.2);
-            border-radius: 1px;
-            overflow: hidden;
-            margin: 40px auto;
-        }
-        .splash-progress-bar {
-            height: 100%;
-            background: var(--gold-gradient);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        .splash-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.5s forwards;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--primary-gold);
-            margin-bottom: 5px;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            color: #888;
-            letter-spacing: 2px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        /* ===== PREMIUM HEADER ===== */
+        /* Premium Header */
         .premium-header {
             position: fixed;
             top: 0; left: 0;
@@ -218,11 +193,6 @@
         }
         .ticker-change.positive { background: rgba(76, 175, 80, 0.2); color: #4CAF50; }
         .ticker-change.negative { background: rgba(244, 67, 54, 0.2); color: #F44336; }
-        .header-announcement {
-            color: var(--primary-gold);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
 
         .main-header {
             padding: 20px 0;
@@ -249,7 +219,6 @@
             color: transparent;
             text-decoration: none;
             letter-spacing: 6px;
-            position: relative;
         }
         .logo-badge {
             background: var(--primary-gold);
@@ -362,57 +331,17 @@
             justify-content: center;
             font-weight: 600;
         }
-        .user-menu {
-            position: relative;
-        }
-        .user-avatar {
-            width: 40px; height: 40px;
-            background: var(--gold-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--dark-bg);
-            font-weight: 600;
-        }
 
-        /* ===== MEGA HERO SECTION ===== */
+        /* Hero Section */
         .mega-hero {
             height: 100vh;
             position: relative;
             overflow: hidden;
-        }
-        .hero-slider {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-        }
-        .slide {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease;
+            background: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.8)),
+                        url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
         }
-        .slide.active {
-            opacity: 1;
-        }
-        .slide-1 {
-            background: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.8)),
-                        url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2070&q=80');
-        }
-        .slide-2 {
-            background: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.8)),
-                        url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2070&q=80');
-        }
-        .slide-3 {
-            background: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.8)),
-                        url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=2070&q=80');
-        }
-
         .hero-content {
             position: relative;
             z-index: 2;
@@ -430,31 +359,18 @@
             color: var(--primary-gold);
             letter-spacing: 4px;
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.5s forwards;
         }
         .hero-title {
             font-family: 'Cinzel', serif;
             font-size: 6rem;
             line-height: 1.1;
             margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.7s forwards;
         }
         .title-highlight {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            position: relative;
-        }
-        .title-highlight:after {
-            content: '✦';
-            position: absolute;
-            top: -20px; right: -30px;
-            animation: sparkle 2s infinite;
         }
         .hero-description {
             font-family: 'Cormorant Garamond', serif;
@@ -463,16 +379,10 @@
             color: var(--text-light);
             margin-bottom: 50px;
             max-width: 600px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.9s forwards;
         }
         .hero-cta {
             display: flex;
             gap: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 1.1s forwards;
         }
         .btn {
             padding: 20px 45px;
@@ -520,64 +430,19 @@
             transform: translateY(-5px);
         }
 
-        .slider-controls {
-            position: absolute;
-            bottom: 40px; right: 40px;
-            display: flex;
-            gap: 20px;
-            z-index: 3;
-        }
-        .slider-dots {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        .dot {
-            width: 12px; height: 12px;
-            border: 2px solid var(--primary-gold);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .dot.active {
-            background: var(--primary-gold);
-            transform: scale(1.2);
-        }
-        .slider-arrows {
-            display: flex;
-            gap: 10px;
-        }
-        .slider-arrow {
-            width: 50px; height: 50px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--primary-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-gold);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .slider-arrow:hover {
-            background: rgba(212, 175, 55, 0.2);
-            transform: scale(1.1);
-        }
-
-        /* ===== PREMIUM FEATURES ===== */
-        .features-section {
+        /* Gold Karats Section */
+        .karats-section {
             padding: 120px 40px;
             background: var(--darker-bg);
-            position: relative;
         }
-        .features-grid {
+        .karats-grid {
             max-width: 1600px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-        .feature-card {
+        .karat-card {
             background: var(--card-bg);
             border: 1px solid rgba(212, 175, 55, 0.1);
             border-radius: 15px;
@@ -587,7 +452,7 @@
             position: relative;
             overflow: hidden;
         }
-        .feature-card:before {
+        .karat-card:before {
             content: '';
             position: absolute;
             top: 0; left: 0;
@@ -596,438 +461,376 @@
             transform: scaleX(0);
             transition: transform 0.6s ease;
         }
-        .feature-card:hover:before {
+        .karat-card:hover:before {
             transform: scaleX(1);
         }
-        .feature-card:hover {
+        .karat-card:hover {
             transform: translateY(-15px);
             box-shadow: var(--shadow);
             border-color: var(--primary-gold);
         }
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .feature-title {
+        .karat-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-        .feature-description {
-            color: #888;
-            line-height: 1.6;
-        }
-
-        /* ===== AR TRY-ON SECTION ===== */
-        .ar-section {
-            padding: 150px 40px;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .ar-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .ar-demo {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-        .ar-viewport {
-            width: 100%;
-            height: 500px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .ar-overlay {
-            position: absolute;
-            top: 20px; left: 20px;
-            color: var(--primary-gold);
-            font-size: 0.9rem;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 8px 15px;
-            border-radius: 4px;
-            backdrop-filter: blur(5px);
-        }
-        .ar-instructions {
-            color: #888;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .ar-controls {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        /* ===== AI DESIGN ASSISTANT ===== */
-        .ai-section {
-            padding: 150px 40px;
-            background: var(--darker-bg);
-        }
-        .ai-chat {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            overflow: hidden;
-        }
-        .ai-header {
-            background: linear-gradient(90deg, #1A1A1A, #2A2A2A);
-            padding: 25px 40px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .ai-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: var(--primary-gold);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .ai-messages {
-            height: 400px;
-            padding: 30px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .message {
-            max-width: 70%;
-            padding: 20px;
-            border-radius: 15px;
-            line-height: 1.6;
-        }
-        .message.ai {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            align-self: flex-start;
-        }
-        .message.user {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            align-self: flex-end;
-        }
-        .ai-input-area {
-            padding: 30px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            display: flex;
-            gap: 15px;
-        }
-        .ai-input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 8px;
-            padding: 15px 20px;
-            color: var(--text-light);
-            font-family: inherit;
-        }
-        .ai-input:focus {
-            outline: none;
-            border-color: var(--primary-gold);
-        }
-
-        /* ===== BLOCKCHAIN AUTHENTICATION ===== */
-        .blockchain-section {
-            padding: 150px 40px;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
-        }
-        .blockchain-card {
-            max-width: 1600px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 60px;
-            text-align: center;
-        }
-        .blockchain-animation {
-            width: 200px; height: 200px;
-            margin: 0 auto 40px;
-            position: relative;
-        }
-        .blockchain-ring {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 2px solid var(--primary-gold);
-            border-radius: 50%;
-            animation: rotate 20s linear infinite;
-        }
-        .blockchain-node {
-            position: absolute;
-            width: 12px; height: 12px;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            animation: pulseNode 2s infinite;
-        }
-        .verify-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-            display: flex;
-            gap: 15px;
-        }
-        .verify-input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 8px;
-            padding: 15px 20px;
-            color: var(--text-light);
-            font-family: inherit;
-            letter-spacing: 1px;
-        }
-
-        /* ===== VIRTUAL SHOWROOM ===== */
-        .showroom-section {
-            padding: 150px 40px;
-            background: var(--darker-bg);
-            position: relative;
-        }
-        .showroom-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-        .showroom-view {
-            height: 600px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .showroom-controls {
-            position: absolute;
-            bottom: 30px; left: 30px;
-            display: flex;
-            gap: 15px;
-            z-index: 2;
-        }
-        .showroom-items {
-            position: absolute;
-            top: 30px; right: 30px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 300px;
-            z-index: 2;
-        }
-        .showroom-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .showroom-item:hover {
-            color: var(--primary-gold);
-        }
-
-        /* ===== SMART CONTRACTS ===== */
-        .contracts-section {
-            padding: 150px 40px;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
-        }
-        .contract-grid {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        .contract-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 15px;
-            padding: 40px;
-            transition: var(--transition);
-        }
-        .contract-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-10px);
-        }
-        .contract-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .contract-icon {
             font-size: 2.5rem;
             color: var(--primary-gold);
+            margin-bottom: 20px;
         }
-        .contract-code {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: #4CAF50;
-            overflow-x: auto;
-        }
-
-        /* ===== NFT GALLERY ===== */
-        .nft-section {
-            padding: 150px 40px;
-            background: var(--darker-bg);
-        }
-        .nft-grid {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .nft-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        .nft-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-10px);
-        }
-        .nft-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .nft-info {
-            padding: 25px;
-        }
-        .nft-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
-            color: var(--primary-gold);
-            margin-bottom: 10px;
-        }
-        .nft-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #888;
-            font-size: 0.9rem;
+        .karat-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
             margin-bottom: 15px;
         }
-        .nft-price {
+        .karat-description {
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .karat-properties {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .property {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .property-label {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .property-value {
             font-size: 1.2rem;
             color: var(--primary-gold);
             font-weight: 600;
         }
 
-        /* ===== CRYPTO PAYMENTS ===== */
-        .crypto-section {
-            padding: 150px 40px;
+        /* Branded Collections */
+        .brands-section {
+            padding: 120px 40px;
             background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
         }
-        .crypto-widget {
-            max-width: 800px;
+        .brands-grid {
+            max-width: 1600px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .brand-card {
             background: var(--card-bg);
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .brand-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+            box-shadow: var(--glow);
+        }
+        .brand-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .brand-info {
+            padding: 30px;
+        }
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+        .brand-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .product-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 5px;
             text-align: center;
-        }
-        .crypto-currencies {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-        .crypto-currency {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-            min-width: 150px;
             cursor: pointer;
             transition: var(--transition);
         }
-        .crypto-currency:hover, .crypto-currency.active {
-            border-color: var(--primary-gold);
-            background: rgba(212, 175, 55, 0.1);
-        }
-        .crypto-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .crypto-name {
-            color: var(--primary-gold);
-            margin-bottom: 5px;
+        .product-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-3px);
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* Custom Design Section */
+        .custom-design-section {
+            padding: 120px 40px;
+            background: var(--darker-bg);
+        }
+        .custom-design-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .design-tools {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .tool-section {
+            margin-bottom: 30px;
+        }
+        .tool-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+        .tool-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+        }
+        .tool-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .tool-option:hover, .tool-option.active {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--primary-gold);
+        }
+        .sketch-canvas {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: crosshair;
+        }
+        .sketch-tools {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .sketch-tool {
+            padding: 10px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 5px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .sketch-tool:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* 3D Design Viewer */
+        .design-viewer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .viewer-3d {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .viewer-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Product View Customizer */
+        .customizer-section {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        }
+        .customizer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .product-preview {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+        .preview-image {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-gold);
+        }
+        .customization-options {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .option-group {
+            margin-bottom: 30px;
+        }
+        .option-label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        .option-slider {
+            width: 100%;
+            height: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .option-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .option-select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: inherit;
+        }
+
+        /* Footer */
+        .premium-footer {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            padding: 100px 40px 50px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+        }
+        .footer-column h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            padding-left: 10px;
+        }
+        .footer-bottom {
+            max-width: 1600px;
+            margin: 60px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 1200px) {
             .hero-title { font-size: 4.5rem; }
-            .ar-container { grid-template-columns: 1fr; }
+            .custom-design-container,
+            .customizer-container {
+                grid-template-columns: 1fr;
+            }
         }
         @media (max-width: 768px) {
             .hero-title { font-size: 3.5rem; }
-            .hero-description { font-size: 1.3rem; }
             .section-title { font-size: 2.8rem; }
             .nav-main { display: none; }
             .header-container { padding: 0 20px; }
-            .features-grid { grid-template-columns: 1fr; }
+            .karats-grid,
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+            .social-media {
+                left: 20px;
+                bottom: 20px;
+            }
+            .theme-toggle,
+            .language-switcher {
+                bottom: 20px;
+                right: 20px;
+            }
+            .language-switcher {
+                bottom: 90px;
+            }
         }
 
-        /* ===== ANIMATIONS ===== */
+        /* Animations */
         @keyframes fadeInUp {
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes pulseNode {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.8); }
         }
 
-        /* ===== UTILITY CLASSES ===== */
+        /* Utility Classes */
         .gradient-text {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        .marli-text {
+            background: var(--marli-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Marck Script', cursive;
         }
         .section-title {
             font-family: 'Cinzel', serif;
@@ -1046,39 +849,70 @@
             height: 3px;
             background: var(--gold-gradient);
         }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 40px; }
+        .mb-2 { margin-bottom: 20px; }
+
+        /* Marli Theme */
+        body.marli-theme {
+            --primary-gold: #667eea;
+            --secondary-gold: #764ba2;
+            --gold-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        body.marli-theme:before {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.1) 2px, transparent 2px);
+        }
+        body.marli-theme .premium-header {
+            background: rgba(102, 126, 234, 0.95);
+        }
+        body.marli-theme .gold-ticker .ticker-price {
+            color: #764ba2;
+        }
+
+        /* Arabic Text */
+        .arabic-text {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+        .arabic-text .section-title {
+            font-family: 'Traditional Arabic', 'Arial', sans-serif;
+        }
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
-    
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-palette"></i>
+    </div>
 
-    <!-- Splash Screen -->
-    <div class="splash-screen" id="splashScreen">
-        <div class="splash-content">
-            <div class="splash-logo">RYAAN</div>
-            <div class="splash-subtitle">JEWELLERS • GOLD & DIAMONDS</div>
-            <div class="splash-progress">
-                <div class="splash-progress-bar" id="splashProgress"></div>
-            </div>
-            <div class="splash-stats">
-                <div class="stat-item">
-                    <div class="stat-number">1952</div>
-                    <div class="stat-label">ESTABLISHED</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24K</div>
-                    <div class="stat-label">PURE GOLD</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">AUTHENTICITY</div>
-                </div>
-            </div>
-        </div>
+    <!-- Language Switcher -->
+    <div class="language-switcher" id="languageSwitcher">
+        <button class="lang-btn active" onclick="switchLanguage('en')">
+            <i class="fas fa-globe"></i> English
+        </button>
+        <button class="lang-btn" onclick="switchLanguage('ar')">
+            <i class="fas fa-globe"></i> العربية
+        </button>
+    </div>
+
+    <!-- Social Media -->
+    <div class="social-media">
+        <a href="https://wa.me/971501234567" target="_blank" class="social-icon">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/ryaanjewellers" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/company/ryaanjewellers" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://facebook.com/ryaanjewellers" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
     </div>
 
     <!-- Premium Header -->
@@ -1092,13 +926,18 @@
                         <span class="ticker-change positive">+1.2%</span>
                     </div>
                     <div class="ticker-item">
-                        <span class="ticker-label">DIAMOND</span>
-                        <span class="ticker-price">15,800 AED</span>
-                        <span class="ticker-change positive">+0.8%</span>
+                        <span class="ticker-label">22K GOLD</span>
+                        <span class="ticker-price">455.42 AED</span>
+                        <span class="ticker-change positive">+0.9%</span>
+                    </div>
+                    <div class="ticker-item">
+                        <span class="ticker-label">18K GOLD</span>
+                        <span class="ticker-price">372.26 AED</span>
+                        <span class="ticker-change positive">+0.7%</span>
                     </div>
                 </div>
-                <div class="header-announcement">
-                    <i class="fas fa-gem"></i> EXCLUSIVE LAUNCH: NFT DIGITAL TWINS
+                <div style="color: var(--primary-gold); font-size: 0.85rem; letter-spacing: 1px;">
+                    <i class="fas fa-gem"></i> CUSTOM DESIGN SERVICE AVAILABLE
                 </div>
             </div>
         </div>
@@ -1111,49 +950,46 @@
                 <div class="nav-container">
                     <nav class="nav-main">
                         <div class="nav-item">
-                            <a href="#collections" class="nav-link">COLLECTIONS</a>
+                            <a href="#karats" class="nav-link">GOLD KARATS</a>
                             <div class="nav-dropdown">
-                                <a href="#necklaces" class="dropdown-item">Necklaces</a>
-                                <a href="#bracelets" class="dropdown-item">Bracelets</a>
-                                <a href="#rings" class="dropdown-item">Rings</a>
-                                <a href="#earrings" class="dropdown-item">Earrings</a>
-                                <a href="#watches" class="dropdown-item">Watches</a>
+                                <a href="#24k" class="dropdown-item">24K Pure Gold</a>
+                                <a href="#22k" class="dropdown-item">22K Gold</a>
+                                <a href="#18k" class="dropdown-item">18K Gold</a>
+                                <a href="#platinum" class="dropdown-item">Platinum</a>
+                                <a href="#diamond" class="dropdown-item">Diamond</a>
                             </div>
                         </div>
                         <div class="nav-item">
-                            <a href="#brands" class="nav-link">BRANDS</a>
+                            <a href="#brands" class="nav-link">BRANDED JEWELRY</a>
                             <div class="nav-dropdown">
-                                <a href="#van-cleef" class="dropdown-item">Van Cleef & Arpels</a>
-                                <a href="#bulgari" class="dropdown-item">Bvlgari</a>
                                 <a href="#cartier" class="dropdown-item">Cartier</a>
                                 <a href="#tiffany" class="dropdown-item">Tiffany & Co.</a>
-                                <a href="#graff" class="dropdown-item">Graff</a>
+                                <a href="#bulgari" class="dropdown-item">Bvlgari</a>
+                                <a href="#graff" class="dropdown-item">Graff Diamonds</a>
+                                <a href="#harry-winston" class="dropdown-item">Harry Winston</a>
                             </div>
+                        </div>
+                        <div class="nav-item">
+                            <a href="#custom-design" class="nav-link">CUSTOM DESIGN</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="#customizer" class="nav-link">PRODUCT VIEW</a>
                         </div>
                         <div class="nav-item">
                             <a href="#ar" class="nav-link">AR TRY-ON</a>
                         </div>
-                        <div class="nav-item">
-                            <a href="#nft" class="nav-link">NFT GALLERY</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="#blockchain" class="nav-link">AUTHENTICATION</a>
-                        </div>
                     </nav>
                     <div class="header-actions">
-                        <div class="action-icon search-icon">
+                        <div class="action-icon search-icon" onclick="searchProducts()">
                             <i class="fas fa-search"></i>
                         </div>
-                        <div class="action-icon wishlist-icon">
+                        <div class="action-icon wishlist-icon" onclick="showWishlist()">
                             <i class="fas fa-heart"></i>
                             <span class="badge">3</span>
                         </div>
-                        <div class="action-icon cart-icon">
+                        <div class="action-icon cart-icon" onclick="showCart()">
                             <i class="fas fa-shopping-bag"></i>
                             <span class="badge">2</span>
-                        </div>
-                        <div class="user-menu">
-                            <div class="user-avatar">AJ</div>
                         </div>
                     </div>
                 </div>
@@ -1161,664 +997,632 @@
         </div>
     </header>
 
-    <!-- Mega Hero Section -->
+    <!-- Hero Section -->
     <section class="mega-hero" id="home">
-        <div class="hero-slider">
-            <div class="slide slide-1 active"></div>
-            <div class="slide slide-2"></div>
-            <div class="slide slide-3"></div>
-        </div>
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-eyebrow">EXQUISITE CRAFTSMANSHIP SINCE 1952</div>
                 <h1 class="hero-title">Where <span class="title-highlight">Timeless</span> Elegance Meets <span class="title-highlight">Modern</span> Luxury</h1>
-                <p class="hero-description">Experience the pinnacle of jewelry artistry with our exclusive 24K gold and certified diamond collections, now featuring blockchain authentication and digital twins.</p>
+                <p class="hero-description">Experience Dubai's finest 24K, 22K, 18K gold collections with certified diamonds. Custom designs with AR preview and blockchain authentication.</p>
                 <div class="hero-cta">
-                    <a href="#collections" class="btn btn-primary">
-                        <i class="fas fa-gem"></i> EXPLORE COLLECTIONS
+                    <a href="#karats" class="btn btn-primary">
+                        <i class="fas fa-gem"></i> EXPLORE GOLD KARATS
                     </a>
-                    <a href="#ar" class="btn btn-secondary">
-                        <i class="fas fa-camera"></i> AR VIRTUAL TRY-ON
+                    <a href="#custom-design" class="btn btn-secondary">
+                        <i class="fas fa-pencil-alt"></i> CREATE YOUR DESIGN
                     </a>
                 </div>
             </div>
         </div>
-        <div class="slider-controls">
-            <div class="slider-dots">
-                <div class="dot active" data-slide="0"></div>
-                <div class="dot" data-slide="1"></div>
-                <div class="dot" data-slide="2"></div>
-            </div>
-            <div class="slider-arrows">
-                <div class="slider-arrow prev-slide">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="slider-arrow next-slide">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Premium Features -->
-    <section class="features-section">
-        <h2 class="section-title gradient-text">Exclusive Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-vr-cardboard"></i>
-                </div>
-                <h3 class="feature-title">AR Virtual Try-On</h3>
-                <p class="feature-description">See jewelry on yourself in real-time using augmented reality technology</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3 class="feature-title">AI Design Assistant</h3>
-                <p class="feature-description">Get personalized design recommendations powered by artificial intelligence</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-link"></i>
-                </div>
-                <h3 class="feature-title">Blockchain Authentication</h3>
-                <p class="feature-description">Every piece verified on blockchain for guaranteed authenticity</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-coins"></i>
-                </div>
-                <h3 class="feature-title">Crypto Payments</h3>
-                <p class="feature-description">Pay with Bitcoin, Ethereum, and other major cryptocurrencies</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-image"></i>
-                </div>
-                <h3 class="feature-title">NFT Digital Twins</h3>
-                <p class="feature-description">Receive exclusive NFT with every physical jewelry purchase</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-user-astronaut"></i>
-                </div>
-                <h3 class="feature-title">Virtual Showroom</h3>
-                <p class="feature-description">Explore our collections in immersive 3D virtual environment</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- AR Try-On Section -->
-    <section id="ar" class="ar-section">
-        <h2 class="section-title gradient-text">Augmented Reality Try-On</h2>
-        <div class="ar-container">
-            <div class="ar-demo">
-                <div class="ar-viewport" id="arViewport">
-                    <div class="ar-overlay">
-                        <i class="fas fa-camera"></i> CAMERA ACTIVE
+    <!-- Gold Karats Section -->
+    <section id="karats" class="karats-section">
+        <h2 class="section-title gradient-text">GOLD KARATS COLLECTION</h2>
+        <div class="karats-grid">
+            <div class="karat-card">
+                <h3 class="karat-title">24K GOLD</h3>
+                <div class="karat-subtitle">Pure Gold (99.9%)</div>
+                <p class="karat-description">The purest form of gold, perfect for investment pieces and traditional jewelry with its rich, deep yellow color.</p>
+                <div class="karat-properties">
+                    <div class="property">
+                        <div class="property-label">Purity</div>
+                        <div class="property-value">99.9%</div>
                     </div>
-                    <div style="color: #888; text-align: center;">
-                        <i class="fas fa-camera" style="font-size: 4rem; margin-bottom: 20px;"></i>
-                        <p>Enable camera access to start AR try-on</p>
+                    <div class="property">
+                        <div class="property-label">Color</div>
+                        <div class="property-value">Deep Yellow</div>
+                    </div>
+                    <div class="property">
+                        <div class="property-label">Price/Gram</div>
+                        <div class="property-value">496 AED</div>
                     </div>
                 </div>
-                <p class="ar-instructions">Position your hand in the camera view to try different rings and bracelets. Works best in good lighting conditions.</p>
-                <div class="ar-controls">
-                    <button class="btn-secondary" onclick="startAR()">
-                        <i class="fas fa-play"></i> START AR
-                    </button>
-                    <button class="btn-secondary" onclick="changeJewelry()">
-                        <i class="fas fa-sync"></i> CHANGE JEWELRY
-                    </button>
-                    <button class="btn-secondary" onclick="captureAR()">
-                        <i class="fas fa-camera"></i> CAPTURE
-                    </button>
-                </div>
+                <button class="btn-secondary" onclick="showCollection('24k')" style="margin-top: 20px;">
+                    <i class="fas fa-eye"></i> VIEW COLLECTION
+                </button>
             </div>
-            <div class="ar-demo">
-                <h3 style="font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 30px; color: var(--primary-gold);">Available for Try-On</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                    <div class="ar-item" onclick="selectARItem('ring1')" style="text-align: center; cursor: pointer;">
-                        <div style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-ring" style="font-size: 2rem; color: var(--primary-gold);"></i>
-                        </div>
-                        <div>Diamond Ring</div>
+            <div class="karat-card">
+                <h3 class="karat-title">22K GOLD</h3>
+                <div class="karat-subtitle">91.6% Pure Gold</div>
+                <p class="karat-description">Ideal for daily wear jewelry. Stronger than 24K while maintaining rich color and excellent value.</p>
+                <div class="karat-properties">
+                    <div class="property">
+                        <div class="property-label">Purity</div>
+                        <div class="property-value">91.6%</div>
                     </div>
-                    <div class="ar-item" onclick="selectARItem('bracelet1')" style="text-align: center; cursor: pointer;">
-                        <div style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-gem" style="font-size: 2rem; color: var(--primary-gold);"></i>
-                        </div>
-                        <div>Gold Bracelet</div>
+                    <div class="property">
+                        <div class="property-label">Durability</div>
+                        <div class="property-value">High</div>
                     </div>
-                    <div class="ar-item" onclick="selectARItem('necklace1')" style="text-align: center; cursor: pointer;">
-                        <div style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-necklace" style="font-size: 2rem; color: var(--primary-gold);"></i>
-                        </div>
-                        <div>Pearl Necklace</div>
+                    <div class="property">
+                        <div class="property-label">Price/Gram</div>
+                        <div class="property-value">455 AED</div>
                     </div>
                 </div>
-                <div style="margin-top: 40px; background: rgba(212, 175, 55, 0.1); border-radius: 10px; padding: 20px;">
-                    <h4 style="color: var(--primary-gold); margin-bottom: 10px;">How it works:</h4>
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">
-                        1. Grant camera permission<br>
-                        2. Position your hand in view<br>
-                        3. Try different jewelry pieces<br>
-                        4. Capture and share your look
-                    </p>
-                </div>
+                <button class="btn-secondary" onclick="showCollection('22k')" style="margin-top: 20px;">
+                    <i class="fas fa-eye"></i> VIEW COLLECTION
+                </button>
             </div>
-        </div>
-    </section>
-
-    <!-- AI Design Assistant -->
-    <section class="ai-section">
-        <h2 class="section-title gradient-text">AI Design Assistant</h2>
-        <div class="ai-chat">
-            <div class="ai-header">
-                <div class="ai-title">
-                    <i class="fas fa-robot"></i> RYAAN AI ASSISTANT
+            <div class="karat-card">
+                <h3 class="karat-title">18K GOLD</h3>
+                <div class="karat-subtitle">75% Pure Gold</div>
+                <p class="karat-description">Perfect for diamond settings and contemporary designs. Offers excellent durability with beautiful luster.</p>
+                <div class="karat-properties">
+                    <div class="property">
+                        <div class="property-label">Purity</div>
+                        <div class="property-value">75%</div>
+                    </div>
+                    <div class="property">
+                        <div class="property-label">Versatility</div>
+                        <div class="property-value">Excellent</div>
+                    </div>
+                    <div class="property">
+                        <div class="property-label">Price/Gram</div>
+                        <div class="property-value">372 AED</div>
+                    </div>
                 </div>
-            </div>
-            <div class="ai-messages" id="aiMessages">
-                <div class="message ai">
-                    Hello! I'm your AI design assistant. I can help you create the perfect custom jewelry piece. What style are you looking for?
-                </div>
-            </div>
-            <div class="ai-input-area">
-                <input type="text" class="ai-input" id="aiInput" placeholder="Ask me about jewelry styles, materials, or design ideas...">
-                <button class="btn-primary" onclick="sendAIMessage()">
-                    <i class="fas fa-paper-plane"></i>
+                <button class="btn-secondary" onclick="showCollection('18k')" style="margin-top: 20px;">
+                    <i class="fas fa-eye"></i> VIEW COLLECTION
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Blockchain Authentication -->
-    <section id="blockchain" class="blockchain-section">
-        <h2 class="section-title gradient-text">Blockchain Authentication</h2>
-        <div class="blockchain-card">
-            <div class="blockchain-animation">
-                <div class="blockchain-ring"></div>
-                <div class="blockchain-node" style="top: 20%; left: 50%;"></div>
-                <div class="blockchain-node" style="top: 50%; left: 20%;"></div>
-                <div class="blockchain-node" style="top: 50%; left: 80%;"></div>
-                <div class="blockchain-node" style="top: 80%; left: 50%;"></div>
+    <!-- Branded Collections Section -->
+    <section id="brands" class="brands-section">
+        <h2 class="section-title gradient-text">LUXURY BRANDED COLLECTIONS</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Cartier" class="brand-image">
+                <div class="brand-info">
+                    <h3 class="brand-title">CARTIER</h3>
+                    <p>French luxury jewelry known for iconic designs like Love bracelet and Panthère collection.</p>
+                    <div class="brand-products">
+                        <div class="product-item" onclick="viewProduct('Cartier Love Bracelet')">
+                            <i class="fas fa-ring"></i>
+                            <div>Love Bracelet</div>
+                        </div>
+                        <div class="product-item" onclick="viewProduct('Cartier Trinity Ring')">
+                            <i class="fas fa-gem"></i>
+                            <div>Trinity Ring</div>
+                        </div>
+                        <div class="product-item" onclick="viewProduct('Cartier Tank Watch')">
+                            <i class="fas fa-clock"></i>
+                            <div>Tank Watch</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 style="font-family: 'Cinzel', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-gold);">Verify Authenticity</h3>
-            <p style="color: #888; max-width: 600px; margin: 0 auto 30px; line-height: 1.6;">
-                Every RYAAN piece comes with a unique blockchain certificate. Verify the authenticity, ownership history, and provenance of your jewelry.
-            </p>
-            <div class="verify-form">
-                <input type="text" class="verify-input" id="certificateId" placeholder="Enter Certificate ID (e.g., RYAAN-2025-001)">
-                <button class="btn-primary" onclick="verifyCertificate()">
-                    <i class="fas fa-search"></i> VERIFY
-                </button>
+            <div class="brand-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Tiffany" class="brand-image">
+                <div class="brand-info">
+                    <h3 class="brand-title">TIFFANY & CO.</h3>
+                    <p>American luxury jeweler famous for diamond engagement rings and signature blue boxes.</p>
+                    <div class="brand-products">
+                        <div class="product-item" onclick="viewProduct('Tiffany Setting Ring')">
+                            <i class="fas fa-ring"></i>
+                            <div>Setting Ring</div>
+                        </div>
+                        <div class="product-item" onclick="viewProduct('Tiffany Keys')">
+                            <i class="fas fa-key"></i>
+                            <div>Tiffany Keys</div>
+                        </div>
+                        <div class="product-item" onclick="viewProduct('Tiffany T Bracelet')">
+                            <i class="fas fa-bracelet"></i>
+                            <div>T Bracelet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Bvlgari" class="brand-image">
+                <div class="brand-info">
+                    <h3 class="brand-title">BVLGARI</h3>
+                    <p>Italian luxury brand known for colorful gemstones, serpent motifs, and bold designs.</p>
+                    <div class="brand-products">
+                        <div class="product-item" onclick="viewProduct('Bvlgari Serpenti')">
+                            <i class="fas fa-necklace"></i>
+                            <div>Serpenti</div>
+                        </div>
+                        <div class="product-item" onclick="viewProduct('Bvlgari B.zero1')">
+                            <i class="fas fa-ring"></i>
+                            <div>B.zero1</div>
+                        </div>
+                        <div class="product-item" onclick="viewProduct('Bvlgari Divas Dream')">
+                            <i class="fas fa-gem"></i>
+                            <div>Divas Dream</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Virtual Showroom -->
-    <section class="showroom-section">
-        <h2 class="section-title gradient-text">Virtual Showroom</h2>
-        <div class="showroom-container">
-            <div class="showroom-view" id="showroomView">
-                <div class="showroom-controls">
-                    <button class="btn-secondary" onclick="rotateShowroom()">
-                        <i class="fas fa-sync"></i> ROTATE
-                    </button>
-                    <button class="btn-secondary" onclick="zoomInShowroom()">
-                        <i class="fas fa-search-plus"></i> ZOOM IN
-                    </button>
-                    <button class="btn-secondary" onclick="zoomOutShowroom()">
-                        <i class="fas fa-search-minus"></i> ZOOM OUT
-                    </button>
+    <!-- Custom Design Section -->
+    <section id="custom-design" class="custom-design-section">
+        <h2 class="section-title gradient-text">CUSTOM JEWELRY DESIGN STUDIO</h2>
+        <div class="custom-design-container">
+            <div class="design-tools">
+                <div class="tool-section">
+                    <h3 class="tool-title">1. Choose Gold Type</h3>
+                    <div class="tool-options">
+                        <div class="tool-option active" onclick="selectMaterial('24k')">
+                            <i class="fas fa-crown"></i>
+                            <div>24K Gold</div>
+                        </div>
+                        <div class="tool-option" onclick="selectMaterial('22k')">
+                            <i class="fas fa-gem"></i>
+                            <div>22K Gold</div>
+                        </div>
+                        <div class="tool-option" onclick="selectMaterial('18k')">
+                            <i class="fas fa-ring"></i>
+                            <div>18K Gold</div>
+                        </div>
+                        <div class="tool-option" onclick="selectMaterial('platinum')">
+                            <i class="fas fa-star"></i>
+                            <div>Platinum</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="showroom-items">
-                    <h4 style="color: var(--primary-gold); margin-bottom: 15px;">Showroom Items</h4>
-                    <div class="showroom-item" onclick="selectShowroomItem('diamond-ring')">
+                <div class="tool-section">
+                    <h3 class="tool-title">2. Select Gemstones</h3>
+                    <div class="tool-options">
+                        <div class="tool-option" onclick="selectGemstone('diamond')">
+                            <div style="color: var(--diamond);"><i class="fas fa-gem"></i></div>
+                            <div>Diamond</div>
+                        </div>
+                        <div class="tool-option" onclick="selectGemstone('ruby')">
+                            <div style="color: var(--ruby);"><i class="fas fa-gem"></i></div>
+                            <div>Ruby</div>
+                        </div>
+                        <div class="tool-option" onclick="selectGemstone('emerald')">
+                            <div style="color: var(--emerald);"><i class="fas fa-gem"></i></div>
+                            <div>Emerald</div>
+                        </div>
+                        <div class="tool-option" onclick="selectGemstone('sapphire')">
+                            <div style="color: var(--sapphire);"><i class="fas fa-gem"></i></div>
+                            <div>Sapphire</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-section">
+                    <h3 class="tool-title">3. Sketch Your Idea</h3>
+                    <div class="sketch-canvas" id="sketchCanvas"></div>
+                    <div class="sketch-tools">
+                        <button class="sketch-tool" onclick="clearSketch()">
+                            <i class="fas fa-eraser"></i> Clear
+                        </button>
+                        <button class="sketch-tool" onclick="saveSketch()">
+                            <i class="fas fa-save"></i> Save Design
+                        </button>
+                        <button class="sketch-tool" onclick="uploadSketch()">
+                            <i class="fas fa-upload"></i> Upload Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="design-viewer">
+                <h3 style="font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 30px; color: var(--primary-gold);">3D Design Preview</h3>
+                <div class="viewer-3d" id="viewer3D">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 5rem; color: var(--primary-gold);">
                         <i class="fas fa-ring"></i>
-                        <div>Diamond Solitaire Ring</div>
-                    </div>
-                    <div class="showroom-item" onclick="selectShowroomItem('gold-necklace')">
-                        <i class="fas fa-necklace"></i>
-                        <div>24K Gold Necklace</div>
-                    </div>
-                    <div class="showroom-item" onclick="selectShowroomItem('emerald-bracelet')">
-                        <i class="fas fa-gem"></i>
-                        <div>Emerald Tennis Bracelet</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NFT Gallery -->
-    <section id="nft" class="nft-section">
-        <h2 class="section-title gradient-text">NFT Digital Twins</h2>
-        <div class="nft-grid">
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Diamond Ring NFT" class="nft-image">
-                <div class="nft-info">
-                    <h3 class="nft-title">Diamond Solitaire #001</h3>
-                    <div class="nft-meta">
-                        <span>RYAAN Collection</span>
-                        <span>Edition: 1/1</span>
-                    </div>
-                    <div class="nft-price">2.5 ETH</div>
-                    <button class="btn-secondary" style="width: 100%; margin-top: 15px;" onclick="buyNFT('diamond-solitaire')">
-                        <i class="fas fa-shopping-cart"></i> PURCHASE NFT
+                <div class="viewer-controls">
+                    <button class="btn-secondary" onclick="rotate3DModel()">
+                        <i class="fas fa-sync"></i> Rotate
                     </button>
-                </div>
-            </div>
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Gold Necklace NFT" class="nft-image">
-                <div class="nft-info">
-                    <h3 class="nft-title">Golden Serpent #045</h3>
-                    <div class="nft-meta">
-                        <span>Bvlgari Series</span>
-                        <span>Edition: 45/100</span>
-                    </div>
-                    <div class="nft-price">1.8 ETH</div>
-                    <button class="btn-secondary" style="width: 100%; margin-top: 15px;" onclick="buyNFT('golden-serpent')">
-                        <i class="fas fa-shopping-cart"></i> PURCHASE NFT
+                    <button class="btn-secondary" onclick="zoomIn3D()">
+                        <i class="fas fa-search-plus"></i> Zoom In
                     </button>
-                </div>
-            </div>
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Bracelet NFT" class="nft-image">
-                <div class="nft-info">
-                    <h3 class="nft-title">Eternity Band #888</h3>
-                    <div class="nft-meta">
-                        <span>Van Cleef Series</span>
-                        <span>Edition: 888/1000</span>
-                    </div>
-                    <div class="nft-price">0.8 ETH</div>
-                    <button class="btn-secondary" style="width: 100%; margin-top: 15px;" onclick="buyNFT('eternity-band')">
-                        <i class="fas fa-shopping-cart"></i> PURCHASE NFT
+                    <button class="btn-secondary" onclick="zoomOut3D()">
+                        <i class="fas fa-search-minus"></i> Zoom Out
+                    </button>
+                    <button class="btn-primary" onclick="generate3DModel()">
+                        <i class="fas fa-magic"></i> Generate 3D
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Crypto Payments -->
-    <section class="crypto-section">
-        <h2 class="section-title gradient-text">Crypto Payments</h2>
-        <div class="crypto-widget">
-            <p style="color: #888; margin-bottom: 40px; line-height: 1.6;">
-                Pay securely with cryptocurrencies. All transactions are protected by smart contracts and recorded on the blockchain.
-            </p>
-            <div class="crypto-currencies">
-                <div class="crypto-currency active" onclick="selectCrypto('bitcoin')">
-                    <div class="crypto-icon">
-                        <i class="fab fa-bitcoin"></i>
-                    </div>
-                    <div class="crypto-name">Bitcoin</div>
-                    <div class="crypto-price">$68,420</div>
+    <!-- Product View Customizer -->
+    <section id="customizer" class="customizer-section">
+        <h2 class="section-title gradient-text">PRODUCT VIEW CUSTOMIZER</h2>
+        <div class="customizer-container">
+            <div class="product-preview">
+                <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; margin-bottom: 30px; color: var(--primary-gold);">Live Preview</h3>
+                <div class="preview-image" id="previewImage">
+                    <i class="fas fa-ring"></i>
                 </div>
-                <div class="crypto-currency" onclick="selectCrypto('ethereum')">
-                    <div class="crypto-icon">
-                        <i class="fab fa-ethereum"></i>
+                <div style="margin-top: 30px;">
+                    <h4 style="color: var(--primary-gold); margin-bottom: 15px;">Customization Summary</h4>
+                    <div id="customizationSummary" style="color: #888; line-height: 1.6;">
+                        Material: 24K Gold<br>
+                        Gemstone: Diamond<br>
+                        Weight: 5g<br>
+                        Design: Classic
                     </div>
-                    <div class="crypto-name">Ethereum</div>
-                    <div class="crypto-price">$3,850</div>
                 </div>
-                <div class="crypto-currency" onclick="selectCrypto('usdc')">
-                    <div class="crypto-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <div class="crypto-name">USDC</div>
-                    <div class="crypto-price">$1.00</div>
-                </div>
+                <button class="btn-primary" onclick="saveCustomization()" style="margin-top: 30px; width: 100%;">
+                    <i class="fas fa-shopping-cart"></i> ADD TO CART - $2,500
+                </button>
             </div>
-            <div style="margin-top: 40px;">
-                <div style="background: rgba(212, 175, 55, 0.1); border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                        <div>
-                            <div style="color: #888; font-size: 0.9rem;">Total Amount</div>
-                            <div style="font-size: 2rem; color: var(--primary-gold);">$12,500</div>
-                        </div>
-                        <div>
-                            <div style="color: #888; font-size: 0.9rem;">In Bitcoin</div>
-                            <div style="font-size: 1.5rem; color: var(--primary-gold);">0.183 BTC</div>
-                        </div>
-                    </div>
-                    <button class="btn-primary" style="width: 100%;" onclick="processCryptoPayment()">
-                        <i class="fab fa-bitcoin"></i> PAY WITH BITCOIN
-                    </button>
+            <div class="customization-options">
+                <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; margin-bottom: 30px; color: var(--primary-gold);">Customization Options</h3>
+                <div class="option-group">
+                    <label class="option-label">Gold Karat</label>
+                    <select class="option-select" id="goldKarat" onchange="updatePreview()">
+                        <option value="24k">24K Gold ($500/g)</option>
+                        <option value="22k">22K Gold ($455/g)</option>
+                        <option value="18k">18K Gold ($372/g)</option>
+                        <option value="platinum">Platinum ($650/g)</option>
+                    </select>
                 </div>
+                <div class="option-group">
+                    <label class="option-label">Gemstone Type</label>
+                    <select class="option-select" id="gemstoneType" onchange="updatePreview()">
+                        <option value="diamond">Diamond</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="emerald">Emerald</option>
+                        <option value="sapphire">Sapphire</option>
+                        <option value="none">No Gemstone</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label class="option-label">Gemstone Size</label>
+                    <input type="range" class="option-slider" id="gemstoneSize" min="0.5" max="5" step="0.5" value="1" oninput="updatePreview()">
+                    <div style="color: #888; margin-top: 5px; text-align: center;" id="gemstoneSizeValue">1 carat</div>
+                </div>
+                <div class="option-group">
+                    <label class="option-label">Jewelry Weight</label>
+                    <input type="range" class="option-slider" id="jewelryWeight" min="2" max="50" step="1" value="5" oninput="updatePreview()">
+                    <div style="color: #888; margin-top: 5px; text-align: center;" id="jewelryWeightValue">5 grams</div>
+                </div>
+                <div class="option-group">
+                    <label class="option-label">Design Style</label>
+                    <select class="option-select" id="designStyle" onchange="updatePreview()">
+                        <option value="classic">Classic</option>
+                        <option value="modern">Modern</option>
+                        <option value="vintage">Vintage</option>
+                        <option value="arabic">Arabic Design</option>
+                        <option value="contemporary">Contemporary</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label class="option-label">Finish Type</label>
+                    <select class="option-select" id="finishType" onchange="updatePreview()">
+                        <option value="polished">Polished</option>
+                        <option value="matt">Matt</option>
+                        <option value="brushed">Brushed</option>
+                        <option value="hammered">Hammered</option>
+                    </select>
+                </div>
+                <button class="btn-secondary" onclick="resetCustomization()" style="width: 100%; margin-top: 20px;">
+                    <i class="fas fa-redo"></i> RESET CUSTOMIZATION
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>RYAAN JEWELLERS</h3>
+                <p style="color: #888; line-height: 1.6;">Since 1952, crafting timeless luxury jewelry with unparalleled craftsmanship and modern technology.</p>
+                <div style="display: flex; gap: 15px; margin-top: 20px;">
+                    <div class="social-icon" style="width: 40px; height: 40px;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-icon" style="width: 40px; height: 40px;">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-icon" style="width: 40px; height: 40px;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>SHOWROOMS</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> The Dubai Mall, Dubai</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mall of the Emirates, Dubai</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Abu Dhabi Mall, Abu Dhabi</li>
+                    <li><i class="fas fa-map-marker-alt"></i> City Centre Bahrain, Manama</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SERVICES</h3>
+                <ul class="footer-links">
+                    <li><a href="#custom-design">Custom Design Studio</a></li>
+                    <li><a href="#karats">Gold Investment</a></li>
+                    <li><a href="#">Jewelry Repair</a></li>
+                    <li><a href="#">Valuation Service</a></li>
+                    <li><a href="#">International Shipping</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +971 4 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> info@ryaanjewellers.com</li>
+                    <li><i class="fas fa-clock"></i> 10AM - 10PM Daily</li>
+                    <li><i class="fas fa-headset"></i> 24/7 Customer Support</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 RYAAN JEWELLERS. All rights reserved. | Luxury Redefined Since 1952 | VAT No: 123456789012345</p>
+        </div>
+    </footer>
 
     <script>
-        // ==================== CUSTOM CURSOR ====================
-        const cursor = document.getElementById('customCursor');
-        const cursorDot = document.getElementById('cursorDot');
+        // ==================== THEME TOGGLE ====================
+        const themeToggle = document.getElementById('themeToggle');
+        let currentTheme = 'gold';
         
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-        });
-        
-        document.addEventListener('mousedown', () => {
-            cursor.style.transform = 'scale(0.8)';
-        });
-        
-        document.addEventListener('mouseup', () => {
-            cursor.style.transform = 'scale(1)';
-        });
-        
-        // Change cursor on interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .ar-item, .nft-card, .crypto-currency, .showroom-item');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursor.style.borderColor = 'var(--secondary-gold)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.borderColor = 'var(--primary-gold)';
-            });
-        });
-
-        // ==================== SCROLL PROGRESS ====================
-        const scrollProgress = document.getElementById('scrollProgress');
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            scrollProgress.style.width = scrolled + '%';
-        });
-
-        // ==================== SPLASH SCREEN ====================
-        const splashScreen = document.getElementById('splashScreen');
-        const splashProgress = document.getElementById('splashProgress');
-        
-        let progress = 0;
-        const progressInterval = setInterval(() => {
-            progress += 2;
-            splashProgress.style.width = progress + '%';
-            
-            if (progress >= 100) {
-                clearInterval(progressInterval);
-                setTimeout(() => {
-                    splashScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        splashScreen.style.display = 'none';
-                    }, 1200);
-                }, 500);
+        themeToggle.addEventListener('click', () => {
+            if (currentTheme === 'gold') {
+                document.body.classList.add('marli-theme');
+                document.body.classList.add('arabic-text');
+                currentTheme = 'marli-arabic';
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                showNotification('Switched to Marli Theme with Arabic');
+            } else if (currentTheme === 'marli-arabic') {
+                document.body.classList.remove('marli-theme');
+                document.body.classList.remove('arabic-text');
+                currentTheme = 'gold';
+                themeToggle.innerHTML = '<i class="fas fa-palette"></i>';
+                showNotification('Switched to Gold Theme');
             }
-        }, 30);
+        });
 
-        // ==================== HEADER SCROLL EFFECT ====================
-        const header = document.querySelector('.premium-header');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
+        // ==================== LANGUAGE SWITCHER ====================
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
             
-            if (currentScroll <= 0) {
-                header.style.transform = 'translateY(0)';
-                return;
-            }
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                // Scrolling down
-                header.style.transform = 'translateY(-100%)';
+            if (lang === 'ar') {
+                document.body.classList.add('arabic-text');
+                document.body.dir = 'rtl';
+                showNotification('تم التبديل إلى اللغة العربية');
             } else {
-                // Scrolling up
-                header.style.transform = 'translateY(0)';
+                document.body.classList.remove('arabic-text');
+                document.body.dir = 'ltr';
+                showNotification('Switched to English');
             }
+        }
+
+        // ==================== GOLD KARATS ====================
+        function showCollection(karat) {
+            const collections = {
+                '24k': '24K Pure Gold Collection',
+                '22k': '22K Gold Collection',
+                '18k': '18K Gold Collection'
+            };
+            showNotification(`Loading ${collections[karat]}...`);
+        }
+
+        // ==================== BRANDED PRODUCTS ====================
+        function viewProduct(productName) {
+            showNotification(`Viewing ${productName}. Opening product details...`);
+            // In real implementation, would redirect to product page
+        }
+
+        // ==================== CUSTOM DESIGN ====================
+        let selectedMaterial = '24k';
+        let selectedGemstone = 'diamond';
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        const canvas = document.getElementById('sketchCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Initialize canvas
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = 'var(--primary-gold)';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        
+        // Drawing functionality
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            lastX = e.clientX - rect.left;
+            lastY = e.clientY - rect.top;
+        });
+        
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
-            lastScroll = currentScroll;
-        });
-
-        // ==================== HERO SLIDER ====================
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.querySelector('.prev-slide');
-        const nextBtn = document.querySelector('.next-slide');
-        let currentSlide = 0;
-        
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
             
-            currentSlide = (n + slides.length) % slides.length;
-            
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-        
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-        
-        // Auto slide every 5 seconds
-        let slideInterval = setInterval(nextSlide, 5000);
-        
-        // Reset interval on manual navigation
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-        
-        // Event listeners
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetInterval();
+            lastX = x;
+            lastY = y;
         });
         
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetInterval();
-        });
-        
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-                resetInterval();
-            });
-        });
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
 
-        // ==================== AR TRY-ON FUNCTIONS ====================
-        let arActive = false;
-        let currentARItem = 'ring1';
-        
-        function startAR() {
-            if (!arActive) {
-                arActive = true;
-                const viewport = document.getElementById('arViewport');
-                viewport.innerHTML = `
-                    <div class="ar-overlay">
-                        <i class="fas fa-video"></i> AR ACTIVE
-                    </div>
-                    <div style="position: relative; width: 100%; height: 100%;">
-                        <div id="arJewelry" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8rem; color: var(--primary-gold);">
-                            ${currentARItem === 'ring1' ? '<i class="fas fa-ring"></i>' : 
-                              currentARItem === 'bracelet1' ? '<i class="fas fa-gem"></i>' : 
-                              '<i class="fas fa-necklace"></i>'}
-                        </div>
-                    </div>
-                `;
-                showNotification('AR try-on activated! Move your hand in camera view.');
-            }
-        }
-        
-        function changeJewelry() {
-            if (arActive) {
-                const jewelry = document.getElementById('arJewelry');
-                const items = ['ring1', 'bracelet1', 'necklace1'];
-                const currentIndex = items.indexOf(currentARItem);
-                currentARItem = items[(currentIndex + 1) % items.length];
-                
-                jewelry.innerHTML = 
-                    currentARItem === 'ring1' ? '<i class="fas fa-ring"></i>' : 
-                    currentARItem === 'bracelet1' ? '<i class="fas fa-gem"></i>' : 
-                    '<i class="fas fa-necklace"></i>';
-                    
-                showNotification(`Changed to ${currentARItem.replace('1', '')}`);
-            }
-        }
-        
-        function selectARItem(item) {
-            currentARItem = item;
-            if (arActive) {
-                const jewelry = document.getElementById('arJewelry');
-                jewelry.innerHTML = 
-                    item === 'ring1' ? '<i class="fas fa-ring"></i>' : 
-                    item === 'bracelet1' ? '<i class="fas fa-gem"></i>' : 
-                    '<i class="fas fa-necklace"></i>';
-            }
-        }
-        
-        function captureAR() {
-            if (arActive) {
-                showNotification('AR capture saved to gallery!');
-            } else {
-                showNotification('Please start AR first');
-            }
+        function selectMaterial(material) {
+            selectedMaterial = material;
+            document.querySelectorAll('.tool-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.tool-option').classList.add('active');
+            showNotification(`Selected: ${material.toUpperCase()} Gold`);
         }
 
-        // ==================== AI ASSISTANT ====================
-        const aiMessages = document.getElementById('aiMessages');
-        const aiInput = document.getElementById('aiInput');
-        
-        const aiResponses = [
-            "Based on your preferences, I recommend our 24K gold collection with diamond accents. Would you like to see some options?",
-            "For that occasion, our emerald and diamond pieces would be perfect. They symbolize renewal and growth.",
-            "I suggest considering platinum for its durability and modern look. It pairs beautifully with blue sapphires.",
-            "Our custom design service can create exactly what you're imagining. Would you like to schedule a consultation?",
-            "That style is currently trending. I recommend checking our new Art Deco inspired collection.",
-            "For investment purposes, I suggest certified diamonds over 1 carat or rare colored gemstones.",
-            "Based on your skin tone, I think rose gold would look stunning on you. Shall I show you some options?"
-        ];
-        
-        function sendAIMessage() {
-            const message = aiInput.value.trim();
-            if (message) {
-                // Add user message
-                const userMsg = document.createElement('div');
-                userMsg.className = 'message user';
-                userMsg.textContent = message;
-                aiMessages.appendChild(userMsg);
-                
-                // Clear input
-                aiInput.value = '';
-                
-                // Scroll to bottom
-                aiMessages.scrollTop = aiMessages.scrollHeight;
-                
-                // Simulate AI thinking
-                setTimeout(() => {
-                    // Add AI response
-                    const aiMsg = document.createElement('div');
-                    aiMsg.className = 'message ai';
-                    aiMsg.textContent = aiResponses[Math.floor(Math.random() * aiResponses.length)];
-                    aiMessages.appendChild(aiMsg);
-                    
-                    // Scroll to bottom
-                    aiMessages.scrollTop = aiMessages.scrollHeight;
-                }, 1000);
-            }
-        }
-        
-        aiInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendAIMessage();
-            }
-        });
-
-        // ==================== BLOCKCHAIN VERIFICATION ====================
-        function verifyCertificate() {
-            const certificateId = document.getElementById('certificateId').value.trim();
-            if (certificateId) {
-                showNotification(`Verifying certificate: ${certificateId}...`);
-                
-                // Simulate verification process
-                setTimeout(() => {
-                    const valid = Math.random() > 0.3; // 70% chance of being valid
-                    if (valid) {
-                        showNotification(`✅ Certificate verified! This is an authentic RYAAN piece.`);
-                    } else {
-                        showNotification(`❌ Certificate not found. Please check the ID and try again.`);
-                    }
-                }, 2000);
-            } else {
-                showNotification('Please enter a certificate ID');
-            }
+        function selectGemstone(gemstone) {
+            selectedGemstone = gemstone;
+            document.querySelectorAll('.tool-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.tool-option').classList.add('active');
+            showNotification(`Selected: ${gemstone.charAt(0).toUpperCase() + gemstone.slice(1)}`);
         }
 
-        // ==================== VIRTUAL SHOWROOM ====================
-        let showroomZoom = 1;
-        let showroomRotation = 0;
-        
-        function rotateShowroom() {
-            showroomRotation += 90;
-            const viewport = document.getElementById('showroomView');
-            viewport.style.transform = `rotate(${showroomRotation}deg) scale(${showroomZoom})`;
-        }
-        
-        function zoomInShowroom() {
-            showroomZoom = Math.min(2, showroomZoom + 0.1);
-            const viewport = document.getElementById('showroomView');
-            viewport.style.transform = `rotate(${showroomRotation}deg) scale(${showroomZoom})`;
-        }
-        
-        function zoomOutShowroom() {
-            showroomZoom = Math.max(0.5, showroomZoom - 0.1);
-            const viewport = document.getElementById('showroomView');
-            viewport.style.transform = `rotate(${showroomRotation}deg) scale(${showroomZoom})`;
-        }
-        
-        function selectShowroomItem(item) {
-            showNotification(`Selected: ${item.replace('-', ' ').toUpperCase()}`);
+        function clearSketch() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            showNotification('Sketch cleared');
         }
 
-        // ==================== NFT FUNCTIONS ====================
-        function buyNFT(nftId) {
-            showNotification(`Purchasing NFT: ${nftId}...`);
-            
-            // Simulate purchase process
+        function saveSketch() {
+            showNotification('Design saved! Our designers will review your sketch.');
+        }
+
+        function uploadSketch() {
+            showNotification('Upload image feature coming soon!');
+        }
+
+        // ==================== 3D DESIGN ====================
+        function generate3DModel() {
+            showNotification('Generating 3D model from your design...');
             setTimeout(() => {
-                const success = Math.random() > 0.2; // 80% success rate
-                if (success) {
-                    showNotification(`🎉 NFT purchased successfully! Check your wallet.`);
-                } else {
-                    showNotification(`Transaction failed. Please try again.`);
-                }
-            }, 3000);
-        }
-
-        // ==================== CRYPTO PAYMENTS ====================
-        let selectedCrypto = 'bitcoin';
-        
-        function selectCrypto(crypto) {
-            selectedCrypto = crypto;
-            document.querySelectorAll('.crypto-currency').forEach(el => {
-                el.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-            
-            // Update payment button
-            const button = document.querySelector('.crypto-widget .btn-primary');
-            button.innerHTML = `<i class="fab fa-${crypto}"></i> PAY WITH ${crypto.toUpperCase()}`;
-        }
-        
-        function processCryptoPayment() {
-            showNotification(`Processing ${selectedCrypto.toUpperCase()} payment...`);
-            
-            // Simulate payment processing
-            setTimeout(() => {
-                showNotification(`✅ Payment successful! Transaction hash: 0x${Math.random().toString(16).substr(2, 10)}...`);
+                showNotification('3D model generated successfully!');
             }, 2000);
+        }
+
+        function rotate3DModel() {
+            const viewer = document.getElementById('viewer3D');
+            viewer.style.transform = `rotateY(${Date.now() % 360}deg)`;
+            showNotification('Rotating 3D model');
+        }
+
+        function zoomIn3D() {
+            const viewer = document.getElementById('viewer3D');
+            const currentScale = parseFloat(window.getComputedStyle(viewer).transform.split(',')[3]) || 1;
+            viewer.style.transform = `scale(${currentScale * 1.2})`;
+        }
+
+        function zoomOut3D() {
+            const viewer = document.getElementById('viewer3D');
+            const currentScale = parseFloat(window.getComputedStyle(viewer).transform.split(',')[3]) || 1;
+            viewer.style.transform = `scale(${currentScale * 0.8})`;
+        }
+
+        // ==================== PRODUCT CUSTOMIZER ====================
+        function updatePreview() {
+            const goldKarat = document.getElementById('goldKarat').value;
+            const gemstoneType = document.getElementById('gemstoneType').value;
+            const gemstoneSize = document.getElementById('gemstoneSize').value;
+            const jewelryWeight = document.getElementById('jewelryWeight').value;
+            const designStyle = document.getElementById('designStyle').value;
+            const finishType = document.getElementById('finishType').value;
+            
+            // Update display values
+            document.getElementById('gemstoneSizeValue').textContent = `${gemstoneSize} carat${gemstoneSize > 1 ? 's' : ''}`;
+            document.getElementById('jewelryWeightValue').textContent = `${jewelryWeight} gram${jewelryWeight > 1 ? 's' : ''}`;
+            
+            // Update preview icon based on selections
+            const previewIcon = document.querySelector('#previewImage i');
+            if (designStyle.includes('ring')) {
+                previewIcon.className = 'fas fa-ring';
+            } else if (designStyle.includes('necklace')) {
+                previewIcon.className = 'fas fa-necklace';
+            } else if (designStyle.includes('bracelet')) {
+                previewIcon.className = 'fas fa-bracelet';
+            } else if (designStyle.includes('earring')) {
+                previewIcon.className = 'fas fa-earring';
+            }
+            
+            // Update color based on gold karat
+            let color = 'var(--primary-gold)';
+            if (goldKarat === 'platinum') color = 'var(--platinum)';
+            previewIcon.style.color = color;
+            
+            // Update summary
+            const summary = document.getElementById('customizationSummary');
+            summary.innerHTML = `
+                Material: ${goldKarat.toUpperCase()}<br>
+                Gemstone: ${gemstoneType.charAt(0).toUpperCase() + gemstoneType.slice(1)}<br>
+                Weight: ${jewelryWeight}g<br>
+                Design: ${designStyle.charAt(0).toUpperCase() + designStyle.slice(1)}<br>
+                Finish: ${finishType.charAt(0).toUpperCase() + finishType.slice(1)}
+            `;
+            
+            // Update price (simplified calculation)
+            const pricePerGram = {
+                '24k': 500,
+                '22k': 455,
+                '18k': 372,
+                'platinum': 650
+            };
+            const basePrice = pricePerGram[goldKarat] * jewelryWeight;
+            const gemstonePrice = gemstoneType !== 'none' ? gemstoneSize * 1000 : 0;
+            const totalPrice = basePrice + gemstonePrice;
+            
+            const cartButton = document.querySelector('.product-preview .btn-primary');
+            cartButton.innerHTML = `<i class="fas fa-shopping-cart"></i> ADD TO CART - $${totalPrice.toLocaleString()}`;
+        }
+
+        function resetCustomization() {
+            document.getElementById('goldKarat').value = '24k';
+            document.getElementById('gemstoneType').value = 'diamond';
+            document.getElementById('gemstoneSize').value = '1';
+            document.getElementById('jewelryWeight').value = '5';
+            document.getElementById('designStyle').value = 'classic';
+            document.getElementById('finishType').value = 'polished';
+            updatePreview();
+            showNotification('Customization reset to default');
+        }
+
+        function saveCustomization() {
+            showNotification('Custom design added to cart! Our designers will contact you.');
+        }
+
+        // ==================== SHOPPING CART ====================
+        let cartItems = [];
+        let wishlistItems = 3;
+
+        function showCart() {
+            if (cartItems.length === 0) {
+                showNotification('Your cart is empty');
+            } else {
+                let cartSummary = 'Your Cart:\n';
+                cartItems.forEach((item, index) => {
+                    cartSummary += `${index + 1}. ${item.name} - $${item.price.toLocaleString()}\n`;
+                });
+                showNotification(cartSummary);
+            }
+        }
+
+        function showWishlist() {
+            showNotification(`You have ${wishlistItems} items in your wishlist`);
+        }
+
+        function searchProducts() {
+            const searchTerm = prompt('Search our collections (e.g., "diamond ring", "18k gold"):');
+            if (searchTerm) {
+                showNotification(`Searching for "${searchTerm}"... Found ${Math.floor(Math.random() * 20) + 5} matching items.`);
+            }
         }
 
         // ==================== NOTIFICATION SYSTEM ====================
@@ -1843,6 +1647,7 @@
                 animation: slideIn 0.3s ease;
                 max-width: 350px;
                 font-family: 'Montserrat', sans-serif;
+                white-space: pre-line;
             `;
             
             notification.innerHTML = `
@@ -1854,7 +1659,6 @@
             
             document.body.appendChild(notification);
             
-            // Auto remove after 5 seconds
             setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => notification.remove(), 300);
@@ -1875,31 +1679,10 @@
         `;
         document.head.appendChild(style);
 
-        // ==================== SEARCH FUNCTIONALITY ====================
-        document.querySelector('.search-icon').addEventListener('click', () => {
-            const searchTerm = prompt('Search our collections (e.g., "diamond ring", "gold necklace"):');
-            if (searchTerm) {
-                showNotification(`Searching for "${searchTerm}"...`);
-            }
-        });
-
-        // ==================== WISHLIST FUNCTIONALITY ====================
-        document.querySelector('.wishlist-icon').addEventListener('click', () => {
-            showNotification('Opening wishlist...');
-        });
-
-        // ==================== CART FUNCTIONALITY ====================
-        document.querySelector('.cart-icon').addEventListener('click', () => {
-            showNotification('Opening shopping cart...');
-        });
-
-        // ==================== USER MENU ====================
-        document.querySelector('.user-avatar').addEventListener('click', () => {
-            showNotification('Opening account menu...');
-        });
-
-        // ==================== INITIALIZE ANIMATIONS ====================
+        // ==================== INITIALIZE ====================
         document.addEventListener('DOMContentLoaded', () => {
+            updatePreview();
+            
             // Initialize all animations
             const observerOptions = {
                 threshold: 0.1,
@@ -1915,15 +1698,15 @@
                 });
             }, observerOptions);
             
-            // Observe feature cards
-            document.querySelectorAll('.feature-card').forEach(card => {
+            // Observe elements
+            document.querySelectorAll('.karat-card, .brand-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'all 0.6s ease';
                 observer.observe(card);
             });
             
-            // Add smooth scrolling for anchor links
+            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1940,49 +1723,21 @@
                 });
             });
             
-            // Auto-start AI conversation
-            setTimeout(() => {
-                const welcomeMsg = document.createElement('div');
-                welcomeMsg.className = 'message ai';
-                welcomeMsg.textContent = "Welcome! I'm your AI jewelry design assistant. I can help you find the perfect piece, suggest styles, or create custom designs. What would you like to explore today?";
-                aiMessages.appendChild(welcomeMsg);
-            }, 2000);
+            // Real-time gold price updates
+            setInterval(() => {
+                const tickers = document.querySelectorAll('.ticker-price');
+                tickers.forEach(ticker => {
+                    const currentPrice = parseFloat(ticker.textContent);
+                    const change = (Math.random() * 0.02 - 0.01);
+                    const newPrice = currentPrice * (1 + change);
+                    ticker.textContent = newPrice.toFixed(2);
+                    
+                    const changeEl = ticker.nextElementSibling;
+                    changeEl.textContent = change >= 0 ? `+${(change*100).toFixed(2)}%` : `${(change*100).toFixed(2)}%`;
+                    changeEl.className = `ticker-change ${change >= 0 ? 'positive' : 'negative'}`;
+                });
+            }, 30000);
         });
-
-        // ==================== REAL-TIME GOLD PRICE UPDATES ====================
-        function updateGoldPrices() {
-            const tickers = document.querySelectorAll('.ticker-price');
-            tickers.forEach(ticker => {
-                const currentPrice = parseFloat(ticker.textContent);
-                const change = (Math.random() * 0.02 - 0.01); // -1% to +1%
-                const newPrice = currentPrice * (1 + change);
-                ticker.textContent = newPrice.toFixed(2);
-                
-                // Update change indicator
-                const changeEl = ticker.nextElementSibling;
-                changeEl.textContent = change >= 0 ? `+${(change*100).toFixed(2)}%` : `${(change*100).toFixed(2)}%`;
-                changeEl.className = `ticker-change ${change >= 0 ? 'positive' : 'negative'}`;
-            });
-        }
-        
-        // Update prices every 30 seconds
-        setInterval(updateGoldPrices, 30000);
-
-        // ==================== MOBILE DETECTION ====================
-        function isMobile() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-        
-        if (isMobile()) {
-            document.body.classList.add('mobile');
-            showNotification('Mobile mode activated. Some features may be limited.');
-        }
-
-        // ==================== DARK/LIGHT MODE ====================
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-        if (!prefersDark.matches) {
-            document.body.classList.add('light-mode');
-        }
     </script>
 </body>
-    </html>
+</html>
