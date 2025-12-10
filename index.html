@@ -1,668 +1,507 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RYAAN JEWELLERS - فاخر المجوهرات الذهبية والماس في دبي | Premium Luxury Gold & Diamond Jewellery Dubai</title>
-    <meta name="description" content="RYAAN JEWELLERS دبي - نسخ رئيسية مستوحاة من Cartier، Van Cleef، Messika، Chopard، Graff، Boucheron. ذهب 18 قيراط وألماس. طلبات واتساب ودفع باي بال. | RYAAN JEWELLERS Dubai - Inspired master copies of Cartier, Van Cleef & Arpels, Messika, Chopard, Graff, Boucheron. 18K Gold & Diamonds. WhatsApp Orders & PayPal Payments.">
-    <meta name="keywords" content="ryaan jewellers, luxury jewellery dubai, gold diamonds, cartier master copy, van cleef, messika, chopard, graff, boucheron, 18k gold, arabic jewellery, مجوهرات فاخرة دبي, ذهب ماس">
-    <link rel="canonical" href="https://ryaanjewellers.com">
-    <link rel="alternate" hreflang="en" href="https://ryaanjewellers.com/en">
-    <link rel="alternate" hreflang="ar" href="https://ryaanjewellers.com/ar">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --dark-gold: #B8860B;
-            --bg: #0A0A0A;
-            --card: #1A1A1A;
-            --text: #f0f0f0;
-            --gray: #aaaaaa;
-            --accent: linear-gradient(135deg, var(--gold), #FAD02C);
-        }
-        [dir="rtl"] { font-family:'Cairo',sans-serif; text-align:right; }
-        [dir="rtl"] .nav { direction:rtl; }
-        [dir="rtl"] .product-info { direction:rtl; }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { 
-            font-family:'Inter',sans-serif; 
-            background:var(--bg); 
-            color:var(--text); 
-            overflow-x:hidden; 
-            line-height:1.6;
-        }
-        a { text-decoration:none; color:inherit; }
-        .container { max-width:1400px; margin:0 auto; padding:0 20px; }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>RYAAN JEWELLERS — White Diamond Luxury — Dubai</title>
+<meta name="description" content="RYAAN Jewellers Dubai - Luxury White & Rose Gold Jewellery. Custom Designs, WhatsApp Checkout." />
+<link rel="icon" href="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --bg:#ffffff; --card:#fbfbfb; --text:#111111;
+    --rose:#c88b78; --rose-2:#f0dcd8; --muted:#7a7a7a;
+    --accent:linear-gradient(90deg, #c88b78, #f2dbd6);
+    --radius:14px; --trans:.35s ease;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.45}
+  a{color:inherit;text-decoration:none}
 
-        /* Header */
-        header {
-            position:fixed; top:0; width:100%; padding:20px 40px;
-            background:rgba(10,10,10,.98); backdrop-filter:blur(20px);
-            border-bottom:1px solid rgba(212,175,55,.15); z-index:1000;
-            display:flex; justify-content:space-between; align-items:center;
-        }
-        .logo { 
-            font-family:'Playfair Display',serif; 
-            font-size:2.8rem; 
-            font-weight:400; 
-            letter-spacing:0.1em; 
-            background:var(--accent); 
-            -webkit-background-clip:text; 
-            -webkit-text-fill-color:transparent; 
-            background-clip:text;
-        }
-        .nav { display:flex; gap:40px; }
-        .nav a { 
-            font-size:0.95rem; 
-            letter-spacing:1px; 
-            position:relative; 
-            padding:10px 0; 
-            transition:.3s; 
-        }
-        .nav a::after { 
-            content:''; 
-            position:absolute; 
-            bottom:0; 
-            left:0; 
-            width:0; 
-            height:2px; 
-            background:var(--gold); 
-            transition:.3s; 
-        }
-        .nav a:hover { color:var(--gold); }
-        .nav a:hover::after { width:100%; }
-        .lang-switch { 
-            background:transparent; 
-            color:var(--gold); 
-            border:1px solid var(--gold); 
-            padding:8px 16px; 
-            border-radius:20px; 
-            cursor:pointer; 
-            font-size:0.9rem; 
-        }
-        .cart-btn {
-            background:var(--accent); 
-            color:#000; 
-            padding:12px 24px; 
-            border-radius:50px;
-            font-weight:500; 
-            cursor:pointer; 
-            display:flex; 
-            align-items:center; 
-            gap:10px;
-            transition:.3s;
-        }
-        .cart-btn:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(212,175,55,.3); }
+  /* SPLASH */
+  #splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fff}
+  #splash video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(.65)}
+  .splash-inner{position:relative;z-index:2;text-align:center;padding:40px}
+  .splash-logo{width:150px;height:150px;border-radius:50%;background:var(--rose-2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 18px 40px rgba(200,139,120,.08)}
+  .splash-logo img{width:110px}
+  .splash-title{font-family:'Playfair Display',serif;font-size:34px;color:var(--text);letter-spacing:1px;margin-bottom:6px}
+  .splash-sub{color:var(--muted);margin-bottom:14px}
+  .enter-btn{padding:12px 28px;border-radius:40px;border:2px solid transparent;background:var(--rose);color:#fff;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(200,139,120,.12)}
+  .loading-bar{width:280px;height:4px;background:rgba(0,0,0,.06);border-radius:99px;overflow:hidden;margin-top:18px}
+  .loading-bar > i{display:block;height:100%;width:0;background:var(--rose);transition:width 3.6s linear}
 
-        /* Hero */
-        .hero {
-            height:100vh; 
-            background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.95)),
-            url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2067&q=80') center/cover;
-            display:grid; place-items:center; text-align:center; color:white; position:relative;
-        }
-        .hero::before {
-            content:''; position:absolute; inset:0; background:radial-gradient(circle at center, transparent 0%, rgba(0,0,0,.4) 100%);
-        }
-        .hero-content { position:relative; z-index:1; }
-        .hero h1 { 
-            font-family:'Playfair Display',serif; 
-            font-size:6rem; 
-            letter-spacing:0.2em; 
-            color:var(--gold); 
-            margin-bottom:20px; 
-            text-shadow:0 0 40px rgba(212,175,55,.5);
-        }
-        .hero p { 
-            font-size:1.5rem; 
-            letter-spacing:0.1em; 
-            margin-bottom:40px; 
-            opacity:0.9;
-        }
-        .cta-btn {
-            background:var(--accent); 
-            color:#000; 
-            padding:18px 40px; 
-            border-radius:50px; 
-            font-size:1.1rem; 
-            font-weight:500; 
-            cursor:pointer; 
-            transition:.4s; 
-            border:none;
-        }
-        .cta-btn:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(212,175,55,.4); }
+  /* Header */
+  header{position:fixed;top:0;left:0;width:100%;z-index:900;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,.04)}
+  .container{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:56px;height:56px;border-radius:50%}
+  nav ul{display:flex;gap:18px;list-style:none}
+  nav a{padding:8px 10px;border-radius:8px;color:var(--text);font-weight:600}
+  nav a:hover{background:rgba(200,139,120,.06)}
+  .actions{display:flex;gap:10px;align-items:center}
+  .pill{padding:8px 12px;border-radius:999px;border:1px solid rgba(200,139,120,.12);background:transparent;color:var(--text);cursor:pointer;font-weight:600}
 
-        /* Sections */
-        .section { padding:120px 0; }
-        .section .container { text-align:center; }
-        .title {
-            font-family:'Playfair Display',serif; 
-            font-size:3.2rem; 
-            letter-spacing:0.1em; 
-            color:var(--gold); 
-            margin-bottom:30px;
-            position:relative; 
-        }
-        .title::after { 
-            content:''; 
-            position:absolute; 
-            bottom:-20px; 
-            left:50%; 
-            transform:translateX(-50%);
-            width:100px; 
-            height:3px; 
-            background:var(--accent); 
-            border-radius:2px;
-        }
-        .subtitle { 
-            max-width:800px; 
-            margin:0 auto 80px; 
-            color:var(--gray); 
-            font-size:1.1rem; 
-            line-height:1.8; 
-        }
+  /* HERO */
+  .hero{min-height:68vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 40px}
+  .hero-inner{text-align:center;max-width:880px}
+  .hero-title{font-family:'Playfair Display',serif;font-size:48px;color:var(--text);margin-bottom:8px}
+  .hero-sub{color:var(--muted);margin-bottom:20px}
+  .cta{display:flex;gap:12px;justify-content:center}
 
-        /* Gold Rate */
-        .gold-rate { background:var(--card); padding:60px 0; }
-        .gold-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; max-width:800px; margin:0 auto;
-        }
-        .gr-card { 
-            background:rgba(255,255,255,.05); 
-            padding:40px 20px; 
-            border-radius:20px; 
-            border:1px solid rgba(212,175,55,.1);
-            transition:.3s;
-        }
-        .gr-card:hover { border-color:var(--gold); transform:translateY(-10px); }
-        .gr-card h3 { color:var(--gold); font-size:1.8rem; font-family:'Playfair Display',serif; }
-        .gr-card p { font-size:1.4rem; margin-top:10px; font-weight:500; }
+  /* gold rates */
+  .rates{max-width:1100px;margin:20px auto;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+  .rate-card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(200,139,120,.08);min-width:170px;text-align:center}
+  .rate-title{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .rate-value{font-family:'Playfair Display',serif;font-size:18px;color:var(--text);font-weight:700}
+  .rate-time{font-size:12px;color:var(--muted);margin-top:6px}
 
-        /* Products */
-        .products-grid {
-            display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:40px;
-            max-width:1400px; margin:0 auto;
-        }
-        .product {
-            background:var(--card); 
-            border-radius:20px; 
-            overflow:hidden; 
-            transition:.4s;
-            border:1px solid rgba(212,175,55,.1);
-            position:relative;
-        }
-        .product::before {
-            content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--accent);
-        }
-        .product:hover { 
-            transform:translateY(-20px); 
-            box-shadow:0 30px 60px rgba(0,0,0,.6); 
-            border-color:var(--gold);
-        }
-        .product img { 
-            width:100%; 
-            height:350px; 
-            object-fit:cover; 
-            transition:.3s;
-        }
-        .product:hover img { transform:scale(1.05); }
-        .product-info { padding:30px; }
-        .product-brand { 
-            color:var(--gold); 
-            font-weight:600; 
-            letter-spacing:2px; 
-            text-transform:uppercase; 
-            font-size:0.9rem;
-        }
-        .product-name { 
-            margin:15px 0; 
-            font-size:1.4rem; 
-            font-weight:500; 
-        }
-        .product-price { 
-            font-size:1.8rem; 
-            color:var(--gold); 
-            font-weight:700; 
-            font-family:'Playfair Display',serif;
-        }
-        .add-cart {
-            margin-top:20px; 
-            background:var(--accent); 
-            color:#000; 
-            border:none;
-            padding:14px; 
-            width:100%; 
-            border-radius:12px; 
-            font-weight:600; 
-            cursor:pointer; 
-            transition:.3s;
-            font-size:1rem;
-        }
-        .add-cart:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(212,175,55,.3); }
+  /* sections */
+  .section{padding:48px 20px}
+  .cards{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
 
-        /* Floating Buttons */
-        .float-btn {
-            position:fixed; 
-            width:60px; 
-            height:60px; 
-            border-radius:50%;
-            background:var(--gold); 
-            color:#000; 
-            display:grid; 
-            place-items:center;
-            font-size:1.8rem; 
-            box-shadow:0 5px 20px rgba(0,0,0,.4); 
-            z-index:999; 
-            cursor:pointer;
-            transition:.3s;
-        }
-        .float-btn:hover { transform:scale(1.15); }
-        #whatsapp-btn { bottom:120px; right:20px; background:#25D366; color:white; }
-        #insta-btn { bottom:200px; right:20px; background:linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color:white; }
-        #paypal-qr {
-            position:fixed; 
-            bottom:280px; 
-            right:20px; 
-            background:white; 
-            padding:15px; 
-            border-radius:20px;
-            box-shadow:0 10px 40px rgba(0,0,0,.5); 
-            display:none; 
-            z-index:998;
-            text-align:center;
-        }
-        #paypal-qr img { width:220px; border-radius:15px; }
-        #paypal-qr p { margin-top:10px; color:#000; font-weight:600; }
+  /* slider */
+  .slider{max-width:1180px;margin:0 auto;background:transparent;padding:12px 6px}
+  .track{display:flex;gap:16px;transition:transform .45s ease}
+  .slide{min-width:300px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.04);box-shadow:0 10px 30px rgba(19,19,19,.02)}
+  .slide img{width:100%;height:220px;object-fit:cover}
+  .slide .meta{padding:12px}
 
-        /* Cart Modal */
-        #cartModal {
-            position:fixed; inset:0; 
-            background:rgba(0,0,0,.9); 
-            display:none;
-            align-items:center; 
-            justify-content:center; 
-            z-index:1001;
-        }
-        .cart-box {
-            background:var(--card); 
-            width:95%; 
-            max-width:600px; 
-            border-radius:25px;
-            padding:40px; 
-            max-height:85vh; 
-            overflow-y:auto;
-            border:1px solid rgba(212,175,55,.2);
-        }
-        .cart-title {
-            font-family:'Playfair Display',serif; 
-            color:var(--gold); 
-            font-size:2rem; 
-            margin-bottom:30px; 
-            text-align:center;
-        }
-        #cartItems { margin:30px 0; }
-        .cart-item { 
-            display:flex; 
-            justify-content:space-between; 
-            align-items:center; 
-            padding:20px 0; 
-            border-bottom:1px solid #333; 
-            font-size:1rem;
-        }
-        .cart-item div:first-child { flex:1; }
-        #cartTotal { 
-            font-size:1.6rem; 
-            color:var(--gold); 
-            margin:30px 0; 
-            text-align:center; 
-            font-weight:600;
-        }
-        .checkout-btn { 
-            width:100%; 
-            background:var(--accent); 
-            color:#000; 
-            border:none; 
-            padding:16px; 
-            border-radius:12px; 
-            font-weight:600; 
-            font-size:1.1rem; 
-            cursor:pointer; 
-            margin-bottom:15px;
-        }
-        .close-btn { 
-            width:100%; 
-            background:#444; 
-            color:var(--text); 
-            border:none; 
-            padding:12px; 
-            border-radius:12px; 
-            cursor:pointer;
-        }
+  /* product cards */
+  .product{background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.04);box-shadow:0 10px 30px rgba(19,19,19,.03)}
+  .product img{width:100%;height:240px;object-fit:cover}
+  .product .info{padding:14px}
+  .product .name{font-weight:700;margin-bottom:6px;color:var(--text)}
+  .product .desc{color:var(--muted);font-size:13px;margin-bottom:10px}
+  .product .price{font-family:'Playfair Display',serif;color:var(--text);font-weight:800}
 
-        /* Footer */
-        footer { 
-            padding:80px 0 40px; 
-            background:var(--card); 
-            text-align:center; 
-            border-top:1px solid rgba(212,175,55,.1);
-        }
-        .footer-logo {
-            font-family:'Playfair Display',serif; 
-            font-size:3rem; 
-            letter-spacing:0.1em; 
-            color:var(--gold); 
-            margin-bottom:20px;
-        }
-        .social { 
-            display:flex; 
-            justify-content:center; 
-            gap:30px; 
-            margin:40px 0;
-        }
-        .social a { 
-            font-size:2.2rem; 
-            color:var(--gold); 
-            transition:.3s;
-        }
-        .social a:hover { transform:translateY(-5px); color:#FAD02C; }
-        .footer-text { color:var(--gray); margin-top:20px; }
+  .filter-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+  .filter-row button{padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.04);background:transparent;color:var(--muted);cursor:pointer}
+  .filter-row button.active{background:var(--rose);color:#fff;border-color:var(--rose)}
 
-        /* Responsive */
-        @media(max-width:768px) {
-            header { padding:15px 20px; }
-            .logo { font-size:2rem; }
-            .nav { display:none; }
-            .hero h1 { font-size:3.5rem; letter-spacing:0.1em; }
-            .hero p { font-size:1.2rem; }
-            .title { font-size:2.2rem; }
-            .products-grid { grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:30px; }
-            .float-btn { width:55px; height:55px; font-size:1.6rem; }
-            #whatsapp-btn { bottom:100px; }
-            #insta-btn { bottom:170px; }
-            .cart-box { padding:20px; }
-            [dir="rtl"] { padding-right:10px; padding-left:10px; }
-        }
-    </style>
+  /* cart modal */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.45);z-index:1200}
+  .modal-box{background:#fff;padding:18px;border-radius:12px;width:96%;max-width:620px;border:1px solid rgba(0,0,0,.06)}
+  .cart-item{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+  .cart-item img{width:72px;height:72px;object-fit:cover;border-radius:8px}
+
+  /* checkout form */
+  .form-row{display:flex;gap:10px;flex-wrap:wrap}
+  .input{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,.06);width:100%}
+  .small{width:48%}
+  .btn-primary{background:var(--rose);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+  .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,.06);padding:10px 12px;border-radius:8px;cursor:pointer}
+
+  /* footer */
+  footer{padding:36px 20px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.01))}
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .muted{color:var(--muted)}
+
+  @media (max-width:800px){
+    .hero-title{font-size:28px}
+    .slide img{height:160px}
+    .product img{height:180px}
+  }
+</style>
 </head>
-<body data-lang="en" dir="ltr">
+<body>
 
-<!-- Header -->
+<!-- SPLASH -->
+<div id="splash" aria-hidden="false">
+  <video id="splashVideo" autoplay muted playsinline loop src="assets/splash.mp4"></video>
+  <div class="splash-inner">
+    <div class="splash-logo"><img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png" alt="logo"></div>
+    <div class="splash-title">RYAAN JEWELLERS</div>
+    <div class="splash-sub">White Diamond Luxury — Dubai</div>
+    <button id="enterBtn" class="enter-btn">Enter Boutique</button>
+    <div class="loading-bar"><i id="loadBar"></i></div>
+  </div>
+</div>
+
+<!-- HEADER -->
 <header>
-    <div class="logo" data-en="RYAAN JEWELLERS" data-ar="ريان جويلرز">RYAAN JEWELLERS</div>
-    <nav class="nav" data-en>
-        <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
-        <a href="#collections" data-en="Collections" data-ar="المجموعات">Collections</a>
-        <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
-        <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-    </nav>
-    <div style="display:flex; gap:20px; align-items:center;">
-        <button class="lang-switch" onclick="toggleLang()">العربية | English</button>
-        <button class="cart-btn" onclick="openCart()">
-            <i class="fas fa-shopping-bag"></i> 
-            <span data-en="Cart" data-ar="السلة">Cart</span> (<span id="cartCount">0</span>)
-        </button>
+  <div class="container">
+    <div class="brand">
+      <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png" alt="logo">
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700">RYAAN JEWELLERS</div>
+        <div class="muted" style="font-size:12px">Dubai • Handcrafted Luxury</div>
+      </div>
     </div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#custom">Custom</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <button class="pill" onclick="document.getElementById('goldRates').scrollIntoView({behavior:'smooth'})"><i class="fas fa-coins"></i> Gold Rate</button>
+      <button class="pill" onclick="openCart()"><i class="fas fa-shopping-bag"></i> <span id="cartCount"></span></button>
+    </div>
+  </div>
 </header>
 
-<!-- Hero -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1 data-en="RYAAN" data-ar="ريان">RYAAN</h1>
-        <p data-en="PREMIUM LUXURY MASTER COPIES • DUBAI" data-ar="نسخ رئيسية فاخرة • دبي">PREMIUM LUXURY MASTER COPIES • DUBAI</p>
-        <button class="cta-btn" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})" data-en="DISCOVER COLLECTIONS" data-ar="اكتشف المجموعات">
-            DISCOVER COLLECTIONS
-        </button>
-    </div>
-</section>
+<main id="home" style="padding-top:98px">
 
-<!-- Gold Rate -->
-<section class="gold-rate">
-    <div class="container">
-        <h2 class="title" data-en="LIVE GOLD RATES" data-ar="أسعار الذهب الحية">LIVE GOLD RATES</h2>
-        <div class="gold-grid">
-            <div class="gr-card">
-                <h3 data-en="24K Gold" data-ar="ذهب 24 قيراط">24K Gold</h3>
-                <p id="g24" data-en="AED 506.25 /g" data-ar="506.25 درهم /غرام">AED 506.25 /g</p>
-            </div>
-            <div class="gr-card">
-                <h3 data-en="22K Gold" data-ar="ذهب 22 قيراط">22K Gold</h3>
-                <p id="g22" data-en="AED 468.75 /g" data-ar="468.75 درهم /غرام">AED 468.75 /g</p>
-            </div>
-            <div class="gr-card">
-                <h3 data-en="18K Gold" data-ar="ذهب 18 قيراط">18K Gold</h3>
-                <p id="g18" data-en="AED 385.25 /g" data-ar="385.25 درهم /غرام">AED 385.25 /g</p>
-            </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div style="display:inline-block;padding:8px 20px;background:var(--rose-2);border-radius:40px;color:var(--rose);font-weight:700;margin-bottom:12px">Signature Collection</div>
+      <h1 class="hero-title">White Diamond Luxury — Handcrafted in Dubai</h1>
+      <p class="hero-sub">Discover our curated selection of rings, necklaces, bracelets and bespoke creations.</p>
+      <div class="cta">
+        <button class="btn-primary" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">Explore Collections</button>
+        <button class="btn-ghost" onclick="document.getElementById('custom').scrollIntoView({behavior:'smooth'})">Custom Design</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE GOLD RATES -->
+  <section id="goldRates" class="section">
+    <div style="max-width:1100px;margin:0 auto;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose);margin-bottom:6px">Live Dubai Gold Rate (AED)</div>
+      <div class="rates" id="ratesWrap">
+        <div class="rate-card"><div class="rate-title">24K / g</div><div class="rate-value" id="rate24">—</div><div class="rate-time" id="rateTime">—</div></div>
+        <div class="rate-card"><div class="rate-title">22K / g</div><div class="rate-value" id="rate22">—</div></div>
+        <div class="rate-card"><div class="rate-title">18K / g</div><div class="rate-value" id="rate18">—</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SLIDER -->
+  <section class="section">
+    <div style="max-width:1180px;margin:0 auto;text-align:center;margin-bottom:12px">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose);">Featured Collection</div>
+    </div>
+    <div class="slider" style="overflow:hidden">
+      <div class="track" id="sliderTrack"></div>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
+      <button class="pill" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <button class="pill" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="collections" class="section">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:18px">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--rose);margin-bottom:6px">Our Collections</div>
+          <div class="muted">Filter by category</div>
         </div>
-    </div>
-</section>
-
-<!-- Collections -->
-<section class="section" id="collections">
-    <div class="container">
-        <h2 class="title" data-en="LUXURY MASTER COPIES" data-ar="نسخ رئيسية فاخرة">LUXURY MASTER COPIES</h2>
-        <p class="subtitle" data-en="Inspired by the world's finest houses: Cartier, Van Cleef & Arpels, Messika, Chopard, Graff, Boucheron" data-ar="مستوحاة من أفضل دور العالم: كارتييه، فان كليف آند أربيلس، ميسيكا، شوبارد، غراف، بوثرون">Inspired by the world's finest houses: Cartier, Van Cleef & Arpels, Messika, Chopard, Graff, Boucheron</p>
-        <div class="products-grid" id="productsGrid"></div>
-    </div>
-</section>
-
-<!-- Services -->
-<section class="section" id="services">
-    <div class="container">
-        <h2 class="title" data-en="PREMIUM SERVICES" data-ar="خدمات فاخرة">PREMIUM SERVICES</h2>
-        <p class="subtitle" data-en="Bespoke design, worldwide delivery, and expert consultation" data-ar="تصميم مخصص، توصيل عالمي، واستشارة خبير">Bespoke design, worldwide delivery, and expert consultation</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; max-width:1000px; margin:0 auto;">
-            <div style="background:var(--card); padding:40px; border-radius:20px; border-left:5px solid var(--gold);">
-                <i class="fas fa-pencil-ruler" style="font-size:3rem; color:var(--gold); margin-bottom:20px; display:block;"></i>
-                <h3 data-en="Custom Design" data-ar="تصميم مخصص" style="font-size:1.5rem; margin-bottom:15px;">Custom Design</h3>
-                <p data-en="Tailor-made pieces with our master craftsmen" data-ar="قطع مصممة خصيصًا مع حرفيينا الماهرين" style="color:var(--gray);">Tailor-made pieces with our master craftsmen</p>
-            </div>
-            <div style="background:var(--card); padding:40px; border-radius:20px; border-left:5px solid var(--gold);">
-                <i class="fas fa-shipping-fast" style="font-size:3rem; color:var(--gold); margin-bottom:20px; display:block;"></i>
-                <h3 data-en="Worldwide Delivery" data-ar="توصيل عالمي" style="font-size:1.5rem; margin-bottom:15px;">Worldwide Delivery</h3>
-                <p data-en="Secure & insured shipping globally" data-ar="شحن آمن ومؤمن عالميًا" style="color:var(--gray);">Secure & insured shipping globally</p>
-            </div>
-            <div style="background:var(--card); padding:40px; border-radius:20px; border-left:5px solid var(--gold);">
-                <i class="fas fa-headset" style="font-size:3rem; color:var(--gold); margin-bottom:20px; display:block;"></i>
-                <h3 data-en="24/7 Support" data-ar="دعم 24/7" style="font-size:1.5rem; margin-bottom:15px;">24/7 Support</h3>
-                <p data-en="Personal consultation via WhatsApp" data-ar="استشارة شخصية عبر واتساب" style="color:var(--gray);">Personal consultation via WhatsApp</p>
-            </div>
+        <div class="filter-row" id="filterRow">
+          <button class="active" onclick="filterProducts('all', this)">All</button>
+          <button onclick="filterProducts('bracelet', this)">Bracelets</button>
+          <button onclick="filterProducts('necklace', this)">Necklaces</button>
+          <button onclick="filterProducts('ring', this)">Rings</button>
+          <button onclick="filterProducts('earrings', this)">Earrings</button>
+          <button onclick="filterProducts('bangle', this)">Bangles</button>
         </div>
-    </div>
-</section>
+      </div>
 
-<!-- Floating Buttons -->
-<div class="float-btn" id="whatsapp-btn" onclick="openWhatsApp()">
-    <i class="fab fa-whatsapp"></i>
-</div>
-<div class="float-btn" id="insta-btn" onclick="togglePayPal()">
-    <i class="fab fa-instagram"></i>
-</div>
-<div id="paypal-qr">
-    <img src="https://i.imgur.com/0z6p1.jpg" alt="رمز الاستجابة السريعة لباي بال - ثنسي ر شاميم | PayPal QR - Thanseer Shameem" style="width:220px; border-radius:15px;">
-    <p data-en="Scan to pay Thanseer Shameem" data-ar="مسح لدفع ثنسي ر شاميم">Scan to pay Thanseer Shameem</p>
+      <div class="cards" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- CUSTOM -->
+  <section id="custom" class="section" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.01))">
+    <div style="max-width:1100px;margin:0 auto;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--rose);margin-bottom:8px">Custom Design</div>
+      <p class="muted">From concept to creation — bespoke jewellery crafted to your wishes.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px">
+        <div style="background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,.04)">Consultation & Quote</div>
+        <div style="background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,.04)">3D Proof & Approval</div>
+        <div style="background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,.04)">Handcraft & Delivery</div>
+      </div>
+      <div style="margin-top:16px"><button class="btn-primary" onclick="openCustomInquiry()">Inquire on WhatsApp</button></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose)">RYAAN JEWELLERS</div>
+        <div class="muted">Dubai • Bespoke Jewellery</div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center">
+        <a href="https://wa.me/971543746476" style="color:var(--rose)"><i class="fab fa-whatsapp fa-2x"></i></a>
+        <a href="#" class="muted"><i class="fab fa-instagram fa-2x"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART MODAL -->
+<div id="cartModal" class="modal" aria-hidden="true" onclick="if(event.target===this) closeCart()">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div style="font-family:'Playfair Display',serif;color:var(--rose);font-weight:800">Your Cart</div>
+      <button onclick="closeCart()" style="background:none;border:none;color:var(--muted);cursor:pointer"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div id="cartItems" style="max-height:260px;overflow:auto"></div>
+
+    <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div style="font-weight:800;color:var(--text)" id="cartTotal">Total: AED 0</div>
+      <div style="display:flex;gap:10px">
+        <button class="btn-ghost" onclick="closeCart()">Continue Shopping</button>
+        <button class="btn-primary" onclick="openCheckout()">Checkout (WhatsApp)</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Cart Modal -->
-<div id="cartModal" onclick="if(event.target===this) closeCart()">
-    <div class="cart-box">
-        <h2 class="cart-title" data-en="YOUR SELECTION" data-ar="اختياراتك">YOUR SELECTION</h2>
-        <div id="cartItems"></div>
-        <div id="cartTotal" data-en="Total:" data-ar="الإجمالي:"></div>
-        <button class="checkout-btn" onclick="openWhatsApp()" data-en="Proceed via WhatsApp" data-ar="تابع عبر واتساب">Proceed via WhatsApp</button>
-        <button class="close-btn" onclick="closeCart()" data-en="Continue Shopping" data-ar="تابع التسوق">Continue Shopping</button>
+<!-- CHECKOUT (collect customer info before sending WhatsApp) -->
+<div id="checkoutModal" class="modal" aria-hidden="true" onclick="if(event.target===this) closeCheckout()">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div style="font-family:'Playfair Display',serif;color:var(--rose);font-weight:800">Checkout — WhatsApp</div>
+      <button onclick="closeCheckout()" style="background:none;border:none;color:var(--muted);cursor:pointer"><i class="fas fa-times"></i></button>
     </div>
+
+    <div style="margin-bottom:10px;color:var(--muted)">Please enter delivery details — we'll send the order to WhatsApp for confirmation and payment instructions.</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <input id="custName" class="input" placeholder="Full name" />
+      <input id="custPhone" class="input" placeholder="Phone (e.g. +9715XXXXXXXX)" />
+      <input id="custAddress" class="input" placeholder="Delivery address" />
+      <div style="display:flex;gap:8px;align-items:center">
+        <input type="checkbox" id="agree" checked style="transform:scale(1.1)"/>
+        <label for="agree" class="muted">I agree to be contacted about this order</label>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button class="btn-ghost" onclick="closeCheckout()">Cancel</button>
+        <button class="btn-primary" onclick="sendOrderWhatsApp()">Send Order to WhatsApp</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Footer -->
-<footer id="contact">
-    <div class="container">
-        <div class="footer-logo" data-en="RYAAN JEWELLERS" data-ar="ريان جويلرز">RYAAN JEWELLERS</div>
-        <p data-en="Dubai, UAE | +971 54 374 6476" data-ar="دبي، الإمارات | +971 54 374 6476" style="margin-bottom:20px;">Dubai, UAE | +971 54 374 6476</p>
-        <div class="social">
-            <a href="https://wa.me/971543746476" target="_blank" title="واتساب | WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com/ryaanjewellers" target="_blank" title="إنستغرام | Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:info@ryaanjewellers.com" title="بريد إلكتروني | Email"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p class="footer-text" data-en="© 2025 RYAAN JEWELLERS • Crafting Timeless Elegance" data-ar="© 2025 ريان جويلرز • صناعة الأناقة الأبدية">© 2025 RYAAN JEWELLERS • Crafting Timeless Elegance</p>
-    </div>
-</footer>
+<!-- NOTIFY -->
+<div id="notify" style="position:fixed;right:18px;top:90px;display:none;background:var(--rose);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;z-index:2000"></div>
 
 <script>
-// Complete Products List (30+ inspired master copies with GitHub images cycled)
-const products = [
-    {id:1, brand:"Cartier", name:"Love Bracelet 18K Yellow Gold", price:"AED 8,900", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:2, brand:"Cartier", name:"Juste un Clou Ring Rose Gold", price:"AED 7,500", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:3, brand:"Cartier", name:"Panthère de Cartier Necklace", price:"AED 12,200", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:4, brand:"Van Cleef & Arpels", name:"Vintage Alhambra Earrings", price:"AED 9,800", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:5, brand:"Van Cleef & Arpels", name:"Perlée Diamond Bracelet", price:"AED 11,000", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:6, brand:"Van Cleef & Arpels", name:"Frivole Ring White Gold", price:"AED 6,900", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:7, brand:"Messika", name:"Move Uno Pavé Ring", price:"AED 8,200", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:8, brand:"Messika", name:"Skinny Move Necklace", price:"AED 10,500", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:9, brand:"Messika", name:"Glamour Hoop Earrings", price:"AED 7,800", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:10, brand:"Chopard", name:"Happy Diamonds Ring", price:"AED 9,700", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:11, brand:"Chopard", name:"Ice Cube Bracelet", price:"AED 8,900", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:12, brand:"Chopard", name:"Happy Hearts Necklace", price:"AED 11,200", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:13, brand:"Graff", name:"Hallucination Watch", price:"AED 25,000", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:14, brand:"Graff", name:"Signature Diamond Ring", price:"AED 15,500", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:15, brand:"Graff", name:"Pavé Diamond Earrings", price:"AED 18,900", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:16, brand:"Boucheron", name:"Quatre Ring Edition", price:"AED 10,200", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:17, brand:"Boucheron", name:"Serpent Bohème Necklace", price:"AED 13,800", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:18, brand:"Boucheron", name:"Cartier Panthère Bracelet", price:"AED 9,600", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:19, brand:"Cartier", name:"Trinity Ring Tri-Color", price:"AED 5,900", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:20, brand:"Van Cleef & Arpels", name:"Sweet Alhambra Pendant", price:"AED 7,200", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:21, brand:"Messika", name:"Move N°1 Bracelet", price:"AED 12,100", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:22, brand:"Chopard", name:"Imperiale Earrings", price:"AED 14,500", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:23, brand:"Graff", name:"Cool Jewels Necklace", price:"AED 22,000", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:24, brand:"Boucheron", name:"Reflet Cushion Ring", price:"AED 8,300", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:25, brand:"Cartier", name:"Santos de Cartier Watch", price:"AED 28,900", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:26, brand:"Van Cleef & Arpels", name:"Perlée Clasp Necklace", price:"AED 16,700", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:27, brand:"Messika", name:"Glamour Dream Earrings", price:"AED 11,400", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    {id:28, brand:"Chopard", name:"Haute Joaillerie Ring", price:"AED 19,800", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg"},
-    {id:29, brand:"Graff", name:"High Jewelry Bracelet", price:"AED 32,500", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg"},
-    {id:30, brand:"Boucheron", name:"Nature de Bois Earrings", price:"AED 13,200", img:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg"},
-    // Expandable - add more IDs and descriptions as needed
+/* CONFIG */
+const VIDEO_URL = 'assets/splash.mp4';  // replace if needed
+const GOLD_API_PROVIDER = 'goldapi';   // 'goldapi' or 'metals' or 'none'
+const GOLD_API_KEY = 'YOUR_API_KEY_HERE'; // optional - replace to fetch live rates
+const WA_NUMBER = '971543746476'; // RYAAN WhatsApp (without +)
+
+/* PRODUCTS (from your uploaded assets) */
+const allProducts = [
+  {id:1,name:"Van Cleef Onyx Bracelet",category:"Van Cleef Inspired",price:9800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",type:"bracelet",description:"Luxury gold bracelet with genuine black onyx stones"},
+  {id:2,name:"Van Cleef Carnelian Bracelet",category:"Van Cleef Inspired",price:10200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",type:"bracelet",description:"Gold bracelet with vibrant carnelian stones"},
+  {id:3,name:"Van Cleef Agate Bracelet",category:"Van Cleef Inspired",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",type:"bracelet",description:"Gold bracelet with natural agate stones"},
+  {id:4,name:"Van Cleef Chalcedony Bracelet",category:"Van Cleef Inspired",price:10800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",type:"bracelet",description:"Gold bracelet with beautiful blue chalcedony"},
+  {id:5,name:"Van Cleef Mother of Pearl Bracelet",category:"Van Cleef Inspired",price:11200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",type:"bracelet",description:"Gold bracelet with mother of pearl inlay"},
+  {id:6,name:"Van Cleef Tiger Eye Bracelet",category:"Van Cleef Inspired",price:9600,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",type:"bracelet",description:"Gold bracelet with tiger eye stone"},
+  {id:7,name:"Van Cleef Malachite Bracelet",category:"Van Cleef Inspired",price:10400,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",type:"bracelet",description:"Gold bracelet with green malachite stones"},
+  {id:8,name:"Serpenti Choker Necklace",category:"Bvlgari Inspired",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",type:"necklace",description:"Luxury serpent design necklace with diamonds"},
+  {id:9,name:"Diamond Pendant Necklace",category:"Luxury Collection",price:8500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",type:"necklace",description:"Elegant diamond pendant necklace"},
+  {id:10,name:"Butterfly Diamond Ring",category:"Messika Inspired",price:4850,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",type:"ring",description:"18K gold ring with diamond butterfly design"},
+  {id:11,name:"Emerald Solitaire Ring",category:"Classic Collection",price:7500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",type:"ring",description:"Solitaire emerald ring with diamond halo"},
+  {id:12,name:"Ruby Diamond Ring",category:"Classic Collection",price:8200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",type:"ring",description:"Ruby center stone with diamond accents"},
+  {id:13,name:"Heart Bangle",category:"Chopard Inspired",price:8250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",type:"bangle",description:"18K gold heart design bangle"},
+  {id:14,name:"Chopard Diamond Earrings",category:"Chopard Inspired",price:6500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",type:"earrings",description:"Diamond stud earrings with gold setting"},
+  {id:15,name:"Messika Rose Uno Move",category:"Messika Inspired",price:7250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",type:"bracelet",description:"Moving diamond rose gold bracelet"},
+  {id:16,name:"Diamond Tennis Bracelet",category:"Classic Collection",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",type:"bracelet",description:"Full diamond tennis bracelet"},
+  {id:17,name:"Pearl Drop Earrings",category:"Luxury Collection",price:5800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",type:"earrings",description:"Pearl drop earrings with diamond accents"},
+  {id:18,name:"Diamond Halo Necklace",category:"Luxury Collection",price:11500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",type:"necklace",description:"Diamond halo pendant necklace"},
+  {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
+  {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
+  {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"}
 ];
 
+/* STATE */
 let cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]');
-let currentLang = 'en';
+let currentSlide = 0;
+let autoSlide = null;
 
-const translations = {
-    en: {
-        // Default English
-    },
-    ar: {
-        // Arabic keys already in data- attributes
+/* SPLASH */
+document.getElementById('splashVideo').src = VIDEO_URL;
+const loadBar = document.getElementById('loadBar');
+setTimeout(()=>loadBar.style.width='100%',40);
+document.getElementById('enterBtn').addEventListener('click', ()=>{ document.getElementById('splash').style.opacity='0'; setTimeout(()=>document.getElementById('splash').style.display='none',700); });
+
+/* NOTIFY */
+function showNotify(t){
+  const n=document.getElementById('notify'); n.textContent=t; n.style.display='block';
+  setTimeout(()=>n.style.display='none',2400);
+}
+
+/* GOLD RATES */
+async function fetchGoldRates(){
+  const el24=document.getElementById('rate24'), el22=document.getElementById('rate22'), el18=document.getElementById('rate18'), elTime=document.getElementById('rateTime');
+  el24.textContent='...'; el22.textContent='...'; el18.textContent='...';
+  try{
+    if(GOLD_API_PROVIDER==='none' || !GOLD_API_KEY || GOLD_API_KEY==='YOUR_API_KEY_HERE') throw new Error('No API key');
+    if(GOLD_API_PROVIDER==='goldapi'){
+      const resp = await fetch('https://www.goldapi.io/api/XAU/AED',{headers:{'x-access-token':GOLD_API_KEY}});
+      if(!resp.ok) throw new Error('GoldAPI failed');
+      const data = await resp.json();
+      const perOz = data.price || data.price_au || data['price'];
+      const perGram = perOz / 31.1034768;
+      const g24 = perGram; const g22 = g24*(22/24); const g18 = g24*(18/24);
+      el24.textContent=`AED ${g24.toFixed(2)}`; el22.textContent=`AED ${g22.toFixed(2)}`; el18.textContent=`AED ${g18.toFixed(2)}`;
+      elTime.textContent=new Date().toLocaleString();
+      return;
+    } else if(GOLD_API_PROVIDER==='metals'){
+      const url=`https://metals-api.com/api/latest?access_key=${GOLD_API_KEY}&base=XAU&symbols=AED`;
+      const resp = await fetch(url);
+      if(!resp.ok) throw new Error('Metals failed');
+      const j = await resp.json();
+      const rate = j && j.rates && j.rates.AED;
+      const perGram = rate/31.1034768;
+      const g24=perGram; const g22=g24*(22/24); const g18=g24*(18/24);
+      el24.textContent=`AED ${g24.toFixed(2)}`; el22.textContent=`AED ${g22.toFixed(2)}`; el18.textContent=`AED ${g18.toFixed(2)}`;
+      elTime.textContent=new Date().toLocaleString();
+      return;
     }
-};
+    throw new Error('Provider not configured');
+  }catch(err){
+    // fallback demo rates
+    const demo24 = 499.50; el24.textContent=`AED ${demo24.toFixed(2)}`; el22.textContent=`AED ${(demo24*(22/24)).toFixed(2)}`; el18.textContent=`AED ${(demo24*(18/24)).toFixed(2)}`;
+    elTime.textContent='Fallback rate';
+    console.info('Gold fetch error:',err);
+  }
+}
+fetchGoldRates(); setInterval(fetchGoldRates,60000);
 
-function toggleLang() {
-    currentLang = currentLang === 'en' ? 'ar' : 'en';
-    document.body.setAttribute('data-lang', currentLang);
-    document.body.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-    document.querySelector('.lang-switch').textContent = currentLang === 'en' ? 'العربية | English' : 'Arabic | العربية';
-    document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
-    });
-    renderProducts(); // Re-render for RTL if needed
+/* SLIDER */
+function renderSlider(){
+  const track=document.getElementById('sliderTrack'); track.innerHTML='';
+  const featured = allProducts.slice(0,6);
+  featured.forEach((p,i)=>{
+    const div=document.createElement('div'); div.className='slide';
+    div.innerHTML = `<img src="${p.image}" alt="${p.name}"><div class="meta"><div style="font-size:13px;color:var(--muted)">${p.category}</div><div style="font-weight:700;margin:6px 0">${p.name}</div><div style="font-weight:800;color:var(--text)">AED ${p.price.toLocaleString()}</div><div style="margin-top:8px;display:flex;gap:8px"><button class="btn-primary" onclick="addToCart(${p.id})">Add</button><button class="btn-ghost" onclick="viewProduct(${p.id})">View</button></div></div>`;
+    track.appendChild(div);
+  });
+  startAutoSlider();
+}
+function updateSlider(){ const track=document.getElementById('sliderTrack'); const slide=document.querySelector('.slide'); if(!slide)return; const w = slide.offsetWidth + 16; track.style.transform = `translateX(${-currentSlide*w}px)`; }
+function nextSlide(){ currentSlide=(currentSlide+1) % Math.max(1,Math.min(6,allProducts.length)); updateSlider(); resetAuto(); }
+function prevSlide(){ currentSlide=(currentSlide-1+6)%6; updateSlider(); resetAuto(); }
+function startAutoSlider(){ clearInterval(autoSlide); autoSlide=setInterval(()=>{currentSlide=(currentSlide+1)%6; updateSlider()},4500); }
+function resetAuto(){ clearInterval(autoSlide); startAutoSlider(); }
+
+/* PRODUCTS */
+function renderProducts(){
+  const grid=document.getElementById('productsGrid'); grid.innerHTML='';
+  allProducts.forEach(p=>{
+    const el=document.createElement('div'); el.className='product'; el.setAttribute('data-type',p.type);
+    el.innerHTML=`<img src="${p.image}" alt="${p.name}"><div class="info"><div class="name">${p.name}</div><div class="desc">${p.description}</div><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">AED ${p.price.toLocaleString()}</div><div><button class="btn-ghost" onclick="viewProduct(${p.id})" style="margin-right:8px">View</button><button class="btn-primary" onclick="addToCart(${p.id})">Add</button></div></div></div>`;
+    grid.appendChild(el);
+  });
+  updateCartCount();
+}
+function filterProducts(type,btn){
+  document.querySelectorAll('#filterRow button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelectorAll('.product').forEach(card=>{ if(type==='all' || card.getAttribute('data-type')===type) card.style.display='block'; else card.style.display='none'; });
 }
 
-function renderProducts() {
-    const grid = document.getElementById('productsGrid');
-    grid.innerHTML = products.map(p => `
-        <div class="product">
-            <img src="\( {p.img}" alt=" \){p.name} - \( {p.brand} | \){p.name} - ${p.brand}" loading="lazy">
-            <div class="product-info">
-                <div class="product-brand" data-en="\( {p.brand}" data-ar=" \){p.brand}">${p.brand}</div>
-                <div class="product-name" data-en="\( {p.name}" data-ar=" \){p.name}">${p.name}</div>
-                <div class="product-price" data-en="\( {p.price}" data-ar=" \){p.price}">${p.price}</div>
-                <button class="add-cart" onclick="addToCart(${p.id})" data-en="Add to Cart" data-ar="أضف إلى السلة">
-                    <i class="fas fa-cart-plus"></i> ${currentLang === 'en' ? 'Add to Cart' : 'أضف إلى السلة'}
-                </button>
-            </div>
-        </div>
-    `).join('');
+/* CART */
+function saveCart(){ localStorage.setItem('ryaanCart', JSON.stringify(cart)); updateCartCount(); }
+function updateCartCount(){ const c = cart.reduce((s,i)=>s+i.quantity,0); document.getElementById('cartCount').textContent = c ? c : ''; }
+function addToCart(id){ const p = allProducts.find(x=>x.id===id); if(!p) return; const e=cart.find(i=>i.id===id); if(e) e.quantity++; else cart.push({...p,quantity:1}); saveCart(); showNotify(`${p.name} added`); }
+function openCart(){ renderCart(); document.getElementById('cartModal').style.display='flex'; }
+function closeCart(){ document.getElementById('cartModal').style.display='none'; }
+function renderCart(){
+  const el=document.getElementById('cartItems'); el.innerHTML='';
+  if(!cart.length){ el.innerHTML=`<div style="padding:20px;text-align:center;color:var(--muted)">Cart is empty</div>`; document.getElementById('cartTotal').textContent='Total: AED 0'; return; }
+  let total=0;
+  cart.forEach((it,idx)=>{
+    const subtotal = it.price * it.quantity; total += subtotal;
+    const row=document.createElement('div'); row.className='cart-item';
+    row.innerHTML = `<img src="${it.image}" alt="${it.name}"><div style="flex:1"><div style="font-weight:700">${it.name}</div><div style="color:var(--muted);font-size:13px">AED ${it.price.toLocaleString()} x ${it.quantity}</div></div><div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div><button class="pill" onclick="changeQty(${idx},${it.quantity-1})">-</button> <span style="padding:6px 8px">${it.quantity}</span> <button class="pill" onclick="changeQty(${idx},${it.quantity+1})">+</button></div><button class="pill" onclick="removeItem(${idx})" style="background:#fff;border:1px solid rgba(255,0,0,.06);color:#ff4d4d"><i class="fas fa-trash"></i></button></div>`;
+    el.appendChild(row);
+  });
+  document.getElementById('cartTotal').textContent = `Total: AED ${total.toLocaleString()}`;
+}
+function changeQty(i,q){ if(q<1) return removeItem(i); cart[i].quantity=q; saveCart(); renderCart(); }
+function removeItem(i){ cart.splice(i,1); saveCart(); renderCart(); }
+
+/* CHECKOUT (WhatsApp) */
+function openCheckout(){ closeCart(); document.getElementById('checkoutModal').style.display='flex'; // fill with stored values if any
+  document.getElementById('custName').value = localStorage.getItem('ryaan_cust_name') || '';
+  document.getElementById('custPhone').value = localStorage.getItem('ryaan_cust_phone') || '';
+  document.getElementById('custAddress').value = localStorage.getItem('ryaan_cust_addr') || '';
+}
+function closeCheckout(){ document.getElementById('checkoutModal').style.display='none'; }
+
+function sendOrderWhatsApp(){
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const addr = document.getElementById('custAddress').value.trim();
+  const agree = document.getElementById('agree').checked;
+  if(!name || !phone || !addr){ alert('Please fill name, phone and address.'); return; }
+  if(!agree){ alert('Please agree to be contacted.'); return; }
+  // persist contact
+  localStorage.setItem('ryaan_cust_name', name);
+  localStorage.setItem('ryaan_cust_phone', phone);
+  localStorage.setItem('ryaan_cust_addr', addr);
+
+  // build message
+  let total = 0;
+  let msg = `🛍️ *RYAAN JEWELLERS — Order*%0A%0A`;
+  msg += `*Customer:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Address:* ${encodeURIComponent(addr)}%0A%0A`;
+  cart.forEach((it,i)=>{
+    total += it.price * it.quantity;
+    msg += `${i+1}. ${encodeURIComponent(it.name)}%0A   Qty: ${it.quantity}%0A   Price: AED ${it.price.toLocaleString()}%0A%0A`;
+  });
+  msg += `*Total:* AED ${total.toLocaleString()}%0A%0A`;
+  msg += encodeURIComponent('Please confirm and provide payment details. Thank you.');
+
+  // open WhatsApp (international number without +)
+  const url = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+  window.open(url, '_blank');
+  showNotify('Opening WhatsApp with your order...');
+  // optional: clear cart after sending
+  // cart = []; saveCart(); renderCart();
+  closeCheckout();
 }
 
-function addToCart(id) {
-    const item = products.find(p => p.id === id);
-    const existing = cart.find(x => x.id === id);
-    if (existing) existing.qty = (existing.qty || 1) + 1;
-    else cart.push({...item, qty:1});
-    localStorage.setItem('ryaanCart', JSON.stringify(cart));
-    document.getElementById('cartCount').textContent = cart.reduce((a,c)=>a+(c.qty||1),0);
-    const toastText = currentLang === 'en' ? `\( {item.name} added!` : `تم إضافة \){item.name}!`;
-    const toast = document.createElement('div');
-    toast.style.cssText = 'position:fixed;top:20px;right:20px;background:var(--gold);color:#000;padding:15px 20px;border-radius:10px;z-index:1002;';
-    toast.textContent = toastText;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
+/* VIEW PRODUCT */
+function viewProduct(id){
+  const p = allProducts.find(x=>x.id===id);
+  if(!p) return;
+  const msg = `🔎 Product Inquiry - ${p.name}\nCategory: ${p.category}\nPrice: AED ${p.price.toLocaleString()}\n\nPlease provide details.`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-function openCart() {
-    const modal = document.getElementById('cartModal');
-    const items = document.getElementById('cartItems');
-    items.innerHTML = cart.length === 0 ? `<p style="text-align:center;color:var(--gray);margin:40px 0;" data-en="Your cart is elegantly empty" data-ar="سلتك فارغة بأناقة">${currentLang === 'en' ? 'Your cart is elegantly empty' : 'سلتك فارغة بأناقة'}</p>` : '';
-    let total = 0;
-    cart.forEach((item, i) => {
-        const qty = item.qty || 1;
-        const priceNum = parseFloat(item.price.replace(/[^0-9.-]+/g,""));
-        total += priceNum * qty;
-        const itemText = currentLang === 'en' ? `<strong>\( {item.name}</strong><br><small style="color:var(--gray);"> \){item.brand} • Qty: \( {qty}</small>` : `<strong> \){item.name}</strong><br><small style="color:var(--gray);">\( {item.brand} • الكمية: \){qty}</small>`;
-        items.innerHTML += `
-            <div class="cart-item">
-                <div>${itemText}</div>
-                <div style="font-weight:600;">AED ${(priceNum * qty).toFixed(2)}</div>
-            </div>`;
-    });
-    document.getElementById('cartTotal').innerHTML = `\( {currentLang === 'en' ? 'Total:' : 'الإجمالي:'} <strong style="color:var(--gold);">AED \){total.toFixed(2)}</strong>`;
-    modal.style.display = 'flex';
+/* CUSTOM INQUIRY */
+function openCustomInquiry(){
+  const msg = `Hello, I'm interested in a custom design. Please assist.`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-function closeCart() { document.getElementById('cartModal').style.display = 'none'; }
+/* INIT */
+function init(){
+  renderSlider();
+  renderProducts();
+  updateCartCount();
+  // load cart
+  cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]'); updateCartCount();
 
-function openWhatsApp() {
-    if (cart.length === 0) {
-        alert(currentLang === 'en' ? "Please add items to cart first." : "يرجى إضافة العناصر إلى السلة أولاً.");
-        return;
-    }
-    let msg = currentLang === 'en' ? "Hello RYAAN JEWELLERS! ✨%0A%0AI'm ready to order:%0A" : "مرحبا ريان جويلرز! ✨%0A%0Aأنا جاهز للطلب:%0A";
-    cart.forEach(item => {
-        const qtyText = currentLang === 'en' ? `(x\( {item.qty || 1})` : `(x \){item.qty || 1})`;
-        msg += `• \( {item.name} \){qtyText} - ${item.brand}%0A`;
-    });
-    const total = cart.reduce((a,c)=>{const p=parseFloat(c.price.replace(/[^0-9.-]+/g,""));return a + p*(c.qty||1);},0).toFixed(2);
-    msg += `%0A💎 ${currentLang === 'en' ? 'Total: AED ' + total : 'الإجمالي: درهم ' + total}`;
-    msg += `%0A${currentLang === 'en' ? 'Please advise on delivery & payment.' : 'يرجى النصيحة بشأن التوصيل والدفع.'}`;
-    window.open(`https://wa.me/971543746476?text=${encodeURIComponent(msg)}`, '_blank');
+  // slider drag support
+  const track = document.getElementById('sliderTrack');
+  let isDown=false,startX;
+  track.addEventListener('pointerdown', (e)=>{ isDown=true; startX=e.clientX; });
+  window.addEventListener('pointerup', ()=>{ if(isDown) isDown=false; });
+  track.addEventListener('pointermove', (e)=>{ if(!isDown) return; const dx = e.clientX - startX; track.style.transform = `translateX(${-currentSlide * (document.querySelector('.slide')?.offsetWidth + 16 || 316) + dx}px)`; });
+
+  // resize
+  window.addEventListener('resize', ()=>{ updateSlider(); });
 }
-
-function togglePayPal() {
-    const qr = document.getElementById('paypal-qr');
-    qr.style.display = qr.style.display === 'block' ? 'none' : 'block';
-    window.open('https://instagram.com/ryaanjewellers', '_blank');
-}
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
-
-// Init
-document.addEventListener('DOMContentLoaded', () => {
-    renderProducts();
-    document.getElementById('cartCount').textContent = cart.reduce((a,c)=>a+(c.qty||1),0);
-    // Update gold prices (static for now, can add API later)
-    document.getElementById('g24').textContent = currentLang === 'en' ? 'AED 506.25 /g' : '506.25 درهم /غرام';
-    document.getElementById('g22').textContent = currentLang === 'en' ? 'AED 468.75 /g' : '468.75 درهم /غرام';
-    document.getElementById('g18').textContent = currentLang === 'en' ? 'AED 385.25 /g' : '385.25 درهم /غرام';
-});
+document.addEventListener('DOMContentLoaded', init);
 </script>
-
 </body>
 </html>
