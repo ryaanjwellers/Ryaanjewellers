@@ -3,105 +3,122 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>RYAAN JEWELLERS — White Diamond Luxury — Dubai</title>
-<meta name="description" content="RYAAN Jewellers Dubai - Luxury White & Rose Gold Jewellery. Custom Designs, WhatsApp Checkout." />
-<link rel="icon" href="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>RYAAN JEWELLERS — White Diamond Luxury</title>
+<meta name="description" content="RYAAN Jewellers Dubai - White Diamond Luxury theme. Custom designs, live gold rates, WhatsApp checkout." />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root{
-    --bg:#ffffff; --card:#fbfbfb; --text:#111111;
-    --rose:#c88b78; --rose-2:#f0dcd8; --muted:#7a7a7a;
-    --accent:linear-gradient(90deg, #c88b78, #f2dbd6);
-    --radius:14px; --trans:.35s ease;
+    --rose:#C77B7B; /* rose gold accent */
+    --rose-soft:#F7E9E9;
+    --muted:#8a8a8a;
+    --bg:#ffffff;
+    --card:#fbfbfb;
+    --dark:#0f1720;
+    --radius:14px;
+    --trans:.35s ease;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
-  body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.45}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--dark);background:var(--bg);-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-
+  
   /* SPLASH */
-  #splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fff}
-  #splash video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(.65)}
-  .splash-inner{position:relative;z-index:2;text-align:center;padding:40px}
-  .splash-logo{width:150px;height:150px;border-radius:50%;background:var(--rose-2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 18px 40px rgba(200,139,120,.08)}
-  .splash-logo img{width:110px}
-  .splash-title{font-family:'Playfair Display',serif;font-size:34px;color:var(--text);letter-spacing:1px;margin-bottom:6px}
-  .splash-sub{color:var(--muted);margin-bottom:14px}
-  .enter-btn{padding:12px 28px;border-radius:40px;border:2px solid transparent;background:var(--rose);color:#fff;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(200,139,120,.12)}
-  .loading-bar{width:280px;height:4px;background:rgba(0,0,0,.06);border-radius:99px;overflow:hidden;margin-top:18px}
-  .loading-bar > i{display:block;height:100%;width:0;background:var(--rose);transition:width 3.6s linear}
+  #splash{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+  .splash-fallback{position:absolute;inset:0;background:linear-gradient(135deg, #0f1720 0%, #2c1810 100%);z-index:1}
+  .splash-inner{position:relative;z-index:2;text-align:center;padding:28px;color:#fff}
+  .splash-logo{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--rose),#fbeff0);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 18px 40px rgba(199,123,123,.12)}
+  .splash-logo img{width:100px}
+  .splash-title{font-family:'Cinzel',serif;font-size:34px;color:#fff;margin-bottom:6px}
+  .splash-sub{color:rgba(255,255,255,.85);margin-bottom:12px}
+  .enter-btn{padding:12px 26px;border-radius:999px;border:2px solid rgba(255,255,255,.18);background:rgba(255,255,255,.03);color:#fff;cursor:pointer;font-weight:700;transition:all .3s ease}
+  .enter-btn:hover{background:rgba(255,255,255,.1);transform:scale(1.05)}
+  .loading-bar{width:260px;height:4px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;margin-top:14px}
+  .loading-bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,#fff,var(--rose));transition:width 3.6s linear}
 
-  /* Header */
-  header{position:fixed;top:0;left:0;width:100%;z-index:900;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,.04)}
-  .container{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{width:56px;height:56px;border-radius:50%}
+  /* HEADER */
+  header{position:sticky;top:0;left:0;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.98));backdrop-filter:blur(10px);z-index:900;border-bottom:1px solid rgba(199,123,123,.08)}
+  .container{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+  .brand img{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--rose),#ffdfe0);padding:8px}
   nav ul{display:flex;gap:18px;list-style:none}
-  nav a{padding:8px 10px;border-radius:8px;color:var(--text);font-weight:600}
-  nav a:hover{background:rgba(200,139,120,.06)}
+  nav a{padding:8px 10px;border-radius:8px;font-weight:600;color:var(--dark);transition:all .2s ease}
+  nav a:hover{background:var(--rose-soft);color:var(--rose)}
   .actions{display:flex;gap:10px;align-items:center}
-  .pill{padding:8px 12px;border-radius:999px;border:1px solid rgba(200,139,120,.12);background:transparent;color:var(--text);cursor:pointer;font-weight:600}
+  .icon-btn{background:transparent;border:1px solid rgba(199,123,123,.1);padding:8px 12px;border-radius:10px;cursor:pointer;color:var(--dark);transition:all .2s ease}
+  .icon-btn:hover{background:var(--rose-soft);border-color:var(--rose)}
+  .cart-count{background:var(--rose);color:#fff;padding:3px 8px;border-radius:20px;font-weight:800;font-size:12px;margin-left:8px}
 
   /* HERO */
-  .hero{min-height:68vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 40px}
-  .hero-inner{text-align:center;max-width:880px}
-  .hero-title{font-family:'Playfair Display',serif;font-size:48px;color:var(--text);margin-bottom:8px}
-  .hero-sub{color:var(--muted);margin-bottom:20px}
+  .hero{min-height:64vh;display:flex;align-items:center;justify-content:center;padding:90px 16px 40px}
+  .hero-inner{text-align:center;max-width:920px}
+  .hero-title{font-family:'Cinzel',serif;font-size:48px;color:var(--dark);margin-bottom:10px}
+  .hero-sub{color:var(--muted);margin-bottom:18px}
   .cta{display:flex;gap:12px;justify-content:center}
+  .btn{padding:12px 24px;border-radius:999px;cursor:pointer;border:none;font-weight:700;transition:all .3s ease}
+  .btn-primary{background:var(--rose);color:#fff}
+  .btn-primary:hover{background:#b56969;transform:translateY(-2px);box-shadow:0 10px 20px rgba(199,123,123,.2)}
+  .btn-outline{background:transparent;border:1px solid rgba(10,10,10,.1);color:var(--dark)}
+  .btn-outline:hover{background:var(--rose-soft);border-color:var(--rose)}
 
-  /* gold rates */
-  .rates{max-width:1100px;margin:20px auto;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:0 16px}
-  .rate-card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(200,139,120,.08);min-width:170px;text-align:center}
+  /* GOLD RATES */
+  .rates{max-width:1100px;margin:22px auto 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+  .rate-card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(199,123,123,.1);min-width:165px;text-align:center;transition:all .3s ease}
+  .rate-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(199,123,123,.1)}
   .rate-title{font-size:13px;color:var(--muted);margin-bottom:6px}
-  .rate-value{font-family:'Playfair Display',serif;font-size:18px;color:var(--text);font-weight:700}
+  .rate-value{font-family:'Cinzel',serif;font-size:20px;color:var(--rose);font-weight:800}
   .rate-time{font-size:12px;color:var(--muted);margin-top:6px}
 
-  /* sections */
-  .section{padding:48px 20px}
-  .cards{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
-
-  /* slider */
-  .slider{max-width:1180px;margin:0 auto;background:transparent;padding:12px 6px}
-  .track{display:flex;gap:16px;transition:transform .45s ease}
-  .slide{min-width:300px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.04);box-shadow:0 10px 30px rgba(19,19,19,.02)}
+  /* SECTION / SLIDER / PRODUCTS */
+  .section{padding:56px 16px}
+  .section-title{font-family:'Cinzel',serif;font-size:26px;color:var(--rose);text-align:center;margin-bottom:24px}
+  .slider{max-width:1100px;margin:0 auto;background:transparent;padding:6px;border-radius:12px;overflow:hidden}
+  .track{display:flex;gap:14px;transition:transform .4s ease}
+  .slide{min-width:300px;border-radius:12px;background:var(--card);overflow:hidden;box-shadow:0 8px 24px rgba(10,10,10,.04);transition:all .3s ease}
+  .slide:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(199,123,123,.15)}
   .slide img{width:100%;height:220px;object-fit:cover}
   .slide .meta{padding:12px}
-
-  /* product cards */
-  .product{background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.04);box-shadow:0 10px 30px rgba(19,19,19,.03)}
-  .product img{width:100%;height:240px;object-fit:cover}
-  .product .info{padding:14px}
-  .product .name{font-weight:700;margin-bottom:6px;color:var(--text)}
-  .product .desc{color:var(--muted);font-size:13px;margin-bottom:10px}
-  .product .price{font-family:'Playfair Display',serif;color:var(--text);font-weight:800}
+  .products-grid{max-width:1200px;margin:18px auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;padding:0 12px}
+  .product{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(199,123,123,.08);transition:transform var(--trans),box-shadow var(--trans)}
+  .product:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(199,123,123,.12)}
+  .product img{width:100%;height:220px;object-fit:cover}
+  .product .info{padding:12px}
+  .product .name{font-weight:700;margin-bottom:6px}
+  .product .desc{color:var(--muted);font-size:13px;margin-bottom:8px}
+  .product .price{font-family:'Cinzel',serif;color:var(--rose);font-weight:800}
 
   .filter-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
-  .filter-row button{padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.04);background:transparent;color:var(--muted);cursor:pointer}
+  .filter-row button{padding:8px 16px;border-radius:20px;border:1px solid rgba(199,123,123,.1);background:transparent;cursor:pointer;transition:all .2s ease}
+  .filter-row button:hover{background:var(--rose-soft)}
   .filter-row button.active{background:var(--rose);color:#fff;border-color:var(--rose)}
 
-  /* cart modal */
-  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.45);z-index:1200}
-  .modal-box{background:#fff;padding:18px;border-radius:12px;width:96%;max-width:620px;border:1px solid rgba(0,0,0,.06)}
-  .cart-item{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.04)}
-  .cart-item img{width:72px;height:72px;object-fit:cover;border-radius:8px}
+  /* CUSTOM / FOOTER */
+  #custom .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+  .custom-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(199,123,123,.08);text-align:center;transition:all .3s ease}
+  .custom-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(199,123,123,.1)}
 
-  /* checkout form */
-  .form-row{display:flex;gap:10px;flex-wrap:wrap}
-  .input{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,.06);width:100%}
-  .small{width:48%}
-  .btn-primary{background:var(--rose);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
-  .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,.06);padding:10px 12px;border-radius:8px;cursor:pointer}
+  footer{padding:40px 18px;background:linear-gradient(180deg,transparent,#faf9fa);border-top:1px solid rgba(199,123,123,.05)}
 
-  /* footer */
-  footer{padding:36px 20px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.01))}
-  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-  .muted{color:var(--muted)}
+  /* CART MODAL */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,10,.75);z-index:1200}
+  .modal-box{background:#fff;padding:24px;border-radius:16px;width:96%;max-width:620px;color:var(--dark);box-shadow:0 25px 50px rgba(0,0,0,.15)}
+  .cart-item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(199,123,123,.1)}
 
+  /* small */
+  .center{text-align:center}
   @media (max-width:800px){
+    .hero-title{font-size:32px}
+    .slide{min-width:280px}
+    .slide img{height:180px}
+    .products-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+    nav ul{gap:8px}
+  }
+  @media (max-width:600px){
     .hero-title{font-size:28px}
-    .slide img{height:160px}
-    .product img{height:180px}
+    .products-grid{grid-template-columns:1fr}
+    .filter-row{justify-content:flex-start;overflow-x:auto;padding-bottom:8px}
+    .rates{flex-direction:column;align-items:center}
+    .rate-card{width:100%;max-width:300px}
   }
 </style>
 </head>
@@ -109,24 +126,24 @@
 
 <!-- SPLASH -->
 <div id="splash" aria-hidden="false">
-  <video id="splashVideo" autoplay muted playsinline loop src="assets/splash.mp4"></video>
+  <div class="splash-fallback"></div>
   <div class="splash-inner">
     <div class="splash-logo"><img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png" alt="logo"></div>
     <div class="splash-title">RYAAN JEWELLERS</div>
     <div class="splash-sub">White Diamond Luxury — Dubai</div>
-    <button id="enterBtn" class="enter-btn">Enter Boutique</button>
-    <div class="loading-bar"><i id="loadBar"></i></div>
+    <button id="enterBtn" class="enter-btn">Enter RYAAN</button>
+    <div class="loading-bar"><i id="loadingProgress"></i></div>
   </div>
 </div>
 
 <!-- HEADER -->
 <header>
   <div class="container">
-    <div class="brand">
+    <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
       <img src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Logo%20new%20ryaan.png" alt="logo">
       <div>
-        <div style="font-family:'Playfair Display',serif;font-weight:700">RYAAN JEWELLERS</div>
-        <div class="muted" style="font-size:12px">Dubai • Handcrafted Luxury</div>
+        <div style="font-family:'Cinzel',serif;font-weight:800">RYAAN JEWELLERS</div>
+        <div style="font-size:12px;color:var(--muted)">Dubai — Handcrafted Luxury</div>
       </div>
     </div>
 
@@ -140,185 +157,183 @@
     </nav>
 
     <div class="actions">
-      <button class="pill" onclick="document.getElementById('goldRates').scrollIntoView({behavior:'smooth'})"><i class="fas fa-coins"></i> Gold Rate</button>
-      <button class="pill" onclick="openCart()"><i class="fas fa-shopping-bag"></i> <span id="cartCount"></span></button>
+      <button class="icon-btn" onclick="document.getElementById('goldRates').scrollIntoView({behavior:'smooth'})"><i class="fas fa-coins"></i></button>
+      <button class="icon-btn" onclick="openCart()"><i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount"></span></button>
     </div>
   </div>
 </header>
 
-<main id="home" style="padding-top:98px">
-
+<main id="home">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" style="padding-top:98px">
     <div class="hero-inner">
-      <div style="display:inline-block;padding:8px 20px;background:var(--rose-2);border-radius:40px;color:var(--rose);font-weight:700;margin-bottom:12px">Signature Collection</div>
-      <h1 class="hero-title">White Diamond Luxury — Handcrafted in Dubai</h1>
-      <p class="hero-sub">Discover our curated selection of rings, necklaces, bracelets and bespoke creations.</p>
+      <div class="hero-tag" style="display:inline-block;padding:8px 20px;background:var(--rose-soft);border-radius:40px;color:var(--rose);font-weight:700">Signature Masterpieces</div>
+      <h1 class="hero-title">Elegant. Timeless. Crafted for you.</h1>
+      <p class="hero-sub">Discover our exclusive collection of rings, necklaces, bracelets and bespoke creations — made in Dubai.</p>
       <div class="cta">
-        <button class="btn-primary" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">Explore Collections</button>
-        <button class="btn-ghost" onclick="document.getElementById('custom').scrollIntoView({behavior:'smooth'})">Custom Design</button>
+        <button class="btn btn-primary" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">Explore Collections</button>
+        <button class="btn btn-outline" onclick="document.getElementById('custom').scrollIntoView({behavior:'smooth'})">Custom Design</button>
       </div>
     </div>
   </section>
 
   <!-- LIVE GOLD RATES -->
-  <section id="goldRates" class="section">
-    <div style="max-width:1100px;margin:0 auto;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose);margin-bottom:6px">Live Dubai Gold Rate (AED)</div>
+  <section id="goldRates" class="section center">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="display:flex;justify-content:center;gap:10px;align-items:center;margin-bottom:12px">
+        <div style="font-family:'Cinzel',serif;font-weight:800;font-size:20px;color:var(--rose)">Live Dubai Gold Rate (AED)</div>
+        <div style="color:var(--muted);font-size:13px">Updated automatically</div>
+      </div>
       <div class="rates" id="ratesWrap">
-        <div class="rate-card"><div class="rate-title">24K / g</div><div class="rate-value" id="rate24">—</div><div class="rate-time" id="rateTime">—</div></div>
-        <div class="rate-card"><div class="rate-title">22K / g</div><div class="rate-value" id="rate22">—</div></div>
-        <div class="rate-card"><div class="rate-title">18K / g</div><div class="rate-value" id="rate18">—</div></div>
+        <div class="rate-card"><div class="rate-title">24K / gram</div><div class="rate-value" id="rate24">—</div><div class="rate-time" id="rateTime">—</div></div>
+        <div class="rate-card"><div class="rate-title">22K / gram</div><div class="rate-value" id="rate22">—</div></div>
+        <div class="rate-card"><div class="rate-title">18K / gram</div><div class="rate-value" id="rate18">—</div></div>
       </div>
     </div>
   </section>
 
   <!-- FEATURED SLIDER -->
-  <section class="section">
-    <div style="max-width:1180px;margin:0 auto;text-align:center;margin-bottom:12px">
-      <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose);">Featured Collection</div>
-    </div>
-    <div class="slider" style="overflow:hidden">
-      <div class="track" id="sliderTrack"></div>
+  <section class="section slider">
+    <h2 class="section-title">Featured Collection</h2>
+    <div style="overflow:hidden">
+      <div class="track" id="sliderTrack" aria-live="polite"></div>
     </div>
     <div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
-      <button class="pill" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
-      <button class="pill" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+      <button class="icon-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <button class="icon-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
 
   <!-- PRODUCTS -->
-  <section id="collections" class="section">
+  <section class="section" id="collections">
     <div style="max-width:1200px;margin:0 auto">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:18px">
-        <div>
-          <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--rose);margin-bottom:6px">Our Collections</div>
-          <div class="muted">Filter by category</div>
-        </div>
-        <div class="filter-row" id="filterRow">
-          <button class="active" onclick="filterProducts('all', this)">All</button>
-          <button onclick="filterProducts('bracelet', this)">Bracelets</button>
-          <button onclick="filterProducts('necklace', this)">Necklaces</button>
-          <button onclick="filterProducts('ring', this)">Rings</button>
-          <button onclick="filterProducts('earrings', this)">Earrings</button>
-          <button onclick="filterProducts('bangle', this)">Bangles</button>
-        </div>
+      <h2 class="section-title">All Luxury Products</h2>
+      <p style="color:var(--muted);text-align:center;margin-bottom:24px">Browse our curated collection</p>
+      
+      <div class="filter-row" id="filterRow">
+        <button class="active" onclick="filterProducts('all', this)">All</button>
+        <button onclick="filterProducts('bracelet', this)">Bracelets</button>
+        <button onclick="filterProducts('necklace', this)">Necklaces</button>
+        <button onclick="filterProducts('ring', this)">Rings</button>
+        <button onclick="filterProducts('earrings', this)">Earrings</button>
+        <button onclick="filterProducts('bangle', this)">Bangles</button>
+        <button onclick="filterProductsByCategory('Messika Collection', this)">Messika</button>
+        <button onclick="filterProductsByCategory('Van Cleef Inspired', this)">Van Cleef</button>
       </div>
 
-      <div class="cards" id="productsGrid"></div>
+      <div class="products-grid" id="productsGrid"></div>
     </div>
   </section>
 
-  <!-- CUSTOM -->
-  <section id="custom" class="section" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.01))">
-    <div style="max-width:1100px;margin:0 auto;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--rose);margin-bottom:8px">Custom Design</div>
-      <p class="muted">From concept to creation — bespoke jewellery crafted to your wishes.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px">
-        <div style="background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,.04)">Consultation & Quote</div>
-        <div style="background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,.04)">3D Proof & Approval</div>
-        <div style="background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,.04)">Handcraft & Delivery</div>
+  <!-- CUSTOM DESIGN -->
+  <section id="custom" class="section">
+    <div style="max-width:980px;margin:0 auto;text-align:center">
+      <h2 class="section-title">Custom Design</h2>
+      <p style="color:var(--muted);margin-top:6px">From idea to masterpiece — 3D design, approval, and handcrafting.</p>
+      <div class="cards" id="customCards">
+        <div class="custom-card">
+          <i class="fas fa-comments" style="font-size:32px;color:var(--rose);margin-bottom:10px"></i>
+          <h3 style="margin-bottom:8px">Consultation & Vision</h3>
+          <p style="color:var(--muted);font-size:14px">Share your ideas with our designers</p>
+        </div>
+        <div class="custom-card">
+          <i class="fas fa-cube" style="font-size:32px;color:var(--rose);margin-bottom:10px"></i>
+          <h3 style="margin-bottom:8px">3D Modelling</h3>
+          <p style="color:var(--muted);font-size:14px">Digital preview before crafting</p>
+        </div>
+        <div class="custom-card">
+          <i class="fas fa-hammer" style="font-size:32px;color:var(--rose);margin-bottom:10px"></i>
+          <h3 style="margin-bottom:8px">Handcraft & Delivery</h3>
+          <p style="color:var(--muted);font-size:14px">Master artisans bring design to life</p>
+        </div>
       </div>
-      <div style="margin-top:16px"><button class="btn-primary" onclick="openCustomInquiry()">Inquire on WhatsApp</button></div>
+      <div style="margin-top:24px"><button class="btn btn-primary" onclick="openCustomInquiry()">Inquire on WhatsApp</button></div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer id="contact">
-    <div class="footer-inner">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
       <div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose)">RYAAN JEWELLERS</div>
-        <div class="muted">Dubai • Bespoke Jewellery</div>
+        <div style="font-family:'Cinzel',serif;font-size:20px;color:var(--rose)">RYAAN JEWELLERS</div>
+        <div style="color:var(--muted);margin-top:6px">Dubai — handcrafted luxury</div>
+        <div style="margin-top:10px;color:var(--muted);font-size:14px">
+          <p>📍 Dubai, UAE</p>
+          <p>📞 +971 54 374 6476</p>
+          <p>✉️ info@ryaanjewellers.com</p>
+        </div>
       </div>
-      <div style="display:flex;gap:14px;align-items:center">
-        <a href="https://wa.me/971543746476" style="color:var(--rose)"><i class="fab fa-whatsapp fa-2x"></i></a>
-        <a href="#" class="muted"><i class="fab fa-instagram fa-2x"></i></a>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="https://wa.me/971543746476" style="color:#25D366;font-size:14px;display:flex;align-items:center;gap:6px">
+            <i class="fab fa-whatsapp fa-lg"></i> WhatsApp Order
+          </a>
+          <a href="#" style="color:var(--rose);font-size:14px;display:flex;align-items:center;gap:6px">
+            <i class="fab fa-instagram fa-lg"></i> @ryaanjewellers
+          </a>
+        </div>
+        <div style="color:var(--muted);font-size:12px">© 2024 RYAAN JEWELLERS. All rights reserved.</div>
       </div>
     </div>
   </footer>
-
 </main>
 
 <!-- CART MODAL -->
-<div id="cartModal" class="modal" aria-hidden="true" onclick="if(event.target===this) closeCart()">
+<div id="cartModal" class="modal" aria-hidden="true">
   <div class="modal-box" role="dialog" aria-modal="true">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <div style="font-family:'Playfair Display',serif;color:var(--rose);font-weight:800">Your Cart</div>
-      <button onclick="closeCart()" style="background:none;border:none;color:var(--muted);cursor:pointer"><i class="fas fa-times"></i></button>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div style="font-family:'Cinzel',serif;color:var(--rose);font-weight:800;font-size:20px">Your Cart</div>
+      <button onclick="closeCart()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:20px"><i class="fas fa-times"></i></button>
     </div>
 
     <div id="cartItems" style="max-height:260px;overflow:auto"></div>
 
-    <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <div style="font-weight:800;color:var(--text)" id="cartTotal">Total: AED 0</div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(199,123,123,.1);display:flex;justify-content:space-between;align-items:center">
+      <div style="font-weight:800;color:var(--rose);font-size:18px" id="cartTotal">Total: AED 0</div>
       <div style="display:flex;gap:10px">
-        <button class="btn-ghost" onclick="closeCart()">Continue Shopping</button>
-        <button class="btn-primary" onclick="openCheckout()">Checkout (WhatsApp)</button>
+        <button class="btn btn-outline" onclick="closeCart()">Continue Shopping</button>
+        <button class="btn btn-primary" onclick="openCheckout()">Checkout Now</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CHECKOUT (collect customer info before sending WhatsApp) -->
-<div id="checkoutModal" class="modal" aria-hidden="true" onclick="if(event.target===this) closeCheckout()">
-  <div class="modal-box" role="dialog" aria-modal="true">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <div style="font-family:'Playfair Display',serif;color:var(--rose);font-weight:800">Checkout — WhatsApp</div>
-      <button onclick="closeCheckout()" style="background:none;border:none;color:var(--muted);cursor:pointer"><i class="fas fa-times"></i></button>
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div style="font-family:'Cinzel',serif;color:var(--rose);font-weight:800;font-size:20px">Checkout — WhatsApp</div>
+      <button onclick="closeCheckout()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:20px"><i class="fas fa-times"></i></button>
     </div>
 
-    <div style="margin-bottom:10px;color:var(--muted)">Please enter delivery details — we'll send the order to WhatsApp for confirmation and payment instructions.</div>
+    <div id="checkoutContent">
+      <div style="margin-bottom:12px;color:var(--rose);font-weight:700">Order summary</div>
+      <div id="checkoutItems" style="max-height:160px;overflow:auto;margin-bottom:16px"></div>
 
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <input id="custName" class="input" placeholder="Full name" />
-      <input id="custPhone" class="input" placeholder="Phone (e.g. +9715XXXXXXXX)" />
-      <input id="custAddress" class="input" placeholder="Delivery address" />
-      <div style="display:flex;gap:8px;align-items:center">
-        <input type="checkbox" id="agree" checked style="transform:scale(1.1)"/>
-        <label for="agree" class="muted">I agree to be contacted about this order</label>
+      <div style="margin-bottom:12px;color:var(--rose);font-weight:700">Delivery details</div>
+      <div style="display:grid;gap:12px;margin-bottom:20px">
+        <input id="custName" type="text" placeholder="Full name" style="padding:12px;border-radius:8px;border:1px solid rgba(199,123,123,.2);font-family:inherit">
+        <input id="custPhone" type="text" placeholder="Phone (e.g. +97150xxxxxxx)" style="padding:12px;border-radius:8px;border:1px solid rgba(199,123,123,.2);font-family:inherit">
+        <textarea id="custAddress" placeholder="Delivery address in Dubai" rows="3" style="padding:12px;border-radius:8px;border:1px solid rgba(199,123,123,.2);font-family:inherit"></textarea>
       </div>
-      <div style="display:flex;gap:8px;justify-content:flex-end">
-        <button class="btn-ghost" onclick="closeCheckout()">Cancel</button>
-        <button class="btn-primary" onclick="sendOrderWhatsApp()">Send Order to WhatsApp</button>
+
+      <div style="display:flex;gap:10px;justify-content:flex-end">
+        <button class="btn btn-outline" onclick="closeCheckout()">Cancel</button>
+        <button class="btn btn-primary" onclick="sendOrderWhatsApp()">Send via WhatsApp</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- NOTIFY -->
-<div id="notify" style="position:fixed;right:18px;top:90px;display:none;background:var(--rose);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;z-index:2000"></div>
+<!-- NOTIFICATION -->
+<div id="notify" style="position:fixed;right:18px;top:90px;display:none;background:var(--rose);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700;z-index:2000;box-shadow:0 5px 15px rgba(199,123,123,.3)"></div>
 
 <script>
-/* CONFIG */
-const VIDEO_URL = 'assets/splash.mp4';  // replace if needed
-const GOLD_API_PROVIDER = 'goldapi';   // 'goldapi' or 'metals' or 'none'
-const GOLD_API_KEY = 'YOUR_API_KEY_HERE'; // optional - replace to fetch live rates
-const WA_NUMBER = '971543746476'; // RYAAN WhatsApp (without +)
+/* ---------- CONFIGURATION ---------- */
+const GOLD_API_PROVIDER = 'goldapi'; // Options: 'goldapi' or 'metals'
+const GOLD_API_KEY = ''; // Get your free API key from goldapi.io
 
-/* PRODUCTS (from your uploaded assets) */
-const allProducts = [
-  {id:1,name:"Van Cleef Onyx Bracelet",category:"Van Cleef Inspired",price:9800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",type:"bracelet",description:"Luxury gold bracelet with genuine black onyx stones"},
-  {id:2,name:"Van Cleef Carnelian Bracelet",category:"Van Cleef Inspired",price:10200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",type:"bracelet",description:"Gold bracelet with vibrant carnelian stones"},
-  {id:3,name:"Van Cleef Agate Bracelet",category:"Van Cleef Inspired",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",type:"bracelet",description:"Gold bracelet with natural agate stones"},
-  {id:4,name:"Van Cleef Chalcedony Bracelet",category:"Van Cleef Inspired",price:10800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",type:"bracelet",description:"Gold bracelet with beautiful blue chalcedony"},
-  {id:5,name:"Van Cleef Mother of Pearl Bracelet",category:"Van Cleef Inspired",price:11200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",type:"bracelet",description:"Gold bracelet with mother of pearl inlay"},
-  {id:6,name:"Van Cleef Tiger Eye Bracelet",category:"Van Cleef Inspired",price:9600,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",type:"bracelet",description:"Gold bracelet with tiger eye stone"},
-  {id:7,name:"Van Cleef Malachite Bracelet",category:"Van Cleef Inspired",price:10400,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",type:"bracelet",description:"Gold bracelet with green malachite stones"},
-  {id:8,name:"Serpenti Choker Necklace",category:"Bvlgari Inspired",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",type:"necklace",description:"Luxury serpent design necklace with diamonds"},
-  {id:9,name:"Diamond Pendant Necklace",category:"Luxury Collection",price:8500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",type:"necklace",description:"Elegant diamond pendant necklace"},
-  {id:10,name:"Butterfly Diamond Ring",category:"Messika Inspired",price:4850,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",type:"ring",description:"18K gold ring with diamond butterfly design"},
-  {id:11,name:"Emerald Solitaire Ring",category:"Classic Collection",price:7500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",type:"ring",description:"Solitaire emerald ring with diamond halo"},
-  {id:12,name:"Ruby Diamond Ring",category:"Classic Collection",price:8200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",type:"ring",description:"Ruby center stone with diamond accents"},
-  {id:13,name:"Heart Bangle",category:"Chopard Inspired",price:8250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",type:"bangle",description:"18K gold heart design bangle"},
-  {id:14,name:"Chopard Diamond Earrings",category:"Chopard Inspired",price:6500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",type:"earrings",description:"Diamond stud earrings with gold setting"},
-  {id:15,name:"Messika Rose Uno Move",category:"Messika Inspired",price:7250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",type:"bracelet",description:"Moving diamond rose gold bracelet"},
-  {id:16,name:"Diamond Tennis Bracelet",category:"Classic Collection",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",type:"bracelet",description:"Full diamond tennis bracelet"},
-  {id:17,name:"Pearl Drop Earrings",category:"Luxury Collection",price:5800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",type:"earrings",description:"Pearl drop earrings with diamond accents"},
-  {id:18,name:"Diamond Halo Necklace",category:"Luxury Collection",price:11500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",type:"necklace",description:"Diamond halo pendant necklace"},
-  {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
-  {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
-  {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"}
-/* ---------- MESSIKA PRODUCTS ARRAY ---------- */
+/* ---------- MESSIKA PRODUCTS ---------- */
 const messikaProducts = [
   {
     id: 100,
@@ -448,80 +463,198 @@ const messikaProducts = [
   }
 ];
 
-/* ---------- MAIN PRODUCTS ARRAY (Combined) ---------- */
-const allProducts = [
-  // Your existing products
-  {id:1,name:"Van Cleef Onyx Bracelet",category:"Van Cleef Inspired",price:9800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",type:"bracelet",description:"Luxury gold bracelet with genuine black onyx stones"},
-  {id:2,name:"Van Cleef Carnelian Bracelet",category:"Van Cleef Inspired",price:10200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",type:"bracelet",description:"Gold bracelet with vibrant carnelian stones"},
-  {id:3,name:"Van Cleef Agate Bracelet",category:"Van Cleef Inspired",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",type:"bracelet",description:"Gold bracelet with natural agate stones"},
-  {id:4,name:"Van Cleef Chalcedony Bracelet",category:"Van Cleef Inspired",price:10800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",type:"bracelet",description:"Gold bracelet with beautiful blue chalcedony"},
-  {id:5,name:"Van Cleef Mother of Pearl Bracelet",category:"Van Cleef Inspired",price:11200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",type:"bracelet",description:"Gold bracelet with mother of pearl inlay"},
-  {id:6,name:"Van Cleef Tiger Eye Bracelet",category:"Van Cleef Inspired",price:9600,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",type:"bracelet",description:"Gold bracelet with tiger eye stone"},
-  {id:7,name:"Van Cleef Malachite Bracelet",category:"Van Cleef Inspired",price:10400,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",type:"bracelet",description:"Gold bracelet with green malachite stones"},
-  {id:8,name:"Serpenti Choker Necklace",category:"Bvlgari Inspired",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",type:"necklace",description:"Luxury serpent design necklace with diamonds"},
-  {id:9,name:"Diamond Pendant Necklace",category:"Luxury Collection",price:8500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",type:"necklace",description:"Elegant diamond pendant necklace"},
-  {id:10,name:"Butterfly Diamond Ring",category:"Messika Inspired",price:4850,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",type:"ring",description:"18K gold ring with diamond butterfly design"},
-  {id:11,name:"Emerald Solitaire Ring",category:"Classic Collection",price:7500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",type:"ring",description:"Solitaire emerald ring with diamond halo"},
-  {id:12,name:"Ruby Diamond Ring",category:"Classic Collection",price:8200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",type:"ring",description:"Ruby center stone with diamond accents"},
-  {id:13,name:"Heart Bangle",category:"Chopard Inspired",price:8250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",type:"bangle",description:"18K gold heart design bangle"},
-  {id:14,name:"Chopard Diamond Earrings",category:"Chopard Inspired",price:6500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",type:"earrings",description:"Diamond stud earrings with gold setting"},
-  {id:15,name:"Messika Rose Uno Move",category:"Messika Inspired",price:7250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",type:"bracelet",description:"Moving diamond rose gold bracelet"},
-  {id:16,name:"Diamond Tennis Bracelet",category:"Classic Collection",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",type:"bracelet",description:"Full diamond tennis bracelet"},
-  {id:17,name:"Pearl Drop Earrings",category:"Luxury Collection",price:5800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",type:"earrings",description:"Pearl drop earrings with diamond accents"},
-  {id:18,name:"Diamond Halo Necklace",category:"Luxury Collection",price:11500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",type:"necklace",description:"Diamond halo pendant necklace"},
-  {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
-  {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
-  {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"},
-  
-  // Add all Messika products
-  ...messikaProducts
-<script>
-/* ---------- CONFIGURATION ---------- */
-const GOLD_API_PROVIDER = 'goldapi'; // Options: 'goldapi' or 'metals'
-const GOLD_API_KEY = ''; // Get your free API key from goldapi.io
-
-/* ---------- MESSIKA PRODUCTS ---------- */
-const messikaProducts = [
-  {id:100,name:"Messika Move Hoop Earrings",category:"Messika Collection",price:8500,image:"Messika-Move-Hoop-04407-YG.jpg",type:"earrings",description:"Yellow gold move hoop earrings with diamonds"},
-  {id:101,name:"Messika Move Uno Mini Hoops",category:"Messika Collection",price:7200,image:"Messika-Move-UNO-Mini-Hoops-10050-WG-1.jpg",type:"earrings",description:"White gold mini hoop earrings with moving diamonds"},
-  {id:102,name:"Messika Move Classic Bracelet",category:"Messika Collection",price:9200,image:"Messika-Move-Classic-03998-WG.jpg",type:"bracelet",description:"Classic move bracelet in white gold with diamonds"},
-  {id:103,name:"Messika Move Uno Bracelet",category:"Messika Collection",price:8800,image:"Messika-Move-Uno-04705-WG.jpg",type:"bracelet",description:"Uno move bracelet in white gold"},
-  {id:104,name:"Messika Move Thin Bracelet",category:"Messika Collection",price:6800,image:"Messika-Move-Thin-04068-RG-2-1024x1024.jpg",type:"bracelet",description:"Rose gold thin move bracelet with diamonds"},
-  {id:105,name:"Messika Move Romane Necklace",category:"Messika Collection",price:11500,image:"Messika-Move-Romane-06516-YG-55-2-1000x1000.jpg",type:"necklace",description:"Yellow gold romane necklace with moving diamonds"},
-  {id:106,name:"Messika Move XL Earrings",category:"Messika Collection",price:9800,image:"messika_-packshot-boucles_d_oreilles_pendantes_move_10th_xl_pav_es_vue_2_06823_pg.jpg",type:"earrings",description:"XL pavé diamond earrings with move technology"},
-  {id:107,name:"Messika Move Uno Pavé Necklace",category:"Messika Collection",price:12500,image:"messika_paris-collier_move_uno_pav_vue_1_04708_p.jpg",type:"necklace",description:"Uno pavé necklace with moving diamonds"},
-  {id:108,name:"Messika Move Uno Pampille Choker",category:"Messika Collection",price:14200,image:"messika-packshot-collier_choker_move_uno_pampille_pav_vue_1_12150_wg.jpg",type:"necklace",description:"White gold choker with pampille diamonds"},
-  {id:109,name:"Messika Move Uno Pampille Choker",category:"Messika Collection",price:14500,image:"messika-packshot-collier_choker_move_uno_pampille_vue_1_14588_wg.jpg",type:"necklace",description:"Elegant choker with moving diamond pampilles"},
-  {id:110,name:"Messika Move Classic Pavé Necklace",category:"Messika Collection",price:11200,image:"messika-packshot-collier_move_classique_pav_vue_1_03994_p.jpg",type:"necklace",description:"Classic pavé necklace with move technology"},
-  {id:111,name:"Messika Lucky Eye Necklace",category:"Messika Collection",price:9500,image:"messika-packshot-collier_lucky_eye_pav_vue_1_07525_yg.jpg",type:"necklace",description:"Yellow gold lucky eye necklace with diamonds"},
-  {id:112,name:"Messika Lucky Eye Necklace Pink",category:"Messika Collection",price:9700,image:"messika-packshot-collier_lucky_eye_pav_vue_2_07525_pg.jpg",type:"necklace",description:"Pink gold lucky eye necklace with diamonds"},
-  {id:113,name:"Messika Uno Pampille Choker White",category:"Messika Collection",price:13800,image:"messika-packshot-_collier_choker_move_uno_pampille_vue_1_14588_wg.jpg",type:"necklace",description:"White gold uno pampille choker with diamonds"}
-];
-
 /* ---------- MAIN PRODUCTS ARRAY ---------- */
 const allProducts = [
   // Your existing products
-  {id:1,name:"Van Cleef Onyx Bracelet",category:"Van Cleef Inspired",price:9800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",type:"bracelet",description:"Luxury gold bracelet with genuine black onyx stones"},
-  {id:2,name:"Van Cleef Carnelian Bracelet",category:"Van Cleef Inspired",price:10200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",type:"bracelet",description:"Gold bracelet with vibrant carnelian stones"},
-  {id:3,name:"Van Cleef Agate Bracelet",category:"Van Cleef Inspired",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",type:"bracelet",description:"Gold bracelet with natural agate stones"},
-  {id:4,name:"Van Cleef Chalcedony Bracelet",category:"Van Cleef Inspired",price:10800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",type:"bracelet",description:"Gold bracelet with beautiful blue chalcedony"},
-  {id:5,name:"Van Cleef Mother of Pearl Bracelet",category:"Van Cleef Inspired",price:11200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",type:"bracelet",description:"Gold bracelet with mother of pearl inlay"},
-  {id:6,name:"Van Cleef Tiger Eye Bracelet",category:"Van Cleef Inspired",price:9600,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",type:"bracelet",description:"Gold bracelet with tiger eye stone"},
-  {id:7,name:"Van Cleef Malachite Bracelet",category:"Van Cleef Inspired",price:10400,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",type:"bracelet",description:"Gold bracelet with green malachite stones"},
-  {id:8,name:"Serpenti Choker Necklace",category:"Bvlgari Inspired",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",type:"necklace",description:"Luxury serpent design necklace with diamonds"},
-  {id:9,name:"Diamond Pendant Necklace",category:"Luxury Collection",price:8500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",type:"necklace",description:"Elegant diamond pendant necklace"},
-  {id:10,name:"Butterfly Diamond Ring",category:"Messika Inspired",price:4850,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",type:"ring",description:"18K gold ring with diamond butterfly design"},
-  {id:11,name:"Emerald Solitaire Ring",category:"Classic Collection",price:7500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",type:"ring",description:"Solitaire emerald ring with diamond halo"},
-  {id:12,name:"Ruby Diamond Ring",category:"Classic Collection",price:8200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",type:"ring",description:"Ruby center stone with diamond accents"},
-  {id:13,name:"Heart Bangle",category:"Chopard Inspired",price:8250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",type:"bangle",description:"18K gold heart design bangle"},
-  {id:14,name:"Chopard Diamond Earrings",category:"Chopard Inspired",price:6500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",type:"earrings",description:"Diamond stud earrings with gold setting"},
-  {id:15,name:"Messika Rose Uno Move",category:"Messika Inspired",price:7250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",type:"bracelet",description:"Moving diamond rose gold bracelet"},
-  {id:16,name:"Diamond Tennis Bracelet",category:"Classic Collection",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",type:"bracelet",description:"Full diamond tennis bracelet"},
-  {id:17,name:"Pearl Drop Earrings",category:"Luxury Collection",price:5800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",type:"earrings",description:"Pearl drop earrings with diamond accents"},
-  {id:18,name:"Diamond Halo Necklace",category:"Luxury Collection",price:11500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",type:"necklace",description:"Diamond halo pendant necklace"},
-  {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
-  {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
-  {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"},
+  {
+    id: 1,
+    name: "Van Cleef Onyx Bracelet",
+    category: "Van Cleef Inspired",
+    price: 9800,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",
+    type: "bracelet",
+    description: "Luxury gold bracelet with genuine black onyx stones"
+  },
+  {
+    id: 2,
+    name: "Van Cleef Carnelian Bracelet",
+    category: "Van Cleef Inspired",
+    price: 10200,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",
+    type: "bracelet",
+    description: "Gold bracelet with vibrant carnelian stones"
+  },
+  {
+    id: 3,
+    name: "Van Cleef Agate Bracelet",
+    category: "Van Cleef Inspired",
+    price: 9500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",
+    type: "bracelet",
+    description: "Gold bracelet with natural agate stones"
+  },
+  {
+    id: 4,
+    name: "Van Cleef Chalcedony Bracelet",
+    category: "Van Cleef Inspired",
+    price: 10800,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",
+    type: "bracelet",
+    description: "Gold bracelet with beautiful blue chalcedony"
+  },
+  {
+    id: 5,
+    name: "Van Cleef Mother of Pearl Bracelet",
+    category: "Van Cleef Inspired",
+    price: 11200,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",
+    type: "bracelet",
+    description: "Gold bracelet with mother of pearl inlay"
+  },
+  {
+    id: 6,
+    name: "Van Cleef Tiger Eye Bracelet",
+    category: "Van Cleef Inspired",
+    price: 9600,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",
+    type: "bracelet",
+    description: "Gold bracelet with tiger eye stone"
+  },
+  {
+    id: 7,
+    name: "Van Cleef Malachite Bracelet",
+    category: "Van Cleef Inspired",
+    price: 10400,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",
+    type: "bracelet",
+    description: "Gold bracelet with green malachite stones"
+  },
+  {
+    id: 8,
+    name: "Serpenti Choker Necklace",
+    category: "Bvlgari Inspired",
+    price: 12500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",
+    type: "necklace",
+    description: "Luxury serpent design necklace with diamonds"
+  },
+  {
+    id: 9,
+    name: "Diamond Pendant Necklace",
+    category: "Luxury Collection",
+    price: 8500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",
+    type: "necklace",
+    description: "Elegant diamond pendant necklace"
+  },
+  {
+    id: 10,
+    name: "Butterfly Diamond Ring",
+    category: "Messika Inspired",
+    price: 4850,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",
+    type: "ring",
+    description: "18K gold ring with diamond butterfly design"
+  },
+  {
+    id: 11,
+    name: "Emerald Solitaire Ring",
+    category: "Classic Collection",
+    price: 7500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",
+    type: "ring",
+    description: "Solitaire emerald ring with diamond halo"
+  },
+  {
+    id: 12,
+    name: "Ruby Diamond Ring",
+    category: "Classic Collection",
+    price: 8200,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",
+    type: "ring",
+    description: "Ruby center stone with diamond accents"
+  },
+  {
+    id: 13,
+    name: "Heart Bangle",
+    category: "Chopard Inspired",
+    price: 8250,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",
+    type: "bangle",
+    description: "18K gold heart design bangle"
+  },
+  {
+    id: 14,
+    name: "Chopard Diamond Earrings",
+    category: "Chopard Inspired",
+    price: 6500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",
+    type: "earrings",
+    description: "Diamond stud earrings with gold setting"
+  },
+  {
+    id: 15,
+    name: "Messika Rose Uno Move",
+    category: "Messika Inspired",
+    price: 7250,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",
+    type: "bracelet",
+    description: "Moving diamond rose gold bracelet"
+  },
+  {
+    id: 16,
+    name: "Diamond Tennis Bracelet",
+    category: "Classic Collection",
+    price: 12500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",
+    type: "bracelet",
+    description: "Full diamond tennis bracelet"
+  },
+  {
+    id: 17,
+    name: "Pearl Drop Earrings",
+    category: "Luxury Collection",
+    price: 5800,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",
+    type: "earrings",
+    description: "Pearl drop earrings with diamond accents"
+  },
+  {
+    id: 18,
+    name: "Diamond Halo Necklace",
+    category: "Luxury Collection",
+    price: 11500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",
+    type: "necklace",
+    description: "Diamond halo pendant necklace"
+  },
+  {
+    id: 19,
+    name: "Custom Diamond Ring",
+    category: "Bespoke Collection",
+    price: 9500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",
+    type: "ring",
+    description: "Custom designed diamond ring"
+  },
+  {
+    id: 20,
+    name: "Gold Diamond Set",
+    category: "Luxury Collection",
+    price: 18500,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",
+    type: "set",
+    description: "Complete gold and diamond jewellery set"
+  },
+  {
+    id: 21,
+    name: "Classic Diamond Ring",
+    category: "Timeless Collection",
+    price: 6800,
+    image: "https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",
+    type: "ring",
+    description: "Classic diamond solitaire ring"
+  },
   
   // Add all Messika products
   ...messikaProducts
@@ -636,13 +769,21 @@ function renderSlider() {
   const track = document.getElementById('sliderTrack');
   track.innerHTML = '';
   
-  const featuredProducts = allProducts.slice(0, 6);
+  // Mix products for featured slider
+  const featuredProducts = [
+    allProducts[0],  // Van Cleef Onyx
+    allProducts[7],  // Serpenti Choker
+    allProducts[100], // Messika Hoop Earrings
+    allProducts[15], // Messika Rose Uno
+    allProducts[8],  // Diamond Pendant
+    allProducts[102] // Messika Classic Bracelet
+  ];
   
   featuredProducts.forEach(p => {
     const slide = document.createElement('div');
     slide.className = 'slide';
     slide.innerHTML = `
-      <img src="${p.image}" alt="${p.name}" loading="lazy">
+      <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjODA4MDgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UllBQU4gSkVXRUxMRVJTPC90ZXh0Pjwvc3ZnPg=='">
       <div class="meta">
         <div style="font-size:13px;color:var(--muted)">${p.category}</div>
         <div style="font-weight:800;margin:6px 0">${p.name}</div>
@@ -709,7 +850,7 @@ function renderProducts() {
     productCard.setAttribute('data-category', p.category);
     
     productCard.innerHTML = `
-      <img src="${p.image}" alt="${p.name}" loading="lazy">
+      <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjODA4MDgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UlkgSkVXRUxMRVJTPC90ZXh0Pjwvc3ZnPg=='">
       <div class="info">
         <div class="name">${p.name}</div>
         <div class="desc">${p.description}</div>
@@ -798,7 +939,7 @@ function renderCart() {
     const itemElement = document.createElement('div');
     itemElement.className = 'cart-item';
     itemElement.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" style="width:70px;height:70px;object-fit:cover;border-radius:8px">
+      <img src="${item.image}" alt="${item.name}" style="width:70px;height:70px;object-fit:cover;border-radius:8px" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YwZjBmMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTJweCIgZmlsbD0iIzgwODA4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJZQUFOIEpFV0VMQzwvdGV4dD48L3N2Zz4='">
       <div style="flex:1">
         <div style="font-weight:700;font-size:15px">${item.name}</div>
         <div style="color:var(--rose);font-weight:700;margin-top:4px">AED ${item.price.toLocaleString()}</div>
@@ -1072,189 +1213,6 @@ function init() {
   window.addEventListener('resize', updateSliderPosition);
 }
 
-document.addEventListener('DOMContentLoaded', init);
-</script>
-/* STATE */
-let cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]');
-let currentSlide = 0;
-let autoSlide = null;
-
-/* SPLASH */
-document.getElementById('splashVideo').src = VIDEO_URL;
-const loadBar = document.getElementById('loadBar');
-setTimeout(()=>loadBar.style.width='100%',40);
-document.getElementById('enterBtn').addEventListener('click', ()=>{ document.getElementById('splash').style.opacity='0'; setTimeout(()=>document.getElementById('splash').style.display='none',700); });
-
-/* NOTIFY */
-function showNotify(t){
-  const n=document.getElementById('notify'); n.textContent=t; n.style.display='block';
-  setTimeout(()=>n.style.display='none',2400);
-}
-
-/* GOLD RATES */
-async function fetchGoldRates(){
-  const el24=document.getElementById('rate24'), el22=document.getElementById('rate22'), el18=document.getElementById('rate18'), elTime=document.getElementById('rateTime');
-  el24.textContent='...'; el22.textContent='...'; el18.textContent='...';
-  try{
-    if(GOLD_API_PROVIDER==='none' || !GOLD_API_KEY || GOLD_API_KEY==='YOUR_API_KEY_HERE') throw new Error('No API key');
-    if(GOLD_API_PROVIDER==='goldapi'){
-      const resp = await fetch('https://www.goldapi.io/api/XAU/AED',{headers:{'x-access-token':GOLD_API_KEY}});
-      if(!resp.ok) throw new Error('GoldAPI failed');
-      const data = await resp.json();
-      const perOz = data.price || data.price_au || data['price'];
-      const perGram = perOz / 31.1034768;
-      const g24 = perGram; const g22 = g24*(22/24); const g18 = g24*(18/24);
-      el24.textContent=`AED ${g24.toFixed(2)}`; el22.textContent=`AED ${g22.toFixed(2)}`; el18.textContent=`AED ${g18.toFixed(2)}`;
-      elTime.textContent=new Date().toLocaleString();
-      return;
-    } else if(GOLD_API_PROVIDER==='metals'){
-      const url=`https://metals-api.com/api/latest?access_key=${GOLD_API_KEY}&base=XAU&symbols=AED`;
-      const resp = await fetch(url);
-      if(!resp.ok) throw new Error('Metals failed');
-      const j = await resp.json();
-      const rate = j && j.rates && j.rates.AED;
-      const perGram = rate/31.1034768;
-      const g24=perGram; const g22=g24*(22/24); const g18=g24*(18/24);
-      el24.textContent=`AED ${g24.toFixed(2)}`; el22.textContent=`AED ${g22.toFixed(2)}`; el18.textContent=`AED ${g18.toFixed(2)}`;
-      elTime.textContent=new Date().toLocaleString();
-      return;
-    }
-    throw new Error('Provider not configured');
-  }catch(err){
-    // fallback demo rates
-    const demo24 = 499.50; el24.textContent=`AED ${demo24.toFixed(2)}`; el22.textContent=`AED ${(demo24*(22/24)).toFixed(2)}`; el18.textContent=`AED ${(demo24*(18/24)).toFixed(2)}`;
-    elTime.textContent='Fallback rate';
-    console.info('Gold fetch error:',err);
-  }
-}
-fetchGoldRates(); setInterval(fetchGoldRates,60000);
-
-/* SLIDER */
-function renderSlider(){
-  const track=document.getElementById('sliderTrack'); track.innerHTML='';
-  const featured = allProducts.slice(0,6);
-  featured.forEach((p,i)=>{
-    const div=document.createElement('div'); div.className='slide';
-    div.innerHTML = `<img src="${p.image}" alt="${p.name}"><div class="meta"><div style="font-size:13px;color:var(--muted)">${p.category}</div><div style="font-weight:700;margin:6px 0">${p.name}</div><div style="font-weight:800;color:var(--text)">AED ${p.price.toLocaleString()}</div><div style="margin-top:8px;display:flex;gap:8px"><button class="btn-primary" onclick="addToCart(${p.id})">Add</button><button class="btn-ghost" onclick="viewProduct(${p.id})">View</button></div></div>`;
-    track.appendChild(div);
-  });
-  startAutoSlider();
-}
-function updateSlider(){ const track=document.getElementById('sliderTrack'); const slide=document.querySelector('.slide'); if(!slide)return; const w = slide.offsetWidth + 16; track.style.transform = `translateX(${-currentSlide*w}px)`; }
-function nextSlide(){ currentSlide=(currentSlide+1) % Math.max(1,Math.min(6,allProducts.length)); updateSlider(); resetAuto(); }
-function prevSlide(){ currentSlide=(currentSlide-1+6)%6; updateSlider(); resetAuto(); }
-function startAutoSlider(){ clearInterval(autoSlide); autoSlide=setInterval(()=>{currentSlide=(currentSlide+1)%6; updateSlider()},4500); }
-function resetAuto(){ clearInterval(autoSlide); startAutoSlider(); }
-
-/* PRODUCTS */
-function renderProducts(){
-  const grid=document.getElementById('productsGrid'); grid.innerHTML='';
-  allProducts.forEach(p=>{
-    const el=document.createElement('div'); el.className='product'; el.setAttribute('data-type',p.type);
-    el.innerHTML=`<img src="${p.image}" alt="${p.name}"><div class="info"><div class="name">${p.name}</div><div class="desc">${p.description}</div><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">AED ${p.price.toLocaleString()}</div><div><button class="btn-ghost" onclick="viewProduct(${p.id})" style="margin-right:8px">View</button><button class="btn-primary" onclick="addToCart(${p.id})">Add</button></div></div></div>`;
-    grid.appendChild(el);
-  });
-  updateCartCount();
-}
-function filterProducts(type,btn){
-  document.querySelectorAll('#filterRow button').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  document.querySelectorAll('.product').forEach(card=>{ if(type==='all' || card.getAttribute('data-type')===type) card.style.display='block'; else card.style.display='none'; });
-}
-
-/* CART */
-function saveCart(){ localStorage.setItem('ryaanCart', JSON.stringify(cart)); updateCartCount(); }
-function updateCartCount(){ const c = cart.reduce((s,i)=>s+i.quantity,0); document.getElementById('cartCount').textContent = c ? c : ''; }
-function addToCart(id){ const p = allProducts.find(x=>x.id===id); if(!p) return; const e=cart.find(i=>i.id===id); if(e) e.quantity++; else cart.push({...p,quantity:1}); saveCart(); showNotify(`${p.name} added`); }
-function openCart(){ renderCart(); document.getElementById('cartModal').style.display='flex'; }
-function closeCart(){ document.getElementById('cartModal').style.display='none'; }
-function renderCart(){
-  const el=document.getElementById('cartItems'); el.innerHTML='';
-  if(!cart.length){ el.innerHTML=`<div style="padding:20px;text-align:center;color:var(--muted)">Cart is empty</div>`; document.getElementById('cartTotal').textContent='Total: AED 0'; return; }
-  let total=0;
-  cart.forEach((it,idx)=>{
-    const subtotal = it.price * it.quantity; total += subtotal;
-    const row=document.createElement('div'); row.className='cart-item';
-    row.innerHTML = `<img src="${it.image}" alt="${it.name}"><div style="flex:1"><div style="font-weight:700">${it.name}</div><div style="color:var(--muted);font-size:13px">AED ${it.price.toLocaleString()} x ${it.quantity}</div></div><div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div><button class="pill" onclick="changeQty(${idx},${it.quantity-1})">-</button> <span style="padding:6px 8px">${it.quantity}</span> <button class="pill" onclick="changeQty(${idx},${it.quantity+1})">+</button></div><button class="pill" onclick="removeItem(${idx})" style="background:#fff;border:1px solid rgba(255,0,0,.06);color:#ff4d4d"><i class="fas fa-trash"></i></button></div>`;
-    el.appendChild(row);
-  });
-  document.getElementById('cartTotal').textContent = `Total: AED ${total.toLocaleString()}`;
-}
-function changeQty(i,q){ if(q<1) return removeItem(i); cart[i].quantity=q; saveCart(); renderCart(); }
-function removeItem(i){ cart.splice(i,1); saveCart(); renderCart(); }
-
-/* CHECKOUT (WhatsApp) */
-function openCheckout(){ closeCart(); document.getElementById('checkoutModal').style.display='flex'; // fill with stored values if any
-  document.getElementById('custName').value = localStorage.getItem('ryaan_cust_name') || '';
-  document.getElementById('custPhone').value = localStorage.getItem('ryaan_cust_phone') || '';
-  document.getElementById('custAddress').value = localStorage.getItem('ryaan_cust_addr') || '';
-}
-function closeCheckout(){ document.getElementById('checkoutModal').style.display='none'; }
-
-function sendOrderWhatsApp(){
-  const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
-  const addr = document.getElementById('custAddress').value.trim();
-  const agree = document.getElementById('agree').checked;
-  if(!name || !phone || !addr){ alert('Please fill name, phone and address.'); return; }
-  if(!agree){ alert('Please agree to be contacted.'); return; }
-  // persist contact
-  localStorage.setItem('ryaan_cust_name', name);
-  localStorage.setItem('ryaan_cust_phone', phone);
-  localStorage.setItem('ryaan_cust_addr', addr);
-
-  // build message
-  let total = 0;
-  let msg = `🛍️ *RYAAN JEWELLERS — Order*%0A%0A`;
-  msg += `*Customer:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Address:* ${encodeURIComponent(addr)}%0A%0A`;
-  cart.forEach((it,i)=>{
-    total += it.price * it.quantity;
-    msg += `${i+1}. ${encodeURIComponent(it.name)}%0A   Qty: ${it.quantity}%0A   Price: AED ${it.price.toLocaleString()}%0A%0A`;
-  });
-  msg += `*Total:* AED ${total.toLocaleString()}%0A%0A`;
-  msg += encodeURIComponent('Please confirm and provide payment details. Thank you.');
-
-  // open WhatsApp (international number without +)
-  const url = `https://wa.me/${WA_NUMBER}?text=${msg}`;
-  window.open(url, '_blank');
-  showNotify('Opening WhatsApp with your order...');
-  // optional: clear cart after sending
-  // cart = []; saveCart(); renderCart();
-  closeCheckout();
-}
-
-/* VIEW PRODUCT */
-function viewProduct(id){
-  const p = allProducts.find(x=>x.id===id);
-  if(!p) return;
-  const msg = `🔎 Product Inquiry - ${p.name}\nCategory: ${p.category}\nPrice: AED ${p.price.toLocaleString()}\n\nPlease provide details.`;
-  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-}
-
-/* CUSTOM INQUIRY */
-function openCustomInquiry(){
-  const msg = `Hello, I'm interested in a custom design. Please assist.`;
-  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-}
-
-/* INIT */
-function init(){
-  renderSlider();
-  renderProducts();
-  updateCartCount();
-  // load cart
-  cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]'); updateCartCount();
-
-  // slider drag support
-  const track = document.getElementById('sliderTrack');
-  let isDown=false,startX;
-  track.addEventListener('pointerdown', (e)=>{ isDown=true; startX=e.clientX; });
-  window.addEventListener('pointerup', ()=>{ if(isDown) isDown=false; });
-  track.addEventListener('pointermove', (e)=>{ if(!isDown) return; const dx = e.clientX - startX; track.style.transform = `translateX(${-currentSlide * (document.querySelector('.slide')?.offsetWidth + 16 || 316) + dx}px)`; });
-
-  // resize
-  window.addEventListener('resize', ()=>{ updateSlider(); });
-}
 document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
