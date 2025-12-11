@@ -318,8 +318,762 @@ const allProducts = [
   {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
   {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
   {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"}
+/* ---------- MESSIKA PRODUCTS ARRAY ---------- */
+const messikaProducts = [
+  {
+    id: 100,
+    name: "Messika Move Hoop Earrings",
+    category: "Messika Collection",
+    price: 8500,
+    image: "Messika-Move-Hoop-04407-YG.jpg",
+    type: "earrings",
+    description: "Yellow gold move hoop earrings with diamonds"
+  },
+  {
+    id: 101,
+    name: "Messika Move Uno Mini Hoops",
+    category: "Messika Collection",
+    price: 7200,
+    image: "Messika-Move-UNO-Mini-Hoops-10050-WG-1.jpg",
+    type: "earrings",
+    description: "White gold mini hoop earrings with moving diamonds"
+  },
+  {
+    id: 102,
+    name: "Messika Move Classic Bracelet",
+    category: "Messika Collection",
+    price: 9200,
+    image: "Messika-Move-Classic-03998-WG.jpg",
+    type: "bracelet",
+    description: "Classic move bracelet in white gold with diamonds"
+  },
+  {
+    id: 103,
+    name: "Messika Move Uno Bracelet",
+    category: "Messika Collection",
+    price: 8800,
+    image: "Messika-Move-Uno-04705-WG.jpg",
+    type: "bracelet",
+    description: "Uno move bracelet in white gold"
+  },
+  {
+    id: 104,
+    name: "Messika Move Thin Bracelet",
+    category: "Messika Collection",
+    price: 6800,
+    image: "Messika-Move-Thin-04068-RG-2-1024x1024.jpg",
+    type: "bracelet",
+    description: "Rose gold thin move bracelet with diamonds"
+  },
+  {
+    id: 105,
+    name: "Messika Move Romane Necklace",
+    category: "Messika Collection",
+    price: 11500,
+    image: "Messika-Move-Romane-06516-YG-55-2-1000x1000.jpg",
+    type: "necklace",
+    description: "Yellow gold romane necklace with moving diamonds"
+  },
+  {
+    id: 106,
+    name: "Messika Move XL Earrings",
+    category: "Messika Collection",
+    price: 9800,
+    image: "messika_-packshot-boucles_d_oreilles_pendantes_move_10th_xl_pav_es_vue_2_06823_pg.jpg",
+    type: "earrings",
+    description: "XL pavé diamond earrings with move technology"
+  },
+  {
+    id: 107,
+    name: "Messika Move Uno Pavé Necklace",
+    category: "Messika Collection",
+    price: 12500,
+    image: "messika_paris-collier_move_uno_pav_vue_1_04708_p.jpg",
+    type: "necklace",
+    description: "Uno pavé necklace with moving diamonds"
+  },
+  {
+    id: 108,
+    name: "Messika Move Uno Pampille Choker",
+    category: "Messika Collection",
+    price: 14200,
+    image: "messika-packshot-collier_choker_move_uno_pampille_pav_vue_1_12150_wg.jpg",
+    type: "necklace",
+    description: "White gold choker with pampille diamonds"
+  },
+  {
+    id: 109,
+    name: "Messika Move Uno Pampille Choker",
+    category: "Messika Collection",
+    price: 14500,
+    image: "messika-packshot-collier_choker_move_uno_pampille_vue_1_14588_wg.jpg",
+    type: "necklace",
+    description: "Elegant choker with moving diamond pampilles"
+  },
+  {
+    id: 110,
+    name: "Messika Move Classic Pavé Necklace",
+    category: "Messika Collection",
+    price: 11200,
+    image: "messika-packshot-collier_move_classique_pav_vue_1_03994_p.jpg",
+    type: "necklace",
+    description: "Classic pavé necklace with move technology"
+  },
+  {
+    id: 111,
+    name: "Messika Lucky Eye Necklace",
+    category: "Messika Collection",
+    price: 9500,
+    image: "messika-packshot-collier_lucky_eye_pav_vue_1_07525_yg.jpg",
+    type: "necklace",
+    description: "Yellow gold lucky eye necklace with diamonds"
+  },
+  {
+    id: 112,
+    name: "Messika Lucky Eye Necklace Pink",
+    category: "Messika Collection",
+    price: 9700,
+    image: "messika-packshot-collier_lucky_eye_pav_vue_2_07525_pg.jpg",
+    type: "necklace",
+    description: "Pink gold lucky eye necklace with diamonds"
+  },
+  {
+    id: 113,
+    name: "Messika Uno Pampille Choker White",
+    category: "Messika Collection",
+    price: 13800,
+    image: "messika-packshot-_collier_choker_move_uno_pampille_vue_1_14588_wg.jpg",
+    type: "necklace",
+    description: "White gold uno pampille choker with diamonds"
+  }
 ];
 
+/* ---------- MAIN PRODUCTS ARRAY (Combined) ---------- */
+const allProducts = [
+  // Your existing products
+  {id:1,name:"Van Cleef Onyx Bracelet",category:"Van Cleef Inspired",price:9800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",type:"bracelet",description:"Luxury gold bracelet with genuine black onyx stones"},
+  {id:2,name:"Van Cleef Carnelian Bracelet",category:"Van Cleef Inspired",price:10200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",type:"bracelet",description:"Gold bracelet with vibrant carnelian stones"},
+  {id:3,name:"Van Cleef Agate Bracelet",category:"Van Cleef Inspired",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",type:"bracelet",description:"Gold bracelet with natural agate stones"},
+  {id:4,name:"Van Cleef Chalcedony Bracelet",category:"Van Cleef Inspired",price:10800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",type:"bracelet",description:"Gold bracelet with beautiful blue chalcedony"},
+  {id:5,name:"Van Cleef Mother of Pearl Bracelet",category:"Van Cleef Inspired",price:11200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",type:"bracelet",description:"Gold bracelet with mother of pearl inlay"},
+  {id:6,name:"Van Cleef Tiger Eye Bracelet",category:"Van Cleef Inspired",price:9600,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",type:"bracelet",description:"Gold bracelet with tiger eye stone"},
+  {id:7,name:"Van Cleef Malachite Bracelet",category:"Van Cleef Inspired",price:10400,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",type:"bracelet",description:"Gold bracelet with green malachite stones"},
+  {id:8,name:"Serpenti Choker Necklace",category:"Bvlgari Inspired",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",type:"necklace",description:"Luxury serpent design necklace with diamonds"},
+  {id:9,name:"Diamond Pendant Necklace",category:"Luxury Collection",price:8500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",type:"necklace",description:"Elegant diamond pendant necklace"},
+  {id:10,name:"Butterfly Diamond Ring",category:"Messika Inspired",price:4850,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",type:"ring",description:"18K gold ring with diamond butterfly design"},
+  {id:11,name:"Emerald Solitaire Ring",category:"Classic Collection",price:7500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",type:"ring",description:"Solitaire emerald ring with diamond halo"},
+  {id:12,name:"Ruby Diamond Ring",category:"Classic Collection",price:8200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",type:"ring",description:"Ruby center stone with diamond accents"},
+  {id:13,name:"Heart Bangle",category:"Chopard Inspired",price:8250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",type:"bangle",description:"18K gold heart design bangle"},
+  {id:14,name:"Chopard Diamond Earrings",category:"Chopard Inspired",price:6500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",type:"earrings",description:"Diamond stud earrings with gold setting"},
+  {id:15,name:"Messika Rose Uno Move",category:"Messika Inspired",price:7250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",type:"bracelet",description:"Moving diamond rose gold bracelet"},
+  {id:16,name:"Diamond Tennis Bracelet",category:"Classic Collection",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",type:"bracelet",description:"Full diamond tennis bracelet"},
+  {id:17,name:"Pearl Drop Earrings",category:"Luxury Collection",price:5800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",type:"earrings",description:"Pearl drop earrings with diamond accents"},
+  {id:18,name:"Diamond Halo Necklace",category:"Luxury Collection",price:11500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",type:"necklace",description:"Diamond halo pendant necklace"},
+  {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
+  {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
+  {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"},
+  
+  // Add all Messika products
+  ...messikaProducts
+<script>
+/* ---------- CONFIGURATION ---------- */
+const GOLD_API_PROVIDER = 'goldapi'; // Options: 'goldapi' or 'metals'
+const GOLD_API_KEY = ''; // Get your free API key from goldapi.io
+
+/* ---------- MESSIKA PRODUCTS ---------- */
+const messikaProducts = [
+  {id:100,name:"Messika Move Hoop Earrings",category:"Messika Collection",price:8500,image:"Messika-Move-Hoop-04407-YG.jpg",type:"earrings",description:"Yellow gold move hoop earrings with diamonds"},
+  {id:101,name:"Messika Move Uno Mini Hoops",category:"Messika Collection",price:7200,image:"Messika-Move-UNO-Mini-Hoops-10050-WG-1.jpg",type:"earrings",description:"White gold mini hoop earrings with moving diamonds"},
+  {id:102,name:"Messika Move Classic Bracelet",category:"Messika Collection",price:9200,image:"Messika-Move-Classic-03998-WG.jpg",type:"bracelet",description:"Classic move bracelet in white gold with diamonds"},
+  {id:103,name:"Messika Move Uno Bracelet",category:"Messika Collection",price:8800,image:"Messika-Move-Uno-04705-WG.jpg",type:"bracelet",description:"Uno move bracelet in white gold"},
+  {id:104,name:"Messika Move Thin Bracelet",category:"Messika Collection",price:6800,image:"Messika-Move-Thin-04068-RG-2-1024x1024.jpg",type:"bracelet",description:"Rose gold thin move bracelet with diamonds"},
+  {id:105,name:"Messika Move Romane Necklace",category:"Messika Collection",price:11500,image:"Messika-Move-Romane-06516-YG-55-2-1000x1000.jpg",type:"necklace",description:"Yellow gold romane necklace with moving diamonds"},
+  {id:106,name:"Messika Move XL Earrings",category:"Messika Collection",price:9800,image:"messika_-packshot-boucles_d_oreilles_pendantes_move_10th_xl_pav_es_vue_2_06823_pg.jpg",type:"earrings",description:"XL pavé diamond earrings with move technology"},
+  {id:107,name:"Messika Move Uno Pavé Necklace",category:"Messika Collection",price:12500,image:"messika_paris-collier_move_uno_pav_vue_1_04708_p.jpg",type:"necklace",description:"Uno pavé necklace with moving diamonds"},
+  {id:108,name:"Messika Move Uno Pampille Choker",category:"Messika Collection",price:14200,image:"messika-packshot-collier_choker_move_uno_pampille_pav_vue_1_12150_wg.jpg",type:"necklace",description:"White gold choker with pampille diamonds"},
+  {id:109,name:"Messika Move Uno Pampille Choker",category:"Messika Collection",price:14500,image:"messika-packshot-collier_choker_move_uno_pampille_vue_1_14588_wg.jpg",type:"necklace",description:"Elegant choker with moving diamond pampilles"},
+  {id:110,name:"Messika Move Classic Pavé Necklace",category:"Messika Collection",price:11200,image:"messika-packshot-collier_move_classique_pav_vue_1_03994_p.jpg",type:"necklace",description:"Classic pavé necklace with move technology"},
+  {id:111,name:"Messika Lucky Eye Necklace",category:"Messika Collection",price:9500,image:"messika-packshot-collier_lucky_eye_pav_vue_1_07525_yg.jpg",type:"necklace",description:"Yellow gold lucky eye necklace with diamonds"},
+  {id:112,name:"Messika Lucky Eye Necklace Pink",category:"Messika Collection",price:9700,image:"messika-packshot-collier_lucky_eye_pav_vue_2_07525_pg.jpg",type:"necklace",description:"Pink gold lucky eye necklace with diamonds"},
+  {id:113,name:"Messika Uno Pampille Choker White",category:"Messika Collection",price:13800,image:"messika-packshot-_collier_choker_move_uno_pampille_vue_1_14588_wg.jpg",type:"necklace",description:"White gold uno pampille choker with diamonds"}
+];
+
+/* ---------- MAIN PRODUCTS ARRAY ---------- */
+const allProducts = [
+  // Your existing products
+  {id:1,name:"Van Cleef Onyx Bracelet",category:"Van Cleef Inspired",price:9800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Onyx.jpg",type:"bracelet",description:"Luxury gold bracelet with genuine black onyx stones"},
+  {id:2,name:"Van Cleef Carnelian Bracelet",category:"Van Cleef Inspired",price:10200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Carnelian.jpg",type:"bracelet",description:"Gold bracelet with vibrant carnelian stones"},
+  {id:3,name:"Van Cleef Agate Bracelet",category:"Van Cleef Inspired",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Agate.jpg",type:"bracelet",description:"Gold bracelet with natural agate stones"},
+  {id:4,name:"Van Cleef Chalcedony Bracelet",category:"Van Cleef Inspired",price:10800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Chalcedony.jpg",type:"bracelet",description:"Gold bracelet with beautiful blue chalcedony"},
+  {id:5,name:"Van Cleef Mother of Pearl Bracelet",category:"Van Cleef Inspired",price:11200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Mother%20of%20Pearl.jpg",type:"bracelet",description:"Gold bracelet with mother of pearl inlay"},
+  {id:6,name:"Van Cleef Tiger Eye Bracelet",category:"Van Cleef Inspired",price:9600,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Tiger%20Eye.jpg",type:"bracelet",description:"Gold bracelet with tiger eye stone"},
+  {id:7,name:"Van Cleef Malachite Bracelet",category:"Van Cleef Inspired",price:10400,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Vancleef%20Bracelet%20Malachite.jpg",type:"bracelet",description:"Gold bracelet with green malachite stones"},
+  {id:8,name:"Serpenti Choker Necklace",category:"Bvlgari Inspired",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Serpenti%20Bvulgari%20Chocker.jpg",type:"necklace",description:"Luxury serpent design necklace with diamonds"},
+  {id:9,name:"Diamond Pendant Necklace",category:"Luxury Collection",price:8500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/White%20.%20Blue%20.%20jpg.jpg",type:"necklace",description:"Elegant diamond pendant necklace"},
+  {id:10,name:"Butterfly Diamond Ring",category:"Messika Inspired",price:4850,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Butterfly%20Ring.jpg",type:"ring",description:"18K gold ring with diamond butterfly design"},
+  {id:11,name:"Emerald Solitaire Ring",category:"Classic Collection",price:7500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014624_Chrome.jpg",type:"ring",description:"Solitaire emerald ring with diamond halo"},
+  {id:12,name:"Ruby Diamond Ring",category:"Classic Collection",price:8200,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014621_Chrome.jpg",type:"ring",description:"Ruby center stone with diamond accents"},
+  {id:13,name:"Heart Bangle",category:"Chopard Inspired",price:8250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Heart%20Bangle.jpg",type:"bangle",description:"18K gold heart design bangle"},
+  {id:14,name:"Chopard Diamond Earrings",category:"Chopard Inspired",price:6500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Chopard%20Earring.jpg",type:"earrings",description:"Diamond stud earrings with gold setting"},
+  {id:15,name:"Messika Rose Uno Move",category:"Messika Inspired",price:7250,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Messika%20rose%20uno%20move.jpg",type:"bracelet",description:"Moving diamond rose gold bracelet"},
+  {id:16,name:"Diamond Tennis Bracelet",category:"Classic Collection",price:12500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014606_Chrome.jpg",type:"bracelet",description:"Full diamond tennis bracelet"},
+  {id:17,name:"Pearl Drop Earrings",category:"Luxury Collection",price:5800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014550_Chrome.jpg",type:"earrings",description:"Pearl drop earrings with diamond accents"},
+  {id:18,name:"Diamond Halo Necklace",category:"Luxury Collection",price:11500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251129_014405_Chrome.jpg",type:"necklace",description:"Diamond halo pendant necklace"},
+  {id:19,name:"Custom Diamond Ring",category:"Bespoke Collection",price:9500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_021000_Instagram.jpg",type:"ring",description:"Custom designed diamond ring"},
+  {id:20,name:"Gold Diamond Set",category:"Luxury Collection",price:18500,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20251126_020930_Instagram.jpg",type:"set",description:"Complete gold and diamond jewellery set"},
+  {id:21,name:"Classic Diamond Ring",category:"Timeless Collection",price:6800,image:"https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/Screenshot_20250618_220852_Chrome.jpg",type:"ring",description:"Classic diamond solitaire ring"},
+  
+  // Add all Messika products
+  ...messikaProducts
+];
+
+let cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]');
+let currentSlide = 0;
+let autoSlide = null;
+
+/* ---------- Splash handling ---------- */
+const loadingProgress = document.getElementById('loadingProgress');
+setTimeout(() => loadingProgress.style.width = '100%', 80);
+
+document.getElementById('enterBtn').addEventListener('click', () => {
+  const splash = document.getElementById('splash');
+  splash.style.opacity = '0';
+  splash.style.pointerEvents = 'none';
+  setTimeout(() => splash.style.display = 'none', 650);
+  document.body.style.overflow = 'auto';
+});
+
+// Auto-enter after 5 seconds
+setTimeout(() => {
+  if (document.getElementById('splash').style.display !== 'none') {
+    document.getElementById('enterBtn').click();
+  }
+}, 5000);
+
+/* ---------- Live gold rates ---------- */
+async function fetchGoldRates() {
+  const el24 = document.getElementById('rate24');
+  const el22 = document.getElementById('rate22');
+  const el18 = document.getElementById('rate18');
+  const elTime = document.getElementById('rateTime');
+  
+  el24.textContent = '...';
+  el22.textContent = '...';
+  el18.textContent = '...';
+  
+  try {
+    if (!GOLD_API_KEY) throw new Error('No API key configured');
+    
+    if (GOLD_API_PROVIDER === 'goldapi') {
+      const res = await fetch('https://www.goldapi.io/api/XAU/AED', {
+        headers: { 'x-access-token': GOLD_API_KEY }
+      });
+      
+      if (!res.ok) throw new Error('API request failed');
+      
+      const data = await res.json();
+      const perOz = data.price;
+      const perGram = perOz / 31.1034768;
+      
+      el24.textContent = `AED ${perGram.toFixed(2)}`;
+      el22.textContent = `AED ${(perGram * (22/24)).toFixed(2)}`;
+      el18.textContent = `AED ${(perGram * (18/24)).toFixed(2)}`;
+      elTime.textContent = `Updated: ${new Date().toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})}`;
+      return;
+    }
+    
+    throw new Error('Provider not configured');
+    
+  } catch (err) {
+    // Fallback to realistic Dubai gold rates
+    const baseRate = 215.50;
+    const sample24 = baseRate + Math.random() * 10;
+    
+    el24.textContent = `AED ${sample24.toFixed(2)}`;
+    el22.textContent = `AED ${(sample24 * (22/24)).toFixed(2)}`;
+    el18.textContent = `AED ${(sample24 * (18/24)).toFixed(2)}`;
+    elTime.textContent = 'Sample rates - Add API key for live';
+    
+    console.log('Gold rates: Using fallback -', err.message);
+  }
+}
+
+// Initial fetch and update every 60 seconds
+fetchGoldRates();
+setInterval(fetchGoldRates, 60000);
+
+/* ---------- Filter functions ---------- */
+function filterProducts(type, btn) {
+  document.querySelectorAll('#filterRow button').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  
+  const products = document.querySelectorAll('.product');
+  
+  products.forEach(card => {
+    if (type === 'all') {
+      card.style.display = 'block';
+    } else {
+      const productType = card.getAttribute('data-type');
+      card.style.display = productType === type ? 'block' : 'none';
+    }
+  });
+}
+
+function filterProductsByCategory(category, btn) {
+  document.querySelectorAll('#filterRow button').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  
+  const products = document.querySelectorAll('.product');
+  
+  products.forEach(card => {
+    const productCategory = card.getAttribute('data-category');
+    card.style.display = productCategory === category ? 'block' : 'none';
+  });
+}
+
+/* ---------- Slider functions ---------- */
+function renderSlider() {
+  const track = document.getElementById('sliderTrack');
+  track.innerHTML = '';
+  
+  const featuredProducts = allProducts.slice(0, 6);
+  
+  featuredProducts.forEach(p => {
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    slide.innerHTML = `
+      <img src="${p.image}" alt="${p.name}" loading="lazy">
+      <div class="meta">
+        <div style="font-size:13px;color:var(--muted)">${p.category}</div>
+        <div style="font-weight:800;margin:6px 0">${p.name}</div>
+        <div style="color:var(--rose);font-weight:800">AED ${p.price.toLocaleString()}</div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn btn-primary" onclick="addToCart(${p.id})">Add to Cart</button>
+          <button class="btn btn-outline" onclick="viewProduct(${p.id})">View Details</button>
+        </div>
+      </div>`;
+    track.appendChild(slide);
+  });
+  
+  updateSliderPosition();
+  startAutoSlide();
+}
+
+function updateSliderPosition() {
+  const track = document.getElementById('sliderTrack');
+  const slides = document.querySelectorAll('.slide');
+  
+  if (slides.length === 0) return;
+  
+  const slideWidth = slides[0].offsetWidth + 14;
+  track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll('.slide');
+  if (slides.length === 0) return;
+  
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateSliderPosition();
+  resetAutoSlide();
+}
+
+function prevSlide() {
+  const slides = document.querySelectorAll('.slide');
+  if (slides.length === 0) return;
+  
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSliderPosition();
+  resetAutoSlide();
+}
+
+function startAutoSlide() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(nextSlide, 4500);
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlide);
+  startAutoSlide();
+}
+
+/* ---------- Product rendering ---------- */
+function renderProducts() {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = '';
+  
+  allProducts.forEach(p => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product';
+    productCard.setAttribute('data-type', p.type);
+    productCard.setAttribute('data-category', p.category);
+    
+    productCard.innerHTML = `
+      <img src="${p.image}" alt="${p.name}" loading="lazy">
+      <div class="info">
+        <div class="name">${p.name}</div>
+        <div class="desc">${p.description}</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px">
+          <div class="price">AED ${p.price.toLocaleString()}</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-outline" onclick="viewProduct(${p.id})">View</button>
+            <button class="btn btn-primary" onclick="addToCart(${p.id})">Add</button>
+          </div>
+        </div>
+      </div>`;
+    
+    grid.appendChild(productCard);
+  });
+  
+  updateCartUI();
+}
+
+/* ---------- Cart functions ---------- */
+function saveCart() {
+  localStorage.setItem('ryaanCart', JSON.stringify(cart));
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartCount = document.getElementById('cartCount');
+  cartCount.textContent = itemCount > 0 ? itemCount : '';
+  cartCount.style.display = itemCount > 0 ? 'inline-block' : 'none';
+}
+
+function addToCart(id) {
+  const product = allProducts.find(p => p.id === id);
+  if (!product) return;
+  
+  const existingItem = cart.find(item => item.id === id);
+  
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    });
+  }
+  
+  saveCart();
+  showNotification(`${product.name} added to cart`);
+}
+
+function openCart() {
+  renderCart();
+  document.getElementById('cartModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cartModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function renderCart() {
+  const cartItems = document.getElementById('cartItems');
+  
+  if (cart.length === 0) {
+    cartItems.innerHTML = `
+      <div style="text-align:center;padding:40px;color:var(--muted)">
+        <i class="fas fa-shopping-bag" style="font-size:48px;margin-bottom:16px;opacity:0.3"></i>
+        <p>Your cart is empty</p>
+        <button class="btn btn-primary" style="margin-top:16px" onclick="closeCart()">Continue Shopping</button>
+      </div>`;
+    document.getElementById('cartTotal').textContent = 'Total: AED 0';
+    return;
+  }
+  
+  cartItems.innerHTML = '';
+  let total = 0;
+  
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    
+    const itemElement = document.createElement('div');
+    itemElement.className = 'cart-item';
+    itemElement.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" style="width:70px;height:70px;object-fit:cover;border-radius:8px">
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:15px">${item.name}</div>
+        <div style="color:var(--rose);font-weight:700;margin-top:4px">AED ${item.price.toLocaleString()}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="icon-btn" onclick="updateQuantity(${index}, ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled style="opacity:0.5"' : ''}>-</button>
+          <span style="min-width:30px;text-align:center">${item.quantity}</span>
+          <button class="icon-btn" onclick="updateQuantity(${index}, ${item.quantity + 1})">+</button>
+        </div>
+        <button class="icon-btn" onclick="removeFromCart(${index})" title="Remove">
+          <i class="fas fa-trash" style="color:#ff6b6b"></i>
+        </button>
+      </div>`;
+    
+    cartItems.appendChild(itemElement);
+  });
+  
+  document.getElementById('cartTotal').textContent = `Total: AED ${total.toLocaleString()}`;
+}
+
+function updateQuantity(index, newQuantity) {
+  if (newQuantity < 1) {
+    removeFromCart(index);
+    return;
+  }
+  
+  cart[index].quantity = newQuantity;
+  saveCart();
+  renderCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  saveCart();
+  renderCart();
+  
+  if (cart.length === 0) {
+    setTimeout(closeCart, 300);
+  }
+}
+
+/* ---------- Checkout functions ---------- */
+function openCheckout() {
+  if (cart.length === 0) {
+    showNotification('Your cart is empty');
+    return;
+  }
+  
+  renderCheckoutItems();
+  document.getElementById('checkoutModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function renderCheckoutItems() {
+  const checkoutItems = document.getElementById('checkoutItems');
+  checkoutItems.innerHTML = '';
+  
+  let total = 0;
+  
+  cart.forEach(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    
+    const itemElement = document.createElement('div');
+    itemElement.style.padding = '8px 0';
+    itemElement.style.borderBottom = '1px solid rgba(199,123,123,.1)';
+    itemElement.innerHTML = `
+      <div style="display:flex;justify-content:space-between">
+        <div>
+          <strong>${item.name}</strong>
+          <div style="font-size:13px;color:var(--muted)">Qty: ${item.quantity} × AED ${item.price.toLocaleString()}</div>
+        </div>
+        <div style="font-weight:700">AED ${subtotal.toLocaleString()}</div>
+      </div>`;
+    
+    checkoutItems.appendChild(itemElement);
+  });
+  
+  const totalElement = document.createElement('div');
+  totalElement.style.padding = '12px 0';
+  totalElement.style.borderTop = '2px solid var(--rose)';
+  totalElement.style.marginTop = '8px';
+  totalElement.innerHTML = `
+    <div style="display:flex;justify-content:space-between;font-weight:800;font-size:18px">
+      <div>Total Amount:</div>
+      <div style="color:var(--rose)">AED ${total.toLocaleString()}</div>
+    </div>`;
+  
+  checkoutItems.appendChild(totalElement);
+}
+
+function sendOrderWhatsApp() {
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  
+  if (!name || !phone || !address) {
+    showNotification('Please fill in all delivery details');
+    return;
+  }
+  
+  let formattedPhone = phone.replace(/\D/g, '');
+  if (!formattedPhone.startsWith('971') && formattedPhone.length === 9) {
+    formattedPhone = '971' + formattedPhone;
+  } else if (formattedPhone.length === 10 && formattedPhone.startsWith('0')) {
+    formattedPhone = '971' + formattedPhone.substring(1);
+  }
+  
+  let orderMessage = `🛍️ *RYAAN JEWELLERS - ORDER CONFIRMATION* 🛍️\n\n`;
+  orderMessage += `*Customer Details:*\n`;
+  orderMessage += `👤 Name: ${name}\n`;
+  orderMessage += `📱 Phone: ${phone}\n`;
+  orderMessage += `📍 Address: ${address}\n\n`;
+  orderMessage += `*Order Items:*\n`;
+  
+  let total = 0;
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    orderMessage += `${index + 1}. ${item.name}\n`;
+    orderMessage += `   Quantity: ${item.quantity}\n`;
+    orderMessage += `   Price: AED ${item.price.toLocaleString()}\n`;
+    orderMessage += `   Subtotal: AED ${subtotal.toLocaleString()}\n\n`;
+  });
+  
+  orderMessage += `*Order Total: AED ${total.toLocaleString()}*\n\n`;
+  orderMessage += `Please confirm this order and provide delivery timing.`;
+  
+  const whatsappNumber = '971543746476';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
+  
+  window.open(whatsappUrl, '_blank');
+  
+  cart = [];
+  saveCart();
+  
+  closeCheckout();
+  closeCart();
+  
+  showNotification('Order sent via WhatsApp!', 'success');
+  
+  document.getElementById('custName').value = '';
+  document.getElementById('custPhone').value = '';
+  document.getElementById('custAddress').value = '';
+}
+
+/* ---------- Helper functions ---------- */
+function viewProduct(id) {
+  const product = allProducts.find(p => p.id === id);
+  if (!product) return;
+  
+  const message = `🔍 *Product Inquiry - RYAAN JEWELLERS*\n\n`;
+  message += `*Product:* ${product.name}\n`;
+  message += `*Category:* ${product.category}\n`;
+  message += `*Price:* AED ${product.price.toLocaleString()}\n\n`;
+  message += `I'm interested in this product. Please provide more details.`;
+  
+  const whatsappUrl = `https://wa.me/971543746476?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+function openCustomInquiry() {
+  const message = `🎨 *Custom Design Inquiry - RYAAN JEWELLERS*\n\n`;
+  message += `Hello, I'm interested in creating a custom jewellery piece.\n\n`;
+  message += `Please assist me with the design process.`;
+  
+  const whatsappUrl = `https://wa.me/971543746476?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+function showNotification(message, type = 'info') {
+  const notify = document.getElementById('notify');
+  notify.textContent = message;
+  notify.style.backgroundColor = type === 'success' ? '#4CAF50' : 'var(--rose)';
+  notify.style.display = 'block';
+  
+  setTimeout(() => notify.style.transform = 'translateX(0)', 10);
+  
+  setTimeout(() => {
+    notify.style.transform = 'translateX(100%)';
+    setTimeout(() => notify.style.display = 'none', 300);
+  }, 3000);
+}
+
+/* ---------- Initialize ---------- */
+function init() {
+  renderSlider();
+  renderProducts();
+  updateCartUI();
+  
+  const savedCart = localStorage.getItem('ryaanCart');
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
+    updateCartUI();
+  }
+  
+  const track = document.getElementById('sliderTrack');
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  
+  track.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    prevTranslate = currentTranslate;
+    track.style.cursor = 'grabbing';
+    clearInterval(autoSlide);
+  });
+  
+  track.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const currentX = e.clientX;
+    const diff = currentX - startX;
+    currentTranslate = prevTranslate + diff;
+  });
+  
+  track.addEventListener('pointerup', () => {
+    isDragging = false;
+    track.style.cursor = 'grab';
+    
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    
+    const slideWidth = slides[0].offsetWidth + 14;
+    currentSlide = Math.round(currentTranslate / slideWidth);
+    currentSlide = Math.max(0, Math.min(currentSlide, slides.length - 1));
+    currentTranslate = currentSlide * slideWidth;
+    
+    updateSliderPosition();
+    startAutoSlide();
+  });
+  
+  track.addEventListener('pointerleave', () => {
+    if (isDragging) {
+      isDragging = false;
+      track.style.cursor = 'grab';
+      
+      const slides = document.querySelectorAll('.slide');
+      if (slides.length === 0) return;
+      
+      const slideWidth = slides[0].offsetWidth + 14;
+      currentSlide = Math.round(currentTranslate / slideWidth);
+      currentSlide = Math.max(0, Math.min(currentSlide, slides.length - 1));
+      currentTranslate = currentSlide * slideWidth;
+      
+      updateSliderPosition();
+      startAutoSlide();
+    }
+  });
+  
+  window.addEventListener('click', (e) => {
+    if (e.target.id === 'cartModal') closeCart();
+    if (e.target.id === 'checkoutModal') closeCheckout();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeCart();
+      closeCheckout();
+    }
+  });
+  
+  window.addEventListener('resize', updateSliderPosition);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
 /* STATE */
 let cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]');
 let currentSlide = 0;
