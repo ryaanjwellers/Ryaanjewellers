@@ -333,7 +333,7 @@
 <script>
 /* ---------- CONFIGURATION ---------- */
 const GOLD_API_PROVIDER = 'goldapi'; // Options: 'goldapi' or 'metals'
-const GOLD_API_KEY = ''; // Get your free API key from goldapi.io
+const GOLD_API_KEY = ''; // const GOLD_API_KEY = 'goldapi-zw91ysmirop9ad-io'; // Your API key
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/ryaanjewellers007/Ryaanjewellers/main/';
 
 /* ---------- MESSIKA PRODUCTS (with GitHub paths) ---------- */
@@ -702,7 +702,7 @@ async function fetchGoldRates() {
     
     if (GOLD_API_PROVIDER === 'goldapi') {
       const res = await fetch('https://www.goldapi.io/api/XAU/AED', {
-        headers: { 'x-access-token': GOLD_API_KEY }
+        headers: { 'x-access-token': const GOLD_API_KEY = 'goldapi-zw91ysmirop9ad-io'; // Your API key }
       });
       
       if (!res.ok) throw new Error('API request failed');
