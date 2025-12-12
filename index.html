@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RYAAN JEWELLERS — Messika Inspired Luxury | Dubai</title>
-  <meta name="description" content="RYAAN Jewellers Dubai — Messika inspired luxury jewellery. Live gold rates, bespoke designs, secure WhatsApp checkout. Handcrafted elegance." />
-  <meta name="keywords" content="RYAAN Jewellers, Messika jewellery, Dubai gold, luxury diamonds, bespoke jewellery, gold rates, Dubai jewellery" />
+  <title>RYAAN JEWELLERS — Complete Collection | Dubai</title>
+  <meta name="description" content="RYAAN Jewellers Dubai — Complete jewellery collection. Live gold rates, bespoke designs, secure WhatsApp checkout." />
+  <meta name="keywords" content="RYAAN Jewellers, Dubai gold, luxury jewellery, diamonds, bespoke jewellery, gold rates, Dubai jewellery" />
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>" />
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* -------------------- MESSIKA INSPIRED THEME -------------------- */
+    /* -------------------- THEME VARIABLES -------------------- */
     :root {
       --black: #0a0a0a;
       --dark-gray: #1a1a1a;
@@ -22,6 +22,7 @@
       --gold: #D4AF37;
       --gold-light: #E8C874;
       --gold-dark: #B8941F;
+      --rose: #C77B7B;
       --diamond: #ffffff;
       --diamond-glow: rgba(255, 255, 255, 0.3);
       --accent: #8B7355;
@@ -125,7 +126,7 @@
 
     .splash-logo h1 {
       font-size: 4.5rem;
-      background: linear-gradient(45deg, var(--white), var(--gold-light));
+      background: linear-gradient(45deg, var(--white), var(--gold-light), var(--rose));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -450,7 +451,7 @@
       font-size: 5rem;
       line-height: 1.1;
       margin-bottom: 2rem;
-      background: linear-gradient(45deg, var(--white), var(--gold-light));
+      background: linear-gradient(45deg, var(--white), var(--gold-light), var(--rose));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1145,6 +1146,68 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--gold-light);
     }
+
+    /* -------------------- FEATURED SLIDER -------------------- */
+    .featured-slider {
+      padding: 4rem 2rem;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 2rem;
+      transition: transform 0.5s ease;
+      padding: 1rem;
+    }
+
+    .slide {
+      min-width: 350px;
+      background: var(--glass);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      transition: all var(--transition);
+    }
+
+    .slide:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .slider-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--glass);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      color: var(--gold-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+
+    .slider-btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
   </style>
 </head>
 <body>
@@ -1154,14 +1217,13 @@
     <div class="splash-container">
       <div class="splash-logo">
         <h1>RYAAN JEWELLERS</h1>
-        <div class="subtitle">MESSIKA INSPIRED LUXURY</div>
+        <div class="subtitle">COMPLETE COLLECTION</div>
       </div>
       
       <div class="splash-video-container">
         <video class="splash-video" autoplay muted loop playsinline>
-          <!-- Using a diamond/jewellery themed video -->
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-diamond-jewelry-1726-large.mp4" type="video/mp4">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-diamond-jewelry-1726-large.webm" type="video/webm">
+          <!-- Actual GitHub video -->
+          <source src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/Ryaan%20Jewellers.mp4" type="video/mp4">
         </video>
         
         <div class="splash-controls">
@@ -1175,7 +1237,7 @@
       </div>
       
       <div class="splash-note">
-        Experience luxury jewellery craftsmanship inspired by Messika
+        Experience complete jewellery collection from our GitHub repository
       </div>
     </div>
   </div>
@@ -1186,8 +1248,8 @@
       <a href="#" class="brand">
         <div class="logo-container">
           <video class="logo-video" autoplay muted loop playsinline>
-            <!-- Logo animation video -->
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-golden-jewelry-spinning-on-a-black-background-49074-large.mp4" type="video/mp4">
+            <!-- Actual GitHub logo video -->
+            <source src="https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/LogoDec.mp4" type="video/mp4">
           </video>
         </div>
         <div class="brand-text">
@@ -1197,17 +1259,17 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#featured" class="nav-link">Featured</a>
+        <a href="#collections" class="nav-link">All Products</a>
         <a href="#gold-rates" class="nav-link">Gold Rates</a>
         <a href="#custom" class="nav-link">Custom Design</a>
-        <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
         <div class="search-container">
           <i class="fas fa-search search-icon"></i>
-          <input type="text" class="search-input" placeholder="Search diamonds..." id="searchInput">
+          <input type="text" class="search-input" placeholder="Search all products..." id="searchInput">
         </div>
         
         <button class="action-button" id="themeToggle" title="Toggle theme">
@@ -1226,20 +1288,43 @@
   <section class="hero">
     <div class="hero-background"></div>
     <div class="hero-content">
-      <span class="hero-badge">New Collection 2025</span>
-      <h1 class="hero-title">Messika Inspired Elegance</h1>
+      <span class="hero-badge">Complete Collection 2025</span>
+      <h1 class="hero-title">Complete Luxury Collection</h1>
       <p class="hero-subtitle">
-        Experience the perfect fusion of contemporary design and timeless craftsmanship. 
-        Each piece tells a story of luxury, innovation, and unparalleled beauty.
+        Explore our complete range of jewellery pieces from Van Cleef inspired to Messika collections. 
+        Each piece crafted with precision and passion in Dubai.
       </p>
       <div class="hero-actions">
         <a href="#collections" class="btn btn-primary">
-          <i class="fas fa-gem"></i> Explore Collection
+          <i class="fas fa-gem"></i> View All Products
         </a>
         <a href="#custom" class="btn btn-secondary">
           <i class="fas fa-pencil-ruler"></i> Custom Design
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Featured Slider -->
+  <section class="featured-slider" id="featured">
+    <div class="section-header">
+      <h2 class="section-title">Featured Pieces</h2>
+      <p class="section-subtitle">Our most popular and exclusive jewellery pieces</p>
+    </div>
+    
+    <div class="slider-container">
+      <div class="slider-track" id="sliderTrack">
+        <!-- Featured products will be loaded here -->
+      </div>
+    </div>
+    
+    <div class="slider-controls">
+      <button class="slider-btn" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </section>
 
@@ -1284,30 +1369,35 @@
     </div>
   </section>
 
-  <!-- Collections Section -->
+  <!-- All Products Section -->
   <section class="products" id="collections">
     <div class="section-header">
-      <h2 class="section-title">Signature Collections</h2>
-      <p class="section-subtitle">Inspired by Messika's innovative designs and movement philosophy</p>
+      <h2 class="section-title">Complete Collection</h2>
+      <p class="section-subtitle">Browse our extensive collection of luxury jewellery pieces</p>
     </div>
     
     <div class="filters">
-      <button class="filter-btn active" onclick="applyFilter('all', this)">All</button>
+      <button class="filter-btn active" onclick="applyFilter('all', this)">All Products</button>
       <button class="filter-btn" onclick="applyFilter('earrings', this)">Earrings</button>
       <button class="filter-btn" onclick="applyFilter('bracelet', this)">Bracelets</button>
       <button class="filter-btn" onclick="applyFilter('necklace', this)">Necklaces</button>
       <button class="filter-btn" onclick="applyFilter('ring', this)">Rings</button>
+      <button class="filter-btn" onclick="applyFilter('collection:messika', this)">Messika</button>
+      <button class="filter-btn" onclick="applyFilter('collection:vancleef', this)">Van Cleef</button>
+      <button class="filter-btn" onclick="applyFilter('collection:bvlgari', this)">Bvlgari</button>
       <select class="filter-btn" onchange="applySort(this.value)" style="appearance: none; padding-right: 40px">
         <option value="featured">Sort by</option>
         <option value="price-asc">Price: Low to High</option>
         <option value="price-desc">Price: High to Low</option>
-        <option value="newest">Newest First</option>
+        <option value="name-asc">Name: A-Z</option>
       </select>
     </div>
     
     <div class="products-grid" id="productsGrid">
-      <!-- Products will be loaded here -->
+      <!-- All products will be loaded here -->
     </div>
+    
+    <div id="loading" class="loader" style="display: none;"></div>
   </section>
 
   <!-- Custom Design Section -->
@@ -1350,38 +1440,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="products" id="about">
-    <div class="section-header">
-      <h2 class="section-title">RYAAN Story</h2>
-      <p class="section-subtitle">Where innovation meets tradition in jewellery craftsmanship</p>
-    </div>
-    
-    <div style="max-width: 800px; margin: 0 auto; text-align: center">
-      <p style="color: var(--light-gray); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem">
-        Inspired by the bold innovation of Messika and rooted in Dubai's rich jewellery heritage, 
-        RYAAN JEWELLERS represents a new era of luxury. We blend cutting-edge design with 
-        traditional craftsmanship to create pieces that move with you, capturing light and 
-        attention with every gesture.
-      </p>
-      
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem">
-        <div>
-          <div style="font-size: 2.5rem; color: var(--gold); font-weight: 700">14+</div>
-          <div style="color: var(--light-gray)">Years Excellence</div>
-        </div>
-        <div>
-          <div style="font-size: 2.5rem; color: var(--gold); font-weight: 700">5000+</div>
-          <div style="color: var(--light-gray)">Happy Clients</div>
-        </div>
-        <div>
-          <div style="font-size: 2.5rem; color: var(--gold); font-weight: 700">100%</div>
-          <div style="color: var(--light-gray)">Satisfaction</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer id="contact">
     <div class="footer-content">
@@ -1402,13 +1460,12 @@
       </div>
       
       <div>
-        <h3 style="color: var(--white); margin-bottom: 1.5rem">Quick Links</h3>
+        <h3 style="color: var(--white); margin-bottom: 1.5rem">Collections</h3>
         <div style="display: flex; flex-direction: column; gap: 1rem">
-          <a href="#collections" style="color: var(--light-gray); text-decoration: none">Collections</a>
-          <a href="#gold-rates" style="color: var(--light-gray); text-decoration: none">Gold Rates</a>
-          <a href="#custom" style="color: var(--light-gray); text-decoration: none">Custom Design</a>
-          <a href="#about" style="color: var(--light-gray); text-decoration: none">Our Story</a>
-          <a href="#" onclick="openCart()" style="color: var(--light-gray); text-decoration: none">Your Cart</a>
+          <a href="#collections" style="color: var(--light-gray); text-decoration: none">All Products</a>
+          <a href="#collections" onclick="applyFilter('collection:messika')" style="color: var(--light-gray); text-decoration: none">Messika Inspired</a>
+          <a href="#collections" onclick="applyFilter('collection:vancleef')" style="color: var(--light-gray); text-decoration: none">Van Cleef Inspired</a>
+          <a href="#collections" onclick="applyFilter('collection:bvlgari')" style="color: var(--light-gray); text-decoration: none">Bvlgari Inspired</a>
         </div>
       </div>
       
@@ -1473,107 +1530,265 @@
    ***********************************************/
   const GOLD_API_KEY = 'goldapi-zw91ysmirop9ad-io';
   const WHATSAPP_NUMBER = '971543746476';
+  const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/ryaanjewellers007/ryaanjewellers/main/';
   const COMPANY_NAME = 'RYAAN JEWELLERS';
   
   /***********************************************
-   * PRODUCTS DATABASE
+   * COMPLETE PRODUCTS DATABASE FROM GITHUB
    ***********************************************/
   const allProducts = [
+    // Messika Collection from GitHub
+    {
+      id: 100,
+      name: "Messika Move Hoop Earrings",
+      category: "Messika Collection",
+      price: 8500,
+      image: GITHUB_BASE_URL + "Messika-Move-Hoop-04407-YG.jpg",
+      altImage: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?w=800&q=80",
+      type: "earrings",
+      collection: "messika",
+      description: "18K yellow gold move hoop earrings with brilliant-cut diamonds. Inspired by Messika's signature moving diamonds design.",
+      material: "18K Yellow Gold",
+      stones: "Brilliant-cut Diamonds",
+      weight: "8.2g",
+      featured: true
+    },
+    {
+      id: 101,
+      name: "Messika Move Uno Mini Hoops",
+      category: "Messika Collection",
+      price: 7200,
+      image: GITHUB_BASE_URL + "Messika-Move-UNO-Mini-Hoops-10050-WG-1.jpg",
+      altImage: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+      type: "earrings",
+      collection: "messika",
+      description: "White gold mini hoop earrings with single moving diamond. Minimalist elegance with signature movement.",
+      material: "18K White Gold",
+      stones: "Single Brilliant-cut Diamond",
+      weight: "6.5g",
+      featured: true
+    },
+    
+    // Van Cleef Inspired from GitHub
     {
       id: 1,
-      name: "Messika Move Hoop Earrings",
-      category: "Messika Inspired",
-      price: 8500,
-      image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?w=800&q=80",
-      type: "earrings",
-      description: "18K yellow gold move hoop earrings with brilliant-cut diamonds. Inspired by Messika's signature moving diamonds design.",
-      featured: true,
+      name: "Van Cleef Onyx Bracelet",
+      category: "Van Cleef Inspired",
+      price: 9800,
+      image: GITHUB_BASE_URL + "Vancleef%20Bracelet%20Onyx.jpg",
+      altImage: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
+      type: "bracelet",
+      collection: "vancleef",
+      description: "Luxury gold bracelet with black onyx and diamond accents. Inspired by classic Alhambra design.",
       material: "18K Yellow Gold",
-      stones: "Brilliant-cut Diamonds"
+      stones: "Black Onyx, Diamonds",
+      weight: "22.5g",
+      featured: true
     },
     {
       id: 2,
-      name: "Move Uno Mini Hoops",
-      category: "Messika Inspired",
-      price: 7200,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
-      type: "earrings",
-      description: "White gold mini hoop earrings with single moving diamond. Minimalist elegance with signature movement.",
-      featured: true,
-      material: "18K White Gold",
-      stones: "Single Brilliant-cut Diamond"
+      name: "Van Cleef Carnelian Bracelet",
+      category: "Van Cleef Inspired",
+      price: 10200,
+      image: GITHUB_BASE_URL + "Vancleef%20Bracelet%20Carnelian.jpg",
+      altImage: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+      type: "bracelet",
+      collection: "vancleef",
+      description: "Gold bracelet with vibrant carnelian stones. Four-leaf clover motif for luck and elegance.",
+      material: "18K Rose Gold",
+      stones: "Carnelian, Diamonds",
+      weight: "24.8g",
+      featured: true
     },
+    
+    // Bvlgari Inspired from GitHub
     {
       id: 3,
-      name: "Glissant Bracelet",
-      category: "Messika Inspired",
+      name: "Serpenti Choker Necklace",
+      category: "Bvlgari Inspired",
       price: 12500,
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
-      type: "bracelet",
-      description: "Sliding diamond bracelet with invisible setting. A modern take on tennis bracelets.",
-      featured: true,
+      image: GITHUB_BASE_URL + "Serpenti%20Bvulgari%20Chocker.jpg",
+      altImage: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
+      type: "necklace",
+      collection: "bvlgari",
+      description: "Iconic serpent design choker necklace with emerald eyes. A statement piece for evening wear.",
       material: "18K White Gold",
-      stones: "Channel-set Diamonds"
+      stones: "Diamonds, Emerald Eyes",
+      weight: "45.2g",
+      featured: true
     },
+    
+    // Butterfly Ring from GitHub
+    {
+      id: 10,
+      name: "Butterfly Diamond Ring",
+      category: "Messika Inspired",
+      price: 4850,
+      image: GITHUB_BASE_URL + "Butterfly%20Ring.jpg",
+      altImage: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+      type: "ring",
+      collection: "messika",
+      description: "Delicate butterfly motif ring with diamond accents. Whimsical and feminine design.",
+      material: "18K Rose Gold",
+      stones: "Brilliant-cut Diamonds",
+      weight: "4.2g",
+      featured: true
+    },
+    
+    // Additional Products (using Unsplash as fallback)
     {
       id: 4,
-      name: "Move Double Ring",
-      category: "Messika Inspired",
-      price: 9800,
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
-      type: "ring",
-      description: "Double band ring with moving diamonds between the bands. Symbolic of eternal connection.",
-      featured: true,
-      material: "18K Rose Gold",
-      stones: "Moving Diamonds"
+      name: "Diamond Tennis Bracelet",
+      category: "Classic Collection",
+      price: 15600,
+      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+      type: "bracelet",
+      collection: "classic",
+      description: "Classic tennis bracelet with channel-set brilliant diamonds. Timeless elegance for any occasion.",
+      material: "18K White Gold",
+      stones: "Brilliant-cut Diamonds (2ct total)",
+      weight: "18.6g",
+      featured: true
     },
     {
       id: 5,
-      name: "Bye Bye Love Necklace",
-      category: "Messika Inspired",
-      price: 15600,
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
-      type: "necklace",
-      description: "Pendant necklace with detachable elements. Transformable design for multiple looks.",
-      featured: true,
-      material: "18K Yellow Gold",
-      stones: "Diamonds & Black Lacquer"
+      name: "Pear Drop Diamond Earrings",
+      category: "Classic Collection",
+      price: 8900,
+      image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?w=800&q=80",
+      type: "earrings",
+      collection: "classic",
+      description: "Elegant pear-shaped diamond drop earrings with gold detailing. Perfect for formal events.",
+      material: "18K White Gold",
+      stones: "Pear-shaped Diamonds (1.5ct total)",
+      weight: "9.8g",
+      featured: false
     },
     {
       id: 6,
-      name: "My Move Collection Earrings",
-      category: "Messika Inspired",
-      price: 6500,
-      image: "https://images.unsplash.com/photo-1596495578066-5ce0c8d5d6b1?w=800&q=80",
-      type: "earrings",
-      description: "Personalizable earrings with interchangeable diamond slides. Create your unique style.",
-      featured: false,
-      material: "18K White Gold",
-      stones: "Interchangeable Diamonds"
+      name: "Emerald Cut Solitaire Ring",
+      category: "Engagement Collection",
+      price: 22000,
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+      type: "ring",
+      collection: "engagement",
+      description: "Stunning emerald-cut diamond solitaire ring with pave diamond band. Center stone 2.5ct.",
+      material: "Platinum",
+      stones: "Emerald-cut Diamond (2.5ct), Pave Diamonds",
+      weight: "6.2g",
+      featured: true
     },
     {
       id: 7,
-      name: "Bangle Trio Set",
-      category: "Messika Inspired",
-      price: 22000,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
-      type: "bracelet",
-      description: "Stackable bangle set featuring different diamond patterns. Mix and match for personal style.",
-      featured: false,
-      material: "18K Yellow Gold",
-      stones: "Various Diamond Cuts"
+      name: "Diamond Halo Pendant",
+      category: "Pendant Collection",
+      price: 6500,
+      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
+      type: "necklace",
+      collection: "pendant",
+      description: "Round brilliant diamond with halo setting on delicate chain. Adjustable 16-18 inch chain.",
+      material: "18K White Gold",
+      stones: "Round Brilliant Diamond (0.75ct), Halo Diamonds",
+      weight: "5.4g",
+      featured: false
     },
     {
       id: 8,
-      name: "Étoile Ring",
-      category: "Messika Inspired",
-      price: 8900,
+      name: "Bangle Set with Sapphires",
+      category: "Color Stone Collection",
+      price: 13200,
+      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+      type: "bracelet",
+      collection: "colorstone",
+      description: "Matching bangle set featuring alternating diamonds and blue sapphires. Stackable design.",
+      material: "18K Yellow Gold",
+      stones: "Diamonds, Blue Sapphires",
+      weight: "42.3g",
+      featured: true
+    },
+    {
+      id: 9,
+      name: "Three Stone Anniversary Ring",
+      category: "Anniversary Collection",
+      price: 18500,
       image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
       type: "ring",
-      description: "Star-shaped ring with radiating diamond pattern. Celestial inspiration meets modern design.",
-      featured: false,
+      collection: "anniversary",
+      description: "Three brilliant diamonds representing past, present, and future. Channel-set band.",
       material: "Platinum",
-      stones: "Radiating Diamonds"
+      stones: "Three Round Diamonds (3ct total)",
+      weight: "7.8g",
+      featured: false
+    },
+    {
+      id: 11,
+      name: "Diamond Cluster Earrings",
+      category: "Evening Collection",
+      price: 11500,
+      image: "https://images.unsplash.com/photo-1596495578066-5ce0c8d5d6b1?w=800&q=80",
+      type: "earrings",
+      collection: "evening",
+      description: "Statement cluster earrings with multiple diamond shapes. Perfect for special occasions.",
+      material: "18K White Gold",
+      stones: "Mixed-cut Diamonds (3ct total)",
+      weight: "12.3g",
+      featured: false
+    },
+    {
+      id: 12,
+      name: "Pearl and Diamond Necklace",
+      category: "Pearl Collection",
+      price: 9800,
+      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
+      type: "necklace",
+      collection: "pearl",
+      description: "Elegant necklace featuring freshwater pearls and diamond accents. Timeless sophistication.",
+      material: "18K Yellow Gold",
+      stones: "Freshwater Pearls, Diamonds",
+      weight: "28.7g",
+      featured: false
+    },
+    {
+      id: 13,
+      name: "Stackable Diamond Rings",
+      category: "Stackable Collection",
+      price: 3200,
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+      type: "ring",
+      collection: "stackable",
+      description: "Set of three stackable rings with diamond accents. Mix and match for personal style.",
+      material: "18K Rose Gold",
+      stones: "Small Diamonds",
+      weight: "5.1g",
+      featured: false
+    },
+    {
+      id: 14,
+      name: "Gold Cuff Bracelet",
+      category: "Modern Collection",
+      price: 7800,
+      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
+      type: "bracelet",
+      collection: "modern",
+      description: "Modern cuff bracelet with geometric design and diamond accents. Bold and contemporary.",
+      material: "18K Yellow Gold",
+      stones: "Diamonds",
+      weight: "32.4g",
+      featured: false
+    },
+    {
+      id: 15,
+      name: "Diamond Stud Earrings",
+      category: "Essential Collection",
+      price: 4500,
+      image: "https://images.unsplash.com/photo-1594576722512-582d5577dc56?w=800&q=80",
+      type: "earrings",
+      collection: "essential",
+      description: "Classic diamond stud earrings for everyday wear. Perfectly cut round brilliant diamonds.",
+      material: "Platinum",
+      stones: "Round Diamonds (0.5ct each)",
+      weight: "3.8g",
+      featured: false
     }
   ];
 
@@ -1583,6 +1798,8 @@
   let cart = JSON.parse(localStorage.getItem('ryaanCart') || '[]');
   let currentFilter = 'all';
   let currentSort = 'featured';
+  let currentSlide = 0;
+  let sliderInterval;
 
   /***********************************************
    * UTILITY FUNCTIONS
@@ -1598,6 +1815,17 @@
     setTimeout(() => {
       notification.className = 'notification';
     }, 3000);
+  }
+
+  // Image fallback function
+  function handleImageError(img) {
+    const productId = img.getAttribute('data-product-id');
+    const product = allProducts.find(p => p.id == productId);
+    if (product && product.altImage) {
+      img.src = product.altImage;
+    } else {
+      img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%231a1a1a"/><text x="200" y="150" font-family="Arial" font-size="20" fill="%23D4AF37" text-anchor="middle" dy=".3em">Image Loading</text></svg>';
+    }
   }
 
   /***********************************************
@@ -1714,44 +1942,23 @@
   setInterval(fetchGoldRates, 300000);
 
   /***********************************************
-   * PRODUCTS DISPLAY
+   * FEATURED SLIDER
    ***********************************************/
-  function renderProducts() {
-    const grid = el('productsGrid');
-    if (!grid) return;
+  function renderFeaturedSlider() {
+    const sliderTrack = el('sliderTrack');
+    if (!sliderTrack) return;
     
-    let products = [...allProducts];
+    const featuredProducts = allProducts.filter(p => p.featured).slice(0, 6);
     
-    // Apply filter
-    if (currentFilter !== 'all') {
-      products = products.filter(p => p.type === currentFilter);
-    }
-    
-    // Apply sort
-    switch (currentSort) {
-      case 'price-asc':
-        products.sort((a, b) => a.price - b.price);
-        break;
-      case 'price-desc':
-        products.sort((a, b) => b.price - a.price);
-        break;
-      case 'newest':
-        products.sort((a, b) => b.id - a.id);
-        break;
-      case 'featured':
-      default:
-        products.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-        break;
-    }
-    
-    grid.innerHTML = products.map(product => `
-      <div class="product-card fade-in">
-        ${product.featured ? '<span class="product-badge">Featured</span>' : ''}
-        <img src="${product.image}" alt="${product.name}" class="product-image">
+    sliderTrack.innerHTML = featuredProducts.map(product => `
+      <div class="slide">
+        <img src="${product.image}" alt="${product.name}" class="product-image" 
+             data-product-id="${product.id}"
+             onerror="handleImageError(this)">
         <div class="product-content">
           <div class="product-category">${product.category}</div>
           <h3 class="product-title">${product.name}</h3>
-          <p class="product-description">${product.description}</p>
+          <p class="product-description">${product.description.substring(0, 80)}...</p>
           <div class="product-footer">
             <div class="product-price">${formatCurrency(product.price)}</div>
             <div class="product-actions">
@@ -1766,6 +1973,115 @@
         </div>
       </div>
     `).join('');
+    
+    startSliderAutoPlay();
+  }
+  
+  function startSliderAutoPlay() {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+  }
+  
+  function nextSlide() {
+    const sliderTrack = el('sliderTrack');
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSliderPosition();
+  }
+  
+  function prevSlide() {
+    const sliderTrack = el('sliderTrack');
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSliderPosition();
+  }
+  
+  function updateSliderPosition() {
+    const sliderTrack = el('sliderTrack');
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    
+    const slideWidth = slides[0].offsetWidth + 32; // width + gap
+    sliderTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+  }
+
+  /***********************************************
+   * PRODUCTS DISPLAY
+   ***********************************************/
+  function renderProducts() {
+    const grid = el('productsGrid');
+    const loading = el('loading');
+    
+    if (!grid) return;
+    
+    // Show loading
+    loading.style.display = 'block';
+    grid.innerHTML = '';
+    
+    // Simulate loading delay for images
+    setTimeout(() => {
+      let products = [...allProducts];
+      
+      // Apply filter
+      if (currentFilter !== 'all') {
+        if (currentFilter.startsWith('collection:')) {
+          const collection = currentFilter.split(':')[1];
+          products = products.filter(p => p.collection === collection);
+        } else {
+          products = products.filter(p => p.type === currentFilter);
+        }
+      }
+      
+      // Apply sort
+      switch (currentSort) {
+        case 'price-asc':
+          products.sort((a, b) => a.price - b.price);
+          break;
+        case 'price-desc':
+          products.sort((a, b) => b.price - a.price);
+          break;
+        case 'name-asc':
+          products.sort((a, b) => a.name.localeCompare(b.name));
+          break;
+        case 'featured':
+        default:
+          products.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+          break;
+      }
+      
+      grid.innerHTML = products.map(product => `
+        <div class="product-card fade-in">
+          ${product.featured ? '<span class="product-badge">Featured</span>' : ''}
+          <img src="${product.image}" alt="${product.name}" class="product-image" 
+               data-product-id="${product.id}"
+               onerror="handleImageError(this)">
+          <div class="product-content">
+            <div class="product-category">${product.category}</div>
+            <h3 class="product-title">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <div class="product-footer">
+              <div class="product-price">${formatCurrency(product.price)}</div>
+              <div class="product-actions">
+                <button class="action-icon" onclick="showProductDetails(${product.id})" title="View details">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-icon" onclick="addToCart(${product.id})" title="Add to cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      loading.style.display = 'none';
+    }, 500);
   }
   
   function applyFilter(type, button) {
@@ -1775,9 +2091,15 @@
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.classList.remove('active');
     });
-    button.classList.add('active');
+    
+    if (button) {
+      button.classList.add('active');
+    }
     
     renderProducts();
+    
+    // Scroll to products section
+    document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
   }
   
   function applySort(type) {
@@ -1793,8 +2115,9 @@
     products.forEach(product => {
       const title = product.querySelector('.product-title').textContent.toLowerCase();
       const description = product.querySelector('.product-description').textContent.toLowerCase();
+      const category = product.querySelector('.product-category').textContent.toLowerCase();
       
-      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+      if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
         product.style.display = 'block';
       } else {
         product.style.display = 'none';
@@ -1825,6 +2148,7 @@
         <div style="text-align: center; padding: 3rem 1rem; color: var(--light-gray)">
           <i class="fas fa-shopping-bag fa-3x" style="opacity: 0.3; margin-bottom: 1rem"></i>
           <p>Your cart is empty</p>
+          <p style="font-size: 0.9rem; margin-top: 0.5rem">Add products from our collection</p>
         </div>
       `;
       cartTotal.textContent = 'AED 0';
@@ -1833,12 +2157,14 @@
     
     let total = 0;
     cartItems.innerHTML = cart.map(item => {
+      const product = allProducts.find(p => p.id === item.id);
       const itemTotal = item.price * item.quantity;
       total += itemTotal;
       
       return `
         <div class="cart-item">
-          <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+          <img src="${product ? product.image : ''}" alt="${item.name}" class="cart-item-image"
+               onerror="this.src='data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"80\" height=\"80\"><rect width=\"80\" height=\"80\" fill=\"%231a1a1a\"/><text x=\"40\" y=\"40\" font-family=\"Arial\" font-size=\"12\" fill=\"%23D4AF37\" text-anchor=\"middle\" dy=\".3em\">Image</text></svg>'">
           <div class="cart-item-details">
             <h4 class="cart-item-title">${item.name}</h4>
             <div class="cart-item-price">${formatCurrency(item.price)}</div>
@@ -1864,7 +2190,10 @@
   
   function addToCart(productId) {
     const product = allProducts.find(p => p.id === productId);
-    if (!product) return;
+    if (!product) {
+      showNotification('Product not found', 'error');
+      return;
+    }
     
     const existingItem = cart.find(item => item.id === productId);
     
@@ -1898,9 +2227,12 @@
   }
   
   function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    updateCart();
-    showNotification('Item removed from cart', 'info');
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+      cart = cart.filter(item => item.id !== productId);
+      updateCart();
+      showNotification('Item removed from cart', 'info');
+    }
   }
   
   function clearCart() {
@@ -1933,7 +2265,7 @@
       return;
     }
     
-    let message = `*RYAAN JEWELLERS - ORDER*\n\n`;
+    let message = `*${COMPANY_NAME} - ORDER*\n\n`;
     message += `*Customer Details:*\n`;
     message += `Please provide:\n`;
     message += `- Full Name\n`;
@@ -1967,14 +2299,14 @@
     updateCart();
     closeCart();
     
-    showNotification('Order sent via WhatsApp!', 'success');
+    showNotification('Order sent via WhatsApp! Our team will contact you shortly.', 'success');
   }
 
   /***********************************************
    * CUSTOM DESIGN INQUIRY
    ***********************************************/
   function openCustomInquiry() {
-    const message = `*RYAAN JEWELLERS - CUSTOM DESIGN INQUIRY*\n\n`;
+    const message = `*${COMPANY_NAME} - CUSTOM DESIGN INQUIRY*\n\n`;
     message += `Hello RYAAN team,\n\n`;
     message += `I'm interested in creating a custom jewellery piece.\n\n`;
     message += `Please contact me to discuss:\n`;
@@ -2007,7 +2339,8 @@
         </button>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3rem">
           <div>
-            <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: var(--radius)">
+            <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: var(--radius); max-height: 500px; object-fit: cover"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"400\"><rect width=\"400\" height=\"400\" fill=\"%231a1a1a\"/><text x=\"200\" y=\"200\" font-family=\"Arial\" font-size=\"20\" fill=\"%23D4AF37\" text-anchor=\"middle\" dy=\".3em\">${product.name}</text></svg>'">
           </div>
           <div>
             <h2 style="color: var(--white); margin-bottom: 1rem">${product.name}</h2>
@@ -2027,10 +2360,21 @@
                   <div style="color: var(--light-gray); font-size: 0.9rem">Stones</div>
                   <div style="color: var(--white)">${product.stones}</div>
                 </div>
+                <div>
+                  <div style="color: var(--light-gray); font-size: 0.9rem">Weight</div>
+                  <div style="color: var(--white)">${product.weight}</div>
+                </div>
+                <div>
+                  <div style="color: var(--light-gray); font-size: 0.9rem">Collection</div>
+                  <div style="color: var(--white)">${product.category}</div>
+                </div>
               </div>
             </div>
             <button class="btn btn-primary" onclick="addToCart(${product.id}); this.parentElement.parentElement.parentElement.remove()" style="width: 100%">
               <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+            <button class="btn btn-secondary" onclick="openCheckout()" style="width: 100%; margin-top: 1rem">
+              <i class="fab fa-whatsapp"></i> Quick Buy
             </button>
           </div>
         </div>
@@ -2073,7 +2417,13 @@
    * INITIALIZATION
    ***********************************************/
   function init() {
+    // Render featured slider
+    renderFeaturedSlider();
+    
+    // Render all products
     renderProducts();
+    
+    // Update cart
     updateCart();
     
     // Auto-hide splash after 8 seconds
@@ -2093,10 +2443,30 @@
         document.querySelectorAll('.modal').forEach(modal => modal.remove());
       }
     });
+    
+    // Handle window resize for slider
+    window.addEventListener('resize', () => {
+      updateSliderPosition();
+    });
+    
+    // Initialize slider position
+    setTimeout(updateSliderPosition, 1000);
+    
+    // Pause slider on hover
+    const sliderTrack = el('sliderTrack');
+    if (sliderTrack) {
+      sliderTrack.addEventListener('mouseenter', () => {
+        clearInterval(sliderInterval);
+      });
+      
+      sliderTrack.addEventListener('mouseleave', () => {
+        startSliderAutoPlay();
+      });
+    }
   }
   
   // Initialize when DOM is loaded
   document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
-        </html>
+</html>
